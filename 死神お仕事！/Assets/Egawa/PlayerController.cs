@@ -14,6 +14,18 @@ public class PlayerController : MonoBehaviour
     bool goJump = false;          //ジャンプ開始フラグ
 
 
+    //アニメーション対応
+    Animator animator; //アニメーター
+   // public string stopAnime = "Player Stop";
+    //public string moveAnime = "PlayerMove";
+    //public string jumpAnime = "PlayerJump";
+    //public string goalAnime = "playerGoal";
+    //public string deadAnime = "PlayerOver";
+
+    //string nowAnime = "";
+    //string oldAnime = "";
+
+
     // Start is called before the first frame update
     void Start()
     {
