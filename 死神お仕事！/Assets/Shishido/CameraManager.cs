@@ -19,7 +19,7 @@ public class CameraManager : MonoBehaviour
     void Update()
     {
         GameObject player =
-            GameObject.FindGameObjectWithTag("player");// プレイヤーを探す
+            GameObject.FindGameObjectWithTag("Player");// プレイヤーを探す
         if (player != null)
         {
             //カメラの更新座標
