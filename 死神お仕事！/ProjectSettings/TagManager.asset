@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Dead
   - Soul
+  - ScoreItem
   layers:
   - Default
   - TransparentFX
