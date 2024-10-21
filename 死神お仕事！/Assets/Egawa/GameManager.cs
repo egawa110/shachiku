@@ -1,5 +1,5 @@
 
-/*
+
 
 using JetBrains.Annotations;
 using System.Collections;
@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
             Button bt = restartButton.GetComponent<Button>();
             bt.interactable = false;
             mainImage.GetComponent<Image>().sprite = gameClearSpr;  //‰æ‘œ‚ğİ’è‚·‚é
-            PlayerController.gameState == "gameend";
+            PlayerController.gameState = "gameend";
         }
         else if (PlayerController.gameState == "gameover")
         {
@@ -57,10 +57,10 @@ public class GameManager : MonoBehaviour
             mainImage.GetComponent<Image>().sprite = gameOverSpr;  //‰æ‘œ‚ğİ’è‚·‚é
             PlayerController.gameState = "gameend";
         }
-        
+
         else if (PlayerController.gameState == "playing")
         {
-            //ƒQ[ƒ€’†
+            //ƒQ[ƒ€’†S
         }
     }
 
@@ -72,4 +72,3 @@ public class GameManager : MonoBehaviour
 }
 
 
-*/
