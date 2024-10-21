@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class scytheAttack : MonoBehaviour
 {
-    public float throwSpeed = 10.0f;
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +13,10 @@ public class scytheAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.Z))
+        {
+            //Destroy(gameObject);
+
+        }
     }
 }
