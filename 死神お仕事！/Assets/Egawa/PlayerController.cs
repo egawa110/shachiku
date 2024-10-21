@@ -14,27 +14,29 @@ public class PlayerController : MonoBehaviour
     bool goJump = false;          //ジャンプ開始フラグ
 
 
-    //アニメーション対応
-    Animator animator; //アニメーター
-    public string stopAnime = "Player Stop";
-    public string moveAnime = "PlayerMove";
-    public string jumpAnime = "PlayerJump";
-    public string goalAnime = "playerGoal";
-    public string deadAnime = "PlayerOver";
+    ////アニメーション対応
+    //Animator animator; //アニメーター
+    //public string stopAnime = "Player Stop";
+    //public string moveAnime = "PlayerMove";
+    //public string jumpAnime = "PlayerJump";
+    //public string goalAnime = "playerGoal";
+    //public string deadAnime = "PlayerOver";
 
-    string nowAnime = "";
-    string oldAnime = "";
+    //string nowAnime = "";
+    //string oldAnime = "";
 
     public static string gameState = "playing";// ゲームの状態
+
+    public int Soul_num;//魂何個取ったか
 
     // Start is called before the first frame update
     void Start()
     {
 
         rbody = this.GetComponent<Rigidbody2D>();   //Rigidbod2Dを取ってくる
-        animator = GetComponent<Animator>();        //Animatorを取ってくる
-        nowAnime = stopAnime;   //停止から開始する
-        oldAnime = stopAnime;   //停止から開始する
+        //animator = GetComponent<Animator>();        //Animatorを取ってくる
+        //nowAnime = stopAnime;   //停止から開始する
+        //oldAnime = stopAnime;   //停止から開始する
 
         gameState = "playing";//ゲーム中
     }
@@ -99,22 +101,22 @@ public class PlayerController : MonoBehaviour
                 // 地面の上
                 if(axisH == 0)
                 {
-                    nowAnime = stopAnime;//停止中
+                    //nowAnime = stopAnime;//停止中
                 }
                 else
                 {
-                    nowAnime = moveAnime;//移動
+                    //nowAnime = moveAnime;//移動
                 }
             }
             else
             {
                 //空中
-                nowAnime = jumpAnime;
-            }
-            if(nowAnime!=oldAnime)
-            {
-                oldAnime = nowAnime;
-                animator.Play(nowAnime);// アニメーション再生
+                //    //nowAnime = jumpAnime;
+                //}
+                //if (nowAnime != oldAnime)
+                //{
+                //    oldAnime = nowAnime;
+                //    animator.Play(nowAnime);// アニメーション再生
             }
         }
 
@@ -133,7 +135,7 @@ public class PlayerController : MonoBehaviour
     // 接触開始
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag=="Goal")
+        if (collision.gameObject.tag == "Goal")
         {
             Goal();
         }
@@ -141,11 +143,21 @@ public class PlayerController : MonoBehaviour
         {
             GameOver();
         }
+        else if (collision.gameObject.tag == "Soul")
+        {
+            if (Input.GetKey(KeyCode.X)) // 魂を取る
+            {
+                Souls soul = collision.gameObject.GetComponent<Souls>();
+                Soul_num = soul.soul_one;
+
+                Destroy(collision.gameObject);
+            }
+        }
     }
     // ゴール
     public void Goal()
     {
-        animator.Play(goalAnime);
+        //animator.Play(goalAnime);
 
         gameState = "gameclear";
         GameStop();
@@ -153,7 +165,7 @@ public class PlayerController : MonoBehaviour
     // ゲームオーバー
     public void GameOver()
     {
-        animator.Play(deadAnime);
+        //animator.Play(deadAnime);
 
         gameState = "gameover";
         GameStop();
@@ -173,18 +185,4 @@ public class PlayerController : MonoBehaviour
         // 速度を０にして強制停止
         rbody.velocity=new Vector2(0,0);
     }
-
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if(collision.gameObject.tag=="Soul")
-    //    {
-    //        if (Input.GetKey(KeyCode.X))
-    //        {
-                
-
-    //            Destroy(collision.gameObject);
-    //        }
-    //    }
-    //}
-
 }
