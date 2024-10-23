@@ -27,7 +27,9 @@ public class PlayerController : MonoBehaviour
 
     public static string gameState = "playing";// ゲームの状態
 
-    public int Soul_num;//魂何個取ったか
+    //public int Soul_num;//魂何個取ったか
+
+    public int score = 0;//スコア
 
     // Start is called before the first frame update
     void Start()
@@ -143,15 +145,25 @@ public class PlayerController : MonoBehaviour
         {
             GameOver();
         }
-        else if (collision.gameObject.tag == "Soul")
+        else if (collision.gameObject.tag == "ScoreItem")
         {
-            if (Input.GetKey(KeyCode.X)) // 魂を取る
-            {
-                Souls soul = collision.gameObject.GetComponent<Souls>();
-                Soul_num = soul.soul_one;
+            //スコアアイテム
+            //ItemDataを取る
+            Souls item = collision.gameObject.GetComponent<Souls>();
+            //スコアを得る
+            score = item.value;
 
-                Destroy(collision.gameObject);
-            }
+            //アイテムを削除する
+            Destroy(collision.gameObject);
+
+
+            //if (Input.GetKey(KeyCode.X)) // 魂を取る
+            //{
+            //    Souls soul = collision.gameObject.GetComponent<Souls>();
+            //    Soul_num = soul.soul_one;
+
+            //    Destroy(collision.gameObject);
+            //}
         }
     }
     // ゴール
