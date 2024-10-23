@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Schema;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class Player : MonoBehaviour
 {
 
     Rigidbody2D rbody;         //Rigidbody2D型の作成
@@ -20,6 +21,12 @@ public class PlayerController : MonoBehaviour
     public string stopAnime = "Player Stop";
     public string moveAnime = "PlayerMove";
     public string jumpAnime = "PlayerJump";
+    ////アニメーション対応
+    //Animator animator; //アニメーター
+    //public string stopAnime = "Player Stop";
+    //public string moveAnime = "PlayerMove";
+    //public string jumpAnime = "PlayerJump";
+    //public string goalAnime = "playerGoal";
     public string deadAnime = "PlayerOver";
 
     string nowAnime = "";
@@ -40,6 +47,10 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();      //Animatorを取ってくる
         nowAnime = stopAnime;                     //停止から開始する
         oldAnime = stopAnime;                     //停止から開始する
+        rbody = this.GetComponent<Rigidbody2D>();   //Rigidbod2Dを取ってくる
+        //animator = GetComponent<Animator>();        //Animatorを取ってくる
+        //nowAnime = stopAnime;   //停止から開始する
+        //oldAnime = stopAnime;   //停止から開始する
 
         gameState = "playing";//ゲーム中
     }
@@ -102,7 +113,7 @@ public class PlayerController : MonoBehaviour
             if (onGround)
             {
                 // 地面の上
-                if(axisH == 0)
+                if (axisH == 0)
                 {
                     //nowAnime = stopAnime;//停止中
                 }
@@ -170,13 +181,12 @@ public class PlayerController : MonoBehaviour
 
         else if (collision.gameObject.tag == "Dead")
         {
-            //GameOver(); //ゲームオーバー
+            GameOver(); //ゲームオーバー
         }
     }
 
    
         
-
 
 
     // 接触開始
@@ -190,46 +200,55 @@ public class PlayerController : MonoBehaviour
         {
             GameOver();
         }
-        //else if (collision.gameObject.tag == "ScoreItem")
-        //{
-        //    if (Input.GetKey(KeyCode.X)) // 魂を取る
-        //    {
-        //        Souls soul = collision.gameObject.GetComponent<Souls>();
-        //        Soul_num = soul.soul_one;
+        else if (collision.gameObject.tag == "ScoreItem")
+        {
+            //スコアアイテム
+            //ItemDataを得る
+            ItemData item =collision.gameObject.GetComponent<ItemData>();
+            //スコアを得る
+            score = item.value;
 
-        //        Destroy(collision.gameObject);
-        //    }
-        //}
+            //アイテム削除する
+            Destroy(collision.gameObject);
+
+            //if (Input.GetKey(KeyCode.X)) // 魂を取る
+            //{
+            //    Souls soul = collision.gameObject.GetComponent<Souls>();
+            //    Soul_num = soul.soul_one;
+
+            //    Destroy(collision.gameObject);
+            //}
+        }
     }
     // ゴール
     public void Goal()
-    {
-        //animator.Play(goalAnime);
+{
+    //animator.Play(goalAnime);
 
-        gameState = "gameclear";
-        GameStop();
-    }
-    // ゲームオーバー
-    public void GameOver()
-    {
-        //animator.Play(deadAnime);
+    gameState = "gameclear";
+    GameStop();
+}
+// ゲームオーバー
+public void GameOver()
+{
+    //animator.Play(deadAnime);
 
-        gameState = "gameover";
-        GameStop();
-        //===================
-        // ゲームオーバー演出
-        //===================
-        // プレイヤー当たりを消す
-        GetComponent<CapsuleCollider2D>().enabled = false;
-        // プレイヤーを上に少し跳ね上げる演出
-        rbody.AddForce(new Vector2(0,5),ForceMode2D.Impulse);
-    }
-    // ゲーム停止
-    void GameStop()
-    {
-        // Rigidbody2Dを取ってくる
-        Rigidbody2D rbody=GetComponent<Rigidbody2D>();
-        // 速度を０にして強制停止
-        rbody.velocity=new Vector2(0,0);
-    }
+    gameState = "gameover";
+    GameStop();
+    //===================
+    // ゲームオーバー演出
+    //===================
+    // プレイヤー当たりを消す
+    GetComponent<CapsuleCollider2D>().enabled = false;
+    // プレイヤーを上に少し跳ね上げる演出
+    rbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
+}
+// ゲーム停止
+void GameStop()
+{
+    // Rigidbody2Dを取ってくる
+    Rigidbody2D rbody = GetComponent<Rigidbody2D>();
+    // 速度を０にして強制停止
+    rbody.velocity = new Vector2(0, 0);
+}
 }
