@@ -15,20 +15,11 @@ public class PlayerController : MonoBehaviour
     bool goJump = false;          //ジャンプ開始フラグ
 
 
-<<<<<<< HEAD
     //アニメーション対応
     Animator animator; //アニメーター
     public string stopAnime = "Player Stop";
     public string moveAnime = "PlayerMove";
     public string jumpAnime = "PlayerJump";
-=======
-    ////アニメーション対応
-    //Animator animator; //アニメーター
-    //public string stopAnime = "Player Stop";
-    //public string moveAnime = "PlayerMove";
-    //public string jumpAnime = "PlayerJump";
->>>>>>> b1adeec8ff0e6419a08051f9b53bc59f46b202c0
-    //public string goalAnime = "playerGoal";
     public string deadAnime = "PlayerOver";
 
     string nowAnime = "";
@@ -44,18 +35,11 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
 
-<<<<<<< HEAD
         //Rigidbod2Dを取ってくる
         rbody = this.GetComponent<Rigidbody2D>(); //Rigidbody2Dを取ってくる
         animator = GetComponent<Animator>();      //Animatorを取ってくる
         nowAnime = stopAnime;                     //停止から開始する
         oldAnime = stopAnime;                     //停止から開始する
-=======
-        rbody = this.GetComponent<Rigidbody2D>();   //Rigidbod2Dを取ってくる
-        //animator = GetComponent<Animator>();        //Animatorを取ってくる
-        //nowAnime = stopAnime;   //停止から開始する
-        //oldAnime = stopAnime;   //停止から開始する
->>>>>>> b1adeec8ff0e6419a08051f9b53bc59f46b202c0
 
         gameState = "playing";//ゲーム中
     }
@@ -176,7 +160,6 @@ public class PlayerController : MonoBehaviour
         goJump = true; //ジャンプフラグを立てる
     }
 
-<<<<<<< HEAD
     //接触開始
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -187,7 +170,7 @@ public class PlayerController : MonoBehaviour
 
         else if (collision.gameObject.tag == "Dead")
         {
-            GameOver(); //ゲームオーバー
+            //GameOver(); //ゲームオーバー
         }
     }
 
@@ -195,7 +178,7 @@ public class PlayerController : MonoBehaviour
         
 
 
-=======
+
     // 接触開始
     private void OnCollisionEnter(Collision collision)
     {
@@ -220,8 +203,12 @@ public class PlayerController : MonoBehaviour
             {
                 Souls soul = collision.gameObject.GetComponent<Souls>();
                 Soul_num = soul.soul_one;
+<<<<<<< HEAD
+
+=======
 >>>>>>> b1adeec8ff0e6419a08051f9b53bc59f46b202c0
 >>>>>>> 039c9e7fa3dd4a7519a7809f46cfb6d27b8e61a3
+>>>>>>> ee0b54e44e4685f97b0128604ddacf60d0716dac
 
             //アイテムを削除する
             Destroy(collision.gameObject);
