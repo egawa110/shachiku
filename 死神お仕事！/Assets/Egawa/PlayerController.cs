@@ -192,23 +192,15 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.gameObject.tag == "ScoreItem")
         {
-<<<<<<< HEAD
             //スコアアイテム
             //ItemDataを取る
             Souls item = collision.gameObject.GetComponent<Souls>();
             //スコアを得る
             score = item.value;
-=======
             if (Input.GetKey(KeyCode.X)) // 魂を取る
             {
                 Souls soul = collision.gameObject.GetComponent<Souls>();
                 Soul_num = soul.soul_one;
-<<<<<<< HEAD
-
-=======
->>>>>>> b1adeec8ff0e6419a08051f9b53bc59f46b202c0
->>>>>>> 039c9e7fa3dd4a7519a7809f46cfb6d27b8e61a3
->>>>>>> ee0b54e44e4685f97b0128604ddacf60d0716dac
 
             //アイテムを削除する
             Destroy(collision.gameObject);
