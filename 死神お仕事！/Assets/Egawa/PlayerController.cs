@@ -17,9 +17,10 @@ public class PlayerController : MonoBehaviour
 
     //アニメーション対応
     Animator animator; //アニメーター
-    public string stopAnime = "Player Stop";
+    public string stopAnime = "PlayerStop";
     public string moveAnime = "PlayerMove";
     public string jumpAnime = "PlayerJump";
+    public string goalAnime = "PlayerGoal";
     public string deadAnime = "PlayerOver";
 
     string nowAnime = "";
@@ -37,12 +38,16 @@ public class PlayerController : MonoBehaviour
         nowAnime = stopAnime;                     //停止から開始する
         oldAnime = stopAnime;                     //停止から開始する
 
-        gameState = "playing";//ゲーム中
+        gameState = "playing";//ゲーム中にする
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (gameState != "playing")
+        {
+            return;
+        }
 
         //水平方向の入力をチェック
         axisH = Input.GetAxisRaw("Horizontal");
@@ -64,15 +69,15 @@ public class PlayerController : MonoBehaviour
             Jump();
         }
 
+    }
+
+    void FixedUpdate()
+    {
         if (gameState != "playing")
         {
             return;
         }
 
-    }
-
-    void FixedUpdate()
-    {
         //地上判定
         bool onGround = Physics2D.CircleCast(transform.position, //発射位置
                                              1.8f,               //円の半径
@@ -94,59 +99,31 @@ public class PlayerController : MonoBehaviour
             rbody.AddForce(jumpPw, ForceMode2D.Impulse); //瞬間敵な力を加える
             goJump = false; //ジャンプフラグを下ろす
 
-            // アニメーション更新
+
+            //アニメーション更新
             if (onGround)
             {
-                // 地面の上
-                if(axisH == 0)
+                //地面の上
+                if (axisH == 0)
                 {
-                    //nowAnime = stopAnime;//停止中
+                    nowAnime = stopAnime; //停止中
                 }
+
                 else
                 {
-                    //nowAnime = moveAnime;//移動
+                    nowAnime = moveAnime; //移動
                 }
             }
             else
             {
                 //空中
-                //    //nowAnime = jumpAnime;
-                //}
-                //if (nowAnime != oldAnime)
-                //{
-                //    oldAnime = nowAnime;
-                //    animator.Play(nowAnime);// アニメーション再生
+                nowAnime = jumpAnime;
             }
-        }
-
-        if (gameState != "playing")
-        {
-            return;
-        }
-
-        //アニメーション更新
-        if (onGround)
-        {
-            //地面の上
-            if (axisH == 0)
+            if (nowAnime != oldAnime)
             {
-                nowAnime = stopAnime; //停止中
+                oldAnime = nowAnime;
+                animator.Play(nowAnime);  //アニメーション再生
             }
-
-            else
-            {
-                nowAnime = moveAnime; //移動
-            }
-        }
-        else
-        {
-            //空中
-            nowAnime = jumpAnime;
-        }
-        if (nowAnime != oldAnime)
-        {
-            oldAnime = nowAnime;
-            animator.Play(nowAnime);  //アニメーション再生
         }
     }
 
@@ -157,62 +134,24 @@ public class PlayerController : MonoBehaviour
     }
 
     //接触開始
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Goal")
-        {
-            //Goal();
-        }
-
-        else if (collision.gameObject.tag == "Dead")
-        {
-            //GameOver(); //ゲームオーバー
-        }
-    }
-
-    // 接触開始
-    private void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Goal")
         {
             Goal();
         }
+
         else if (collision.gameObject.tag == "Dead")
         {
-            GameOver();
+            GameOver(); //ゲームオーバー
         }
-<<<<<<< HEAD
-        else if (collision.gameObject.tag == "ScoreItem")
-        {
-            //スコアアイテム
-            //ItemDataを取る
-            Souls item = collision.gameObject.GetComponent<Souls>();
-            //スコアを得る
-            score = item.value;
-            if (Input.GetKey(KeyCode.X)) // 魂を取る
-            {
-                Souls soul = collision.gameObject.GetComponent<Souls>();
-                Soul_num = soul.soul_one;
-
-            //アイテムを削除する
-            Destroy(collision.gameObject);
-
-
-            //if (Input.GetKey(KeyCode.X)) // 魂を取る
-            //{
-            //    Souls soul = collision.gameObject.GetComponent<Souls>();
-            //    Soul_num = soul.soul_one;
-
-            //    Destroy(collision.gameObject);
-            //}
-        }
-=======
->>>>>>> 118f783b870080a9d1ae5b8b594c7359590b235b
     }
+
+
     // ゴール
     public void Goal()
     {
-        //animator.Play(goalAnime);
+        animator.Play(goalAnime);
 
         gameState = "gameclear";
         GameStop();
@@ -220,24 +159,28 @@ public class PlayerController : MonoBehaviour
     // ゲームオーバー
     public void GameOver()
     {
-        //animator.Play(deadAnime);
+        animator.Play(deadAnime);
 
         gameState = "gameover";
         GameStop();
-        //===================
-        // ゲームオーバー演出
-        //===================
-        // プレイヤー当たりを消す
+        //---------------------
+        //ゲームオーバー演出
+        //---------------------
+        //プレイヤー当たりを消す
+        //---------------------
         GetComponent<CapsuleCollider2D>().enabled = false;
-        // プレイヤーを上に少し跳ね上げる演出
-        rbody.AddForce(new Vector2(0,5),ForceMode2D.Impulse);
+        //プレイヤーを上に少し跳ね上げる演出
+        rbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
     }
-    // ゲーム停止
+
+    //ゲーム停止
     void GameStop()
     {
-        // Rigidbody2Dを取ってくる
-        Rigidbody2D rbody=GetComponent<Rigidbody2D>();
-        // 速度を０にして強制停止
-        rbody.velocity=new Vector2(0,0);
+        //Rigidbody2Dを取ってくる
+        Rigidbody2D rbody = GetComponent<Rigidbody2D>();
+        //速度を０にして強制停止
+        rbody.velocity = new Vector2(0, 0);
     }
 }
+    
+

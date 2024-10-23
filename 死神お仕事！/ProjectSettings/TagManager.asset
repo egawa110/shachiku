@@ -7,6 +7,7 @@ TagManager:
   - Dead
   - Soul
   - ScoreItem
+  - Goal
   layers:
   - Default
   - TransparentFX
