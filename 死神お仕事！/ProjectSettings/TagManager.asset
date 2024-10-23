@@ -6,8 +6,11 @@ TagManager:
   tags:
   - Dead
   - Soul
+<<<<<<< HEAD
   - ScoreItem
   - Goal
+=======
+>>>>>>> 5a8f9e9d32957c2887a4f9c4e455e95923cfd0e5
   layers:
   - Default
   - TransparentFX
