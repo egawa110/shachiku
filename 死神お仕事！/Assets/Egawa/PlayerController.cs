@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -14,16 +15,24 @@ public class PlayerController : MonoBehaviour
     bool goJump = false;          //ジャンプ開始フラグ
 
 
+<<<<<<< HEAD
+    //アニメーション対応
+    Animator animator; //アニメーター
+    public string stopAnime = "Player Stop";
+    public string moveAnime = "PlayerMove";
+    public string jumpAnime = "PlayerJump";
+=======
     ////アニメーション対応
     //Animator animator; //アニメーター
     //public string stopAnime = "Player Stop";
     //public string moveAnime = "PlayerMove";
     //public string jumpAnime = "PlayerJump";
+>>>>>>> b1adeec8ff0e6419a08051f9b53bc59f46b202c0
     //public string goalAnime = "playerGoal";
-    //public string deadAnime = "PlayerOver";
+    public string deadAnime = "PlayerOver";
 
-    //string nowAnime = "";
-    //string oldAnime = "";
+    string nowAnime = "";
+    string oldAnime = "";
 
     public static string gameState = "playing";// ゲームの状態
 
@@ -35,10 +44,18 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
 
+<<<<<<< HEAD
+        //Rigidbod2Dを取ってくる
+        rbody = this.GetComponent<Rigidbody2D>(); //Rigidbody2Dを取ってくる
+        animator = GetComponent<Animator>();      //Animatorを取ってくる
+        nowAnime = stopAnime;                     //停止から開始する
+        oldAnime = stopAnime;                     //停止から開始する
+=======
         rbody = this.GetComponent<Rigidbody2D>();   //Rigidbod2Dを取ってくる
         //animator = GetComponent<Animator>();        //Animatorを取ってくる
         //nowAnime = stopAnime;   //停止から開始する
         //oldAnime = stopAnime;   //停止から開始する
+>>>>>>> b1adeec8ff0e6419a08051f9b53bc59f46b202c0
 
         gameState = "playing";//ゲーム中
     }
@@ -53,12 +70,12 @@ public class PlayerController : MonoBehaviour
         //向きの調整
         if (axisH > 0.0f)
         {
-            transform.localScale = new Vector2(-1, 1);
+            transform.localScale = new Vector2(1, 1);
         }
 
         else if (axisH < 0.0f)
         {
-            transform.localScale = new Vector2(1, 1);
+            transform.localScale = new Vector2(-1, 1);
         }
 
         //キャラクターをジャンプさせる
@@ -78,7 +95,7 @@ public class PlayerController : MonoBehaviour
     {
         //地上判定
         bool onGround = Physics2D.CircleCast(transform.position, //発射位置
-                                             1.9f,               //円の半径
+                                             1.8f,               //円の半径
                                              Vector2.down,       //発射方向
                                              0.0f,               //発射距離
                                              groundLayer);       //検出するレイヤー
@@ -126,6 +143,31 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+
+        //アニメーション更新
+        if (onGround)
+        {
+            //地面の上
+            if (axisH == 0)
+            {
+                nowAnime = stopAnime; //停止中
+            }
+
+            else
+            {
+                nowAnime = moveAnime; //移動
+            }
+        }
+        else
+        {
+            //空中
+            nowAnime = jumpAnime;
+        }
+        if (nowAnime != oldAnime)
+        {
+            oldAnime = nowAnime;
+            animator.Play(nowAnime);  //アニメーション再生
+        }
     }
 
     //ジャンプ
@@ -134,6 +176,26 @@ public class PlayerController : MonoBehaviour
         goJump = true; //ジャンプフラグを立てる
     }
 
+<<<<<<< HEAD
+    //接触開始
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Goal")
+        {
+            //Goal();
+        }
+
+        else if (collision.gameObject.tag == "Dead")
+        {
+            GameOver(); //ゲームオーバー
+        }
+    }
+
+   
+        
+
+
+=======
     // 接触開始
     private void OnCollisionEnter(Collision collision)
     {
@@ -147,11 +209,19 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.gameObject.tag == "ScoreItem")
         {
+<<<<<<< HEAD
             //スコアアイテム
             //ItemDataを取る
             Souls item = collision.gameObject.GetComponent<Souls>();
             //スコアを得る
             score = item.value;
+=======
+            if (Input.GetKey(KeyCode.X)) // 魂を取る
+            {
+                Souls soul = collision.gameObject.GetComponent<Souls>();
+                Soul_num = soul.soul_one;
+>>>>>>> b1adeec8ff0e6419a08051f9b53bc59f46b202c0
+>>>>>>> 039c9e7fa3dd4a7519a7809f46cfb6d27b8e61a3
 
             //アイテムを削除する
             Destroy(collision.gameObject);
