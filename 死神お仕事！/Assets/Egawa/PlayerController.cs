@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -16,14 +17,14 @@ public class PlayerController : MonoBehaviour
 
     //アニメーション対応
     Animator animator; //アニメーター
-   // public string stopAnime = "Player Stop";
-    //public string moveAnime = "PlayerMove";
-    //public string jumpAnime = "PlayerJump";
+    public string stopAnime = "Player Stop";
+    public string moveAnime = "PlayerMove";
+    public string jumpAnime = "PlayerJump";
     //public string goalAnime = "playerGoal";
-    //public string deadAnime = "PlayerOver";
+    public string deadAnime = "PlayerOver";
 
-    //string nowAnime = "";
-    //string oldAnime = "";
+    string nowAnime = "";
+    string oldAnime = "";
 
 
     // Start is called before the first frame update
@@ -31,7 +32,10 @@ public class PlayerController : MonoBehaviour
     {
 
         //Rigidbod2Dを取ってくる
-        rbody = this.GetComponent<Rigidbody2D>();
+        rbody = this.GetComponent<Rigidbody2D>(); //Rigidbody2Dを取ってくる
+        animator = GetComponent<Animator>();      //Animatorを取ってくる
+        nowAnime = stopAnime;                     //停止から開始する
+        oldAnime = stopAnime;                     //停止から開始する
 
     }
 
@@ -45,12 +49,12 @@ public class PlayerController : MonoBehaviour
         //向きの調整
         if (axisH > 0.0f)
         {
-            transform.localScale = new Vector2(-1, 1);
+            transform.localScale = new Vector2(1, 1);
         }
 
         else if (axisH < 0.0f)
         {
-            transform.localScale = new Vector2(1, 1);
+            transform.localScale = new Vector2(-1, 1);
         }
 
         //キャラクターをジャンプさせる
@@ -66,7 +70,7 @@ public class PlayerController : MonoBehaviour
     {
         //地上判定
         bool onGround = Physics2D.CircleCast(transform.position, //発射位置
-                                             1.9f,               //円の半径
+                                             1.8f,               //円の半径
                                              Vector2.down,       //発射方向
                                              0.0f,               //発射距離
                                              groundLayer);       //検出するレイヤー
@@ -87,6 +91,31 @@ public class PlayerController : MonoBehaviour
             goJump = false; //ジャンプフラグを下ろす
 
         }
+
+        //アニメーション更新
+        if (onGround)
+        {
+            //地面の上
+            if (axisH == 0)
+            {
+                nowAnime = stopAnime; //停止中
+            }
+
+            else
+            {
+                nowAnime = moveAnime; //移動
+            }
+        }
+        else
+        {
+            //空中
+            nowAnime = jumpAnime;
+        }
+        if (nowAnime != oldAnime)
+        {
+            oldAnime = nowAnime;
+            animator.Play(nowAnime);  //アニメーション再生
+        }
     }
 
     //ジャンプ
@@ -94,6 +123,24 @@ public class PlayerController : MonoBehaviour
     {
         goJump = true; //ジャンプフラグを立てる
     }
+
+    //接触開始
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Goal")
+        {
+            //Goal();
+        }
+
+        else if (collision.gameObject.tag == "Dead")
+        {
+            GameOver(); //ゲームオーバー
+        }
+    }
+
+   
+        
+
 
 
 }
