@@ -60,6 +60,12 @@ public class Player_s : MonoBehaviour
         {
             Jump();
         }
+
+        //主人公の攻撃
+        if (Input.GetKey(KeyCode.Z))
+        {
+            Attack();
+        }
     }
 
     void FixedUpdate()
@@ -117,6 +123,11 @@ public class Player_s : MonoBehaviour
     {
         goJump = true;                      //ジャンプフラグを立てる
     }
+    //攻撃
+    public void Attack()
+    {
+
+    }
     // 接触開始
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -132,7 +143,7 @@ public class Player_s : MonoBehaviour
         {
                 //魂取得する
                 Souls item = collision.gameObject.GetComponent<Souls>();
-                ALL_SOUL = item.soul_one;
+                ALL_SOUL += item.soul_one;
                 // オブジェクト削除する
                 Destroy(collision.gameObject);
         }
