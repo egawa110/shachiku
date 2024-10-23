@@ -181,33 +181,6 @@ public class PlayerController : MonoBehaviour
         {
             GameOver();
         }
-<<<<<<< HEAD
-        else if (collision.gameObject.tag == "ScoreItem")
-        {
-            //スコアアイテム
-            //ItemDataを取る
-            Souls item = collision.gameObject.GetComponent<Souls>();
-            //スコアを得る
-            score = item.value;
-            if (Input.GetKey(KeyCode.X)) // 魂を取る
-            {
-                Souls soul = collision.gameObject.GetComponent<Souls>();
-                Soul_num = soul.soul_one;
-
-            //アイテムを削除する
-            Destroy(collision.gameObject);
-
-
-            //if (Input.GetKey(KeyCode.X)) // 魂を取る
-            //{
-            //    Souls soul = collision.gameObject.GetComponent<Souls>();
-            //    Soul_num = soul.soul_one;
-
-            //    Destroy(collision.gameObject);
-            //}
-        }
-=======
->>>>>>> 118f783b870080a9d1ae5b8b594c7359590b235b
     }
     // ゴール
     public void Goal()
