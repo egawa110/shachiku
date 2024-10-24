@@ -31,6 +31,7 @@ public class Player_s : MonoBehaviour
         nowAnime = stopAnime;                       //停止から開始する
         oldAnime = stopAnime;                       //停止から開始する
         gameState = "playing";                      // ゲーム中にする
+
     }
 
     // Update is called once per frame
@@ -62,7 +63,7 @@ public class Player_s : MonoBehaviour
         }
 
         //主人公の攻撃
-        if (Input.GetKey(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             Attack();
         }
@@ -118,6 +119,7 @@ public class Player_s : MonoBehaviour
         }
 
     }
+
     //ジャンプ
     public void Jump()
     {
@@ -128,6 +130,7 @@ public class Player_s : MonoBehaviour
     {
 
     }
+
     // 接触開始
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -148,6 +151,7 @@ public class Player_s : MonoBehaviour
                 Destroy(collision.gameObject);
         }
     }
+
     // ゴール
     public void Goal()
     {
@@ -155,6 +159,7 @@ public class Player_s : MonoBehaviour
         gameState = "gameclear";
         GameStop();             // ゲーム停止
     }
+    
     // ゲームオーバー
     public void GameOver()
     {
@@ -166,6 +171,7 @@ public class Player_s : MonoBehaviour
         // プレイヤーを上に少し跳ね上げる演出
         rbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
     }
+
     // ゲーム停止
     void GameStop()
     {
