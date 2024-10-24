@@ -3,14 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Dead
-  - Soul
-<<<<<<< HEAD
-  - ScoreItem
-  - Goal
-=======
->>>>>>> 5a8f9e9d32957c2887a4f9c4e455e95923cfd0e5
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -18,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Ground
+  - 
   - 
   - 
   - 
