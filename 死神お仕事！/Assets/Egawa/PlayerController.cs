@@ -100,30 +100,31 @@ public class PlayerController : MonoBehaviour
             goJump = false; //ジャンプフラグを下ろす
 
 
-            //アニメーション更新
-            if (onGround)
+           
+        }
+        //アニメーション更新
+        if (onGround)
+        {
+            //地面の上
+            if (axisH == 0)
             {
-                //地面の上
-                if (axisH == 0)
-                {
-                    nowAnime = stopAnime; //停止中
-                }
-
-                else
-                {
-                    nowAnime = moveAnime; //移動
-                }
+                nowAnime = stopAnime; //停止中 
             }
+
             else
             {
-                //空中
-                nowAnime = jumpAnime;
+                nowAnime = moveAnime; //移動
             }
-            if (nowAnime != oldAnime)
-            {
-                oldAnime = nowAnime;
-                animator.Play(nowAnime);  //アニメーション再生
-            }
+        }
+        else
+        {
+            //空中
+            nowAnime = jumpAnime;
+        }
+        if (nowAnime != oldAnime)
+        {
+            oldAnime = nowAnime;
+            animator.Play(nowAnime);  //アニメーション再生
         }
     }
 
