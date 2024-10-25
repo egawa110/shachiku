@@ -21,6 +21,7 @@ public class Player_s : MonoBehaviour
     string oldAnime = "";
     public static string gameState = "playing"; // ゲームの状態
 
+    //追加
     public int ALL_SOUL = 0;      //1ステージで取得したすべての魂
 
     //攻撃用変数
@@ -170,6 +171,8 @@ public class Player_s : MonoBehaviour
         {
             GameOver();     // ゲームオーバー
         }
+        
+        //追加
         else if (collision.gameObject.tag == "Soul")
         {
                 //魂取得する
