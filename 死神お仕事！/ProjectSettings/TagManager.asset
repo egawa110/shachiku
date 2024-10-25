@@ -3,13 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags:
   - Soul
+=======
+  tags: []
+>>>>>>> de507751d53ed80baa002e062eccafc7158d2811
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - 
   - Water
   - UI
   - 
