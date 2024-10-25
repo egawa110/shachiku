@@ -24,3 +24,4 @@ public class BulletManager : MonoBehaviour
         lazerPos.x += speed * Time.deltaTime; //xÀ•W‚Éspeed‚ğ‰ÁZ
         transform.position = lazerPos; //Œ»İ‚ÌˆÊ’uî•ñ‚É”½‰f‚³‚¹‚é
     }
+}

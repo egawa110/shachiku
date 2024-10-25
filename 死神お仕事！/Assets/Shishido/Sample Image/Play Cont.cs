@@ -7,7 +7,7 @@ public class PlayCont : MonoBehaviour
     [SerializeField] private float speed;//プレイヤーの移動速度
     [SerializeField] private float maxY, minY; //移動範囲の制限
 
-    [SerializeField] private GameObject lazer; //レーザープレハブを格納
+    [SerializeField] private GameObject Bullet; //レーザープレハブを格納
     [SerializeField] private Transform attackPoint;//アタックポイントを格納
 
     [SerializeField] private float attackTime = 0.2f; //攻撃の間隔
@@ -66,7 +66,7 @@ public class PlayCont : MonoBehaviour
             if (canAttack)
             {
                 //第一引数に生成するオブジェクト、第二引数にVector3型の座標、第三引数に回転の情報
-                Instantiate(lazer, attackPoint.position, Quaternion.identity);
+                Instantiate(Bullet, attackPoint.position, Quaternion.identity);
                 canAttack = false;　//攻撃フラグをfalseにする
                 attackTime = 0f;　//attackTimeを0に戻す
             }

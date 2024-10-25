@@ -133,11 +133,10 @@ GameObject:
   m_Component:
   - component: {fileID: 13437786}
   - component: {fileID: 13437785}
-  - component: {fileID: 13437784}
   - component: {fileID: 13437783}
   - component: {fileID: 13437782}
   - component: {fileID: 13437787}
-  - component: {fileID: 13437788}
+  - component: {fileID: 13437789}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -207,29 +206,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.06262636, y: 0.3914137}
   m_Size: {x: 1.0612135, y: 1.7814155}
   m_Direction: 0
---- !u!114 &13437784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 13437781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e7069774cf0099468f8aa9b20a4978f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  jump: 9
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  stopAnime: Player Stop
-  moveAnime: PlayerMove
-  jumpAnime: PlayerJump
-  goalAnime: PlayerGoal
-  deadAnime: PlayerOver
-  ALL_SOUL: 0
 --- !u!212 &13437785
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -319,7 +295,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &13437788
+--- !u!114 &13437789
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -328,11 +304,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 13437781}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c2b854c414b15140a5bff97fb6ea42c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e7069774cf0099468f8aa9b20a4978f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fMoveSpeed: 7
-  BulletObj: {fileID: 2937897550353236852, guid: 676bf8b092de8e24abef3c1600c222da, type: 3}
+  speed: 3
+  jump: 9
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  stopAnime: PlayerStop
+  moveAnime: PlayerMove
+  jumpAnime: PlayerJump
+  goalAnime: PlayerGoal
+  deadAnime: PlayerOver
+  ALL_SOUL: 0
+  Bullet: {fileID: 2937897550353236852, guid: 676bf8b092de8e24abef3c1600c222da, type: 3}
+  attackTime: 0.2
 --- !u!1 &755175273
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,10 +361,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 755175273}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d6954183d83c19478201637e1afe03e, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c2b854c414b15140a5bff97fb6ea42c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 20
+  speed: 0
 --- !u!4 &896456433 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 609164459992509387, guid: 08810a2fb5df0f1438f9b2435dce4397, type: 3}
@@ -469,6 +456,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1634466532516499447, guid: 08810a2fb5df0f1438f9b2435dce4397, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -536,6 +527,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1634466532516499447, guid: 08810a2fb5df0f1438f9b2435dce4397, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -592,6 +587,10 @@ PrefabInstance:
     - target: {fileID: 1634466532516499447, guid: 08810a2fb5df0f1438f9b2435dce4397, type: 3}
       propertyPath: m_Name
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634466532516499447, guid: 08810a2fb5df0f1438f9b2435dce4397, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -23,6 +23,17 @@ public class Player_s : MonoBehaviour
 
     public int ALL_SOUL = 0;      //1ステージで取得したすべての魂
 
+    //攻撃用変数
+    [SerializeField] private GameObject Bullet; //レーザープレハブを格納
+    //[SerializeField] private Transform attackPoint;//アタックポイントを格納
+    Vector3 attackPoint;
+
+    [SerializeField] private float attackTime = 0.2f; //攻撃の間隔
+    private float currentAttackTime; //攻撃の間隔を管理
+    private bool canAttack; //攻撃可能状態かを指定するフラグ
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +43,10 @@ public class Player_s : MonoBehaviour
         oldAnime = stopAnime;                       //停止から開始する
         gameState = "playing";                      // ゲーム中にする
 
+        //攻撃
+        currentAttackTime = attackTime; //currentAttackTimeにattackTimeをセット。
+
+        attackPoint = transform.Find("ShotPoint").localPosition;
     }
 
     // Update is called once per frame
@@ -63,10 +78,7 @@ public class Player_s : MonoBehaviour
         }
 
         //主人公の攻撃
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            Attack();
-        }
+        Attack();
     }
 
     void FixedUpdate()
@@ -128,7 +140,23 @@ public class Player_s : MonoBehaviour
     //攻撃
     public void Attack()
     {
+        attackTime += Time.deltaTime; //attackTimeに毎フレームの時間を加算していく
 
+        if (attackTime > currentAttackTime)
+        {
+            canAttack = true; //指定時間を超えたら攻撃可能にする
+        }
+
+        if (Input.GetKeyDown(KeyCode.Z)) //Zキーを押したら
+        {
+            if (canAttack)
+            {
+                //第一引数に生成するオブジェクト、第二引数にVector3型の座標、第三引数に回転の情報
+                Instantiate(Bullet, transform.position + attackPoint, Quaternion.identity);
+                canAttack = false;　//攻撃フラグをfalseにする
+                attackTime = 0.0f;　//attackTimeを0に戻す
+            }
+        }
     }
 
     // 接触開始

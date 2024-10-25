@@ -3,14 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-<<<<<<< HEAD
   tags:
   - Soul
-  - Dead
-  - Goal
-=======
-  tags: []
->>>>>>> 0d03398acb59209d70717b51ddd5216ddd1dd7d2
   layers:
   - Default
   - TransparentFX
