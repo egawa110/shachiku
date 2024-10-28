@@ -148,17 +148,17 @@ public class Player_s : MonoBehaviour
             if (canAttack)
             {
                 GameObject playerObj = GameObject.Find("Player");
-                if(playerObj.transform.position.x >= 0)
+                if(playerObj.transform.localScale.x >= 0)
                 {
                     //第一引数に生成するオブジェクト、第二引数にVector3型の座標、第三引数に回転の情報
-                    Instantiate(bullet, attackPoint.position, Quaternion.identity);
+                    Instantiate(bullet, attackPoint.localScale, Quaternion.identity);
                     canAttack = false; //攻撃フラグをfalseにする
                     attackTime = 0f;　//attackTimeを0に戻す
                 }
                 else
                 {
                     //第一引数に生成するオブジェクト、第二引数にVector3型の座標、第三引数に回転の情報
-                    Instantiate(bullet, attackPoint.position, Quaternion.identity);
+                    Instantiate(bullet, -attackPoint.localScale, Quaternion.identity);
                     canAttack = false; //攻撃フラグをfalseにする
                     attackTime = 0f;　//attackTimeを0に戻す
 
