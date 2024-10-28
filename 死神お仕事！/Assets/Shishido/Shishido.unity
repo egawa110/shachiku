@@ -267,8 +267,8 @@ Transform:
   m_GameObject: {fileID: 13437781}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.7261, y: -1.6954, z: 0}
-  m_LocalScale: {x: 1.1708, y: 1.2458, z: 1}
+  m_LocalPosition: {x: -9.01, y: -2.11, z: 0}
+  m_LocalScale: {x: 0.952797, y: 1.1205971, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 755175274}
@@ -319,8 +319,8 @@ MonoBehaviour:
   deadAnime: PlayerOver
   ALL_SOUL: 0
   Bullet: {fileID: 2937897550353236852, guid: 676bf8b092de8e24abef3c1600c222da, type: 3}
-  attackPoint: {fileID: 0}
-  attackTime: 0.2
+  attackPoint: {fileID: 755175274}
+  attackTime: 1
 --- !u!4 &319550250 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 609164459992509387, guid: 08810a2fb5df0f1438f9b2435dce4397, type: 3}
@@ -336,11 +336,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 609164459992509387, guid: 08810a2fb5df0f1438f9b2435dce4397, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.99
+      value: 6.08
       objectReference: {fileID: 0}
     - target: {fileID: 609164459992509387, guid: 08810a2fb5df0f1438f9b2435dce4397, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.03
+      value: 7.79
       objectReference: {fileID: 0}
     - target: {fileID: 609164459992509387, guid: 08810a2fb5df0f1438f9b2435dce4397, type: 3}
       propertyPath: m_LocalPosition.z

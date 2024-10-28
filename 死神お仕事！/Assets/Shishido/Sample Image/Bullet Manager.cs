@@ -10,12 +10,13 @@ public class BulletManager : MonoBehaviour
 
     void Start()
     {
-        Destroy(gameObject, DeleteTime);
+
     }
 
     void Update()
     {
         Move();
+        Destroy(gameObject, 2);
     }
 
     public void Move()
