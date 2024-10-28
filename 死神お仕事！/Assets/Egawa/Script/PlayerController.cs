@@ -70,6 +70,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             Jump();
+            
+            
+            
+           
+
         }
 
     }
@@ -119,6 +124,8 @@ public class PlayerController : MonoBehaviour
                 nowAnime = moveAnime; //移動
             }
         }
+
+        
         else
         {
             //空中
@@ -129,6 +136,7 @@ public class PlayerController : MonoBehaviour
             oldAnime = nowAnime;
             animator.Play(nowAnime);  //アニメーション再生
         }
+        
     }
 
     //ジャンプ
