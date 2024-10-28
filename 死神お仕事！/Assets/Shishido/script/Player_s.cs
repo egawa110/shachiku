@@ -32,7 +32,7 @@ public class Player_s : MonoBehaviour
     private float currentAttackTime; //攻撃の間隔を管理
     private bool canAttack; //攻撃可能状態かを指定するフラグ
 
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -85,7 +85,7 @@ public class Player_s : MonoBehaviour
         }
         //地上判定
         bool onGround = Physics2D.CircleCast(transform.position,    //発射位置
-                                             0.2f,                  //円の半径
+                                             1.8f,                  //円の半径
                                              Vector2.down,          //発射方向
                                              0.0f,                  //発射距離
                                              groundLayer);          //検出するレイヤー
@@ -147,10 +147,22 @@ public class Player_s : MonoBehaviour
         {
             if (canAttack)
             {
-                //第一引数に生成するオブジェクト、第二引数にVector3型の座標、第三引数に回転の情報
-                Instantiate(bullet, attackPoint.position, Quaternion.identity);
-                canAttack = false;　//攻撃フラグをfalseにする
-                attackTime = 0f;　//attackTimeを0に戻す
+                GameObject playerObj = GameObject.Find("Player");
+                if(playerObj.transform.position.x >= 0)
+                {
+                    //第一引数に生成するオブジェクト、第二引数にVector3型の座標、第三引数に回転の情報
+                    Instantiate(bullet, attackPoint.position, Quaternion.identity);
+                    canAttack = false; //攻撃フラグをfalseにする
+                    attackTime = 0f;　//attackTimeを0に戻す
+                }
+                else
+                {
+                    //第一引数に生成するオブジェクト、第二引数にVector3型の座標、第三引数に回転の情報
+                    Instantiate(bullet, attackPoint.position, Quaternion.identity);
+                    canAttack = false; //攻撃フラグをfalseにする
+                    attackTime = 0f;　//attackTimeを0に戻す
+
+                }
             }
         }
     }
