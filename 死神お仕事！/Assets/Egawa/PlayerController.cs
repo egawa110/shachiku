@@ -28,6 +28,9 @@ public class PlayerController : MonoBehaviour
 
     public static string gameState = "playing";// ゲームの状態
 
+    //追加
+    public int ALL_SOUL = 0;      //1ステージで取得したすべての魂
+
     // Start is called before the first frame update
     void Start()
     {
@@ -146,6 +149,16 @@ public class PlayerController : MonoBehaviour
         {
             GameOver(); //ゲームオーバー
         }
+        //追加
+        else if (collision.gameObject.tag == "Soul")
+        {
+            //魂取得する
+            Souls item = collision.gameObject.GetComponent<Souls>();
+            ALL_SOUL += item.soul_one;
+            // オブジェクト削除する
+            Destroy(collision.gameObject);
+        }
+
     }
 
 
