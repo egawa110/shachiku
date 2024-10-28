@@ -6,8 +6,6 @@ public class BulletManager : MonoBehaviour
 {
     [SerializeField] private float speed = 5; //e’e‚ÌƒXƒs[ƒh
 
-    public float DeleteTime = 2.0f;//Á‚¦‚éŠÔ
-
     void Start()
     {
 
@@ -16,18 +14,22 @@ public class BulletManager : MonoBehaviour
     void Update()
     {
         Move();
-        Destroy(gameObject, 2);
     }
-
     public void Move()
     {
-        Vector3 lazerPos = transform.position; //Vector3Œ^‚ÌplayerPos‚ÉŒ»İ‚ÌˆÊ’uî•ñ‚ğŠi”[
-        lazerPos.x += speed * Time.deltaTime; //xÀ•W‚Éspeed‚ğ‰ÁZ
-        transform.position = lazerPos; //Œ»İ‚ÌˆÊ’uî•ñ‚É”½‰f‚³‚¹‚é
-    }
+        Vector3 buletPos = transform.position; //Vector3Œ^‚ÌbulletPos‚ÉŒ»İ‚ÌˆÊ’uî•ñ‚ğŠi”[
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Destroy(gameObject);//‰½‚©‚É“–‚½‚Á‚½‚çÁ‚¦‚é
+        GameObject playerObj = GameObject.Find("Player");
+
+        if (playerObj.transform.localScale.x >= 0)
+        {
+            buletPos.x += speed * Time.deltaTime; //xÀ•W‚Éspeed‚ğ‰ÁZ
+        }
+        else if(playerObj.transform.localScale.x <= 0)
+        {
+            buletPos.x -= speed * Time.deltaTime; //xÀ•W‚Éspeed‚ğ‰ÁZ
+        }
+
+        transform.position = buletPos; //Œ»İ‚ÌˆÊ’uî•ñ‚É”½‰f‚³‚¹‚é
     }
 }

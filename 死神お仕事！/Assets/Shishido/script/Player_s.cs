@@ -25,13 +25,12 @@ public class Player_s : MonoBehaviour
     public int ALL_SOUL = 0;      //1ステージで取得したすべての魂
 
     //攻撃用変数
-    [SerializeField] private GameObject Bullet; //弾プレハブを格納
+    [SerializeField] private GameObject bullet; //バレットプレハブを格納
     [SerializeField] private Transform attackPoint;//アタックポイントを格納
 
-    [SerializeField] private float attackTime = 0.2f; //攻撃の間隔
+    [SerializeField] private float attackTime = 0.2f; //攻撃間隔
     private float currentAttackTime; //攻撃の間隔を管理
     private bool canAttack; //攻撃可能状態かを指定するフラグ
-
 
 
     // Start is called before the first frame update
@@ -43,9 +42,7 @@ public class Player_s : MonoBehaviour
         oldAnime = stopAnime;                       //停止から開始する
         gameState = "playing";                      // ゲーム中にする
 
-        //攻撃
         currentAttackTime = attackTime; //currentAttackTimeにattackTimeをセット。
-
     }
 
     // Update is called once per frame
@@ -151,9 +148,9 @@ public class Player_s : MonoBehaviour
             if (canAttack)
             {
                 //第一引数に生成するオブジェクト、第二引数にVector3型の座標、第三引数に回転の情報
-                Instantiate(Bullet, attackPoint.position, Quaternion.identity);
+                Instantiate(bullet, attackPoint.position, Quaternion.identity);
                 canAttack = false;　//攻撃フラグをfalseにする
-                attackTime = 0.0f;　//attackTimeを0に戻す
+                attackTime = 0f;　//attackTimeを0に戻す
             }
         }
     }
