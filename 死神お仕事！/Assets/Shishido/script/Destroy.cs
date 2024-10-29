@@ -16,12 +16,12 @@ public class BulletDestroy : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D other)//“–‚½‚Á‚½•û‚Ìî•ñ‚ª“ü‚é
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Enemy")
         {
-            Destroy(gameObject);
-            Destroy(other.gameObject);
+                Destroy(gameObject);
+                Destroy(other.gameObject);
         }
 
         if (other.gameObject.tag == "Ground")
