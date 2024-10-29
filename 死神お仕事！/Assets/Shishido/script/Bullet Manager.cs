@@ -20,19 +20,19 @@ public class BulletManager : MonoBehaviour
     {
         Vector3 bulletPos = transform.position; //Vector3型のbulletPosに現在の位置情報を格納
 
-        GameObject playerObj = GameObject.Find("Player");
+        //GameObject playerObj = GameObject.Find("Player");
 
-        if (playerObj.transform.localScale.x >= 0)
-        {
-            bulletPos.x += speed * Time.deltaTime; //x座標にspeedを加算　右向き（正面）
-            transform.position = bulletPos; //現在の位置情報に反映させる
+        //if (playerObj.transform.localScale.x >= 0)
+        //{
+        //    bulletPos.x += speed * Time.deltaTime; //x座標にspeedを加算　右向き（正面）
+        //    transform.position = bulletPos; //現在の位置情報に反映させる
 
-        }
-        else
-        {
+        //}
+        //else
+        //{
             bulletPos.x -= speed * Time.deltaTime; //x座標にspeedを加算　左向き（後ろ）
             transform.position = bulletPos; //現在の位置情報に反映させる
-        }
+        //}
 
     }
 }
