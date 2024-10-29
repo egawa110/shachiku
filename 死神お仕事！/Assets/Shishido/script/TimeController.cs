@@ -25,7 +25,7 @@ public class TimeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isTimeOver)
+        if (isTimeOver == false)
         {
             times += Time.deltaTime;
             if (isCountDown)

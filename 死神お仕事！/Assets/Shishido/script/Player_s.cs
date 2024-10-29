@@ -31,7 +31,6 @@ public class Player_s : MonoBehaviour
     [SerializeField] private float attackTime = 0.2f; //攻撃間隔
     private float currentAttackTime; //攻撃の間隔を管理
     private bool canAttack; //攻撃可能状態かを指定するフラグ
-
     
     // Start is called before the first frame update
     void Start()
@@ -148,23 +147,24 @@ public class Player_s : MonoBehaviour
             if (canAttack)
             {
                 GameObject playerObj = GameObject.Find("Player");
-                if(playerObj.transform.localScale.x >= 0)
+                if (playerObj.transform.localScale.x >= 0)
                 {
-                    //第一引数に生成するオブジェクト、第二引数にVector3型の座標、第三引数に回転の情報
-                    Instantiate(bullet, attackPoint.localScale, Quaternion.identity);
-                    canAttack = false; //攻撃フラグをfalseにする
-                    attackTime = 0f;　//attackTimeを0に戻す
+                    CreateBullet();
                 }
                 else
                 {
-                    //第一引数に生成するオブジェクト、第二引数にVector3型の座標、第三引数に回転の情報
-                    Instantiate(bullet, -attackPoint.localScale, Quaternion.identity);
-                    canAttack = false; //攻撃フラグをfalseにする
-                    attackTime = 0f;　//attackTimeを0に戻す
-
+                    CreateBullet();
                 }
             }
         }
+    }
+
+    public void CreateBullet()
+    {
+        //第一引数に生成するオブジェクト、第二引数にVector3型の座標、第三引数に回転の情報
+        Instantiate(bullet, attackPoint.position, Quaternion.identity);
+        canAttack = false; //攻撃フラグをfalseにする
+        attackTime = 0f;　 //attackTimeを0に戻す
     }
 
     // 接触開始
