@@ -8,6 +8,8 @@ TagManager:
   - Goal
   - Soul
   - Enemy
+  - Bullet
+  - Ground
   layers:
   - Default
   - TransparentFX
