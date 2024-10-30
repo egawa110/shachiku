@@ -1,30 +1,42 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class BulletController : MonoBehaviour
 {
-    public float shootspeed = 12.0f;  //弾の速度
-    public float shootDeleay = 0.25f; //発射間隔
+    [SerializeField] private float speed = 5.0f; //弾のスピード
 
-    bool inAttack = false;            //攻撃中フラグ
-
-    //攻撃
-    public void Attack()
-    {
-
-    }
-
-    // Start is called before the first frame update
     void Start()
     {
-        
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        GameObject playerObj = GameObject.Find("Player");
+
+        if (playerObj.transform.localScale.x >= 0)
+        {
+            Move_Right();
+        }
+        else
+        {
+            Move_Left();
+        }
+
+        Destroy(gameObject, 2);
+    }
+
+    public void Move_Right()
+    {
+        Vector3 bulletPos = transform.position; //Vector3型のbulletPosに現在の位置情報を格納
+        bulletPos.x += speed * Time.deltaTime; //x座標にspeedを加算　右向き（正面）
+        transform.position = bulletPos; //現在の位置情報に反映させる
+    }
+    public void Move_Left()
+    {
+        Vector3 bulletPos = transform.position; //Vector3型のbulletPosに現在の位置情報を格納
+        bulletPos.x -= speed * Time.deltaTime; //x座標にspeedを加算　左向き（後ろ）
+        transform.position = bulletPos; //現在の位置情報に反映させる
     }
 }
