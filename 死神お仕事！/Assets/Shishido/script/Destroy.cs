@@ -15,16 +15,4 @@ public class Destroy : MonoBehaviour
     {
         
     }
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Ground")
-        {
-            Destroy(gameObject);//’e‚ªÁ‚¦‚é
-        }
-        else if (other.gameObject.tag == "Enemy")
-        {
-            Destroy(gameObject);//’e‚ªÁ‚¦‚é
-            Destroy(other.gameObject);//“G‚àÁ‚¦‚é
-        }
-    }
 }

@@ -197,7 +197,7 @@ MonoBehaviour:
   ALL_SOUL: 0
   bullet: {fileID: 2937897550353236852, guid: 676bf8b092de8e24abef3c1600c222da, type: 3}
   attackPoint: {fileID: 8254156125281766131}
-  attackTime: 2
+  attackTime: 1
 --- !u!1 &8942682655846680193
 GameObject:
   m_ObjectHideFlags: 0
