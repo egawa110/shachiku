@@ -6,13 +6,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    Rigidbody2D rbody;         //Rigidbody2D型の作成
-    float axisH = 0.0f;        //入力
-    public float speed = 3.0f; //移動速度
+    Rigidbody2D rbody;                //Rigidbody2D型の作成
+    public float axisH = 0.0f;        //入力
+    public float speed = 3.0f;        //移動速度
 
-    public float jump = 9.0f;     //ジャンプ力
-    public LayerMask groundLayer; //着地できるレイヤー
-    bool goJump = false;          //ジャンプ開始フラグ
+    public float jump = 9.0f;         //ジャンプ力
+    public LayerMask groundLayer;     //着地できるレイヤー
+    bool goJump = false;              //ジャンプ開始フラグ
 
 
     //アニメーション対応
