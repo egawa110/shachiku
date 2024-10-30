@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletDestroy : MonoBehaviour
+public class Destroy : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,18 +15,16 @@ public class BulletDestroy : MonoBehaviour
     {
         
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == ("Ground"))
         {
-                Destroy(gameObject);
-                Destroy(other.gameObject);
+            Destroy(gameObject);//íeÇ™è¡Ç¶ÇÈ
         }
-
-        if (other.gameObject.tag == "Ground")
+        else if (other.gameObject.tag == "Enemy")
         {
-            Destroy(gameObject);
+            Destroy(gameObject);//íeÇ™è¡Ç¶ÇÈ
+            Destroy(other.gameObject);//ìGÇ‡è¡Ç¶ÇÈ
         }
     }
 }

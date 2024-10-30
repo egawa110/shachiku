@@ -180,9 +180,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 1634466532516499447, guid: 08810a2fb5df0f1438f9b2435dce4397, type: 3}
-      propertyPath: m_Layer
-      value: 3
+    - target: {fileID: 3256691255379489911, guid: 08810a2fb5df0f1438f9b2435dce4397, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3256691255379489911, guid: 08810a2fb5df0f1438f9b2435dce4397, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3256691255379489911, guid: 08810a2fb5df0f1438f9b2435dce4397, type: 3}
+      propertyPath: m_CallbackLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3256691255379489911, guid: 08810a2fb5df0f1438f9b2435dce4397, type: 3}
+      propertyPath: m_ForceSendLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3256691255379489911, guid: 08810a2fb5df0f1438f9b2435dce4397, type: 3}
+      propertyPath: m_ForceReceiveLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3256691255379489911, guid: 08810a2fb5df0f1438f9b2435dce4397, type: 3}
+      propertyPath: m_ContactCaptureLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442657046926666836, guid: 08810a2fb5df0f1438f9b2435dce4397, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -249,6 +273,10 @@ PrefabInstance:
     - target: {fileID: 1634466532516499447, guid: 08810a2fb5df0f1438f9b2435dce4397, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442657046926666836, guid: 08810a2fb5df0f1438f9b2435dce4397, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1478,10 +1506,6 @@ PrefabInstance:
     - target: {fileID: 1634466532516499447, guid: 08810a2fb5df0f1438f9b2435dce4397, type: 3}
       propertyPath: m_Name
       value: Ground
-      objectReference: {fileID: 0}
-    - target: {fileID: 1634466532516499447, guid: 08810a2fb5df0f1438f9b2435dce4397, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
