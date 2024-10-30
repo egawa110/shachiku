@@ -31,9 +31,6 @@ public class Player_s : MonoBehaviour
     [SerializeField] private float attackTime = 0.2f; //UŒ‚ŠÔŠu
     private float currentAttackTime; //UŒ‚‚ÌŠÔŠu‚ğŠÇ—
     private bool canAttack; //UŒ‚‰Â”\ó‘Ô‚©‚ğw’è‚·‚éƒtƒ‰ƒO
-
-    [SerializeField] GameObject _player;
-    [SerializeField] GameObject _bullet;
     
     // Start is called before the first frame update
     void Start()
