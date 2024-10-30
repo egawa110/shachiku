@@ -151,10 +151,10 @@ public class Player_s : MonoBehaviour
                 {
                     CreateBullet();
                 }
-                else
-                {
-                    CreateBullet();
-                }
+                //else
+                //{
+                //    CreateBullet();
+                //}
             }
         }
     }
