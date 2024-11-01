@@ -17,12 +17,14 @@ public class ChangeScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     // ƒV[ƒ“‚ğ“Ç‚İ‚Ş
     public void Load()
     {
+        FadeManager.Instance.LoadScene("Egawa", 1.0f);
+
         SceneManager.LoadScene(SceneName);
+
     }
 }
