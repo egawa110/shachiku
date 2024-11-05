@@ -7,7 +7,7 @@ public class BulletManager : MonoBehaviour
 {
     [SerializeField] private float speed = 5.0f; //弾のスピード
 
-    [SerializeField] private int DeleteTime = 2;
+    [SerializeField] private int DeleteTime = 1;
 
     void Start()
     {
