@@ -22,7 +22,7 @@ public class ChangeScene : MonoBehaviour
     // ƒV[ƒ“‚ğ“Ç‚İ‚Ş
     public void Load()
     {
-        FadeManager.Instance.LoadScene("Egawa", 1.0f);
+        FadeManager.Instance.LoadScene(SceneName, 1.0f);
 
         SceneManager.LoadScene(SceneName);
 
