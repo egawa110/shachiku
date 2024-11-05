@@ -70,15 +70,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             Jump();
-            
-            
-            
-           
 
         }
 
-    }
-
+}
     void FixedUpdate()
     {
         if (gameState != "playing")
@@ -137,6 +132,7 @@ public class PlayerController : MonoBehaviour
             animator.Play(nowAnime);  //アニメーション再生
         }
         
+
     }
 
     //ジャンプ
@@ -203,6 +199,7 @@ public class PlayerController : MonoBehaviour
         //速度を０にして強制停止
         rbody.velocity = new Vector2(0, 0);
     }
+  
 }
     
 
