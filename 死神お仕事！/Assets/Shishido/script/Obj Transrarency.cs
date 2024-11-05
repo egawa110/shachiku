@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,7 @@ public class ObjTransrarency : MonoBehaviour
 
     float cla;
 
-    float speed = 0.005f;//“§–¾‚É‚È‚é‚Ü‚Å‚ÌŠÔ
+    float speed = 0.0005f;//“§–¾‚É‚È‚é‚Ü‚Å‚ÌŠÔ
 
     // Start is called before the first frame update
     void Start()
@@ -19,12 +20,7 @@ public class ObjTransrarency : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //ålŒö‚ª‹ß‚Ã‚­‚Æ“§–¾‚É‚È‚éi‚æ‚¤‚É‚µ‚½‚¢j
-        if(Input.GetKeyDown(KeyCode.S))
-        {
-            cla = sr.color.a;
-            StartCoroutine(Display());
-        }
+
     }
 
     IEnumerator Display()
@@ -36,5 +32,15 @@ public class ObjTransrarency : MonoBehaviour
             sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, cla);
             yield return null;
         }
+    }
+
+    private void OnTriggerStay2D(Collider2D Player)
+    {
+        if(Player.gameObject.tag == "Player")
+        {
+            cla = sr.color.a;
+            StartCoroutine(Display());
+        }
+
     }
 }
