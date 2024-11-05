@@ -26,16 +26,19 @@ public class Player_s : MonoBehaviour
     public int ALL_SOUL = 0;      //1ステージで取得したすべての魂
 
     //攻撃用変数
-    [SerializeField] private GameObject bullet; //バレットプレハブを格納
-    [SerializeField] private Transform attackPoint;//アタックポイントを格納
+    [SerializeField] private GameObject bullet;     //バレットプレハブを格納
+    [SerializeField] private Transform attackPoint; //アタックポイントを格納
 
     [SerializeField] private float attackTime = 0.2f; //攻撃間隔
-    private float currentAttackTime; //攻撃の間隔を管理
-    private bool canAttack; //攻撃可能状態かを指定するフラグ
+    private float currentAttackTime;                  //攻撃の間隔を管理
+    private bool canAttack;                           //攻撃可能状態かを指定するフラグ
 
     //=========================================================
-    public static int HP = 4;//プレイヤーの体力
-    bool inDamage = false;//ダメージ中のフラグ
+   
+    public int HP = 4;      //プレイヤーの体力
+    bool inDamage = false;  //ダメージ中のフラグ
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -102,6 +105,7 @@ public class Player_s : MonoBehaviour
             }
             return; // ダメージ中は操作による移動をさせない
         }
+
         //地上判定
         bool onGround = Physics2D.CircleCast(transform.position,    //発射位置
                                              1.8f,                  //円の半径
@@ -201,7 +205,7 @@ public class Player_s : MonoBehaviour
             //魂取得する
             Souls item = collision.gameObject.GetComponent<Souls>();
             ALL_SOUL += item.soul_one;
-            // オブジェクト削除する
+            // 削除する
             Destroy(collision.gameObject);
         }
         else if (collision.gameObject.tag == "Enemy")
@@ -221,8 +225,7 @@ public class Player_s : MonoBehaviour
                 //移動停止
                 rbody.velocity = new Vector2(0, 0);
                 //敵キャラの反対方向にヒットバックさせる
-                Vector3 v = (transform.position - enemy.transform.position).normalized;
-                rbody.AddForce(new Vector2(v.x * 4, v.y * 4), ForceMode2D.Impulse);
+                Vector3 v = (transform.position - enemy.transform.position).normalized;　rbody.AddForce(new Vector2(v.x * 4, v.y * 4), ForceMode2D.Impulse);
                 //ダメージフラグ　ON
                 inDamage = true;
                 Invoke("DamageEnd", 0.25f);
@@ -238,8 +241,8 @@ public class Player_s : MonoBehaviour
     //ダメージ終了
     void DamageEnd()
     {
-        inDamage = false;
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        inDamage = false; // ダメージフラグOFF
+        gameObject.GetComponent<SpriteRenderer>().enabled = true; // スプライトを元に戻す
     }
     // ゴール
     public void Goal()
