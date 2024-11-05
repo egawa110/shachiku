@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 
 public class BulletManager : MonoBehaviour
 {
-    [SerializeField] private float speed = 5.0f; //弾のスピード
+    [SerializeField] private float speed = 8.0f; //弾のスピード
 
     [SerializeField] private int DeleteTime = 1;
 
@@ -39,7 +39,8 @@ public class BulletManager : MonoBehaviour
         else if (other.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);//弾が消える
-            Destroy(other.gameObject);//敵も消える
+            //Destroy(other.gameObject);//敵も消える
+
         }
     }
 }

@@ -35,7 +35,7 @@ public class Player_s : MonoBehaviour
 
     //=========================================================
    
-    public int HP = 4;      //プレイヤーの体力
+    public int HP_P = 4;      //プレイヤーの体力
     bool inDamage = false;  //ダメージ中のフラグ
 
 
@@ -210,7 +210,7 @@ public class Player_s : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Enemy")
         {
-            GetDamage(collision.gameObject); ;
+            GetDamage(collision.gameObject);
         }
     }
 
@@ -219,8 +219,8 @@ public class Player_s : MonoBehaviour
     {
         if (gameState == "playing")
         {
-            HP--; //hpが減る
-            if (HP > 0)
+            HP_P--; //hpが減る
+            if (HP_P > 0)
             {
                 //移動停止
                 rbody.velocity = new Vector2(0, 0);
