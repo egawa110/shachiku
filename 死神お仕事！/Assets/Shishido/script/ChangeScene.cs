@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement; // シーン切り替えに必要
 
 public class ChangeScene : MonoBehaviour
 {
-        public string SceneName; // 読み込むシーン名
+    public string SceneName; // 読み込むシーン名
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -22,9 +22,10 @@ public class ChangeScene : MonoBehaviour
     // シーンを読み込む
     public void Load()
     {
-        FadeManager.Instance.LoadScene(SceneName, 1.0f);
-
         SceneManager.LoadScene(SceneName);
+
+        FadeManager.Instance.LoadScene(SceneName, 0.3f);
+        Debug.Log(SceneName);
 
     }
 }
