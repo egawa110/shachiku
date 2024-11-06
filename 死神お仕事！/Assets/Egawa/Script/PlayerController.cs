@@ -31,6 +31,18 @@ public class PlayerController : MonoBehaviour
     //追加
     public int ALL_SOUL = 0;      //1ステージで取得したすべての魂
 
+    //攻撃用変数
+    [SerializeField] private GameObject bullet;     //バレットプレハブを格納
+    [SerializeField] private Transform attackPoint; //アタックポイントを格納
+
+    [SerializeField] private float attackTime = 0.2f; //攻撃間隔
+    private float currentAttackTime;                  //攻撃の間隔を管理
+    private bool canAttack;                           //攻撃可能状態かを指定するフラグ
+
+    public int HP_P = 4;      //プレイヤーの体力
+    bool inDamage = false;  //ダメージ中のフラグ
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -143,6 +155,37 @@ public class PlayerController : MonoBehaviour
         goJump = true; //ジャンプフラグを立てる
     }
 
+    //攻撃
+    public void Attack()
+    {
+        attackTime += Time.deltaTime; //attackTimeに毎フレームの時間を加算していく
+
+        if (attackTime > currentAttackTime)
+        {
+            canAttack = true; //指定時間を超えたら攻撃可能にする
+        }
+
+        if (Input.GetKeyDown(KeyCode.Z)) //Zキーを押したら
+        {
+            if (canAttack)
+            {
+                GameObject playerObj = GameObject.Find("Player");
+                if (playerObj.transform.localScale.x >= 0)
+                {
+                    CreateBullet();
+                }
+            }
+        }
+    }
+
+    public void CreateBullet()
+    {
+        //第一引数に生成するオブジェクト、第二引数にVector3型の座標、第三引数に回転の情報
+        Instantiate(bullet, attackPoint.position, Quaternion.identity);
+        canAttack = false; //攻撃フラグをfalseにする
+        attackTime = 0f;　 //attackTimeを0に戻す
+    }
+
     //接触開始
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -164,10 +207,34 @@ public class PlayerController : MonoBehaviour
             // オブジェクト削除する
             Destroy(collision.gameObject);
         }
-
-
+        else if (collision.gameObject.tag == "Enemy")
+        {
+            GetDamage(collision.gameObject);
+        }
     }
 
+    void GetDamage(GameObject enemy)
+    {
+        if (gameState == "playing")
+        {
+            HP_P--; //hpが減る
+            if (HP_P > 0)
+            {
+                //移動停止
+                rbody.velocity = new Vector2(0, 0);
+                //敵キャラの反対方向にヒットバックさせる
+                Vector3 v = (transform.position - enemy.transform.position).normalized; rbody.AddForce(new Vector2(v.x * 4, v.y * 4), ForceMode2D.Impulse);
+                //ダメージフラグ　ON
+                inDamage = true;
+                Invoke("DamageEnd", 0.25f);
+            }
+            else
+            {
+                //ゲームオーバー
+                GameOver();
+            }
+        }
+    }
 
     // ゴール
     public void Goal()
