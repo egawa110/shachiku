@@ -15,6 +15,8 @@ public class Playerml : MonoBehaviour
     {
         Transform myTransform = this.transform;
         Debug.Log(target.transform.position);
-        myTransform.position = -target.transform.position;
+        Vector3 pos = target.transform.position;
+        pos.y = 0;
+       myTransform.position = -pos;
     }
 }
