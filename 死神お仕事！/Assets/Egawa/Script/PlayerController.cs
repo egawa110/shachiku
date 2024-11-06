@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //FPSを60に固定
+        Application.targetFrameRate = 60;
 
         //Rigidbod2Dを取ってくる
         rbody = this.GetComponent<Rigidbody2D>(); //Rigidbody2Dを取ってくる
@@ -187,7 +189,7 @@ public class PlayerController : MonoBehaviour
         //---------------------
         //プレイヤー当たりを消す
         //---------------------
-        GetComponent<CapsuleCollider2D>().enabled = false;
+        GetComponent<BoxCollider2D>().enabled = false;
         //プレイヤーを上に少し跳ね上げる演出
         rbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
     }
