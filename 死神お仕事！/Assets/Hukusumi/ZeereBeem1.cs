@@ -6,7 +6,8 @@ public class ZeereBeem1 : MonoBehaviour
 {
     [SerializeField] GameObject target;
     SpriteRenderer sr;
-    public GameObject objPrefab;
+    [SerializeField] GameObject prefab_A;
+    //public GameObject objPrefab;
     public float firetime = 180.0f;//発射
     public float fireSpeed = 0.0f;
     bool onoff = false;
@@ -47,18 +48,17 @@ public class ZeereBeem1 : MonoBehaviour
             {
                 onoff = false;
                 passedTimes = 0;
-
-                Vector2 pos = new Vector2(getTransform.position.x, getTransform.position.y);
-
-                GameObject obj = Instantiate(objPrefab, pos, Quaternion.identity);
-                Rigidbody2D rbody = obj.GetComponent<Rigidbody2D>();
-                Vector2 v = new Vector2(getTransform.position.x, getTransform.position.y) * fireSpeed;
-                rbody.AddForce(v, ForceMode2D.Impulse);
+                Transform myTransform = this.transform;
+                Vector2 worldPos = myTransform.position;
+                float x = worldPos.x;    // ワールド座標を基準にした、x座標が入っている変数
+                float y = worldPos.y;    // ワールド座標を基準にした、y座標が入っている変数
+                Instantiate(prefab_A,new Vector2(x,y), Quaternion.identity);
 
             }
            
         }
 
     }
+    
 }
 
