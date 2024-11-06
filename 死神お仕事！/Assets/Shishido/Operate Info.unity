@@ -517,7 +517,7 @@ GameObject:
   - component: {fileID: 1350696993}
   - component: {fileID: 1350696992}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: "\u64CD\u4F5C\u8AAC\u660E\u6B04"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -758,7 +758,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Stage1\u3078"
+  m_Text: "\u2192Stage1"
 --- !u!222 &1884865648
 CanvasRenderer:
   m_ObjectHideFlags: 0

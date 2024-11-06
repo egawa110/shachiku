@@ -31,13 +31,13 @@ public class PlayerController : MonoBehaviour
     //追加
     public int ALL_SOUL = 0;      //1ステージで取得したすべての魂
 
-    //攻撃用変数
-    [SerializeField] private GameObject bullet;     //バレットプレハブを格納
-    [SerializeField] private Transform attackPoint; //アタックポイントを格納
+    ////攻撃用変数
+    //[SerializeField] private GameObject bullet;     //バレットプレハブを格納
+    //[SerializeField] private Transform attackPoint; //アタックポイントを格納
 
-    [SerializeField] private float attackTime = 0.2f; //攻撃間隔
-    private float currentAttackTime;                  //攻撃の間隔を管理
-    private bool canAttack;                           //攻撃可能状態かを指定するフラグ
+    //[SerializeField] private float attackTime = 0.2f; //攻撃間隔
+    //private float currentAttackTime;                  //攻撃の間隔を管理
+    //private bool canAttack;                           //攻撃可能状態かを指定するフラグ
 
     public int HP_P = 4;      //プレイヤーの体力
     bool inDamage = false;  //ダメージ中のフラグ
@@ -155,36 +155,36 @@ public class PlayerController : MonoBehaviour
         goJump = true; //ジャンプフラグを立てる
     }
 
-    //攻撃
-    public void Attack()
-    {
-        attackTime += Time.deltaTime; //attackTimeに毎フレームの時間を加算していく
+    ////攻撃
+    //public void Attack()
+    //{
+    //    attackTime += Time.deltaTime; //attackTimeに毎フレームの時間を加算していく
 
-        if (attackTime > currentAttackTime)
-        {
-            canAttack = true; //指定時間を超えたら攻撃可能にする
-        }
+    //    if (attackTime > currentAttackTime)
+    //    {
+    //        canAttack = true; //指定時間を超えたら攻撃可能にする
+    //    }
 
-        if (Input.GetKeyDown(KeyCode.Z)) //Zキーを押したら
-        {
-            if (canAttack)
-            {
-                GameObject playerObj = GameObject.Find("Player");
-                if (playerObj.transform.localScale.x >= 0)
-                {
-                    CreateBullet();
-                }
-            }
-        }
-    }
+    //    if (Input.GetKeyDown(KeyCode.Z)) //Zキーを押したら
+    //    {
+    //        if (canAttack)
+    //        {
+    //            GameObject playerObj = GameObject.Find("Player");
+    //            if (playerObj.transform.localScale.x >= 0)
+    //            {
+    //                CreateBullet();
+    //            }
+    //        }
+    //    }
+    //}
 
-    public void CreateBullet()
-    {
-        //第一引数に生成するオブジェクト、第二引数にVector3型の座標、第三引数に回転の情報
-        Instantiate(bullet, attackPoint.position, Quaternion.identity);
-        canAttack = false; //攻撃フラグをfalseにする
-        attackTime = 0f;　 //attackTimeを0に戻す
-    }
+    //public void CreateBullet()
+    //{
+    //    //第一引数に生成するオブジェクト、第二引数にVector3型の座標、第三引数に回転の情報
+    //    Instantiate(bullet, attackPoint.position, Quaternion.identity);
+    //    canAttack = false; //攻撃フラグをfalseにする
+    //    attackTime = 0f;　 //attackTimeを0に戻す
+    //}
 
     //接触開始
     void OnTriggerEnter2D(Collider2D collision)

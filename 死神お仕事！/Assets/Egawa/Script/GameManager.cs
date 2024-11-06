@@ -43,7 +43,6 @@ public class GameManager : MonoBehaviour
                 timeBar.SetActive(false); //§ŒÀŠÔ‚È‚µ‚È‚ç‰B‚·
             }
         }
-
     }
 
     // Update is called once per frame
