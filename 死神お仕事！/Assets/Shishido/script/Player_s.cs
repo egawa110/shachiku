@@ -224,7 +224,7 @@ public class Player_s : MonoBehaviour
             {
                 //移動停止
                 rbody.velocity = new Vector2(0, 0);
-                //敵キャラの反対方向にヒットバックさせる
+                //敵キャラの反対方向にノックバックさせる
                 Vector3 v = (transform.position - enemy.transform.position).normalized;　rbody.AddForce(new Vector2(v.x * 4, v.y * 4), ForceMode2D.Impulse);
                 //ダメージフラグ　ON
                 inDamage = true;
