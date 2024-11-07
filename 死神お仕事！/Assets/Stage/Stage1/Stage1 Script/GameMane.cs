@@ -121,7 +121,7 @@ public class GameMana : MonoBehaviour
 
     void UpdateSoul()
     {
-
+        soulText.GetComponent<Text>().text=
     }
 }
 

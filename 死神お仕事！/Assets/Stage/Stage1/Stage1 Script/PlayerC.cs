@@ -7,7 +7,7 @@ public class PlayerC : MonoBehaviour
 {
 
     Rigidbody2D rbody;                //Rigidbody2DŒ^‚Ìì¬
-    float axisH = 0.0f;        //“ü—Í
+    float axisH = 0.0f;               //“ü—Í
     public float speed = 3.0f;        //ˆÚ“®‘¬“x
 
     public float jump = 9.0f;         //ƒWƒƒƒ“ƒv—Í
