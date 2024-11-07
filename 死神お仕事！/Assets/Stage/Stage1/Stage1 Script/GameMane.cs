@@ -43,6 +43,8 @@ public class GameMana : MonoBehaviour
                 timeBar.SetActive(false); //§ŒÀŠÔ‚È‚µ‚È‚ç‰B‚·
             }
         }
+
+        UpdateSoul();
     }
 
     // Update is called once per frame
@@ -111,6 +113,8 @@ public class GameMana : MonoBehaviour
                 }
             }
         }
+
+        UpdateSoul();
     }
 
     //‰æ‘œ‚ğ”ñ•\¦‚É‚·‚é
@@ -121,7 +125,12 @@ public class GameMana : MonoBehaviour
 
     void UpdateSoul()
     {
-        soulText.GetComponent<Text>().text=
+        //ƒQ[ƒ€’†
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        //playerController‚ğæ“¾‚·‚é
+        PlayerC playerCnt = player.GetComponent<PlayerC>();
+
+        soulText.GetComponent<Text>().text=playerCnt.ALL_SOUL.ToString();
     }
 }
 
