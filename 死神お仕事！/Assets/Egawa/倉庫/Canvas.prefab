@@ -607,7 +607,6 @@ GameObject:
   - component: {fileID: 2899121202411005044}
   - component: {fileID: 100606055518482071}
   - component: {fileID: 6690727963983004425}
-  - component: {fileID: 8597587288149907069}
   - component: {fileID: 2786823823943902423}
   m_Layer: 5
   m_Name: Canvas
@@ -701,26 +700,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8597587288149907069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6072636781336519141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12fe28aedb227454e96cf1b15c82b07a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainImage: {fileID: 6684666815462553046}
-  gameOverSpr: {fileID: 21300000, guid: 99a71acfbab9ceb4bb549857a328e603, type: 3}
-  gameClearSpr: {fileID: 21300000, guid: a10589696564b804187e4477ce907a7d, type: 3}
-  panel: {fileID: 7858333244314169401}
-  restartButton: {fileID: 3734261841419385413}
-  nextButton: {fileID: 3434556649231677828}
-  timeBar: {fileID: 3085507430924673656}
-  timeText: {fileID: 4933868200360771730}
 --- !u!114 &2786823823943902423
 MonoBehaviour:
   m_ObjectHideFlags: 0
