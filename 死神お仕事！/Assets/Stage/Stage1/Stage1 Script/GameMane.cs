@@ -118,6 +118,11 @@ public class GameMana : MonoBehaviour
     {
         mainImage.SetActive(false);
     }
+
+    void UpdateSoul()
+    {
+
+    }
 }
 
 
