@@ -130,8 +130,6 @@ public class GameMana : MonoBehaviour
         //playerController‚ðŽæ“¾‚·‚é
         PlayerC playerCnt = player.GetComponent<PlayerC>();
 
-        soulText.GetComponent<Text>().text=playerCnt.ALL_SOUL.ToString();
+        soulText.GetComponent<Text>().text = playerCnt.ALL_SOUL.ToString();
     }
 }
-
-

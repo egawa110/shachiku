@@ -229,6 +229,7 @@ MonoBehaviour:
   goalAnime: PlayerGoal
   deadAnime: PlayerOver
   ALL_SOUL: 0
+  HP_P: 4
 --- !u!1001 &1505281951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4775,7 +4776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4548657000076936131, guid: b397f58607b22a049a679e0af4f84b2c, type: 3}
       propertyPath: m_TagString
-      value: Dead
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8214,7 +8215,7 @@ GameObject:
   - component: {fileID: 1043533650398268481}
   m_Layer: 0
   m_Name: "\u6575\u30B5\u30A4\u30BA\u5909\u66F4\uFF11 (1)"
-  m_TagString: Dead
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12813,7 +12814,7 @@ GameObject:
   - component: {fileID: 3254902049849713118}
   m_Layer: 0
   m_Name: "\u6575\u30B5\u30A4\u30BA\u5909\u66F4\uFF11 (3)"
-  m_TagString: Dead
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14632,7 +14633,7 @@ GameObject:
   - component: {fileID: 7842021494744361480}
   m_Layer: 0
   m_Name: "\u6575\u30B5\u30A4\u30BA\u5909\u66F4\uFF11 (2)"
-  m_TagString: Dead
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
