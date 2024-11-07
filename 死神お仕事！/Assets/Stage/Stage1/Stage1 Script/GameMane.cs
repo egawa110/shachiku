@@ -21,6 +21,9 @@ public class GameMana : MonoBehaviour
     public GameObject timeText; //時間テイスト
     TimeController timeCnt;     //TimeController
 
+    public GameObject soulText; //魂のテキスト
+    public int stageSoul;       //取得した魂の数
+
     // Start is called before the first frame update
     void Start()
     {
