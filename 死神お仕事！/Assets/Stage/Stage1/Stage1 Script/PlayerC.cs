@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class PlayerC : MonoBehaviour
 {
@@ -24,6 +25,10 @@ public class PlayerC : MonoBehaviour
     //追加
     public int ALL_SOUL = 0;      //1ステージで取得したすべての魂
 
+    public int HP_P = 4;      //プレイヤーの体力
+    bool inDamage = false;  //ダメージ中のフラグ
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +42,7 @@ public class PlayerC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameState != "playing")
+        if (gameState != "playing" || inDamage)
         {
             return;
         }
@@ -69,6 +74,23 @@ public class PlayerC : MonoBehaviour
         {
             return;
         }
+        if (inDamage)
+        {
+            //ダメージ中、点滅させる
+            float val = Mathf.Sin(Time.time * 50);
+            if (val > 0)
+            {
+                //スプライトを表示
+                gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            }
+            else
+            {
+                //スプライトを非表示
+                gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            }
+            return; // ダメージ中は操作による移動をさせない
+        }
+
         //地上判定
         bool onGround = Physics2D.CircleCast(transform.position,    //発射位置
                                              1.8f,                  //円の半径
@@ -129,7 +151,7 @@ public class PlayerC : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Dead")
         {
-            GameOver();     // ゲームオーバー
+            GameOver();    // ゲームオーバー
         }
 
         //追加
@@ -138,11 +160,46 @@ public class PlayerC : MonoBehaviour
             //魂取得する
             Souls item = collision.gameObject.GetComponent<Souls>();
             ALL_SOUL += item.soul_one;
-            // オブジェクト削除する
+            // 削除する
             Destroy(collision.gameObject);
+        }
+        else if (collision.gameObject.tag == "Enemy")
+        {
+            GetDamage(collision.gameObject);
         }
     }
 
+    //ダメージ
+    void GetDamage(GameObject enemy)
+    {
+        if (gameState == "playing")
+        {
+            HP_P--; //hpが減る
+            if (HP_P > 0)
+            {
+                animator.Play(deadAnime);
+                //移動停止
+                rbody.velocity = new Vector2(0, 0);
+                //敵キャラの反対方向にノックバックさせる
+                Vector3 v = (transform.position - enemy.transform.position).normalized; rbody.AddForce(new Vector2(v.x * 4, v.y * 4), ForceMode2D.Impulse);
+                //ダメージフラグ　ON
+                inDamage = true;
+                Invoke("DamageEnd", 0.25f);
+            }
+            else
+            {
+                //ゲームオーバー
+                GameOver();
+            }
+        }
+    }
+
+    //ダメージ終了
+    void DamageEnd()
+    {
+        inDamage = false; // ダメージフラグOFF
+        gameObject.GetComponent<SpriteRenderer>().enabled = true; // スプライトを元に戻す
+    }
     // ゴール
     public void Goal()
     {
