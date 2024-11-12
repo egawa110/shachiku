@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ZeereRitoning : MonoBehaviour
 {
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,10 @@ public class ZeereRitoning : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(gameObject);
     }
 }
