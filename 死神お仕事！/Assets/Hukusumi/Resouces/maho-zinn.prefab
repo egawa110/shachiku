@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8173478328662352455}
   - component: {fileID: 7784004432078369736}
   - component: {fileID: 2399933786169134756}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: maho-zinn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,4 +102,3 @@ MonoBehaviour:
   - {fileID: 7302596685962986113, guid: e8b21eb976d7ce94aba3eeb272993804, type: 3}
   - {fileID: 3860344785117228322, guid: bdbf35a63caf55f4a921f279a10a4309, type: 3}
   deletetime: 3
-  samontime: 2.9
