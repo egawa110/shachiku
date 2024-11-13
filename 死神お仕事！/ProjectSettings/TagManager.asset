@@ -10,6 +10,8 @@ TagManager:
   - Enemy
   - Bullet
   - Ground
+  - ZeereEye
+  - ZeereCore
   layers:
   - Default
   - TransparentFX

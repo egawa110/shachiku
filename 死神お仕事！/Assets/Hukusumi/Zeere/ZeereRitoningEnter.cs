@@ -9,7 +9,7 @@ public class ZeereRitoningEnter : MonoBehaviour
     public float y = 20.0f;
     public float rx = 1.0f;
     public float boder = 10.0f;
-    bool onoff = false;//起動用
+    bool RRonoff = false;//起動用
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +22,9 @@ public class ZeereRitoningEnter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             // isCheckの値を反転させる
-            onoff = true;
+            RRonoff = true;
         }
-        if (onoff == true)
+        if (RRonoff == true)
         {
             Transform myTransform = this.transform;
             Vector2 worldPos = myTransform.position;
@@ -33,7 +33,7 @@ public class ZeereRitoningEnter : MonoBehaviour
             x += rx;
             if(x>boder)
             {
-                onoff = false;
+                RRonoff = false;
                 x = 0.5f;
             }
         }

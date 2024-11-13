@@ -10,7 +10,7 @@ public class ZeereBeem1 : MonoBehaviour
     //public GameObject objPrefab;
     public float firetime = 180.0f;//発射
     public float fireSpeed = 0.0f;
-    bool onoff = false;//起動用
+    bool Bonoff = false;//起動用
     float transparencyON = 0.0f;//透明
     float transparencyOFF = 1.0f;//不透明
     Transform getTransform;
@@ -29,9 +29,9 @@ public class ZeereBeem1 : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.B))
         {
             // isCheckの値を反転させる
-            onoff = true;
+            Bonoff = true;
         }
-        if (onoff == false)
+        if (Bonoff == false)
         {
             sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, transparencyON);//透明化
             Transform myTransform = this.transform;
@@ -40,13 +40,13 @@ public class ZeereBeem1 : MonoBehaviour
             pos.y = 0;
             myTransform.position = -pos;
         }
-        else if(onoff==true)
+        else if(Bonoff==true)
         {
             sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, transparencyOFF);//不透明化
             passedTimes += Time.deltaTime;//時間経過
             if(passedTimes>=firetime)
             {
-                onoff = false;
+                Bonoff = false;
                 passedTimes = 0;
                 Transform myTransform = this.transform;
                 Vector2 worldPos = myTransform.position;
