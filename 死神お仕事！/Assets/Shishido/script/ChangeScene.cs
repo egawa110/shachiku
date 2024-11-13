@@ -23,9 +23,8 @@ public class ChangeScene : MonoBehaviour
     public void Load()
     {
         SceneManager.LoadScene(SceneName);
-
         FadeManager.Instance.LoadScene(SceneName, 0.3f);
-        Debug.Log(SceneName);
 
+        Debug.Log(SceneName);
     }
 }
