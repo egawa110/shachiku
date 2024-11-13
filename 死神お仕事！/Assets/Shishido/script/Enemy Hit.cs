@@ -28,13 +28,13 @@ public class EnemyHit : MonoBehaviour
             HP_E--;
             if (HP_E <= 0)
             {
-                //€–S
-                //“–‚½‚è‚ğíœ
-                GetComponent<BoxCollider2D>().enabled = false;
-                //ˆÚ“®’â~
-                rbody.velocity = Vector2.zero;
+                ////€–S
+                ////“–‚½‚è‚ğíœ
+                //GetComponent<BoxCollider2D>().enabled = false;
+                ////ˆÚ“®’â~
+                //rbody.velocity = Vector2.zero;
                 //0.5•bŒã‚ÉÁ‚·
-                Destroy(gameObject, 0.5f);
+                Destroy(gameObject);
             }
         }
     }
