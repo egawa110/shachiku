@@ -5,6 +5,7 @@ using UnityEngine;
 public class ZeereRitoningEnter : MonoBehaviour
 {
     [SerializeField] GameObject prefab_A;
+    [SerializeField] GameObject prefab_B;
     public float x = 0.5f;
     public float y = 20.0f;
     public float rx = 1.0f;
@@ -30,6 +31,10 @@ public class ZeereRitoningEnter : MonoBehaviour
             Vector2 worldPos = myTransform.position;
             Instantiate(prefab_A, new Vector2(x, y), Quaternion.identity);
             Instantiate(prefab_A, new Vector2(-x, y), Quaternion.identity);
+            Transform myTransformA = this.transform;
+            Vector2 worldPosA = myTransformA.position;
+            Instantiate(prefab_B, new Vector2(x, y), Quaternion.identity);
+            Instantiate(prefab_B, new Vector2(-x, y), Quaternion.identity);
             x += rx;
             if(x>boder)
             {
