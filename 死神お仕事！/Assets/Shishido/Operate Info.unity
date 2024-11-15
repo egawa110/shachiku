@@ -252,8 +252,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 289, y: -172}
-  m_SizeDelta: {x: 350.11, y: 205.13}
+  m_AnchoredPosition: {x: 318, y: -205}
+  m_SizeDelta: {x: 519.24, y: 258.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &174955079
 MonoBehaviour:
@@ -396,8 +396,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 827, y: 465}
+  m_AnchoredPosition: {x: 0, y: -0.000024796}
+  m_SizeDelta: {x: 916, y: 515}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &954111909
 MonoBehaviour:
@@ -722,8 +722,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 8}
-  m_SizeDelta: {x: -194.72, y: -154.39}
+  m_AnchoredPosition: {x: 0.000030517578, y: 14}
+  m_SizeDelta: {x: -304.59, y: -202.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1884865647
 MonoBehaviour:
@@ -758,7 +758,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u2192Stage1"
+  m_Text: "\u30B9\u30C6\u30FC\u30B8\uFF11\u3078"
 --- !u!222 &1884865648
 CanvasRenderer:
   m_ObjectHideFlags: 0
