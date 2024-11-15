@@ -4,11 +4,20 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Switch
   - Dead
   - Goal
-  - Enemy
   - Soul
+  - Enemy
+  - Bullet
+  - Ground
+<<<<<<< HEAD
+  - Switch
+=======
+  - ZeereEye
+  - ZeereCore
+  - KinKill
+  - ErekiBalle
+>>>>>>> 43a57f99e9d1b8aa93478383cf4eb7b18b90f811
   layers:
   - Default
   - TransparentFX
@@ -16,8 +25,8 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
-  - 
+  - shell
+  - SpeciaAttack
   - 
   - 
   - 
