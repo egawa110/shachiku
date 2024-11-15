@@ -20,8 +20,8 @@ public class PauseMenu : MonoBehaviour
             if (pauseUI.activeSelf)
             {
                 Time.timeScale = 0f;
-                //　ポーズUIが表示されてなければ通常通り進行
             }
+            //　ポーズUIが表示されてなければ通常通り進行
             else
             {
                 Time.timeScale = 1f;
