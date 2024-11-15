@@ -42,10 +42,16 @@ public class PlayerC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
+
         if (gameState != "playing" || inDamage)
         {
             return;
         }
+
         //水平方向の入力をチェックする
         axisH = Input.GetAxisRaw("Horizontal");
         //向きの調整
