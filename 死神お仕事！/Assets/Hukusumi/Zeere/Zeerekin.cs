@@ -25,7 +25,7 @@ public class Zeerekin : MonoBehaviour
         transform.position = Vector2.MoveTowards(
                transform.position,
                new Vector2(playerTr.position.x, playerTr.position.y),
-               speed * Time.deltaTime);
+               -speed * Time.deltaTime);
 
     }
     void FixedUpdate()

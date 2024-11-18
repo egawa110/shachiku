@@ -51,7 +51,6 @@ public class PlayerC : MonoBehaviour
         {
             return;
         }
-
         //水平方向の入力をチェックする
         axisH = Input.GetAxisRaw("Horizontal");
         //向きの調整
