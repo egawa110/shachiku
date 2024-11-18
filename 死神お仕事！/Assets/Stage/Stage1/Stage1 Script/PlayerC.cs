@@ -28,6 +28,10 @@ public class PlayerC : MonoBehaviour
     public int HP_P = 4;      //プレイヤーの体力
     bool inDamage = false;  //ダメージ中のフラグ
 
+    // サウンド再生
+    public AudioClip Jump_SE;
+    public AudioClip Damage_SE;
+    public AudioClip Move_SE;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +40,7 @@ public class PlayerC : MonoBehaviour
         animator = GetComponent<Animator>();        //Animator を取ってくる
         nowAnime = stopAnime;                       //停止から開始する
         oldAnime = stopAnime;                       //停止から開始する
-        gameState = "playing";                      // ゲーム中にする
+        gameState = "playing";                      //ゲーム中にする
     }
 
     // Update is called once per frame
@@ -70,6 +74,7 @@ public class PlayerC : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             Jump();
+            GetComponent<AudioSource>().Play();
         }
     }
 
@@ -171,6 +176,8 @@ public class PlayerC : MonoBehaviour
         else if (collision.gameObject.tag == "Enemy")
         {
             GetDamage(collision.gameObject);
+            GetComponent<AudioSource>().Play();
+
         }
     }
 
