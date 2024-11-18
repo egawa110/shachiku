@@ -29,6 +29,7 @@ public class PlayerC : MonoBehaviour
     bool inDamage = false;  //ダメージ中のフラグ
 
     // サウンド再生
+    private AudioSource audioSource;
     public AudioClip Jump_SE;
     public AudioClip Damage_SE;
     public AudioClip Move_SE;
@@ -41,6 +42,8 @@ public class PlayerC : MonoBehaviour
         nowAnime = stopAnime;                       //停止から開始する
         oldAnime = stopAnime;                       //停止から開始する
         gameState = "playing";                      //ゲーム中にする
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -74,7 +77,7 @@ public class PlayerC : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             Jump();
-            GetComponent<AudioSource>().Play();
+            audioSource.PlayOneShot(Jump_SE);
         }
     }
 
@@ -176,8 +179,7 @@ public class PlayerC : MonoBehaviour
         else if (collision.gameObject.tag == "Enemy")
         {
             GetDamage(collision.gameObject);
-            GetComponent<AudioSource>().Play();
-
+            audioSource.PlayOneShot(Damage_SE);
         }
     }
 
