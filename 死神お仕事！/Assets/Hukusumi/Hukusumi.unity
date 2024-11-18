@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 68333928}
   - component: {fileID: 68333927}
   m_Layer: 0
-  m_Name: "\u4E3B\u4EBA\u516C"
+  m_Name: Migu_Nyumu
   m_TagString: Dead
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -369,11 +369,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47fbc5072f9c9c498be4fcd5d4570b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
   isToRight: 1
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
+  jump: 5
 --- !u!58 &68333928
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -542,7 +543,7 @@ Transform:
   m_GameObject: {fileID: 68333926}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.25, y: 3.2, z: 0}
+  m_LocalPosition: {x: -0.57, y: 3.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1301,7 +1302,7 @@ Transform:
   m_GameObject: {fileID: 1022968063}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.5069, y: 0.8096, z: 0}
+  m_LocalPosition: {x: 4.5, y: 0.8, z: 0}
   m_LocalScale: {x: 0.72702444, y: 0.08792525, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11951,11 +11952,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4892329473010327035, guid: 802fbea0ac6b9dd4093fcffd1792e878, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.92
+      value: 2.98
       objectReference: {fileID: 0}
     - target: {fileID: 4892329473010327035, guid: 802fbea0ac6b9dd4093fcffd1792e878, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.6
+      value: 2.77
       objectReference: {fileID: 0}
     - target: {fileID: 4892329473010327035, guid: 802fbea0ac6b9dd4093fcffd1792e878, type: 3}
       propertyPath: m_LocalPosition.z
