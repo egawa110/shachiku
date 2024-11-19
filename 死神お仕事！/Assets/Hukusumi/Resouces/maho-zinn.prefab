@@ -98,7 +98,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefabs:
-  - {fileID: 4548657000076936131, guid: b397f58607b22a049a679e0af4f84b2c, type: 3}
-  - {fileID: 7302596685962986113, guid: e8b21eb976d7ce94aba3eeb272993804, type: 3}
-  - {fileID: 3860344785117228322, guid: bdbf35a63caf55f4a921f279a10a4309, type: 3}
+  - {fileID: 413604111671354255, guid: 323ebb0e13b329845bcd08377e1db4e5, type: 3}
   deletetime: 3
