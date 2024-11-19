@@ -9,10 +9,15 @@ public class EnemyHit : MonoBehaviour
 
     public int HP_E = 4;    //敵の体力
 
+    //サウンド再生
+    public AudioSource audioSource;
+    public AudioClip EnemyDamage_SE;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        //コンポーネントを取得する
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -26,6 +31,10 @@ public class EnemyHit : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             HP_E--;
+
+            //主人公の攻撃に当たったら音が鳴る
+            audioSource.PlayOneShot(EnemyDamage_SE);
+
             if (HP_E <= 0)
             {
                 ////死亡
