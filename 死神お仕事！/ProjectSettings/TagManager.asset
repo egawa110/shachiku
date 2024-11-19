@@ -11,6 +11,10 @@ TagManager:
   - Dead
   - Goal
   - Switch
+  - ZeereCore
+  - ErekiBalle
+  - Undefined
+  - KinKill
   layers:
   - Default
   - TransparentFX
