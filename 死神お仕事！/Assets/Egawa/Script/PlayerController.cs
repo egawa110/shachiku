@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     private bool canAttack;                           //攻撃可能状態かを指定するフラグ
 
     public int HP_P = 4;      //プレイヤーの体力
-    bool inDamage = false;  //ダメージ中のフラグ
+    //bool inDamage = false;  //ダメージ中のフラグ
 
     // サウンド再生
     private AudioSource audioSource;
@@ -237,7 +237,7 @@ public class PlayerController : MonoBehaviour
                 //敵キャラの反対方向にヒットバックさせる
                 Vector3 v = (transform.position - enemy.transform.position).normalized; rbody.AddForce(new Vector2(v.x * 4, v.y * 4), ForceMode2D.Impulse);
                 //ダメージフラグ　ON
-                inDamage = true;
+                //inDamage = true;
                 Invoke("DamageEnd", 0.25f);
             }
             else
