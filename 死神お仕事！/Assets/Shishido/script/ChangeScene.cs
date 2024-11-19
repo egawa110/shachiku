@@ -17,6 +17,10 @@ public class ChangeScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            Load();
+        }
     }
 
     // ƒV[ƒ“‚ğ“Ç‚İ‚Ş

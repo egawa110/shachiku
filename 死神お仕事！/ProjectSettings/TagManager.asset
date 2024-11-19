@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - Dead
-  - ZeereCore
   - Soul
-  - ErekiBalle
-  - KinKill
+  - Bullet
+  - Enemy
+  - Dead
+  - Goal
+  - Switch
   layers:
   - Default
   - TransparentFX
