@@ -16,7 +16,7 @@ public class MakeaSounds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.timeScale == 0)
+        if (Time.timeScale == 0 || PlayerC.gameState != "playing")
         {
             //‰E–îˆóƒL[‚ğ‰Ÿ‚µ‚½‚ç‰¹‚ª–Â‚é
             if (Input.GetKeyDown(KeyCode.RightArrow))
