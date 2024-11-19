@@ -77,7 +77,6 @@ public class PlayerC : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             Jump();
-            audioSource.PlayOneShot(Jump_SE);
         }
     }
 
@@ -117,6 +116,8 @@ public class PlayerC : MonoBehaviour
         }
         if (onGround && goJump)
         {
+            //ジャンプ音を鳴らす
+            audioSource.PlayOneShot(Jump_SE);
             //地面の上でジャンプキーが押された
             //ジャンプさせる
             Vector2 jumpPw = new Vector2(0, jump);          //ジャンプさせるベクトルを作る
