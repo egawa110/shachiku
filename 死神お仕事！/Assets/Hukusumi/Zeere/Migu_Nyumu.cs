@@ -34,7 +34,7 @@ public class Migu_Nyumu : MonoBehaviour
         Transform yTransform = playerTr.transform;
         Vector2 orldPos = yTransform.position;
         passedTimes += Time.deltaTime;//ŽžŠÔŒo‰ß
-        if (worldPos.y - orldPos.y > 3&&worldPos.x-orldPos.x<=5||worldPos.y-orldPos.y<-3&&worldPos.x-orldPos.x>=-5)
+        if (worldPos.y - orldPos.y > 2&&worldPos.x-orldPos.x<=5||worldPos.y-orldPos.y<-2&&worldPos.x-orldPos.x>=-5)
         {
 
             transform.position = Vector2.MoveTowards(

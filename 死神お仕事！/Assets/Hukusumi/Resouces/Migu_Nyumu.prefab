@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1538318286343054700}
   - component: {fileID: 3382563272117193365}
-  - component: {fileID: 320738880499677160}
   - component: {fileID: 6465371028943123890}
   - component: {fileID: 4530400031986741079}
   - component: {fileID: 7004699919264343239}
+  - component: {fileID: -4730005824483507180}
   m_Layer: 0
   m_Name: Migu_Nyumu
   m_TagString: Dead
@@ -88,25 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &320738880499677160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 413604111671354255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d47fbc5072f9c9c498be4fcd5d4570b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  isToRight: 0
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  jump: 9
-  firetime: 3
 --- !u!50 &6465371028943123890
 Rigidbody2D:
   serializedVersion: 4
@@ -214,3 +195,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.48301548
+--- !u!114 &-4730005824483507180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413604111671354255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f65cde397066e84d9e8f418f03f4f79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  isToRight: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  jump: 9
+  firetime: 3
