@@ -40,50 +40,48 @@ public class Waasy_Darso : MonoBehaviour
         Transform yTransform = playerTr.transform;
         Vector2 orldPos = yTransform.position;
         passedTimes += Time.deltaTime;//éûä‘åoâﬂ
+        if (worldPos.y - orldPos.y < 2 && worldPos.y - orldPos.y > -2)
+        {
+            if (passedTimes >= firetime)
+            {
+                passedTimes = 0; //éûä‘ÇÇOÇ…ÉäÉZÉbÉg
+                                 //ñCíeÇÉvÉåÉnÉuÇ©ÇÁçÏÇÈ
+                if (worldPos.x - orldPos.x >= 1)
+                {
+                    Vector2 pos = new Vector2(gateTransform.position.x,
+                        gateTransform.position.y);
+                    GameObject obj = Instantiate(objPrefab, pos, Quaternion.identity);
+                    //ï˚êjÇ™å¸Ç¢ÇƒÇÈï˚å¸Ç…î≠éÀÇ∑ÇÈ
+                    Rigidbody2D rbody = obj.GetComponent<Rigidbody2D>();
+                    float angleZ = transform.localEulerAngles.z;
+                    float x = Mathf.Cos(angleZ * Mathf.Deg2Rad);
+                    float y = Mathf.Sin(angleZ * Mathf.Deg2Rad);
+                    Vector2 v = new Vector2(-x, y) * rnd;
+                    rbody.AddForce(v, ForceMode2D.Impulse);
+
+                }
+                else if (worldPos.x - orldPos.x <= -1)
+                {
+                    Vector2 pos = new Vector2(gateTransform.position.x,
+                        gateTransform.position.y);
+                    GameObject obj = Instantiate(objPrefab, pos, Quaternion.identity);
+                    //ï˚êjÇ™å¸Ç¢ÇƒÇÈï˚å¸Ç…î≠éÀÇ∑ÇÈ
+                    Rigidbody2D rbody = obj.GetComponent<Rigidbody2D>();
+                    float angleZ = transform.localEulerAngles.z;
+                    float x = Mathf.Cos(angleZ * Mathf.Deg2Rad);
+                    float y = Mathf.Sin(angleZ * Mathf.Deg2Rad);
+                    Vector2 v = new Vector2(x, y) * rnd;
+                    rbody.AddForce(v, ForceMode2D.Impulse);
+                }
+            }
+        }
         if (worldPos.x - orldPos.x >= 5 || worldPos.x - orldPos.x <= -5)
         {
             transform.position = Vector2.MoveTowards(
                    transform.position,
                    new Vector2(playerTr.position.x, worldPos.y),
                    speed * Time.deltaTime);
-            if (worldPos.y - orldPos.y < 2 && worldPos.y - orldPos.y > -2)
-            {
-                if (passedTimes >= firetime)
-                {
-                    passedTimes = 0; //éûä‘ÇÇOÇ…ÉäÉZÉbÉg
-                                     //ñCíeÇÉvÉåÉnÉuÇ©ÇÁçÏÇÈ
-                    if (worldPos.x - orldPos.x >= 1)
-                    {
-                        Vector2 pos = new Vector2(gateTransform.position.x,
-                            gateTransform.position.y);
-                        GameObject obj = Instantiate(objPrefab, pos, Quaternion.identity);
-                        //ï˚êjÇ™å¸Ç¢ÇƒÇÈï˚å¸Ç…î≠éÀÇ∑ÇÈ
-                        Rigidbody2D rbody = obj.GetComponent<Rigidbody2D>();
-                        float angleZ = transform.localEulerAngles.z;
-                        float x = Mathf.Cos(angleZ * Mathf.Deg2Rad);
-                        float y = Mathf.Sin(angleZ * Mathf.Deg2Rad);
-                        Vector2 v = new Vector2(-x, y) * rnd;
-                        rbody.AddForce(v, ForceMode2D.Impulse);
-                        
-                    }
-                    else if (worldPos.x - orldPos.x <= -1)
-                    {
-                        Vector2 pos = new Vector2(gateTransform.position.x,
-                            gateTransform.position.y);
-                        GameObject obj = Instantiate(objPrefab, pos, Quaternion.identity);
-                        //ï˚êjÇ™å¸Ç¢ÇƒÇÈï˚å¸Ç…î≠éÀÇ∑ÇÈ
-                        Rigidbody2D rbody = obj.GetComponent<Rigidbody2D>();
-                        float angleZ = transform.localEulerAngles.z;
-                        float x = Mathf.Cos(angleZ * Mathf.Deg2Rad);
-                        float y = Mathf.Sin(angleZ * Mathf.Deg2Rad);
-                        Vector2 v = new Vector2(x, y) * rnd;
-                        rbody.AddForce(v, ForceMode2D.Impulse);
-                    }
-                }
-            }
-
-
-
+            
         }
         else
         {
