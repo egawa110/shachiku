@@ -204,7 +204,7 @@ public class PlayerController : MonoBehaviour
             Goal();
         }
 
-        else if (collision.gameObject.tag == "Dead")
+        else if (collision.gameObject.tag == "Dead"|| collision.gameObject.tag == "ZeereCore")
         {
             GameOver(); //ゲームオーバー
         }

@@ -11,6 +11,14 @@ TagManager:
   - Dead
   - Goal
   - Switch
+<<<<<<< HEAD
+=======
+  - ZeereCore
+  - ErekiBalle
+  - Undefined
+  - KinKill
+  - ZeeReeL
+>>>>>>> dc1c72c9961918561926b0f94e2b2fa6901e06d7
   layers:
   - Default
   - TransparentFX
