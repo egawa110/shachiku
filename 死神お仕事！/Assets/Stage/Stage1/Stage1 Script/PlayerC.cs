@@ -32,6 +32,9 @@ public class PlayerC : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip Jump_SE;
     public AudioClip Damage_SE;
+    public AudioClip GetSoul_SE;
+    public AudioClip Over_SE;
+    public AudioClip Clear_SE;
 
     // Start is called before the first frame update
     void Start()
@@ -115,13 +118,13 @@ public class PlayerC : MonoBehaviour
         }
         if (onGround && goJump)
         {
-            //ジャンプ音を鳴らす
-            audioSource.PlayOneShot(Jump_SE);
             //地面の上でジャンプキーが押された
             //ジャンプさせる
             Vector2 jumpPw = new Vector2(0, jump);          //ジャンプさせるベクトルを作る
             rbody.AddForce(jumpPw, ForceMode2D.Impulse);    //瞬間的な力を加える
             goJump = false;
+            //ジャンプ音を鳴らす
+            audioSource.PlayOneShot(Jump_SE);
         }
         //アニメーション更新
         if (onGround)
@@ -154,7 +157,6 @@ public class PlayerC : MonoBehaviour
     {
         goJump = true;                      //ジャンプフラグを立てる
     }
-
     // 接触開始
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -170,6 +172,8 @@ public class PlayerC : MonoBehaviour
         //追加
         else if (collision.gameObject.tag == "Soul")
         {
+            //音を鳴らす
+            audioSource.PlayOneShot(GetSoul_SE);
             //魂取得する
             Souls item = collision.gameObject.GetComponent<Souls>();
             ALL_SOUL += item.soul_one;
@@ -217,6 +221,9 @@ public class PlayerC : MonoBehaviour
     // ゴール
     public void Goal()
     {
+        //音楽を鳴らす
+        audioSource.PlayOneShot(Clear_SE);
+
         animator.Play(goalAnime);
         gameState = "gameclear";
         GameStop();             // ゲーム停止
@@ -225,6 +232,9 @@ public class PlayerC : MonoBehaviour
     // ゲームオーバー
     public void GameOver()
     {
+        //音楽を鳴らす
+        audioSource.PlayOneShot(Over_SE);
+
         animator.Play(deadAnime);
         gameState = "gameover"; GameStop();
         // ゲーム停止（ゲームオーバー演出）

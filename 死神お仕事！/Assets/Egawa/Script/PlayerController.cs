@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
     public static string gameState = "playing";// ゲームの状態
 
+
     //追加
     public int ALL_SOUL = 0;      //1ステージで取得したすべての魂
 
@@ -40,13 +41,15 @@ public class PlayerController : MonoBehaviour
     private bool canAttack;                           //攻撃可能状態かを指定するフラグ
 
     public int HP_P = 4;      //プレイヤーの体力
-    //bool inDamage = false;  //ダメージ中のフラグ
+    private bool inDamage = false;  //ダメージ中のフラグ
 
     // サウンド再生
     private AudioSource audioSource;
     public AudioClip Jump_SE;
     public AudioClip Damage_SE;
-    public AudioClip Move_SE;
+    public AudioClip GetSoul_SE;
+    public AudioClip Over_SE;
+    public AudioClip Clear_SE;
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +65,7 @@ public class PlayerController : MonoBehaviour
 
         gameState = "playing";//ゲーム中にする
 
+        currentAttackTime = attackTime; //currentAttackTimeにattackTimeをセット。
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -93,76 +97,82 @@ public class PlayerController : MonoBehaviour
             Jump();
 
         }
+    }
 
-}
     void FixedUpdate()
     {
         if (gameState != "playing")
         {
             return;
         }
+        if (inDamage)
+        {
+            //ダメージ中、点滅させる
+            float val = Mathf.Sin(Time.time * 50);
+            if (val > 0)
+            {
+                //スプライトを表示
+                gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            }
+            else
+            {
+                //スプライトを非表示
+                gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            }
+            return; // ダメージ中は操作による移動をさせない
+        }
 
         //地上判定
-        bool onGround = Physics2D.CircleCast(transform.position, //発射位置
-                                             1.8f,               //円の半径
-                                             Vector2.down,       //発射方向
-                                             0.0f,               //発射距離
-                                             groundLayer);       //検出するレイヤー
-
+        bool onGround = Physics2D.CircleCast(transform.position,    //発射位置
+                                             1.8f,                  //円の半径
+                                             Vector2.down,          //発射方向
+                                             0.0f,                  //発射距離
+                                             groundLayer);          //検出するレイヤー
         if (onGround || axisH != 0)
         {
-            //地面の上 or 速度が０ではない
             //速度を更新する
-            rbody.velocity = new Vector2(speed * axisH, rbody.velocity.y);
+            rbody.velocity = new Vector2(axisH * speed, rbody.velocity.y);
         }
         if (onGround && goJump)
         {
-            //ジャンプ音を鳴らす
-            audioSource.PlayOneShot(Jump_SE);
-
             //地面の上でジャンプキーが押された
             //ジャンプさせる
-            Vector2 jumpPw = new Vector2(0, jump);  //ジャンプさせるベクトルを作る
-            rbody.AddForce(jumpPw, ForceMode2D.Impulse); //瞬間敵な力を加える
-            goJump = false; //ジャンプフラグを下ろす
-
-
-           
+            Vector2 jumpPw = new Vector2(0, jump);          //ジャンプさせるベクトルを作る
+            rbody.AddForce(jumpPw, ForceMode2D.Impulse);    //瞬間的な力を加える
+            goJump = false;
+            //ジャンプ音を鳴らす
+            audioSource.PlayOneShot(Jump_SE);
         }
         //アニメーション更新
         if (onGround)
         {
-            //地面の上
+            // 地面の上
             if (axisH == 0)
             {
-                nowAnime = stopAnime; //停止中 
+                nowAnime = stopAnime; 		// 停止中
             }
-
             else
             {
-                nowAnime = moveAnime; //移動
+                nowAnime = moveAnime;  		// 移動
             }
         }
-
-        
         else
         {
-            //空中
+            // 空中
             nowAnime = jumpAnime;
         }
         if (nowAnime != oldAnime)
         {
             oldAnime = nowAnime;
-            animator.Play(nowAnime);  //アニメーション再生
+            animator.Play(nowAnime);        // アニメーション再生
         }
-        
 
     }
 
     //ジャンプ
     public void Jump()
     {
-        goJump = true; //ジャンプフラグを立てる
+        goJump = true;                      //ジャンプフラグを立てる
     }
 
     //攻撃
@@ -203,12 +213,10 @@ public class PlayerController : MonoBehaviour
         {
             Goal();
         }
-
         else if (collision.gameObject.tag == "Dead"|| collision.gameObject.tag == "ZeereCore")
         {
             GameOver(); //ゲームオーバー
         }
-        //追加
         else if (collision.gameObject.tag == "Soul")
         {
             //魂取得する
@@ -216,6 +224,8 @@ public class PlayerController : MonoBehaviour
             ALL_SOUL += item.soul_one;
             // オブジェクト削除する
             Destroy(collision.gameObject);
+            //魂を取得したときに音を鳴らす
+            audioSource.PlayOneShot(GetSoul_SE);
         }
         else if (collision.gameObject.tag == "Enemy")
         {
@@ -237,7 +247,7 @@ public class PlayerController : MonoBehaviour
                 //敵キャラの反対方向にヒットバックさせる
                 Vector3 v = (transform.position - enemy.transform.position).normalized; rbody.AddForce(new Vector2(v.x * 4, v.y * 4), ForceMode2D.Impulse);
                 //ダメージフラグ　ON
-                //inDamage = true;
+                inDamage = true;
                 Invoke("DamageEnd", 0.25f);
             }
             else
@@ -255,6 +265,9 @@ public class PlayerController : MonoBehaviour
 
         gameState = "gameclear";
         GameStop();
+
+        //音楽を鳴らす
+        audioSource.PlayOneShot(Clear_SE);
     }
     // ゲームオーバー
     public void GameOver()
@@ -271,6 +284,9 @@ public class PlayerController : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = false;
         //プレイヤーを上に少し跳ね上げる演出
         rbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
+
+        //音楽を鳴らす
+        audioSource.PlayOneShot(Over_SE);
     }
 
     //ゲーム停止
