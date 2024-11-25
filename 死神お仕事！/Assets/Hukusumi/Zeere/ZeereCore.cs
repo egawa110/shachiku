@@ -48,6 +48,18 @@ public class ZeereCore : MonoBehaviour
                 transform.position,
                 new Vector2(Reel.position.x, Reel.position.y),
                 speed * Time.deltaTime);
+            if(transform.localEulerAngles.z<180)
+            {
+                transform.Rotate(new Vector3(0, 0, 1));
+            }
+            else if (transform.localEulerAngles.z > 180)
+            {
+                transform.Rotate(new Vector3(0, 0, -1));
+            }
+            else
+            {
+                transform.eulerAngles = new Vector3(0f, 0f, 180f);
+            }
         }
      
         
