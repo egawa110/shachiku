@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip Jump_SE;
     public AudioClip Damage_SE;
     public AudioClip GetSoul_SE;
+    public AudioClip Attack_SE;
     public AudioClip Over_SE;
     public AudioClip Clear_SE;
 
@@ -75,6 +76,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
         if (gameState != "playing")
         {
             return;
@@ -143,9 +148,8 @@ public class PlayerController : MonoBehaviour
             Vector2 jumpPw = new(0, jump);                  //ジャンプさせるベクトルを作る
             rbody.AddForce(jumpPw, ForceMode2D.Impulse);    //瞬間的な力を加える
             goJump = false;
-            SE_Audio=GetComponent<AudioSource>();
             //ジャンプ音を鳴らす
-            audioSource.PlayOneShot(Jump_SE);
+            //audioSource.PlayOneShot(Jump_SE);
         }
         //アニメーション更新
         if (onGround)
@@ -197,6 +201,7 @@ public class PlayerController : MonoBehaviour
                 if (playerObj.transform.localScale.x >= 0)
                 {
                     CreateBullet();
+                    audioSource.PlayOneShot(Attack_SE);
                 }
             }
         }
@@ -213,15 +218,15 @@ public class PlayerController : MonoBehaviour
     //接触開始
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Goal"))
+        if (collision.gameObject.tag=="Goal")
         {
             Goal();
         }
-        else if (collision.gameObject.CompareTag("Dead") || collision.gameObject.CompareTag("ZeereCore"))
+        else if (collision.gameObject.tag=="Dead" || collision.gameObject.tag=="ZeereCore")
         {
             GameOver(); //ゲームオーバー
         }
-        else if (collision.gameObject.CompareTag("Soul"))
+        else if (collision.gameObject.tag=="Soul")
         {
             //魂取得する
             Souls item = collision.gameObject.GetComponent<Souls>();
@@ -229,13 +234,13 @@ public class PlayerController : MonoBehaviour
             // 削除する
             Destroy(collision.gameObject);
             //音を鳴らす
-            audioSource.PlayOneShot(GetSoul_SE);
+            //audioSource.PlayOneShot(GetSoul_SE);
         }
-        else if (collision.gameObject.CompareTag("Enemy"))
+        else if (collision.gameObject.tag=="Enemy")
         {
             GetDamage(collision.gameObject);
             //敵に当たった時に音を鳴らす
-            audioSource.PlayOneShot(Damage_SE);
+            //audioSource.PlayOneShot(Damage_SE);
         }
     }
 
@@ -275,7 +280,7 @@ public class PlayerController : MonoBehaviour
         gameState = "gameclear";
         GameStop();             // ゲーム停止
         //音楽を鳴らす
-        audioSource.PlayOneShot(Clear_SE);
+        //audioSource.PlayOneShot(Clear_SE);
 
     }
 
@@ -290,7 +295,7 @@ public class PlayerController : MonoBehaviour
         // プレイヤーを上に少し跳ね上げる演出
         rbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
         //音楽を鳴らす
-        audioSource.PlayOneShot(Over_SE);
+        //audioSource.PlayOneShot(Over_SE);
     }
 
 
