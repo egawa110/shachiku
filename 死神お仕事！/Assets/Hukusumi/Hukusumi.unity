@@ -157,7 +157,9 @@ MonoBehaviour:
   HP_P: 4
   Jump_SE: {fileID: 0}
   Damage_SE: {fileID: 0}
-  Move_SE: {fileID: 0}
+  GetSoul_SE: {fileID: 0}
+  Over_SE: {fileID: 0}
+  Clear_SE: {fileID: 0}
 --- !u!114 &62616117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,6 +186,9 @@ MonoBehaviour:
   HP_P: 4
   Jump_SE: {fileID: 0}
   Damage_SE: {fileID: 0}
+  GetSoul_SE: {fileID: 0}
+  Over_SE: {fileID: 0}
+  Clear_SE: {fileID: 0}
 --- !u!114 &62616123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,15 +196,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 62616115}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd17eb55c6428844fb8523dfe8d939cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   prefab_A: {fileID: 1163707311380782307, guid: 0463f6e519d6e8c4c9a0bd08309cfd9a, type: 3}
   prefab_B: {fileID: 4774165697195709479, guid: 78e1fd23e79697f4abb668221f067057, type: 3}
-  x: 0.5
-  y: 20
+  brx: 0.5
+  bry: 20
   rx: 1
   boder: 10
 --- !u!114 &62616124
@@ -1249,9 +1254,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Samon: {fileID: 2092714078568262376, guid: 1ef17f78ce339b340bbf5457141379ec, type: 3}
+  prefab_A: {fileID: 1163707311380782307, guid: 0463f6e519d6e8c4c9a0bd08309cfd9a, type: 3}
+  prefab_B: {fileID: 4774165697195709479, guid: 78e1fd23e79697f4abb668221f067057, type: 3}
   target: {fileID: 62616129}
   speed: 5
   RUspeed: 3
+  brx: 0.5
+  bry: 20
+  rx: 1
+  boder: 10
 --- !u!212 &802215751
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2275,12 +2286,12 @@ GameObject:
   - component: {fileID: 1174611542}
   - component: {fileID: 1174611545}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Rain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!199 &1174611542
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -7090,7 +7101,8 @@ Transform:
   m_LocalPosition: {x: -0.77496564, y: 6, z: -4.508251}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1970382030}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!114 &1174611545
@@ -13307,12 +13319,12 @@ GameObject:
   - component: {fileID: 1970382028}
   - component: {fileID: 1970382031}
   m_Layer: 0
-  m_Name: Particle System (1)
+  m_Name: Rain2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!199 &1970382028
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -18118,12 +18130,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970382027}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.77496564, y: 6, z: -4.508251}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1174611544}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!114 &1970382031
 MonoBehaviour:
@@ -18389,7 +18401,6 @@ SceneRoots:
   - {fileID: 588076178}
   - {fileID: 720315569}
   - {fileID: 1174611544}
-  - {fileID: 1970382030}
   - {fileID: 1483799584}
   - {fileID: 68333932}
   - {fileID: 1066780745}

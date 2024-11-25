@@ -6,6 +6,8 @@ public class ZeereCore : MonoBehaviour
 {
     Transform Reel;
     [SerializeField] GameObject Samon;
+    [SerializeField] GameObject prefab_A;
+    [SerializeField] GameObject prefab_B;
     Transform gateTransform;
     public Transform target;
     float passedTimes = 0;
@@ -14,10 +16,18 @@ public class ZeereCore : MonoBehaviour
     [SerializeField] float RUspeed = 3;
     float ATspeed = 10.0f;
     float SamonC = 0;
+
+    
+    public float brx = 0.5f;
+    public float bry = 20.0f;
+    public float rx = 1.0f;
+    public float boder = 10.0f;
+
     bool Cool = false;//調整用
     bool AttackLooc = false;//起動用
     bool BusteAttack = false;//突進起動用
-    bool SamonAttack = false;
+    bool SamonAttack = false;//召喚起動用
+    bool RitoningAttack = false;//雷雨起動用
 
 
 
@@ -52,6 +62,13 @@ public class ZeereCore : MonoBehaviour
         {
             AttackLooc = !AttackLooc;
             SamonAttack = !SamonAttack;
+            passedTimes = 0;
+            coorTime = 0;
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            AttackLooc = !AttackLooc;
+            RitoningAttack = !RitoningAttack;
             passedTimes = 0;
             coorTime = 0;
         }
@@ -101,7 +118,7 @@ public class ZeereCore : MonoBehaviour
         }
 
 
-        if(SamonAttack==true)
+        if(SamonAttack==true)//召喚
         {
             SamonC += Time.deltaTime;//時間経過
             if (coorTime < 3)
@@ -132,7 +149,29 @@ public class ZeereCore : MonoBehaviour
                 SamonC = 0;
             }
         }
-        
+
+
+        if (RitoningAttack == true)//雷雨
+        {
+            if (passedTimes > 5)
+            {
+                Transform myTransform = this.transform;
+                Vector2 worldPos = myTransform.position;
+                Instantiate(prefab_A, new Vector2(brx, bry), Quaternion.identity);
+                Instantiate(prefab_A, new Vector2(-brx, bry), Quaternion.identity);
+                Transform myTransformA = this.transform;
+                Vector2 worldPosA = myTransformA.position;
+                Instantiate(prefab_B, new Vector2(brx, bry), Quaternion.identity);
+                Instantiate(prefab_B, new Vector2(-brx, bry), Quaternion.identity);
+                brx += rx;
+                if (brx > boder)
+                {
+                    RitoningAttack= false;
+                    brx = 0.5f;
+                }
+            }
+        }
+
     }
 
     public void OnTriggerEnter2D(Collider2D other) //ぶつかったら消える命令文開始
