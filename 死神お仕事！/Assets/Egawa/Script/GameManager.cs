@@ -1,6 +1,3 @@
-
-
-
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
@@ -23,6 +20,9 @@ public class GameManager : MonoBehaviour
     public GameObject timeBar;  //時間表示イメージ
     public GameObject timeText; //時間テイスト
     TimeController timeCnt;     //TimeController
+
+    public GameObject soulText; //魂のテキスト
+    public int stageSoul;       //取得した魂の数
 
     // Start is called before the first frame update
     void Start()
@@ -111,12 +111,23 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+
+        UpdateSoul();
     }
 
     //画像を非表示にする
     void InactiveImage()
     {
         mainImage.SetActive(false);
+    }
+    void UpdateSoul()
+    {
+        //ゲーム中
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        //playerControllerを取得する
+        PlayerC playerCnt = player.GetComponent<PlayerC>();
+
+        soulText.GetComponent<Text>().text = playerCnt.ALL_SOUL.ToString();
     }
 }
 

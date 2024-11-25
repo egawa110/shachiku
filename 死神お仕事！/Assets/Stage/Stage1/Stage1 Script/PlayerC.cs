@@ -32,7 +32,6 @@ public class PlayerC : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip Jump_SE;
     public AudioClip Damage_SE;
-    public AudioClip Move_SE;
 
     // Start is called before the first frame update
     void Start()
