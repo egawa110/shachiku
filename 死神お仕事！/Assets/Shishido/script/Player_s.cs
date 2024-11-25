@@ -40,6 +40,8 @@ public class Player_s : MonoBehaviour
 
     private AudioSource audioSource;
     public AudioClip JUMP_SE;
+    public AudioClip GETSOUL_SE;
+    public AudioClip DAMAGE_SE;
 
     // Start is called before the first frame update
     void Start()
@@ -209,12 +211,14 @@ public class Player_s : MonoBehaviour
             //ç∞éÊìæÇ∑ÇÈ
             Souls item = collision.gameObject.GetComponent<Souls>();
             ALL_SOUL += item.soul_one;
+            audioSource.PlayOneShot(GETSOUL_SE);
             // çÌèúÇ∑ÇÈ
             Destroy(collision.gameObject);
         }
         else if (collision.gameObject.tag == "Enemy")
         {
             GetDamage(collision.gameObject);
+            audioSource.PlayOneShot(DAMAGE_SE);
         }
     }
 

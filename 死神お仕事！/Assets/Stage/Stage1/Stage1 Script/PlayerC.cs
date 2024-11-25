@@ -1,32 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
 
 public class PlayerC : MonoBehaviour
 {
-    Rigidbody2D rbody;              //Rigidbody2D型の変数
-    float axisH = 0.0f;             //入力
-    public float speed = 3.0f;      //移動速度
-    public float jump = 9.0f;       //ジャンプ力
-    public LayerMask groundLayer;   //着地できるレイヤー
-    bool goJump = false;            //ジャンプ開始フラグ
-    // アニメーション対応
-    Animator animator; // アニメーター
+
+    Rigidbody2D rbody;                //Rigidbody2D型の作成
+    float axisH = 0.0f;               //入力
+    public float speed = 3.0f;        //移動速度
+
+    public float jump = 9.0f;         //ジャンプ力
+    public LayerMask groundLayer;     //着地できるレイヤー
+    bool goJump = false;              //ジャンプ開始フラグ
+
+
+    //アニメーション対応
+    Animator animator; //アニメーター
     public string stopAnime = "PlayerStop";
     public string moveAnime = "PlayerMove";
     public string jumpAnime = "PlayerJump";
     public string goalAnime = "PlayerGoal";
     public string deadAnime = "PlayerOver";
+
     string nowAnime = "";
     string oldAnime = "";
-    public static string gameState = "playing"; // ゲームの状態
+
+    public static string gameState = "playing";// ゲームの状態
+
 
     //追加
     public int ALL_SOUL = 0;      //1ステージで取得したすべての魂
 
     public int HP_P = 4;      //プレイヤーの体力
-    bool inDamage = false;  //ダメージ中のフラグ
+    private bool inDamage = false;  //ダメージ中のフラグ
 
     // サウンド再生
     private AudioSource audioSource;
@@ -36,14 +43,22 @@ public class PlayerC : MonoBehaviour
     public AudioClip Over_SE;
     public AudioClip Clear_SE;
 
+    private AudioSource SE_Audio;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        rbody = this.GetComponent<Rigidbody2D>();   //Rigidbody2Dを取ってくる
-        animator = GetComponent<Animator>();        //Animator を取ってくる
-        nowAnime = stopAnime;                       //停止から開始する
-        oldAnime = stopAnime;                       //停止から開始する
-        gameState = "playing";                      //ゲーム中にする
+        //FPSを60に固定
+        Application.targetFrameRate = 60;
+
+        //Rigidbod2Dを取ってくる
+        rbody = this.GetComponent<Rigidbody2D>(); //Rigidbody2Dを取ってくる
+        animator = GetComponent<Animator>();      //Animatorを取ってくる
+        nowAnime = stopAnime;                     //停止から開始する
+        oldAnime = stopAnime;                     //停止から開始する
+
+        gameState = "playing";//ゲーム中にする
 
         audioSource = GetComponent<AudioSource>();
     }
@@ -51,27 +66,26 @@ public class PlayerC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.timeScale == 0)
+        if(Time.timeScale==0)
+        {
+            return;
+        }
+        if (gameState != "playing")
         {
             return;
         }
 
-        if (gameState != "playing" || inDamage)
-        {
-            return;
-        }
-        //水平方向の入力をチェックする
+        //水平方向の入力をチェック
         axisH = Input.GetAxisRaw("Horizontal");
+
         //向きの調整
         if (axisH > 0.0f)
         {
-            //右移動
-            Debug.Log("右移動");
             transform.localScale = new Vector2(1, 1);
         }
+
         else if (axisH < 0.0f)
         {
-            Debug.Log("左移動");
             transform.localScale = new Vector2(-1, 1);
         }
 
@@ -79,6 +93,7 @@ public class PlayerC : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             Jump();
+
         }
     }
 
@@ -120,7 +135,7 @@ public class PlayerC : MonoBehaviour
         {
             //地面の上でジャンプキーが押された
             //ジャンプさせる
-            Vector2 jumpPw = new Vector2(0, jump);          //ジャンプさせるベクトルを作る
+            Vector2 jumpPw = new(0, jump);                  //ジャンプさせるベクトルを作る
             rbody.AddForce(jumpPw, ForceMode2D.Impulse);    //瞬間的な力を加える
             goJump = false;
             //ジャンプ音を鳴らす
@@ -157,19 +172,18 @@ public class PlayerC : MonoBehaviour
     {
         goJump = true;                      //ジャンプフラグを立てる
     }
-    // 接触開始
+
+    //接触開始
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Goal")
         {
-            Goal();        // ゴール！！
+            Goal();
         }
-        else if (collision.gameObject.tag == "Dead")
+        else if (collision.gameObject.tag == "Dead" || collision.gameObject.tag == "ZeereCore")
         {
-            GameOver();    // ゲームオーバー
+            GameOver(); //ゲームオーバー
         }
-
-        //追加
         else if (collision.gameObject.tag == "Soul")
         {
             //魂取得する
@@ -183,11 +197,11 @@ public class PlayerC : MonoBehaviour
         else if (collision.gameObject.tag == "Enemy")
         {
             GetDamage(collision.gameObject);
+            //敵に当たった時に音を鳴らす
             audioSource.PlayOneShot(Damage_SE);
         }
     }
 
-    //ダメージ
     void GetDamage(GameObject enemy)
     {
         if (gameState == "playing")
@@ -195,14 +209,13 @@ public class PlayerC : MonoBehaviour
             HP_P--; //hpが減る
             if (HP_P > 0)
             {
-                animator.Play(deadAnime);
                 //移動停止
                 rbody.velocity = new Vector2(0, 0);
-                //敵キャラの反対方向にノックバックさせる
+                //敵キャラの反対方向にヒットバックさせる
                 Vector3 v = (transform.position - enemy.transform.position).normalized; rbody.AddForce(new Vector2(v.x * 4, v.y * 4), ForceMode2D.Impulse);
                 //ダメージフラグ　ON
                 inDamage = true;
-                Invoke("DamageEnd", 0.25f);
+                Invoke(nameof(DamageEnd), 0.25f);
             }
             else
             {
@@ -225,9 +238,10 @@ public class PlayerC : MonoBehaviour
         gameState = "gameclear";
         GameStop();             // ゲーム停止
         //音楽を鳴らす
-        audioSource.PlayOneShot(Clear_SE);
+        //audioSource.PlayOneShot(Clear_SE);
 
     }
+
     // ゲームオーバー
     public void GameOver()
     {
@@ -239,15 +253,17 @@ public class PlayerC : MonoBehaviour
         // プレイヤーを上に少し跳ね上げる演出
         rbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
         //音楽を鳴らす
-        audioSource.PlayOneShot(Over_SE);
+        //audioSource.PlayOneShot(Over_SE);
     }
 
-    // ゲーム停止
+
+    //ゲーム停止
     void GameStop()
     {
-        // Rigidbody2Dを取ってくる
+        //Rigidbody2Dを取ってくる
         Rigidbody2D rbody = GetComponent<Rigidbody2D>();
-        // 速度を 0 にして強制停止
+        //速度を０にして強制停止
         rbody.velocity = new Vector2(0, 0);
     }
+
 }
