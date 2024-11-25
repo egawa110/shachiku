@@ -35,7 +35,7 @@ public class ZeereBeem1 : MonoBehaviour
         {
             sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, transparencyON);//“§–¾‰»
             Transform myTransform = this.transform;
-            Debug.Log(target.transform.position);
+            //Debug.Log(target.transform.position);
             Vector3 pos = target.transform.position;
             pos.y = 0;
             myTransform.position = -pos;
