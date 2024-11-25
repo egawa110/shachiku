@@ -16,22 +16,6 @@ public class MakeaSounds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.timeScale == 0 || PlayerC.gameState != "playing")
-        {
-            //右矢印キーを押したら音が鳴る
-            if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                audioSource.PlayOneShot(Select_Sounds);
-            }
-            //左矢印キーを押したら音が鳴る
-            else if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                audioSource.PlayOneShot(Select_Sounds);
-            }
-        }
-        else
-        {
-            return;
-        }
+
     }
 }

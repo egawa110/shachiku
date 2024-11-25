@@ -32,6 +32,9 @@ public class PlayerC : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip Jump_SE;
     public AudioClip Damage_SE;
+    public AudioClip GetSoul_SE;
+    public AudioClip Over_SE;
+    public AudioClip Clear_SE;
 
     // Start is called before the first frame update
     void Start()
@@ -115,13 +118,13 @@ public class PlayerC : MonoBehaviour
         }
         if (onGround && goJump)
         {
-            //ジャンプ音を鳴らす
-            audioSource.PlayOneShot(Jump_SE);
             //地面の上でジャンプキーが押された
             //ジャンプさせる
             Vector2 jumpPw = new Vector2(0, jump);          //ジャンプさせるベクトルを作る
             rbody.AddForce(jumpPw, ForceMode2D.Impulse);    //瞬間的な力を加える
             goJump = false;
+            //ジャンプ音を鳴らす
+            audioSource.PlayOneShot(Jump_SE);
         }
         //アニメーション更新
         if (onGround)
@@ -154,7 +157,6 @@ public class PlayerC : MonoBehaviour
     {
         goJump = true;                      //ジャンプフラグを立てる
     }
-
     // 接触開始
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -175,6 +177,8 @@ public class PlayerC : MonoBehaviour
             ALL_SOUL += item.soul_one;
             // 削除する
             Destroy(collision.gameObject);
+            //音を鳴らす
+            audioSource.PlayOneShot(GetSoul_SE);
         }
         else if (collision.gameObject.tag == "Enemy")
         {
@@ -220,8 +224,10 @@ public class PlayerC : MonoBehaviour
         animator.Play(goalAnime);
         gameState = "gameclear";
         GameStop();             // ゲーム停止
-    }
+        //音楽を鳴らす
+        audioSource.PlayOneShot(Clear_SE);
 
+    }
     // ゲームオーバー
     public void GameOver()
     {
@@ -232,6 +238,8 @@ public class PlayerC : MonoBehaviour
         GetComponent<CapsuleCollider2D>().enabled = false;
         // プレイヤーを上に少し跳ね上げる演出
         rbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
+        //音楽を鳴らす
+        audioSource.PlayOneShot(Over_SE);
     }
 
     // ゲーム停止
