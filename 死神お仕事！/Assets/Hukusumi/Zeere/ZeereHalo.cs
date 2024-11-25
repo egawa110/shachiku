@@ -11,7 +11,7 @@ public class ZeereHalo : MonoBehaviour
     private void Start()
     {
         // プレイヤーのTransformを取得（プレイヤーのタグをPlayerに設定必要）
-        playerTr = GameObject.FindGameObjectWithTag("Player").transform;
+        playerTr = GameObject.FindGameObjectWithTag("ZeereCore").transform;
     }
 
     private void Update()
