@@ -24,8 +24,6 @@ public class GameMana : MonoBehaviour
     public GameObject soulText; //魂のテキスト
     public int stageSoul;       //取得した魂の数
 
-    // サウンド再生
-
     // Start is called before the first frame update
     void Start()
     {
