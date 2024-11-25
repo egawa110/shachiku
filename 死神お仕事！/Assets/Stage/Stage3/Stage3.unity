@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &599771401 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3732702165677046226, guid: 1cf286f5ec594e945b3e94e0bcda3809, type: 3}
+  m_PrefabInstance: {fileID: 7323082410072297764}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1856937305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -134,6 +139,10 @@ PrefabInstance:
     - target: {fileID: 338668983254509882, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1835996550128943423, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 106
       objectReference: {fileID: 0}
     - target: {fileID: 2203005004000834478, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: m_Camera
@@ -45304,6 +45313,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u6B7B\u795E\u4E3B\u4EBA\u516C2"
       objectReference: {fileID: 0}
+    - target: {fileID: 7028631466610178662, guid: 1cf286f5ec594e945b3e94e0bcda3809, type: 3}
+      propertyPath: attackPoint
+      value: 
+      objectReference: {fileID: 599771401}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -55183,7 +55196,7 @@ Transform:
   m_GameObject: {fileID: 2339203354728106006}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.3551803, y: 0.234115, z: 0.9586587}
+  m_LocalPosition: {x: 1.3551803, y: -1.84, z: 0.9586587}
   m_LocalScale: {x: 2.66892, y: 2.6489599, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

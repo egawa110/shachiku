@@ -30,11 +30,11 @@ Transform:
   m_GameObject: {fileID: 1651049429344736443}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.554635, y: -3.473434, z: 1.9173174}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5162328613442054557}
+  - {fileID: 3732702165677046226}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &982625177102624016
@@ -206,7 +206,7 @@ MonoBehaviour:
   deadAnime: PlayerOver
   ALL_SOUL: 0
   bullet: {fileID: 2937897550353236852, guid: 676bf8b092de8e24abef3c1600c222da, type: 3}
-  attackPoint: {fileID: 5162328613442054557}
+  attackPoint: {fileID: 0}
   attackTime: 1
   HP_P: 4
   Jump_SE: {fileID: 8300000, guid: 9c87b10dce5671c46ad6d159ac79b163, type: 3}
@@ -214,7 +214,7 @@ MonoBehaviour:
   GetSoul_SE: {fileID: 8300000, guid: 747cee683af35e340b8bda47fb324a44, type: 3}
   Over_SE: {fileID: 8300000, guid: 666973d729970c6479f087a84039816a, type: 3}
   Clear_SE: {fileID: 8300000, guid: 99511c31598401c47a5502623bffd77f, type: 3}
---- !u!1 &8231580370498387442
+--- !u!1 &7027706518566547070
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,24 +222,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5162328613442054557}
+  - component: {fileID: 3732702165677046226}
   m_Layer: 0
-  m_Name: 'AttackPoint '
+  m_Name: Attack Point
   m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5162328613442054557
+--- !u!4 &3732702165677046226
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8231580370498387442}
+  m_GameObject: {fileID: 7027706518566547070}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8, y: 0, z: 0}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

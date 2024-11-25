@@ -118,13 +118,13 @@ public class PlayerC : MonoBehaviour
         }
         if (onGround && goJump)
         {
-            //ジャンプ音を鳴らす
-            audioSource.PlayOneShot(Jump_SE);
             //地面の上でジャンプキーが押された
             //ジャンプさせる
             Vector2 jumpPw = new Vector2(0, jump);          //ジャンプさせるベクトルを作る
             rbody.AddForce(jumpPw, ForceMode2D.Impulse);    //瞬間的な力を加える
             goJump = false;
+            //ジャンプ音を鳴らす
+            audioSource.PlayOneShot(Jump_SE);
         }
         //アニメーション更新
         if (onGround)
@@ -157,7 +157,6 @@ public class PlayerC : MonoBehaviour
     {
         goJump = true;                      //ジャンプフラグを立てる
     }
-
     // 接触開始
     void OnTriggerEnter2D(Collider2D collision)
     {
