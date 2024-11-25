@@ -533,7 +533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 4
+    m_Mode: -1
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -710,7 +710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 4
+    m_Mode: -1
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1117,7 +1117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 4
+    m_Mode: -1
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1293,8 +1293,8 @@ GameObject:
   - component: {fileID: 2203005004000834478}
   - component: {fileID: 6744082173506755055}
   - component: {fileID: 4960720344511783464}
-  - component: {fileID: 3387190153804768785}
   - component: {fileID: 3801594696449176174}
+  - component: {fileID: 445257152024511504}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1390,28 +1390,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &3387190153804768785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6686937101272606608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3708569df8c3bd84e820a3306bf66091, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainImage: {fileID: 4018413621005530722}
-  gameOverSpr: {fileID: 21300000, guid: 99a71acfbab9ceb4bb549857a328e603, type: 3}
-  gameClearSpr: {fileID: 21300000, guid: a10589696564b804187e4477ce907a7d, type: 3}
-  panel: {fileID: 338668983254509882}
-  restartButton: {fileID: 6327148144755379605}
-  nextButton: {fileID: 7823398825956477575}
-  timeBar: {fileID: 7098051381778572115}
-  timeText: {fileID: 2933737386603795188}
-  soulText: {fileID: 3588547528010429207}
-  stageSoul: 10
 --- !u!114 &3801594696449176174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1428,6 +1406,28 @@ MonoBehaviour:
   gameTime: 180
   isTimeOver: 0
   displayTime: 0
+--- !u!114 &445257152024511504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6686937101272606608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12fe28aedb227454e96cf1b15c82b07a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainImage: {fileID: 4018413621005530722}
+  gameOverSpr: {fileID: 21300000, guid: 99a71acfbab9ceb4bb549857a328e603, type: 3}
+  gameClearSpr: {fileID: 21300000, guid: 99a71acfbab9ceb4bb549857a328e603, type: 3}
+  panel: {fileID: 338668983254509882}
+  restartButton: {fileID: 6327148144755379605}
+  nextButton: {fileID: 7823398825956477575}
+  timeBar: {fileID: 7098051381778572115}
+  timeText: {fileID: 2933737386603795188}
+  soulText: {fileID: 3588547528010429207}
+  stageSoul: 0
 --- !u!1 &6802950145414469408
 GameObject:
   m_ObjectHideFlags: 0
@@ -1754,7 +1754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 4
+    m_Mode: -1
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
