@@ -174,7 +174,7 @@ public class PlayerC : MonoBehaviour
         else if (collision.gameObject.tag == "Soul")
         {
             //音を鳴らす
-            audioSource.PlayOneShot()
+            audioSource.PlayOneShot(GetSoul_SE);
             //魂取得する
             Souls item = collision.gameObject.GetComponent<Souls>();
             ALL_SOUL += item.soul_one;
@@ -222,6 +222,9 @@ public class PlayerC : MonoBehaviour
     // ゴール
     public void Goal()
     {
+        //音楽を鳴らす
+        audioSource.PlayOneShot(Clear_SE);
+
         animator.Play(goalAnime);
         gameState = "gameclear";
         GameStop();             // ゲーム停止
@@ -230,6 +233,9 @@ public class PlayerC : MonoBehaviour
     // ゲームオーバー
     public void GameOver()
     {
+        //音楽を鳴らす
+        audioSource.PlayOneShot(Over_SE);
+
         animator.Play(deadAnime);
         gameState = "gameover"; GameStop();
         // ゲーム停止（ゲームオーバー演出）

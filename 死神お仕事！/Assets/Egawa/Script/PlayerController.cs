@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     private bool canAttack;                           //攻撃可能状態かを指定するフラグ
 
     public int HP_P = 4;      //プレイヤーの体力
-    bool inDamage = false;  //ダメージ中のフラグ
+    private bool inDamage = false;  //ダメージ中のフラグ
 
     // サウンド再生
     private AudioSource audioSource;
@@ -119,6 +119,7 @@ public class PlayerController : MonoBehaviour
             //速度を更新する
             rbody.velocity = new Vector2(speed * axisH, rbody.velocity.y);
         }
+
         if (onGround && goJump)
         {
             //ジャンプ音を鳴らす
@@ -138,7 +139,6 @@ public class PlayerController : MonoBehaviour
             {
                 nowAnime = stopAnime; //停止中 
             }
-
             else
             {
                 nowAnime = moveAnime; //移動

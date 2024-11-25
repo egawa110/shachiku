@@ -8083,6 +8083,9 @@ MonoBehaviour:
   HP_P: 4
   Jump_SE: {fileID: 8300000, guid: 9c87b10dce5671c46ad6d159ac79b163, type: 3}
   Damage_SE: {fileID: 8300000, guid: 1b2f3ad45283c9e4496672801bd1a76c, type: 3}
+  GetSoul_SE: {fileID: 8300000, guid: 747cee683af35e340b8bda47fb324a44, type: 3}
+  Over_SE: {fileID: 8300000, guid: 666973d729970c6479f087a84039816a, type: 3}
+  Clear_SE: {fileID: 8300000, guid: 99511c31598401c47a5502623bffd77f, type: 3}
 --- !u!1 &3049277000270391981
 GameObject:
   m_ObjectHideFlags: 0
