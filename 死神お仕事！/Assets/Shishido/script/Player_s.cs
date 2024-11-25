@@ -38,6 +38,8 @@ public class Player_s : MonoBehaviour
     public int HP_P = 4;      //プレイヤーの体力
     bool inDamage = false;  //ダメージ中のフラグ
 
+    private AudioSource audioSource;
+    public AudioClip JUMP_SE;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +50,7 @@ public class Player_s : MonoBehaviour
         oldAnime = stopAnime;                       //停止から開始する
         gameState = "playing";                      // ゲーム中にする
 
+        audioSource = GetComponent<AudioSource>();
         currentAttackTime = attackTime; //currentAttackTimeにattackTimeをセット。
     }
 
@@ -124,6 +127,7 @@ public class Player_s : MonoBehaviour
             Vector2 jumpPw = new Vector2(0, jump);          //ジャンプさせるベクトルを作る
             rbody.AddForce(jumpPw, ForceMode2D.Impulse);    //瞬間的な力を加える
             goJump = false;
+            audioSource.PlayOneShot(JUMP_SE);
         }
         //アニメーション更新
         if (onGround)

@@ -51,6 +51,9 @@ public class PlayerController : MonoBehaviour
     public AudioClip Over_SE;
     public AudioClip Clear_SE;
 
+    private AudioSource SE_Audio;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -137,9 +140,10 @@ public class PlayerController : MonoBehaviour
         {
             //地面の上でジャンプキーが押された
             //ジャンプさせる
-            Vector2 jumpPw = new Vector2(0, jump);          //ジャンプさせるベクトルを作る
+            Vector2 jumpPw = new(0, jump);                  //ジャンプさせるベクトルを作る
             rbody.AddForce(jumpPw, ForceMode2D.Impulse);    //瞬間的な力を加える
             goJump = false;
+            SE_Audio=GetComponent<AudioSource>();
             //ジャンプ音を鳴らす
             audioSource.PlayOneShot(Jump_SE);
         }
@@ -209,25 +213,25 @@ public class PlayerController : MonoBehaviour
     //接触開始
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Goal")
+        if (collision.gameObject.CompareTag("Goal"))
         {
             Goal();
         }
-        else if (collision.gameObject.tag == "Dead"|| collision.gameObject.tag == "ZeereCore")
+        else if (collision.gameObject.CompareTag("Dead") || collision.gameObject.CompareTag("ZeereCore"))
         {
             GameOver(); //ゲームオーバー
         }
-        else if (collision.gameObject.tag == "Soul")
+        else if (collision.gameObject.CompareTag("Soul"))
         {
             //魂取得する
             Souls item = collision.gameObject.GetComponent<Souls>();
             ALL_SOUL += item.soul_one;
-            // オブジェクト削除する
+            // 削除する
             Destroy(collision.gameObject);
-            //魂を取得したときに音を鳴らす
+            //音を鳴らす
             audioSource.PlayOneShot(GetSoul_SE);
         }
-        else if (collision.gameObject.tag == "Enemy")
+        else if (collision.gameObject.CompareTag("Enemy"))
         {
             GetDamage(collision.gameObject);
             //敵に当たった時に音を鳴らす
@@ -248,7 +252,7 @@ public class PlayerController : MonoBehaviour
                 Vector3 v = (transform.position - enemy.transform.position).normalized; rbody.AddForce(new Vector2(v.x * 4, v.y * 4), ForceMode2D.Impulse);
                 //ダメージフラグ　ON
                 inDamage = true;
-                Invoke("DamageEnd", 0.25f);
+                Invoke(nameof(DamageEnd), 0.25f);
             }
             else
             {
@@ -258,36 +262,37 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //ダメージ終了
+    void DamageEnd()
+    {
+        inDamage = false; // ダメージフラグOFF
+        gameObject.GetComponent<SpriteRenderer>().enabled = true; // スプライトを元に戻す
+    }
     // ゴール
     public void Goal()
     {
         animator.Play(goalAnime);
-
         gameState = "gameclear";
-        GameStop();
-
+        GameStop();             // ゲーム停止
         //音楽を鳴らす
         audioSource.PlayOneShot(Clear_SE);
+
     }
+
     // ゲームオーバー
     public void GameOver()
     {
         animator.Play(deadAnime);
-
-        gameState = "gameover";
-        GameStop();
-        //---------------------
-        //ゲームオーバー演出
-        //---------------------
-        //プレイヤー当たりを消す
-        //---------------------
-        GetComponent<BoxCollider2D>().enabled = false;
-        //プレイヤーを上に少し跳ね上げる演出
+        gameState = "gameover"; GameStop();
+        // ゲーム停止（ゲームオーバー演出）
+        // プレイヤー当たりを消す
+        GetComponent<CapsuleCollider2D>().enabled = false;
+        // プレイヤーを上に少し跳ね上げる演出
         rbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
-
         //音楽を鳴らす
         audioSource.PlayOneShot(Over_SE);
     }
+
 
     //ゲーム停止
     void GameStop()

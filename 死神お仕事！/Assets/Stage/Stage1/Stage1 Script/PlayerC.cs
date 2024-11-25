@@ -172,13 +172,13 @@ public class PlayerC : MonoBehaviour
         //追加
         else if (collision.gameObject.tag == "Soul")
         {
-            //音を鳴らす
-            audioSource.PlayOneShot(GetSoul_SE);
             //魂取得する
             Souls item = collision.gameObject.GetComponent<Souls>();
             ALL_SOUL += item.soul_one;
             // 削除する
             Destroy(collision.gameObject);
+            //音を鳴らす
+            audioSource.PlayOneShot(GetSoul_SE);
         }
         else if (collision.gameObject.tag == "Enemy")
         {
@@ -221,20 +221,16 @@ public class PlayerC : MonoBehaviour
     // ゴール
     public void Goal()
     {
-        //音楽を鳴らす
-        audioSource.PlayOneShot(Clear_SE);
-
         animator.Play(goalAnime);
         gameState = "gameclear";
         GameStop();             // ゲーム停止
-    }
+        //音楽を鳴らす
+        audioSource.PlayOneShot(Clear_SE);
 
+    }
     // ゲームオーバー
     public void GameOver()
     {
-        //音楽を鳴らす
-        audioSource.PlayOneShot(Over_SE);
-
         animator.Play(deadAnime);
         gameState = "gameover"; GameStop();
         // ゲーム停止（ゲームオーバー演出）
@@ -242,6 +238,8 @@ public class PlayerC : MonoBehaviour
         GetComponent<CapsuleCollider2D>().enabled = false;
         // プレイヤーを上に少し跳ね上げる演出
         rbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
+        //音楽を鳴らす
+        audioSource.PlayOneShot(Over_SE);
     }
 
     // ゲーム停止
