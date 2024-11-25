@@ -32,6 +32,9 @@ public class PlayerC : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip Jump_SE;
     public AudioClip Damage_SE;
+    public AudioClip GetSoul_SE;
+    public AudioClip Over_SE;
+    public AudioClip Clear_SE;
 
     // Start is called before the first frame update
     void Start()
@@ -170,6 +173,8 @@ public class PlayerC : MonoBehaviour
         //í«â¡
         else if (collision.gameObject.tag == "Soul")
         {
+            //âπÇñ¬ÇÁÇ∑
+            audioSource.PlayOneShot()
             //ç∞éÊìæÇ∑ÇÈ
             Souls item = collision.gameObject.GetComponent<Souls>();
             ALL_SOUL += item.soul_one;

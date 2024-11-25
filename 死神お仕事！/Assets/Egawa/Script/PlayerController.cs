@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
     public static string gameState = "playing";// ゲームの状態
 
+
     //追加
     public int ALL_SOUL = 0;      //1ステージで取得したすべての魂
 
@@ -40,13 +41,15 @@ public class PlayerController : MonoBehaviour
     private bool canAttack;                           //攻撃可能状態かを指定するフラグ
 
     public int HP_P = 4;      //プレイヤーの体力
-    //bool inDamage = false;  //ダメージ中のフラグ
+    bool inDamage = false;  //ダメージ中のフラグ
 
     // サウンド再生
     private AudioSource audioSource;
     public AudioClip Jump_SE;
     public AudioClip Damage_SE;
-    public AudioClip Move_SE;
+    public AudioClip GetSoul_SE;
+    public AudioClip Over_SE;
+    public AudioClip Clear_SE;
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +65,7 @@ public class PlayerController : MonoBehaviour
 
         gameState = "playing";//ゲーム中にする
 
+        currentAttackTime = attackTime; //currentAttackTimeにattackTimeをセット。
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -93,8 +97,8 @@ public class PlayerController : MonoBehaviour
             Jump();
 
         }
+    }
 
-}
     void FixedUpdate()
     {
         if (gameState != "playing")
@@ -125,9 +129,6 @@ public class PlayerController : MonoBehaviour
             Vector2 jumpPw = new Vector2(0, jump);  //ジャンプさせるベクトルを作る
             rbody.AddForce(jumpPw, ForceMode2D.Impulse); //瞬間敵な力を加える
             goJump = false; //ジャンプフラグを下ろす
-
-
-           
         }
         //アニメーション更新
         if (onGround)
@@ -143,8 +144,6 @@ public class PlayerController : MonoBehaviour
                 nowAnime = moveAnime; //移動
             }
         }
-
-        
         else
         {
             //空中
@@ -155,8 +154,6 @@ public class PlayerController : MonoBehaviour
             oldAnime = nowAnime;
             animator.Play(nowAnime);  //アニメーション再生
         }
-        
-
     }
 
     //ジャンプ
@@ -203,12 +200,10 @@ public class PlayerController : MonoBehaviour
         {
             Goal();
         }
-
         else if (collision.gameObject.tag == "Dead"|| collision.gameObject.tag == "ZeereCore")
         {
             GameOver(); //ゲームオーバー
         }
-        //追加
         else if (collision.gameObject.tag == "Soul")
         {
             //魂取得する
@@ -237,7 +232,7 @@ public class PlayerController : MonoBehaviour
                 //敵キャラの反対方向にヒットバックさせる
                 Vector3 v = (transform.position - enemy.transform.position).normalized; rbody.AddForce(new Vector2(v.x * 4, v.y * 4), ForceMode2D.Impulse);
                 //ダメージフラグ　ON
-                //inDamage = true;
+                inDamage = true;
                 Invoke("DamageEnd", 0.25f);
             }
             else
@@ -253,6 +248,9 @@ public class PlayerController : MonoBehaviour
     {
         animator.Play(goalAnime);
 
+        //音楽を鳴らす
+        audioSource.PlayOneShot(Clear_SE);
+
         gameState = "gameclear";
         GameStop();
     }
@@ -260,6 +258,9 @@ public class PlayerController : MonoBehaviour
     public void GameOver()
     {
         animator.Play(deadAnime);
+
+        //音楽を鳴らす
+        audioSource.PlayOneShot(Over_SE);
 
         gameState = "gameover";
         GameStop();
