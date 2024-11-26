@@ -8,6 +8,8 @@ public class ZeereCore : MonoBehaviour
     [SerializeField] GameObject Samon;
     [SerializeField] GameObject prefab_A;
     [SerializeField] GameObject prefab_B;
+    [SerializeField] GameObject Rain;
+    [SerializeField] GameObject Rite;
     Transform gateTransform;
     public Transform target;
     float passedTimes = 0;
@@ -123,7 +125,7 @@ public class ZeereCore : MonoBehaviour
             SamonC += Time.deltaTime;//ŽžŠÔŒo‰ß
             if (coorTime < 3)
             {
-                if (SamonC>0.3)
+                if (SamonC>0.5)
                 {
                     coorTime += 1;
                     SamonC = 0;
@@ -142,6 +144,7 @@ public class ZeereCore : MonoBehaviour
             }
             if(passedTimes>4)
             {
+
                 AttackLooc = !AttackLooc;
                 SamonAttack = !SamonAttack;
                 passedTimes = 0;
@@ -153,8 +156,21 @@ public class ZeereCore : MonoBehaviour
 
         if (RitoningAttack == true)//—‹‰J
         {
-            if (passedTimes > 5)
+            transform.position = Vector2.MoveTowards(
+                transform.position,
+                new Vector2(0, 3),
+                speed * Time.deltaTime);
+            if(SamonC<2)
             {
+                SamonC+=1;
+                Transform myTransform = this.transform;
+                Vector2 worldPos = myTransform.position;
+                Instantiate(Rain, new Vector2(0, 6), Quaternion.identity);
+            }
+            if (passedTimes > 4)
+            {
+                
+
                 Transform myTransform = this.transform;
                 Vector2 worldPos = myTransform.position;
                 Instantiate(prefab_A, new Vector2(brx, bry), Quaternion.identity);
@@ -164,10 +180,24 @@ public class ZeereCore : MonoBehaviour
                 Instantiate(prefab_B, new Vector2(brx, bry), Quaternion.identity);
                 Instantiate(prefab_B, new Vector2(-brx, bry), Quaternion.identity);
                 brx += rx;
+                if (passedTimes > 4.3&&SamonC < 5)
+                {
+                    SamonC += 1;
+                    Transform myTransformR = this.transform;
+                    Vector2 worldPosR = myTransformR.position;
+                    Instantiate(Rite, new Vector2(0, 3), Quaternion.identity);
+                }
                 if (brx > boder)
                 {
-                    RitoningAttack= false;
                     brx = 0.5f;
+                   
+                }
+                if (passedTimes > 4.5)
+                {
+                    passedTimes = 0;
+                    AttackLooc = false;
+                    RitoningAttack = false;
+                    SamonC = 0;
                 }
             }
         }
