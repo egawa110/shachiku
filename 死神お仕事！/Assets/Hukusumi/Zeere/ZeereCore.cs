@@ -10,6 +10,8 @@ public class ZeereCore : MonoBehaviour
     [SerializeField] GameObject prefab_B;
     [SerializeField] GameObject Rain;
     [SerializeField] GameObject Rite;
+    [SerializeField] GameObject Beem;
+
     Transform gateTransform;
     public Transform target;
     float passedTimes = 0;
@@ -18,6 +20,7 @@ public class ZeereCore : MonoBehaviour
     [SerializeField] float RUspeed = 3;
     float ATspeed = 10.0f;
     float SamonC = 0;
+    
 
     
     public float brx = 0.5f;
@@ -30,11 +33,13 @@ public class ZeereCore : MonoBehaviour
     bool BusteAttack = false;//突進起動用
     bool SamonAttack = false;//召喚起動用
     bool RitoningAttack = false;//雷雨起動用
+    bool ReeserAttack = false;//ビーム起動用
 
 
 
     private void Start()
     {
+       
         // プレイヤーのTransformを取得（プレイヤーのタグをPlayerに設定必要）
         Reel = GameObject.FindGameObjectWithTag("ZeeReeL").transform;
         gateTransform = GameObject.FindGameObjectWithTag("SamonTG").transform;
@@ -42,6 +47,7 @@ public class ZeereCore : MonoBehaviour
 
     private void Update()
     {
+        
         if(Cool==true)
         {
             coorTime += Time.deltaTime;//時間経過
@@ -52,29 +58,42 @@ public class ZeereCore : MonoBehaviour
             }
         }
         passedTimes += Time.deltaTime;//時間経過
-        if (Input.GetKeyDown(KeyCode.L))
+
+
+        if (Input.GetKeyDown(KeyCode.L))//突進ON
         {
-            // isCheckの値を反転させる
             AttackLooc = !AttackLooc;
             BusteAttack = !BusteAttack;
             passedTimes = 0;
             coorTime = 0;
         }
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.M))//召喚ON
         {
             AttackLooc = !AttackLooc;
             SamonAttack = !SamonAttack;
             passedTimes = 0;
             coorTime = 0;
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))//雷雨ON
         {
             AttackLooc = !AttackLooc;
             RitoningAttack = !RitoningAttack;
             passedTimes = 0;
             coorTime = 0;
         }
-        if (AttackLooc == false)
+        if (Input.GetKeyDown(KeyCode.B))//ビームON
+        {
+
+            AttackLooc = !AttackLooc;
+            ReeserAttack = !ReeserAttack;
+            passedTimes = 0;
+            coorTime = 0;
+            Debug.Log(AttackLooc);
+        }
+
+
+
+        if (AttackLooc == false)//待機状態
         {
             transform.position = Vector2.MoveTowards(
                 transform.position,
@@ -120,12 +139,12 @@ public class ZeereCore : MonoBehaviour
         }
 
 
-        if(SamonAttack==true)//召喚
+        if (SamonAttack == true)//召喚
         {
             SamonC += Time.deltaTime;//時間経過
             if (coorTime < 3)
             {
-                if (SamonC>0.5)
+                if (SamonC > 0.5)
                 {
                     coorTime += 1;
                     SamonC = 0;
@@ -142,7 +161,7 @@ public class ZeereCore : MonoBehaviour
                     //Instantiate(Samon, gateTransform.position, gateTransform.rotation);
                 }
             }
-            if(passedTimes>4)
+            if (passedTimes > 4)
             {
 
                 AttackLooc = !AttackLooc;
@@ -160,7 +179,8 @@ public class ZeereCore : MonoBehaviour
                 transform.position,
                 new Vector2(0, 3),
                 speed * Time.deltaTime);
-            if(SamonC<2)
+            transform.eulerAngles = new Vector3(0f, 0f, 180f);
+            if (SamonC<2)
             {
                 SamonC+=1;
                 Transform myTransform = this.transform;
@@ -200,6 +220,30 @@ public class ZeereCore : MonoBehaviour
                     SamonC = 0;
                 }
             }
+        }
+
+
+        if (ReeserAttack == true)
+        {
+            if (SamonC < 1)
+            {
+                SamonC += 1;
+                Transform myTransform = target.transform;
+                Vector2 worldPos = myTransform.position;
+                float x = worldPos.x;
+                float y = 0;
+
+                Instantiate(Beem, new Vector2(x, y), Quaternion.identity);
+                Instantiate(Beem, new Vector2(-x, y), Quaternion.identity);
+            }
+            if (passedTimes > 3.1)
+            {
+                passedTimes = 0;
+                AttackLooc = false;
+                ReeserAttack = false;
+                SamonC = 0;
+            }
+
         }
 
     }
