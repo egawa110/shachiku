@@ -50,7 +50,6 @@ public class GameMana : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (PlayerC.gameState == "gameclear")
         {
             //ゲームクリア
@@ -86,7 +85,6 @@ public class GameMana : MonoBehaviour
                 timeCnt.isTimeOver = true; //時間カウント停止
             }
         }
-
         else if (PlayerC.gameState == "playing")
         {
             //ゲーム中

@@ -43,13 +43,14 @@ public class GameManager : MonoBehaviour
                 timeBar.SetActive(false); //制限時間なしなら隠す
             }
         }
+
+        UpdateSoul();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (PlayerController.gameState == "gameclear")
+        if (PlayerC.gameState == "gameclear")
         {
             //ゲームクリア
             mainImage.SetActive(true);  //画像を表示する
@@ -67,7 +68,7 @@ public class GameManager : MonoBehaviour
                 timeCnt.isTimeOver = true; //時間カウント停止
             }
         }
-        else if (PlayerController.gameState == "gameover")
+        else if (PlayerC.gameState == "gameover")
         {
             //ゲームオーバー
             mainImage.SetActive(true);  //画像を表示する
@@ -76,7 +77,7 @@ public class GameManager : MonoBehaviour
             Button bt = nextButton.GetComponent<Button>();
             bt.interactable = false;
             mainImage.GetComponent<Image>().sprite = gameOverSpr;  //画像を設定する
-            PlayerController.gameState = "gameend";
+            PlayerC.gameState = "gameend";
 
             //+++ 時間制限追加 +++
             if (timeCnt != null)
@@ -84,13 +85,12 @@ public class GameManager : MonoBehaviour
                 timeCnt.isTimeOver = true; //時間カウント停止
             }
         }
-
-        else if (PlayerController.gameState == "playing")
+        else if (PlayerC.gameState == "playing")
         {
             //ゲーム中
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             //playerControllerを取得する
-            PlayerController playerCnt = player.GetComponent<PlayerController>();
+            PlayerC playerCnt = player.GetComponent<PlayerC>();
 
             //+++ 時間制限追加 +++
             //タイムを更新
@@ -120,15 +120,14 @@ public class GameManager : MonoBehaviour
     {
         mainImage.SetActive(false);
     }
+
     void UpdateSoul()
     {
         //ゲーム中
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         //playerControllerを取得する
-        PlayerC playerCnt = player.GetComponent<PlayerC>();
+        PlayerController playerCnt = player.GetComponent<PlayerController>();
 
         soulText.GetComponent<Text>().text = playerCnt.ALL_SOUL.ToString();
     }
 }
-
-

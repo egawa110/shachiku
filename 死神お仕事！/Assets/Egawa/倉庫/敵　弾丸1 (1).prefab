@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2401295446752209136}
   m_Layer: 6
   m_Name: "\u6575\u3000\u5F3E\u4E381 (1)"
-  m_TagString: Dead
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
