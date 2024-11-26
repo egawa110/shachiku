@@ -20,6 +20,7 @@ public class ZeereCore : MonoBehaviour
     [SerializeField] float RUspeed = 3;
     float ATspeed = 10.0f;
     float SamonC = 0;
+    public float Attack = 99;
     
 
     
@@ -58,7 +59,13 @@ public class ZeereCore : MonoBehaviour
             }
         }
         passedTimes += Time.deltaTime;//時間経過
+        if (passedTimes > Attack)
+        {
+            if (AttackLooc == false)//起動用
+            {
 
+            }
+        }
 
         if (Input.GetKeyDown(KeyCode.L))//突進ON
         {
