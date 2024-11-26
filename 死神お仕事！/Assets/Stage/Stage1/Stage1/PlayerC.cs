@@ -249,7 +249,7 @@ public class PlayerC : MonoBehaviour
         gameState = "gameover"; GameStop();
         // ゲーム停止（ゲームオーバー演出）
         // プレイヤー当たりを消す
-        GetComponent<CapsuleCollider2D>().enabled = false;
+        GetComponent<BoxCollider2D>().enabled = false;
         // プレイヤーを上に少し跳ね上げる演出
         rbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
         //音楽を鳴らす
