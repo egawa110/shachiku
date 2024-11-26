@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4469039410257748459}
   m_Layer: 0
   m_Name: "\u6575\u30B5\u30A4\u30BA\u5909\u66F4\uFF11"
-  m_TagString: Dead
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

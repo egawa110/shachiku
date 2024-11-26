@@ -49,10 +49,9 @@ public class PlayerController : MonoBehaviour
     public AudioClip Damage_SE;
     public AudioClip GetSoul_SE;
     public AudioClip Attack_SE;
-    public AudioClip Over_SE;
+    public AudioClip Switch_Act_SE;
     public AudioClip Clear_SE;
-
-    private AudioSource SE_Audio;
+    public AudioClip Over_SE;
 
 
     // Start is called before the first frame update
@@ -149,7 +148,7 @@ public class PlayerController : MonoBehaviour
             rbody.AddForce(jumpPw, ForceMode2D.Impulse);    //瞬間的な力を加える
             goJump = false;
             //ジャンプ音を鳴らす
-            //audioSource.PlayOneShot(Jump_SE);
+            audioSource.PlayOneShot(Jump_SE);
         }
         //アニメーション更新
         if (onGround)
@@ -234,13 +233,18 @@ public class PlayerController : MonoBehaviour
             // 削除する
             Destroy(collision.gameObject);
             //音を鳴らす
-            //audioSource.PlayOneShot(GetSoul_SE);
+            audioSource.PlayOneShot(GetSoul_SE);
         }
         else if (collision.gameObject.tag=="Enemy")
         {
             GetDamage(collision.gameObject);
             //敵に当たった時に音を鳴らす
-            //audioSource.PlayOneShot(Damage_SE);
+            audioSource.PlayOneShot(Damage_SE);
+        }
+        else if(collision.gameObject.tag == "Switch")
+        {
+            // スイッチに触れたら音を鳴らす
+            audioSource.PlayOneShot(Switch_Act_SE);
         }
     }
 
@@ -280,7 +284,7 @@ public class PlayerController : MonoBehaviour
         gameState = "gameclear";
         GameStop();             // ゲーム停止
         //音楽を鳴らす
-        //audioSource.PlayOneShot(Clear_SE);
+        audioSource.PlayOneShot(Clear_SE);
 
     }
 
@@ -295,7 +299,7 @@ public class PlayerController : MonoBehaviour
         // プレイヤーを上に少し跳ね上げる演出
         rbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
         //音楽を鳴らす
-        //audioSource.PlayOneShot(Over_SE);
+        audioSource.PlayOneShot(Over_SE);
     }
 
 

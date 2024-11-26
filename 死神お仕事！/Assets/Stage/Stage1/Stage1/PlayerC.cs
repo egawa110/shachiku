@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class PlayerC : MonoBehaviour
@@ -238,7 +239,7 @@ public class PlayerC : MonoBehaviour
         gameState = "gameclear";
         GameStop();             // ゲーム停止
         //音楽を鳴らす
-        //audioSource.PlayOneShot(Clear_SE);
+        audioSource.PlayOneShot(Clear_SE);
 
     }
 
@@ -253,7 +254,7 @@ public class PlayerC : MonoBehaviour
         // プレイヤーを上に少し跳ね上げる演出
         rbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
         //音楽を鳴らす
-        //audioSource.PlayOneShot(Over_SE);
+        audioSource.PlayOneShot(Over_SE);
     }
 
 
