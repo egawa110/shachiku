@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
-        if (gameState != "playing")
+        if (gameState != "playing" || inDamage)
         {
             return;
         }
@@ -102,8 +102,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             Jump();
-
         }
+
+        //主人公の攻撃
+        Attack();
     }
 
     void FixedUpdate()
@@ -199,17 +201,30 @@ public class PlayerController : MonoBehaviour
                 GameObject playerObj = GameObject.Find("Player");
                 if (playerObj.transform.localScale.x >= 0)
                 {
-                    CreateBullet();
+                    CreateBullet_R();
+                    audioSource.PlayOneShot(Attack_SE);
+                }
+                else if(playerObj.transform.localScale.x <= 0)
+                {
+                    CreateBullet_L();
                     audioSource.PlayOneShot(Attack_SE);
                 }
             }
         }
     }
 
-    public void CreateBullet()
+    public void CreateBullet_R()
     {
         //第一引数に生成するオブジェクト、第二引数にVector3型の座標、第三引数に回転の情報
         Instantiate(bullet, attackPoint.position, Quaternion.identity);
+        canAttack = false; //攻撃フラグをfalseにする
+        attackTime = 0f;　 //attackTimeを0に戻す
+    }
+
+    public void CreateBullet_L()
+    {
+        //第一引数に生成するオブジェクト、第二引数にVector3型の座標、第三引数に回転の情報
+        Instantiate(bullet, -attackPoint.position, Quaternion.identity);
         canAttack = false; //攻撃フラグをfalseにする
         attackTime = 0f;　 //attackTimeを0に戻す
     }
@@ -230,10 +245,10 @@ public class PlayerController : MonoBehaviour
             //魂取得する
             Souls item = collision.gameObject.GetComponent<Souls>();
             ALL_SOUL += item.soul_one;
-            // 削除する
-            Destroy(collision.gameObject);
             //音を鳴らす
             audioSource.PlayOneShot(GetSoul_SE);
+            // 削除する
+            Destroy(collision.gameObject);
         }
         else if (collision.gameObject.tag=="Enemy")
         {

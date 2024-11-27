@@ -20,9 +20,9 @@ public class ZeereCore : MonoBehaviour
     [SerializeField] float RUspeed = 3;
     float ATspeed = 10.0f;
     float SamonC = 0;
-    public float Attack = 99;
-    
+    public float Attack = 10;
 
+    int rnd;
     
     public float brx = 0.5f;
     public float bry = 20.0f;
@@ -36,7 +36,11 @@ public class ZeereCore : MonoBehaviour
     bool RitoningAttack = false;//雷雨起動用
     bool ReeserAttack = false;//ビーム起動用
 
-
+    bool BusteLooc = false;//突進起動用
+    bool SamonLooc = false;//召喚起動用
+    bool RitoningLooc = false;//雷雨起動用
+    bool ReeserLooc = false;//ビーム起動用
+    bool LongLooc = false;
 
     private void Start()
     {
@@ -44,15 +48,17 @@ public class ZeereCore : MonoBehaviour
         // プレイヤーのTransformを取得（プレイヤーのタグをPlayerに設定必要）
         Reel = GameObject.FindGameObjectWithTag("ZeeReeL").transform;
         gateTransform = GameObject.FindGameObjectWithTag("SamonTG").transform;
+
+        
     }
 
     private void Update()
     {
-        
-        if(Cool==true)
+        rnd = Random.Range(1, 6);
+        if (Cool==true)
         {
             coorTime += Time.deltaTime;//時間経過
-            if(coorTime>1)
+            if(coorTime>3)
             {
                 Cool = false;
                 AttackLooc = false;
@@ -64,38 +70,77 @@ public class ZeereCore : MonoBehaviour
             if (AttackLooc == false)//起動用
             {
 
+
+                if (rnd == 1 && BusteLooc == false)//突進ON
+                {
+                    AttackLooc = !AttackLooc;
+                    BusteAttack = !BusteAttack;
+                    BusteLooc = !BusteLooc;
+                    passedTimes = 0;
+                    coorTime = 0;
+                }
+                if (rnd == 2 && SamonLooc == false)//召喚ON
+                {
+                    AttackLooc = !AttackLooc;
+                    SamonAttack = !SamonAttack;
+                    SamonLooc = !SamonLooc;
+                    passedTimes = 0;
+                    coorTime = 0;
+                }
+                if (rnd == 3 && RitoningLooc == false)//雷雨ON
+                {
+                    AttackLooc = !AttackLooc;
+                    RitoningAttack = !RitoningAttack;
+                    RitoningLooc = !RitoningLooc;
+                    passedTimes = 0;
+                    coorTime = 0;
+                }
+                if (rnd == 4 && ReeserLooc == false)//ビームON
+                {
+                    AttackLooc = !AttackLooc;
+                    ReeserAttack = !ReeserAttack;
+                    ReeserLooc = !ReeserLooc;
+                    passedTimes = 0;
+                    coorTime = 0;
+                    Debug.Log(AttackLooc);
+                }
+                if (rnd == 5 && LongLooc == false)
+                {
+                    passedTimes = 0;
+                    LongLooc = true;
+                }
+
+                //if (Input.GetKeyDown(KeyCode.L))//突進ON
+                //{
+                //    AttackLooc = !AttackLooc;
+                //    BusteAttack = !BusteAttack;
+                //    passedTimes = 0;
+                //    coorTime = 0;
+                //}
+                //if (Input.GetKeyDown(KeyCode.M))//召喚ON
+                //{
+                //    AttackLooc = !AttackLooc;
+                //    SamonAttack = !SamonAttack;
+                //    passedTimes = 0;
+                //    coorTime = 0;
+                //}
+                //if (Input.GetKeyDown(KeyCode.R))//雷雨ON
+                //{
+                //    AttackLooc = !AttackLooc;
+                //    RitoningAttack = !RitoningAttack;
+                //    passedTimes = 0;
+                //    coorTime = 0;
+                //}
+                //if (Input.GetKeyDown(KeyCode.B))//ビームON
+                //{
+
+                //    AttackLooc = !AttackLooc;
+                //    ReeserAttack = !ReeserAttack;
+                //    passedTimes = 0;
+                //    coorTime = 0;
+                //    Debug.Log(AttackLooc);
+                //}
             }
-        }
-
-        if (Input.GetKeyDown(KeyCode.L))//突進ON
-        {
-            AttackLooc = !AttackLooc;
-            BusteAttack = !BusteAttack;
-            passedTimes = 0;
-            coorTime = 0;
-        }
-        if (Input.GetKeyDown(KeyCode.M))//召喚ON
-        {
-            AttackLooc = !AttackLooc;
-            SamonAttack = !SamonAttack;
-            passedTimes = 0;
-            coorTime = 0;
-        }
-        if (Input.GetKeyDown(KeyCode.R))//雷雨ON
-        {
-            AttackLooc = !AttackLooc;
-            RitoningAttack = !RitoningAttack;
-            passedTimes = 0;
-            coorTime = 0;
-        }
-        if (Input.GetKeyDown(KeyCode.B))//ビームON
-        {
-
-            AttackLooc = !AttackLooc;
-            ReeserAttack = !ReeserAttack;
-            passedTimes = 0;
-            coorTime = 0;
-            Debug.Log(AttackLooc);
         }
 
 
@@ -142,6 +187,10 @@ public class ZeereCore : MonoBehaviour
             {
                 Vector3 velocity = gameObject.transform.rotation * new Vector3(0, ATspeed, 0);
                 gameObject.transform.position += velocity * Time.deltaTime;
+                SamonLooc = false;
+                RitoningLooc = false;
+                ReeserLooc = false;
+                LongLooc = false;
             }
         }
 
@@ -176,6 +225,10 @@ public class ZeereCore : MonoBehaviour
                 passedTimes = 0;
                 coorTime = 0;
                 SamonC = 0;
+                BusteLooc = false;
+                RitoningLooc = false;
+                ReeserLooc = false;
+                LongLooc = false;
             }
         }
 
@@ -225,6 +278,10 @@ public class ZeereCore : MonoBehaviour
                     AttackLooc = false;
                     RitoningAttack = false;
                     SamonC = 0;
+                    BusteLooc = false;
+                    SamonLooc = false;
+                    ReeserLooc = false;
+                    LongLooc = false;
                 }
             }
         }
@@ -249,6 +306,10 @@ public class ZeereCore : MonoBehaviour
                 AttackLooc = false;
                 ReeserAttack = false;
                 SamonC = 0;
+                BusteLooc = false;
+                SamonLooc = false;
+                RitoningLooc = false;
+                LongLooc = false;
             }
 
         }

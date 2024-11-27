@@ -43,13 +43,13 @@ public class Zyuto_Myuusey : MonoBehaviour
                    transform.position,
                    new Vector2(playerTr.position.x, worldPos.y),
                    speed * Time.deltaTime);
-            if (worldPos.y - orldPos.y < 2 && worldPos.y - orldPos.y > -2)
+            if (worldPos.y - orldPos.y < 2 && worldPos.y - orldPos.y > -2)//射撃条件
             {
                 if (passedTimes >= firetime)
                 {
                     passedTimes = 0; //時間を０にリセット
                                      //砲弾をプレハブから作る
-                    if (worldPos.x - orldPos.x >= 1)
+                    if (worldPos.x - orldPos.x >= 1)//対象の方向
                     {
                         Vector2 pos = new Vector2(gateTransform.position.x,
                             gateTransform.position.y);
@@ -62,7 +62,7 @@ public class Zyuto_Myuusey : MonoBehaviour
                         Vector2 v = new Vector2(-x, y) * fireSpeed;
                         rbody.AddForce(v, ForceMode2D.Impulse);
                     }
-                    else if (worldPos.x - orldPos.x <= -1)
+                    else if (worldPos.x - orldPos.x <= -1)//対象の方向
                     {
                         Vector2 pos = new Vector2(gateTransform.position.x,
                             gateTransform.position.y);
@@ -110,6 +110,10 @@ public class Zyuto_Myuusey : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) //ぶつかったら消える命令文開始
     {
         if (other.CompareTag("KinKill"))//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
+        {
+            Destroy(gameObject);//このゲームオブジェクトを消滅させる
+        }
+        if (other.CompareTag("Foff"))//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
         {
             Destroy(gameObject);//このゲームオブジェクトを消滅させる
         }

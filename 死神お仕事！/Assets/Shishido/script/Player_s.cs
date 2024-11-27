@@ -5,12 +5,16 @@ using UnityEngine.SocialPlatforms;
 
 public class Player_s : MonoBehaviour
 {
+    
     Rigidbody2D rbody;              //Rigidbody2D型の変数
     float axisH = 0.0f;             //入力
     public float speed = 3.0f;      //移動速度
+  
     public float jump = 9.0f;       //ジャンプ力
     public LayerMask groundLayer;   //着地できるレイヤー
     bool goJump = false;            //ジャンプ開始フラグ
+    
+    
     // アニメーション対応
     Animator animator; // アニメーター
     public string stopAnime = "PlayerStop";
@@ -18,10 +22,13 @@ public class Player_s : MonoBehaviour
     public string jumpAnime = "PlayerJump";
     public string goalAnime = "PlayerGoal";
     public string deadAnime = "PlayerOver";
+   
     string nowAnime = "";
     string oldAnime = "";
+    
     public static string gameState = "playing"; // ゲームの状態
 
+    
     //追加
     public int ALL_SOUL = 0;      //1ステージで取得したすべての魂
 
@@ -32,24 +39,33 @@ public class Player_s : MonoBehaviour
     [SerializeField] private float attackTime = 0.2f; //攻撃間隔
     private float currentAttackTime;                  //攻撃の間隔を管理
     private bool canAttack;                           //攻撃可能状態かを指定するフラグ
-
-    //=========================================================
    
     public int HP_P = 4;      //プレイヤーの体力
     bool inDamage = false;  //ダメージ中のフラグ
 
+    // サウンド再生
     private AudioSource audioSource;
-    public AudioClip JUMP_SE;
-    public AudioClip GETSOUL_SE;
-    public AudioClip DAMAGE_SE;
+    public AudioClip Jump_SE;
+    public AudioClip Damage_SE;
+    public AudioClip GetSoul_SE;
+    public AudioClip Attack_SE;
+    public AudioClip Switch_Act_SE;
+    public AudioClip Clear_SE;
+    public AudioClip Over_SE;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        //FPSを60に固定
+        Application.targetFrameRate = 60;
+
+        // Rigidbody2Dを取ってくる
         rbody = this.GetComponent<Rigidbody2D>();   //Rigidbody2Dを取ってくる
         animator = GetComponent<Animator>();        //Animator を取ってくる
         nowAnime = stopAnime;                       //停止から開始する
         oldAnime = stopAnime;                       //停止から開始する
+        
         gameState = "playing";                      // ゲーム中にする
 
         audioSource = GetComponent<AudioSource>();
@@ -59,22 +75,25 @@ public class Player_s : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Time.timeScale==0)
+        {
+            return;
+        }
         if (gameState != "playing" || inDamage)
         {
             return;
         }
+        
         //水平方向の入力をチェックする
         axisH = Input.GetAxisRaw("Horizontal");
+        
         //向きの調整
         if (axisH > 0.0f)
         {
-            //右移動
-            Debug.Log("右移動");
             transform.localScale = new Vector2(1, 1);
         }
         else if (axisH < 0.0f)
         {
-            Debug.Log("左移動");
             transform.localScale = new Vector2(-1, 1);
         }
 
@@ -129,7 +148,7 @@ public class Player_s : MonoBehaviour
             Vector2 jumpPw = new Vector2(0, jump);          //ジャンプさせるベクトルを作る
             rbody.AddForce(jumpPw, ForceMode2D.Impulse);    //瞬間的な力を加える
             goJump = false;
-            audioSource.PlayOneShot(JUMP_SE);
+            audioSource.PlayOneShot(Jump_SE);
         }
         //アニメーション更新
         if (onGround)
@@ -211,14 +230,14 @@ public class Player_s : MonoBehaviour
             //魂取得する
             Souls item = collision.gameObject.GetComponent<Souls>();
             ALL_SOUL += item.soul_one;
-            audioSource.PlayOneShot(GETSOUL_SE);
+            audioSource.PlayOneShot(GetSoul_SE);
             // 削除する
             Destroy(collision.gameObject);
         }
         else if (collision.gameObject.tag == "Enemy")
         {
             GetDamage(collision.gameObject);
-            audioSource.PlayOneShot(DAMAGE_SE);
+            audioSource.PlayOneShot(Damage_SE);
         }
     }
 
