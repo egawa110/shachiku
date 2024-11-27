@@ -11,6 +11,7 @@ public class ZeereCore : MonoBehaviour
     [SerializeField] GameObject Rain;
     [SerializeField] GameObject Rite;
     [SerializeField] GameObject Beem;
+    [SerializeField] GameObject Helo;
 
     Transform gateTransform;
     public Transform target;
@@ -29,8 +30,11 @@ public class ZeereCore : MonoBehaviour
     public float rx = 1.0f;
     public float boder = 10.0f;
 
+    bool GO = false;
+    bool GoOK = false;
+
     bool Cool = false;//調整用
-    bool AttackLooc = false;//起動用
+    bool AttackLooc = true;//起動用
     bool BusteAttack = false;//突進起動用
     bool SamonAttack = false;//召喚起動用
     bool RitoningAttack = false;//雷雨起動用
@@ -54,8 +58,50 @@ public class ZeereCore : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.G))//突進ON
+        {
+            GO = true;
+        }
+
+        if (GO==false)
+        {
+            passedTimes = 0;
+            //待機場所へ移動
+            transform.position = Vector2.MoveTowards(
+               transform.position,
+               new Vector2(0, -3),
+               speed * Time.deltaTime);
+        }
+        if(GO==true&&GoOK==false)
+        {
+            //指定位置に上昇
+            transform.position = Vector2.MoveTowards(
+               transform.position,
+               new Vector2(0, 3),
+               1 * Time.deltaTime);
+
+            if (passedTimes>5&&Cool==false)
+            {
+                Cool = true;
+                Transform myTransform = this.transform;
+                Vector2 worldPos = myTransform.position;
+                float x = worldPos.x;    // ワールド座標を基準にした、x座標が入っている変数
+                float y = worldPos.y;    // ワールド座標を基準にした、y座標が入っている変数
+                Instantiate(Helo, new Vector2(x, y), Quaternion.identity);
+
+            }
+            if(passedTimes>7)
+            {
+                ReeserAttack = !ReeserAttack;
+                ReeserLooc = !ReeserLooc;
+                passedTimes = 0;
+                coorTime = 0;
+                GoOK = true;
+                Cool = false;
+            }
+        }
         rnd = Random.Range(1, 6);
-        if (Cool==true)
+        if (Cool==true&&GoOK==true)
         {
             coorTime += Time.deltaTime;//時間経過
             if(coorTime>3)
