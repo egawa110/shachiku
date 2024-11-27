@@ -291,6 +291,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 15839434099787338, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
+      propertyPath: pauseUI
+      value: 
+      objectReference: {fileID: 2141489784}
     - target: {fileID: 2699399297199784206, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -343,7 +347,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1803532634303904002, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
     m_RemovedGameObjects:
     - {fileID: 2699399297199784206, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
     - {fileID: 3647771715674010052, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
@@ -625,7 +630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a4c850ec8e40d34db5d825087999bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Stage3
+  SceneName: Stage4
 --- !u!114 &802909697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1575,7 +1580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a4c850ec8e40d34db5d825087999bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Stage4
+  SceneName: Stage5
 --- !u!114 &1585712814
 MonoBehaviour:
   m_ObjectHideFlags: 0
