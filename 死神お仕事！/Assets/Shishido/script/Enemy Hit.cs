@@ -82,13 +82,15 @@ public class EnemyHit : MonoBehaviour
             HP_E--; //hpが減る
             if (HP_E > 0)
             {
-                //移動停止
-                rbody.velocity = new Vector2(0, 0);
-                //敵キャラの反対方向にヒットバックさせる
-                Vector3 v = (transform.position - player.transform.position).normalized; rbody.AddForce(new Vector2(v.x * 4, v.y * 4), ForceMode2D.Impulse);
-                //ダメージフラグ　ON
-                inDamage = true;
-                Invoke(nameof(DamageEnd), 0.25f);
+                ////移動停止
+                //rbody.velocity = new Vector2(0, 0);
+                ////敵キャラの反対方向にヒットバックさせる
+                //Vector3 v = (transform.position - player.transform.position).normalized; rbody.AddForce(new Vector2(v.x * 4, v.y * 4), ForceMode2D.Impulse);
+                ////ダメージフラグ　ON
+                //inDamage = true;
+                //Invoke(nameof(DamageEnd), 0.25f);
+                rbody.AddForce(-transform.forward * 5f);
+
             }
             else
             {

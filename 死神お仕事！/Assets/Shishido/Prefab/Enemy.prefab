@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 4654499669818840856}
   - component: {fileID: 612981784941954969}
   - component: {fileID: 1886052488727122240}
+  - component: {fileID: 3996420941006053704}
   - component: {fileID: 8010768364213262801}
+  - component: {fileID: 326131862701390941}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -27,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128193892614510246}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.200002, y: 0.021770477, z: 0.08138298}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -115,12 +117,57 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.057514668, y: 0.39287984}
+  m_Size: {x: 0.9647951, y: 2.4170744}
+  m_Direction: 0
+--- !u!61 &3996420941006053704
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128193892614510246}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.033290386, y: 0.18670619}
-  m_Size: {x: 0.8942251, y: 1.9490535}
-  m_Direction: 0
+  m_Offset: {x: -0.053032875, y: 0.31819963}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 9.6, y: 5.4}
+    newSize: {x: 9.6, y: 5.4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8873749, y: 2.430131}
+  m_EdgeRadius: 0
 --- !u!50 &8010768364213262801
 Rigidbody2D:
   serializedVersion: 4
@@ -148,3 +195,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &326131862701390941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128193892614510246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff186747214b11049852be39da8dba3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP_E: 4
+  EnemyDamage_SE: {fileID: 8300000, guid: 3e9daad7b0c45074abdcac74f58dea58, type: 3}
