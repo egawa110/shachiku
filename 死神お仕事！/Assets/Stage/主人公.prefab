@@ -206,14 +206,14 @@ MonoBehaviour:
   goalAnime: PlayerGoal
   deadAnime: PlayerOver
   ALL_SOUL: 0
-  bullet: {fileID: 2937897550353236852, guid: 676bf8b092de8e24abef3c1600c222da, type: 3}
+  bullet: {fileID: 1935894521084834061, guid: 32e57dec91737934aa5bcecb46716675, type: 3}
   attackPoint: {fileID: 3732702165677046226}
   attackTime: 1
   HP_P: 4
   Jump_SE: {fileID: 8300000, guid: 9c87b10dce5671c46ad6d159ac79b163, type: 3}
   Damage_SE: {fileID: 8300000, guid: 1b2f3ad45283c9e4496672801bd1a76c, type: 3}
   GetSoul_SE: {fileID: 8300000, guid: 747cee683af35e340b8bda47fb324a44, type: 3}
-  Attack_SE: {fileID: 8300000, guid: 8ed7aee89f18f7a43a2c3ddb9f81e881, type: 3}
+  Attack_SE: {fileID: 8300000, guid: ecb11876312bcad449b6ec0c63c9a37c, type: 3}
   Switch_Act_SE: {fileID: 8300000, guid: b28d3277eb0320e44ad838f471bab4e4, type: 3}
   Clear_SE: {fileID: 8300000, guid: 99511c31598401c47a5502623bffd77f, type: 3}
   Over_SE: {fileID: 8300000, guid: 666973d729970c6479f087a84039816a, type: 3}

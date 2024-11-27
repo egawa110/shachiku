@@ -23,4 +23,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Stage/Stage4/Stage4.unity
     guid: ae8becf2865235246a9e4668ef117614
+  - enabled: 1
+    path: Assets/Egawa/StageSelect/1scene.unity
+    guid: 6b8c96a6964519545a9c6b9e63801077
+  - enabled: 1
+    path: Assets/Egawa/StageSelect/2scene.unity
+    guid: 51303f840b57f07488e467c6e8fe10ac
+  - enabled: 1
+    path: Assets/Egawa/StageSelect/3scene.unity
+    guid: 74460f2f3aae3df458c1a3d89fbc5b45
+  - enabled: 1
+    path: Assets/Egawa/StageSelect/4scene.unity
+    guid: 8b27e3840d9b65d428836bd89624eb93
+  - enabled: 1
+    path: Assets/Egawa/StageSelect/5scene.unity
+    guid: f28d98678658cf24e9d9f2d29c32e410
+  - enabled: 1
+    path: Assets/Egawa/StageSelect/6scene.unity
+    guid: d885f696662396149b8ccb0f92bec9ce
+  - enabled: 1
+    path: Assets/Egawa/StageSelect/StageSelect.unity
+    guid: 3fe4695b2d146cf4084ed8f2f2e5a10b
   m_configObjects: {}

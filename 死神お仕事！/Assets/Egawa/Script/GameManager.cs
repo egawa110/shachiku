@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerC.gameState == "gameclear")
+        if (PlayerController.gameState == "gameclear")
         {
             //ゲームクリア
             mainImage.SetActive(true);  //画像を表示する
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
                 timeCnt.isTimeOver = true; //時間カウント停止
             }
         }
-        else if (PlayerC.gameState == "gameover")
+        else if (PlayerController.gameState == "gameover")
         {
             //ゲームオーバー
             mainImage.SetActive(true);  //画像を表示する
@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
             Button bt = nextButton.GetComponent<Button>();
             bt.interactable = false;
             mainImage.GetComponent<Image>().sprite = gameOverSpr;  //画像を設定する
-            PlayerC.gameState = "gameend";
+            PlayerController.gameState = "gameend";
 
             //+++ 時間制限追加 +++
             if (timeCnt != null)
@@ -85,12 +85,12 @@ public class GameManager : MonoBehaviour
                 timeCnt.isTimeOver = true; //時間カウント停止
             }
         }
-        else if (PlayerC.gameState == "playing")
+        else if (PlayerController.gameState == "playing")
         {
             //ゲーム中
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             //playerControllerを取得する
-            PlayerC playerCnt = player.GetComponent<PlayerC>();
+            PlayerController playerCnt = player.GetComponent<PlayerController>();
 
             //+++ 時間制限追加 +++
             //タイムを更新

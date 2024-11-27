@@ -13,6 +13,9 @@ public class BulletController : MonoBehaviour
     Transform gateTransform;       //発射口のTransform
     float passedTimes = 0;         //経過時間
 
+    private AudioSource audioSource;
+    public AudioClip Enemy_Atk;
+
     //距離チェック
     bool CheckLength(Vector2 targetPos)
     {
@@ -57,6 +60,8 @@ public class BulletController : MonoBehaviour
                 float y = Mathf.Sin(angleZ * Mathf.Deg2Rad);
                 Vector2 v = new Vector2(-x, y) * fireSpeed;
                 rbody.AddForce(v, ForceMode2D.Impulse);
+                //攻撃音を鳴らす
+                audioSource.PlayOneShot(Enemy_Atk);
             }
         }
     }
