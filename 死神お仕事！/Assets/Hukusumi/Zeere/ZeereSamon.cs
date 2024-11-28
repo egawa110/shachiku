@@ -17,7 +17,7 @@ public class ZeereSamon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(0, 0, 10));
+        transform.Rotate(new Vector3(0, 0, 5));
         passedTimes += Time.deltaTime;//ŽžŠÔŒo‰ß
         if (passedTimes >= deletetime)
         {
