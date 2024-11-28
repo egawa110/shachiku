@@ -17,6 +17,10 @@ public class ZeereHalo : MonoBehaviour
     private void Update()
     {
 
+        transform.localScale = Vector2.MoveTowards(
+                transform.localScale,
+                new Vector2(4,4),
+                3 * Time.deltaTime);
         // プレイヤーとの距離が0.1f未満になったらそれ以上実行しない
         if (Vector2.Distance(transform.position, playerTr.position) < 1.0f)
         {

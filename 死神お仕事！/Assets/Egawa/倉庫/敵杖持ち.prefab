@@ -148,6 +148,7 @@ MonoBehaviour:
   delayTime: 3
   fireSpeed: 4
   length: 8
+  Enemy_Atk: {fileID: 8300000, guid: 1b0680956c6d4cf48b18c238d8f34a5f, type: 3}
 --- !u!1 &7470752197514467685
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,6 +198,7 @@ MonoBehaviour:
   delayTime: 3
   fireSpeed: 4
   length: 8
+  Enemy_Atk: {fileID: 0}
 --- !u!61 &3815244631902730856
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -171,24 +171,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4594674292104347793, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5292821373484602624, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
       propertyPath: m_Name
       value: Stage3
       objectReference: {fileID: 0}
-    - target: {fileID: 7100017409538698663, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
-      propertyPath: Switch_Act_SE
-      value: 
-      objectReference: {fileID: 8300000, guid: b28d3277eb0320e44ad838f471bab4e4, type: 3}
-    - target: {fileID: 7295194293968585723, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: 78b17b681843f6c4aa7e783e46f9b191, type: 2}
-    m_RemovedComponents:
-    - {fileID: 4683273134183139007, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

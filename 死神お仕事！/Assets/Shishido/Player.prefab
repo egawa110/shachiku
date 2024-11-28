@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 599763513303640742}
   - component: {fileID: 7273795974977854063}
   - component: {fileID: 8840777467208058527}
-  - component: {fileID: 33744989282308679}
+  - component: {fileID: 5767528962456809159}
   - component: {fileID: 2947991200773172240}
   - component: {fileID: 4501625490419077493}
   - component: {fileID: 3038232133825650613}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 98987370a28328c4ba9bf27f091e0850, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -117,8 +117,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &33744989282308679
-CapsuleCollider2D:
+--- !u!61 &5767528962456809159
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -126,7 +126,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 6038821470476163204}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: cfc249a3a8c1f514c8d49ca7041259a9, type: 2}
+  m_Material: {fileID: 6200000, guid: 373cbc2140fa7814e995cab42b0612a7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -149,9 +149,19 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.06262636, y: 0.3914137}
-  m_Size: {x: 1.0612135, y: 1.7814155}
-  m_Direction: 0
+  m_Offset: {x: -0.101089, y: 0.11524308}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6.72, y: 3.78}
+    newSize: {x: 2.94, y: 2.29}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.8944101, y: 2.745918}
+  m_EdgeRadius: 0
 --- !u!95 &2947991200773172240
 Animator:
   serializedVersion: 5
@@ -315,7 +325,7 @@ GameObject:
   m_Layer: 0
   m_Name: AttackPoint
   m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
