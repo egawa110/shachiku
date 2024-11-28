@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 1084816144}
   - component: {fileID: 1084816143}
   - component: {fileID: 1084816142}
-  - component: {fileID: 1084816141}
+  - component: {fileID: 1084816145}
   m_Layer: 5
   m_Name: Button (Legacy)
   m_TagString: Untagged
@@ -585,19 +585,6 @@ RectTransform:
   m_AnchoredPosition: {x: 315, y: -186}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1084816141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1084816139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a4c850ec8e40d34db5d825087999bea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneName: 5scene
 --- !u!114 &1084816142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -620,9 +607,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -642,8 +629,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1084816141}
-        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+      - m_Target: {fileID: 1084816145}
+        m_TargetAssemblyTypeName: ChangeStory, Assembly-CSharp
         m_MethodName: Load
         m_Mode: 1
         m_Arguments:
@@ -692,6 +679,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084816139}
   m_CullTransparentMesh: 1
+--- !u!114 &1084816145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084816139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca9801b990a144d4386b203fc8f805ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: 5scene
 --- !u!1 &1098393558
 GameObject:
   m_ObjectHideFlags: 0
