@@ -17,6 +17,32 @@ public class BulletManager : MonoBehaviour
     {
 
     }
+<<<<<<< HEAD
+=======
+    
+    public void Move_R()
+    {
+        Vector3 bulletPos = transform.position; //Vector3Œ^‚ÌbulletPos‚ÉŒ»Ý‚ÌˆÊ’uî•ñ‚ðŠi”[
+        bulletPos.x += speed * Time.deltaTime; //xÀ•W‚Éspeed‚ð‰ÁŽZ@‰EŒü‚«i‘Oj
+        transform.position = bulletPos; //Œ»Ý‚ÌˆÊ’uî•ñ‚É”½‰f‚³‚¹‚é
+    }
+    public void Move_L()
+    {
+        Vector3 bulletPos = transform.position; //Vector3Œ^‚ÌbulletPos‚ÉŒ»Ý‚ÌˆÊ’uî•ñ‚ðŠi”[
+        bulletPos.x += speed * Time.deltaTime; //xÀ•W‚Éspeed‚ð‰ÁŽZ@¶Œü‚«iŒã‚ëj
+        transform.position = bulletPos; //Œ»Ý‚ÌˆÊ’uî•ñ‚É”½‰f‚³‚¹‚é
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Ground")
+        {
+            Destroy(gameObject);//’e‚ªÁ‚¦‚é
+        }
+        else if (other.gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);//’e‚ªÁ‚¦‚é
+            //Destroy(other.gameObject);//“G‚àÁ‚¦‚é
+>>>>>>> 803497b97e779d67f9509001fca6a06744e41e38
 
     private void OnTriggerEnter2D(Collider2D other)
     {

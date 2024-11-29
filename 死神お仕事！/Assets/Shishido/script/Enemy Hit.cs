@@ -50,47 +50,17 @@ public class EnemyHit : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet")
         {
-            GetDamage(collision.gameObject);
+            HP_E--;
 
-            //HP_E--;
-
-            //主人公の攻撃に当たったら音が鳴る
-            audioSource.PlayOneShot(EnemyDamage_SE);
-
-
-            //if (HP_E > 0)
-            //{
-            //    //移動停止
-            //    rbody.velocity = new Vector2(0, 0);
-            //    //敵キャラの反対方向にヒットバックさせる
-            //    Vector3 v = (transform.position - transform.position).normalized; rbody.AddForce(new Vector2(v.x * 4, v.y * 4), ForceMode2D.Impulse);
-            //    //ダメージフラグ　ON
-            //    inDamage = true;
-            //}
-            //else
-            //{
-            //    Destroy(gameObject);
-            //}
-
-        }
-    }
-
-    void GetDamage(GameObject player)
-    {
-        if (PlayerController.gameState == "playing")
-        {
-            HP_E--; //hpが減る
             if (HP_E > 0)
             {
-                ////移動停止
-                //rbody.velocity = new Vector2(0, 0);
-                ////敵キャラの反対方向にヒットバックさせる
-                //Vector3 v = (transform.position - player.transform.position).normalized; rbody.AddForce(new Vector2(v.x * 4, v.y * 4), ForceMode2D.Impulse);
-                ////ダメージフラグ　ON
-                //inDamage = true;
-                //Invoke(nameof(DamageEnd), 0.25f);
-                rbody.AddForce(-transform.forward * 5f);
+                //ダメージフラグをONに
+                inDamage = true;
 
+                //主人公の攻撃に当たったら音が鳴る
+                audioSource.PlayOneShot(EnemyDamage_SE);
+
+                Invoke(nameof(DamageEnd), 0.25f);
             }
             else
             {

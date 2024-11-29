@@ -196,23 +196,47 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z)) //Zキーを押したら
         {
+<<<<<<< HEAD
 
             
             if (canAttack)
+=======
+            if(canAttack)
+>>>>>>> 803497b97e779d67f9509001fca6a06744e41e38
             {
-                GameObject playerObj = GameObject.Find("Player");
-                if (playerObj.transform.localScale.x >= 0)
-                {
-                    CreateBullet_R();
-                    audioSource.PlayOneShot(Attack_SE);
-                }
-                else if(playerObj.transform.localScale.x <= 0)
-                {
-                    CreateBullet_L();
-                    audioSource.PlayOneShot(Attack_SE);
-                }
+                //砲弾をプレハブから作る
+                Vector2 pos = new Vector2(attackPoint.position.x,
+                    attackPoint.position.y);
+                GameObject obj = Instantiate(bullet, pos, Quaternion.identity);
+                //方針が向いてる方向に発射する
+                Rigidbody2D rbody = obj.GetComponent<Rigidbody2D>();
+                float angleZ = transform.localEulerAngles.z;
+                float x = Mathf.Cos(angleZ * Mathf.Deg2Rad);
+                float y = Mathf.Sin(angleZ * Mathf.Deg2Rad);
+                Vector2 v = new Vector2(-x, y) * attackTime;
+                rbody.AddForce(v, ForceMode2D.Impulse);
             }
+<<<<<<< HEAD
             
+=======
+
+
+
+            //if (canAttack)
+            //{
+            //    GameObject playerObj = GameObject.Find("Player");
+            //    if (playerObj.transform.localScale.x >= 0)
+            //    {
+            //        CreateBullet_R();
+            //        audioSource.PlayOneShot(Attack_SE);
+            //    }
+            //    else if(playerObj.transform.localScale.x <= 0)
+            //    {
+            //        CreateBullet_L();
+            //        audioSource.PlayOneShot(Attack_SE);
+            //    }
+            //}
+>>>>>>> 803497b97e779d67f9509001fca6a06744e41e38
         }
     }
     
@@ -228,7 +252,7 @@ public class PlayerController : MonoBehaviour
     public void CreateBullet_L()
     {
         //第一引数に生成するオブジェクト、第二引数にVector3型の座標、第三引数に回転の情報
-        Instantiate(bullet, attackPoint.position, Quaternion.identity);
+        Instantiate(bullet, -attackPoint.position, Quaternion.identity);
         canAttack = false; //攻撃フラグをfalseにする
         attackTime = 0f;　 //attackTimeを0に戻す
     }
