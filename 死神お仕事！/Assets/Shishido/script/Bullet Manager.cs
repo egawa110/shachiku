@@ -38,7 +38,7 @@ public class BulletManager : MonoBehaviour
     }
     public void Move_L()
     {
-        Vector3 bulletPos = -transform.position; //Vector3Œ^‚ÌbulletPos‚ÉŒ»İ‚ÌˆÊ’uî•ñ‚ğŠi”[
+        Vector3 bulletPos = transform.position; //Vector3Œ^‚ÌbulletPos‚ÉŒ»İ‚ÌˆÊ’uî•ñ‚ğŠi”[
         bulletPos.x += speed * Time.deltaTime; //xÀ•W‚Éspeed‚ğ‰ÁZ@¶Œü‚«iŒã‚ëj
         transform.position = bulletPos; //Œ»İ‚ÌˆÊ’uî•ñ‚É”½‰f‚³‚¹‚é
     }
