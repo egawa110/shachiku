@@ -152,6 +152,7 @@ public class ZeereCore : MonoBehaviour
                 }
                 if (rnd == 5 && LongLooc == false)
                 {
+                    transform.eulerAngles = new Vector3(0f, 0f, 180f);
                     passedTimes = 0;
                     LongLooc = true;
                 }
@@ -243,6 +244,7 @@ public class ZeereCore : MonoBehaviour
 
         if (SamonAttack == true)//è¢ä´
         {
+            transform.eulerAngles = new Vector3(0f, 0f, 180f);
             SamonC += Time.deltaTime;//éûä‘åoâﬂ
             if (coorTime < 3)
             {
@@ -333,8 +335,9 @@ public class ZeereCore : MonoBehaviour
         }
 
 
-        if (ReeserAttack == true)
+        if (ReeserAttack == true)//ÉrÅ[ÉÄ
         {
+            transform.eulerAngles = new Vector3(0f, 0f, 180f);
             if (SamonC < 1)
             {
                 SamonC += 1;
