@@ -60,8 +60,6 @@ public class BulletController : MonoBehaviour
                 float y = Mathf.Sin(angleZ * Mathf.Deg2Rad);
                 Vector2 v = new Vector2(-x, y) * fireSpeed;
                 rbody.AddForce(v, ForceMode2D.Impulse);
-                //çUåÇâπÇñ¬ÇÁÇ∑
-                audioSource.PlayOneShot(Enemy_Atk);
             }
         }
     }

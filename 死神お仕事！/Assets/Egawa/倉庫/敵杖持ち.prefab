@@ -198,7 +198,7 @@ MonoBehaviour:
   delayTime: 3
   fireSpeed: 4
   length: 8
-  Enemy_Atk: {fileID: 0}
+  Enemy_Atk: {fileID: 8300000, guid: 1b0680956c6d4cf48b18c238d8f34a5f, type: 3}
 --- !u!61 &3815244631902730856
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -228,7 +228,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
