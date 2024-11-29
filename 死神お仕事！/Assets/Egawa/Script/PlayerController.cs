@@ -196,13 +196,9 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z)) //Zキーを押したら
         {
-<<<<<<< HEAD
 
             
-            if (canAttack)
-=======
             if(canAttack)
->>>>>>> 803497b97e779d67f9509001fca6a06744e41e38
             {
                 //砲弾をプレハブから作る
                 Vector2 pos = new Vector2(attackPoint.position.x,
@@ -216,9 +212,7 @@ public class PlayerController : MonoBehaviour
                 Vector2 v = new Vector2(-x, y) * attackTime;
                 rbody.AddForce(v, ForceMode2D.Impulse);
             }
-<<<<<<< HEAD
             
-=======
 
 
 
@@ -236,7 +230,6 @@ public class PlayerController : MonoBehaviour
             //        audioSource.PlayOneShot(Attack_SE);
             //    }
             //}
->>>>>>> 803497b97e779d67f9509001fca6a06744e41e38
         }
     }
     
