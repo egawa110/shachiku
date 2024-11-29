@@ -183,7 +183,7 @@ public class PlayerController : MonoBehaviour
     {
         goJump = true;                      //ジャンプフラグを立てる
     }
-
+    
     //攻撃
     public void Attack()
     {
@@ -196,6 +196,8 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z)) //Zキーを押したら
         {
+
+            
             if (canAttack)
             {
                 GameObject playerObj = GameObject.Find("Player");
@@ -210,8 +212,10 @@ public class PlayerController : MonoBehaviour
                     audioSource.PlayOneShot(Attack_SE);
                 }
             }
+            
         }
     }
+    
 
     public void CreateBullet_R()
     {
@@ -228,6 +232,7 @@ public class PlayerController : MonoBehaviour
         canAttack = false; //攻撃フラグをfalseにする
         attackTime = 0f;　 //attackTimeを0に戻す
     }
+    
 
     //接触開始
     void OnTriggerEnter2D(Collider2D collision)

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2058917457468847541}
   - component: {fileID: 927472590976527377}
   - component: {fileID: 4722397069103241686}
+  - component: {fileID: 7477774586887166564}
   m_Layer: 7
   m_Name: "\u4E3B\u4EBA\u516C\u304A\u8A66\u3057\u5F3E (1)"
   m_TagString: Bullet
@@ -99,8 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c2b854c414b15140a5bff97fb6ea42c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
-  DeleteTime: 1
+  deleteTime: 3
 --- !u!95 &927472590976527377
 Animator:
   serializedVersion: 5
@@ -157,3 +157,30 @@ CapsuleCollider2D:
   m_Offset: {x: 0.4555141, y: -0.29844025}
   m_Size: {x: 3.422964, y: 3.422964}
   m_Direction: 0
+--- !u!50 &7477774586887166564
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935894521084834061}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
