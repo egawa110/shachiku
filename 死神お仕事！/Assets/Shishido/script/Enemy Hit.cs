@@ -31,18 +31,18 @@ public class EnemyHit : MonoBehaviour
     {
         if (inDamage)
         {
-            //ダメージ中、点滅させる
-            float val = Mathf.Sin(Time.time * 50);
-            if (val > 0)
-            {
-                //スプライトを表示
-                gameObject.GetComponent<SpriteRenderer>().enabled = true;
-            }
-            else
-            {
-                //スプライトを非表示
-                gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            }
+            ////ダメージ中、点滅させる
+            //float val = Mathf.Sin(Time.time * 50);
+            //if (val > 0)
+            //{
+            //    //スプライトを表示
+            //    gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            //}
+            //else
+            //{
+            //    //スプライトを非表示
+            //    gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            //}
         }
     }
 

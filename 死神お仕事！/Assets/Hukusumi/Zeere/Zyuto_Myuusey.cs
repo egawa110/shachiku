@@ -25,7 +25,7 @@ public class Zyuto_Myuusey : MonoBehaviour
     {
         gateTransform = transform.Find("gate");
         playerTr = GameObject.FindGameObjectWithTag("Player").transform;
-        rbody = this.GetComponent<Rigidbody2D>(); //Rigidbody2D‚ðŽæ‚Á‚Ä‚­‚é
+        //rbody = this.GetComponent<Rigidbody2D>(); //Rigidbody2D‚ðŽæ‚Á‚Ä‚­‚é
     }
 
     // Update is called once per frame
