@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -36,8 +38,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform attackPoint; //アタックポイントを格納
 
     [SerializeField] private float attackTime = 0.2f; //攻撃間隔
+    public float fireSpeed = 8.0f;
+
     private float currentAttackTime;                  //攻撃の間隔を管理
     private bool canAttack;                           //攻撃可能状態かを指定するフラグ
+    
 
     public int HP_P = 4;      //プレイヤーの体力
     private bool inDamage = false;  //ダメージ中のフラグ
@@ -182,7 +187,7 @@ public class PlayerController : MonoBehaviour
     {
         goJump = true;                      //ジャンプフラグを立てる
     }
-    
+
     //攻撃
     public void Attack()
     {
@@ -195,60 +200,44 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z)) //Zキーを押したら
         {
+            //Debug.Log("ZZZ");
 
-            
-            if(canAttack)
+            if (canAttack)
             {
-                //砲弾をプレハブから作る
-                Vector2 pos = new Vector2(attackPoint.position.x,
-                    attackPoint.position.y);
-                GameObject obj = Instantiate(bullet, pos, Quaternion.identity);
-                //方針が向いてる方向に発射する
-                Rigidbody2D rbody = obj.GetComponent<Rigidbody2D>();
-                float angleZ = transform.localEulerAngles.z;
-                float x = Mathf.Cos(angleZ * Mathf.Deg2Rad);
-                float y = Mathf.Sin(angleZ * Mathf.Deg2Rad);
-                Vector2 v = new Vector2(-x, y) * attackTime;
-                rbody.AddForce(v, ForceMode2D.Impulse);
+                GameObject playerObj = GameObject.Find("Player");
+                if (playerObj.transform.localScale.x >= 0)
+                {
+                    //CreateBullet_R();
+                    Vector2 pos = new Vector2(attackPoint.position.x,
+                            attackPoint.position.y);
+                    GameObject obj = Instantiate(bullet, pos, Quaternion.identity);
+                    //方針が向いてる方向に発射する
+                    Rigidbody2D rbody = obj.GetComponent<Rigidbody2D>();
+                    float angleZ = transform.localEulerAngles.z;
+                    float x = Mathf.Cos(angleZ * Mathf.Deg2Rad);
+                    float y = Mathf.Sin(angleZ * Mathf.Deg2Rad);
+                    Vector2 v = new Vector2(x, y) * fireSpeed;
+                    rbody.AddForce(v, ForceMode2D.Impulse);
+                }
+                else if (playerObj.transform.localScale.x <= 0)
+                {
+                    Vector2 pos = new Vector2(attackPoint.position.x,
+                            attackPoint.position.y);
+                    GameObject obj = Instantiate(bullet, pos, Quaternion.identity);
+                    //方針が向いてる方向に発射する
+                    Rigidbody2D rbody = obj.GetComponent<Rigidbody2D>();
+                    float angleZ = transform.localEulerAngles.z;
+                    float x = Mathf.Cos(angleZ * Mathf.Deg2Rad);
+                    float y = Mathf.Sin(angleZ * Mathf.Deg2Rad);
+                    Vector2 v = new Vector2(-x, y) * fireSpeed;
+                    rbody.AddForce(v, ForceMode2D.Impulse);
+                }
+                canAttack = false; //攻撃フラグをfalseにする
+                attackTime = 0f;　 //attackTimeを0に戻す
             }
-            
 
-
-
-            //if (canAttack)
-            //{
-            //    GameObject playerObj = GameObject.Find("Player");
-            //    if (playerObj.transform.localScale.x >= 0)
-            //    {
-            //        CreateBullet_R();
-            //        audioSource.PlayOneShot(Attack_SE);
-            //    }
-            //    else if(playerObj.transform.localScale.x <= 0)
-            //    {
-            //        CreateBullet_L();
-            //        audioSource.PlayOneShot(Attack_SE);
-            //    }
-            //}
         }
-    }
-    
-
-    public void CreateBullet_R()
-    {
-        //第一引数に生成するオブジェクト、第二引数にVector3型の座標、第三引数に回転の情報
-        Instantiate(bullet, attackPoint.position, Quaternion.identity);
-        canAttack = false; //攻撃フラグをfalseにする
-        attackTime = 0f;　 //attackTimeを0に戻す
-    }
-
-    public void CreateBullet_L()
-    {
-        //第一引数に生成するオブジェクト、第二引数にVector3型の座標、第三引数に回転の情報
-        Instantiate(bullet, -attackPoint.position, Quaternion.identity);
-        canAttack = false; //攻撃フラグをfalseにする
-        attackTime = 0f;　 //attackTimeを0に戻す
-    }
-    
+    }    
 
     //接触開始
     void OnTriggerEnter2D(Collider2D collision)

@@ -135,6 +135,18 @@ PrefabInstance:
       propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4670575674889018903, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: SceneName
+      value: StageSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 5293016714564302727, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -98.000015
+      objectReference: {fileID: 0}
+    - target: {fileID: 6359109715153729380, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: SceneName
+      value: Stage2
+      objectReference: {fileID: 0}
     - target: {fileID: 6611924174335174627, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: m_Name
       value: Stage2
