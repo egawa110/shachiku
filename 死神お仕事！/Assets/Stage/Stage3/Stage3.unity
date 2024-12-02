@@ -183,6 +183,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -49.022
       objectReference: {fileID: 0}
+    - target: {fileID: 7649235143976744381, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: gameTime
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7649235143976744381, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: isCountDown
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8503103653052298490, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -299

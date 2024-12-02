@@ -24,6 +24,18 @@ EditorBuildSettings:
     path: Assets/Stage/Stage4/Stage4.unity
     guid: ae8becf2865235246a9e4668ef117614
   - enabled: 1
+    path: Assets/Egawa/Ending/En2.unity
+    guid: df57d865218b7c44d8cc8fba4f635618
+  - enabled: 1
+    path: Assets/Egawa/Ending/En3.unity
+    guid: 59170ac73ea68384daaf8b63e9419adb
+  - enabled: 1
+    path: Assets/Egawa/Ending/En4.unity
+    guid: 17b124d9901d3f5438fd543abdb1d529
+  - enabled: 1
+    path: Assets/Egawa/Ending/Ending.unity
+    guid: 460d46ab3e623c94a9465a64326a99e7
+  - enabled: 1
     path: Assets/Egawa/StageSelect/1scene.unity
     guid: 6b8c96a6964519545a9c6b9e63801077
   - enabled: 1

@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &603967284
+--- !u!1001 &888696988
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -131,39 +131,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2283419184015173972, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -97.999985
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846059385380819661, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
+      propertyPath: SceneName
+      value: Ending
+      objectReference: {fileID: 0}
     - target: {fileID: 5613234516803186349, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
       propertyPath: m_Name
       value: Stage4
       objectReference: {fileID: 0}
     - target: {fileID: 6119382714064424470, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -296
+      value: -297.3
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-    - target: {fileID: 6004596309219973409, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
-      propertyPath: m_TagString
-      value: Switch
-      objectReference: {fileID: 0}
-    - target: {fileID: 6627245463770951539, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
-      propertyPath: SceneName
-      value: StageSelect
+    - target: {fileID: 6119382714064424470, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 161
       objectReference: {fileID: 0}
     - target: {fileID: 7277278102804921299, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -88.27
+      value: -87.3
       objectReference: {fileID: 0}
-    - target: {fileID: 8215016627605576291, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
+    - target: {fileID: 7894712993278222299, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
+      propertyPath: gameTime
+      value: 300
       objectReference: {fileID: 0}
-    - target: {fileID: 8237129559869607596, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
-      propertyPath: m_TagString
-      value: Switch
-=======
-    - target: {fileID: 6119382714064424470, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 166
->>>>>>> 4d9655748a9ccc3bb9b4fac5247488a3942e3113
+    - target: {fileID: 7894712993278222299, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
+      propertyPath: isCountDown
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8545883780130458332, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
       propertyPath: m_LocalPosition.x
@@ -207,7 +205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8741486991020536639, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -296
+      value: -297.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -218,4 +216,4 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 603967284}
+  - {fileID: 888696988}
