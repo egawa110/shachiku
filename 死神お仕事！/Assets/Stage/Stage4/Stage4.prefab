@@ -3075,7 +3075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a4c850ec8e40d34db5d825087999bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Stage1
+  SceneName: Stage4
 --- !u!114 &1677390777782670457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3495,7 +3495,7 @@ GameObject:
   - component: {fileID: 7891208826366865115}
   m_Layer: 0
   m_Name: "\u30B9\u30A4\u30C3\u30C1\u767D1\u30B5\u30A4\u30BA\u5909\u66F420"
-  m_TagString: Untagged
+  m_TagString: Switch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4458,7 +4458,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5379,7 +5379,7 @@ GameObject:
   - component: {fileID: 3510526223647818132}
   m_Layer: 0
   m_Name: "\u30B9\u30A4\u30C3\u30C1\u9752\uFF11\u30B5\u30A4\u30BA\u5909\u66F420"
-  m_TagString: Untagged
+  m_TagString: Switch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5542,7 +5542,7 @@ GameObject:
   - component: {fileID: 6930677551404402408}
   m_Layer: 0
   m_Name: "\u30B9\u30A4\u30C3\u30C1\u9EC41\u30B5\u30A4\u30BA\u5909\u66F420"
-  m_TagString: Untagged
+  m_TagString: Switch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6064,7 +6064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a4c850ec8e40d34db5d825087999bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Title
+  SceneName: StageSelect
 --- !u!114 &7538506083252447592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6404,6 +6404,7 @@ GameObject:
   - component: {fileID: 4688473402996589040}
   - component: {fileID: 6861316114085127601}
   - component: {fileID: 15839434099787338}
+  - component: {fileID: 938339159823636237}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6508,6 +6509,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseUI: {fileID: 7167549813811379418}
+--- !u!81 &938339159823636237
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5866631226795625257}
+  m_Enabled: 1
 --- !u!1 &5976552156304603524
 GameObject:
   m_ObjectHideFlags: 0
@@ -6598,7 +6607,7 @@ GameObject:
   - component: {fileID: 4021429946793514941}
   m_Layer: 0
   m_Name: "\u30B9\u30A4\u30C3\u30C1\u8D641\u30B5\u30A4\u30BA\u5909\u66F420"
-  m_TagString: Untagged
+  m_TagString: Switch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6763,7 +6772,7 @@ GameObject:
   - component: {fileID: 4618698719369660270}
   m_Layer: 0
   m_Name: "\u30B9\u30A4\u30C3\u30C1\u68431\u30B5\u30A4\u30BA\u5909\u66F420"
-  m_TagString: Untagged
+  m_TagString: Switch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9449,7 +9458,7 @@ GameObject:
   - component: {fileID: 6509699091836433608}
   m_Layer: 0
   m_Name: "\u30B9\u30A4\u30C3\u30C1\u7DD11\u30B5\u30A4\u30BA\u5909\u66F420"
-  m_TagString: Untagged
+  m_TagString: Switch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9747,7 +9756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -12384,7 +12393,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 599763513303640742, guid: 26240530ac30a0b4ba88699e2079aa16, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -87
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 599763513303640742, guid: 26240530ac30a0b4ba88699e2079aa16, type: 3}
       propertyPath: m_LocalPosition.y
