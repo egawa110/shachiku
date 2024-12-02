@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class LifeManager : MonoBehaviour
 {
-    public GameObject[] lifeArray = new GameObject[3];
-    private int lifePoint = 3;
+    public GameObject[] lifeArray = new GameObject[4];
+    private int lifePoint = 4;
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
 
