@@ -31,18 +31,18 @@ public class EnemyHit : MonoBehaviour
     {
         if (inDamage)
         {
-            ////ダメージ中、点滅させる
-            //float val = Mathf.Sin(Time.time * 50);
-            //if (val > 0)
-            //{
-            //    //スプライトを表示
-            //    gameObject.GetComponent<SpriteRenderer>().enabled = true;
-            //}
-            //else
-            //{
-            //    //スプライトを非表示
-            //    gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            //}
+            //ダメージ中、点滅させる
+            float val = Mathf.Sin(Time.time * 50);
+            if (val > 0)
+            {
+                //スプライトを表示
+                gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            }
+            else
+            {
+                //スプライトを非表示
+                gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            }
         }
     }
 
@@ -50,20 +50,26 @@ public class EnemyHit : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet")
         {
-            HP_E--;
+            // 攻撃された時のエフェクト
+            GetDamage(collision.gameObject);
+        }
+    }
 
+    void GetDamage(GameObject player)
+    {
+        if (PlayerController.gameState == "playing")
+        {
+            HP_E--; //hpが減る
             if (HP_E > 0)
             {
-                //ダメージフラグをONに
+                //ダメージフラグ　ON
                 inDamage = true;
-
-                //主人公の攻撃に当たったら音が鳴る
-                audioSource.PlayOneShot(EnemyDamage_SE);
 
                 Invoke(nameof(DamageEnd), 0.25f);
             }
             else
             {
+                //やられる
                 Destroy(gameObject);
             }
         }
