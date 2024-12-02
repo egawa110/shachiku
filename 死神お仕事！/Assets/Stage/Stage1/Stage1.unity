@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 968453672}
+    - target: {fileID: 2739444284392435738, guid: de39d665bb6518a429498a934a4a2197, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6686937101272606608, guid: de39d665bb6518a429498a934a4a2197, type: 3}
       propertyPath: m_Name
       value: Canvas
