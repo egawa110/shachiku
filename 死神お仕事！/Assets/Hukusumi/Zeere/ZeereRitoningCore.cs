@@ -19,10 +19,10 @@ public class ZeereRitoningCore : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) //ぶつかったら消える命令文開始
     {
-        Debug.Log("ここ"+other.tag);
+        //Debug.Log("ここ"+other.tag);
         if (other.CompareTag("Ground"))//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
         {
-            Debug.Log("XXX");
+            //Debug.Log("XXX");
             Destroy(gameObject);//このゲームオブジェクトを消滅させる
         }
 

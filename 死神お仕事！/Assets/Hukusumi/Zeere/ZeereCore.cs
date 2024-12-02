@@ -383,5 +383,14 @@ public class ZeereCore : MonoBehaviour
             
         }
 
+        if (other.CompareTag("Wall") && BusteAttack == true)//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
+        {
+            BusteAttack = false;
+            passedTimes = 0;
+            coorTime = 0;
+            Cool = true;
+
+        }
+
     }
 }

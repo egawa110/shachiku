@@ -19,6 +19,7 @@ TagManager:
   - ZeereAtach
   - SamonTG
   - Foff
+  - Wall
   layers:
   - Default
   - TransparentFX

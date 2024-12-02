@@ -112,7 +112,7 @@ public class PlayerBoos : MonoBehaviour
                 //‘¬“x‚ð‚O‚É‚µ‚Ä‹­§’âŽ~
                 rbody.velocity = new Vector2(0, 0);
             }
-            if(BossIveTime>7)
+            if(BossIveTime>8)
             {
                 BICyec = true;
                 BoosIve = false;
