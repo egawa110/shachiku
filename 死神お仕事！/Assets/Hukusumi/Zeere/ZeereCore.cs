@@ -30,7 +30,7 @@ public class ZeereCore : MonoBehaviour
     public float rx = 1.0f;
     public float boder = 10.0f;
 
-    bool GO = false;
+    public bool GO = false;
     bool GoOK = false;
 
     bool Cool = false;//調整用
@@ -58,13 +58,14 @@ public class ZeereCore : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G))//突進ON
-        {
-            GO = true;
-        }
+        //if (Input.GetKeyDown(KeyCode.G))//ON
+        //{
+        //    GO = true;
+        //}
 
         if (GO==false)
         {
+
             passedTimes = 0;
             //待機場所へ移動
             transform.position = Vector2.MoveTowards(
@@ -293,7 +294,7 @@ public class ZeereCore : MonoBehaviour
                 SamonC+=1;
                 Transform myTransform = this.transform;
                 Vector2 worldPos = myTransform.position;
-                Instantiate(Rain, new Vector2(0, 6), Quaternion.identity);
+                Instantiate(Rain, new Vector2(0, 7), Quaternion.identity);
             }
             if (passedTimes > 4)
             {
@@ -363,6 +364,11 @@ public class ZeereCore : MonoBehaviour
 
         }
 
+    }
+
+    public void Zeereon()
+    {
+        GO = true;
     }
 
     public void OnTriggerEnter2D(Collider2D other) //ぶつかったら消える命令文開始

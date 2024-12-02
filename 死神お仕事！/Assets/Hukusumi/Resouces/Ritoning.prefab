@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3250514656993312869}
   - component: {fileID: 4661985506155474821}
   - component: {fileID: 6202692464170077153}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Ritoning
   m_TagString: Dead
   m_Icon: {fileID: 0}

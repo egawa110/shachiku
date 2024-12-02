@@ -27,5 +27,9 @@ public class BulletCB : MonoBehaviour
         {
             Destroy(gameObject);//このゲームオブジェクトを消滅させる
         }
+        if (other.CompareTag("Bullet"))//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
+        {
+            Destroy(gameObject);//このゲームオブジェクトを消滅させる
+        }
     }
 }
