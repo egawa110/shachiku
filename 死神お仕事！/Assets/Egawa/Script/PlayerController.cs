@@ -198,7 +198,7 @@ public class PlayerController : MonoBehaviour
             canAttack = true; //指定時間を超えたら攻撃可能にする
         }
 
-        if (Input.GetKeyDown(KeyCode.Z)) //Zキーを押したら
+        if (Input.GetKeyDown(KeyCode.K)) // Kキーを押したら
         {
             //Debug.Log("ZZZ");
 
