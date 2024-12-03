@@ -997,35 +997,6 @@ MonoBehaviour:
   Switch_Act_SE: {fileID: 0}
   Clear_SE: {fileID: 0}
   Over_SE: {fileID: 0}
---- !u!114 &1107595981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1107595979}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea65b81978ed4f548b8b1c5a3a73a1f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  jump: 9
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  stopAnime: PlayerStop
-  moveAnime: PlayerMove
-  jumpAnime: PlayerJump
-  goalAnime: PlayerGoal
-  deadAnime: PlayerOver
-  ALL_SOUL: 0
-  HP_P: 4
-  Jump_SE: {fileID: 0}
-  Damage_SE: {fileID: 0}
-  GetSoul_SE: {fileID: 0}
-  Over_SE: {fileID: 0}
-  Clear_SE: {fileID: 0}
 --- !u!4 &1107595986 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4892329473010327035, guid: 802fbea0ac6b9dd4093fcffd1792e878, type: 3}
@@ -1224,7 +1195,6 @@ MonoBehaviour:
   Helo: {fileID: 6196895771319119964, guid: 3ce6e9a2c53fe2c41a1285def8bc24d4, type: 3}
   target: {fileID: 1107595986}
   speed: 5
-  RUspeed: 3
   Attack: 5
   brx: 0.5
   bry: 20
@@ -2501,9 +2471,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 133755722370839353, guid: 802fbea0ac6b9dd4093fcffd1792e878, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1107595981}
     - targetCorrespondingSourceObject: {fileID: 133755722370839353, guid: 802fbea0ac6b9dd4093fcffd1792e878, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1107595991}
