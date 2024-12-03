@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage1
       objectReference: {fileID: 0}
+    - target: {fileID: 5653682689209309297, guid: ab5e395d174c4a84f88b0b35bb6a9a13, type: 3}
+      propertyPath: SceneName
+      value: Stage2set
+      objectReference: {fileID: 0}
     - target: {fileID: 7035538833355338843, guid: ab5e395d174c4a84f88b0b35bb6a9a13, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -97.999985
