@@ -7,13 +7,10 @@ public class Migu_Nyumu : MonoBehaviour
     Rigidbody2D rbody;                //Rigidbody2D型の作成
     Transform playerTr;
     public float speed = 3.0f;  //移動速度
-    public bool isToRight = false; //true ＝ 右向き  false ＝ 左向き
     public LayerMask groundLayer;      //地面レイヤー
     public float jump = 9.0f;
     bool goJump = false;              //ジャンプ開始フラグ
 
-    private Vector3 movement;
-    private float amountX;
 
     float passedTimes = 0;
     public float firetime = 3.0f;//発射

@@ -18,7 +18,7 @@ public class ZeereCore : MonoBehaviour
     float passedTimes = 0;
     float coorTime = 0;
     [SerializeField] float speed = 5; // 敵の動くスピード
-    [SerializeField] float RUspeed = 3;
+    //[SerializeField] float RUspeed = 3;
     float ATspeed = 10.0f;
     float SamonC = 0;
     public float Attack = 10;
@@ -40,11 +40,11 @@ public class ZeereCore : MonoBehaviour
     bool RitoningAttack = false;//雷雨起動用
     bool ReeserAttack = false;//ビーム起動用
 
-    bool BusteLooc = false;//突進起動用
-    bool SamonLooc = false;//召喚起動用
-    bool RitoningLooc = false;//雷雨起動用
-    bool ReeserLooc = false;//ビーム起動用
-    bool LongLooc = false;
+    bool BusteLooc = false;//突進ロック
+    bool SamonLooc = false;//召喚ロック
+    bool RitoningLooc = false;//雷雨ロック
+    bool ReeserLooc = false;//ビームロック
+    bool LongLooc = false;//延長ロック
 
     private void Start()
     {
@@ -246,13 +246,13 @@ public class ZeereCore : MonoBehaviour
         if (SamonAttack == true)//召喚
         {
             transform.eulerAngles = new Vector3(0f, 0f, 180f);
-            SamonC += Time.deltaTime;//時間経過
-            if (coorTime < 3)
+            coorTime += Time.deltaTime;//時間経過
+            if (SamonC < 3)
             {
-                if (SamonC > 0.5)
+                if (coorTime > 0.5)
                 {
-                    coorTime += 1;
-                    SamonC = 0;
+                    SamonC += 1;
+                    coorTime = 0;
                     //Debug.Log("zzz");
                     // 生成する
 
