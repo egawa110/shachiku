@@ -236,9 +236,10 @@ GameObject:
   - component: {fileID: 6978423762210769265}
   - component: {fileID: 6590640079749845671}
   - component: {fileID: 8732688030517432168}
+  - component: {fileID: -4982930926438726419}
   m_Layer: 0
   m_Name: Zyuto_Myuusey
-  m_TagString: Dead
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -439,3 +440,17 @@ CircleCollider2D:
   m_Offset: {x: 0.063050866, y: 0.48339093}
   serializedVersion: 2
   m_Radius: 0.98742354
+--- !u!114 &-4982930926438726419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6694177340419223938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff186747214b11049852be39da8dba3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP_E: 1
+  EnemyDamage_SE: {fileID: 8300000, guid: 3e9daad7b0c45074abdcac74f58dea58, type: 3}

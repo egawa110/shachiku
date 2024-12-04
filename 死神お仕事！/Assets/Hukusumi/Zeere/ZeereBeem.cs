@@ -34,5 +34,12 @@ public class ZeereBeem : MonoBehaviour
 
 
     }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("KinKill"))//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
+        {
+            Destroy(gameObject);//このゲームオブジェクトを消滅させる
+        }
+    }
 
 }

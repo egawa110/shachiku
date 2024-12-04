@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 4530400031986741079}
   - component: {fileID: 7004699919264343239}
   - component: {fileID: -4730005824483507180}
+  - component: {fileID: -265533026075872929}
   m_Layer: 0
   m_Name: Migu_Nyumu
-  m_TagString: Dead
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -208,9 +209,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.5
-  isToRight: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  jump: 9
+  jump: 10
   firetime: 3
+--- !u!114 &-265533026075872929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413604111671354255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff186747214b11049852be39da8dba3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP_E: 1
+  EnemyDamage_SE: {fileID: 8300000, guid: 3e9daad7b0c45074abdcac74f58dea58, type: 3}

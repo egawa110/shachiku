@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2856895683073385923}
   - component: {fileID: 1311125233028326664}
   - component: {fileID: 6971674997991488799}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Beem
-  m_TagString: Dead
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

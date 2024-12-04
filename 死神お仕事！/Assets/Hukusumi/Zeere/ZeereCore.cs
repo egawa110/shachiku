@@ -46,10 +46,12 @@ public class ZeereCore : MonoBehaviour
     bool ReeserLooc = false;//ビームロック
     bool LongLooc = false;//延長ロック
 
+    public int HP_Z = 40;    //敵の体力
+    private bool inDamage;  //ダメージ中のフラグ
+
     private void Start()
     {
        
-        // プレイヤーのTransformを取得（プレイヤーのタグをPlayerに設定必要）
         Reel = GameObject.FindGameObjectWithTag("ZeeReeL").transform;
         gateTransform = GameObject.FindGameObjectWithTag("SamonTG").transform;
 
@@ -298,17 +300,19 @@ public class ZeereCore : MonoBehaviour
             }
             if (passedTimes > 4)
             {
-                
 
-                Transform myTransform = this.transform;
-                Vector2 worldPos = myTransform.position;
-                Instantiate(prefab_A, new Vector2(brx, bry), Quaternion.identity);
-                Instantiate(prefab_A, new Vector2(-brx, bry), Quaternion.identity);
-                Transform myTransformA = this.transform;
-                Vector2 worldPosA = myTransformA.position;
-                Instantiate(prefab_B, new Vector2(brx, bry), Quaternion.identity);
-                Instantiate(prefab_B, new Vector2(-brx, bry), Quaternion.identity);
-                brx += rx;
+                if (Cool == false)
+                {
+                    Transform myTransform = this.transform;
+                    Vector2 worldPos = myTransform.position;
+                    Instantiate(prefab_A, new Vector2(brx, bry), Quaternion.identity);
+                    Instantiate(prefab_A, new Vector2(-brx, bry), Quaternion.identity);
+                    Transform myTransformA = this.transform;
+                    Vector2 worldPosA = myTransformA.position;
+                    Instantiate(prefab_B, new Vector2(brx, bry), Quaternion.identity);
+                    Instantiate(prefab_B, new Vector2(-brx, bry), Quaternion.identity);
+                    brx += rx;
+                }
                 if (passedTimes > 4.3&&SamonC < 5)
                 {
                     SamonC += 1;
@@ -318,11 +322,11 @@ public class ZeereCore : MonoBehaviour
                 }
                 if (brx > boder)
                 {
-                    brx = 0.5f;
-                   
+                    Cool = true;
                 }
                 if (passedTimes > 4.5)
                 {
+                    brx = 0.5f;
                     passedTimes = 0;
                     AttackLooc = false;
                     RitoningAttack = false;
@@ -331,6 +335,7 @@ public class ZeereCore : MonoBehaviour
                     SamonLooc = false;
                     ReeserLooc = false;
                     LongLooc = false;
+                    Cool = false;
                 }
             }
         }
@@ -392,5 +397,39 @@ public class ZeereCore : MonoBehaviour
 
         }
 
+        if (other.gameObject.tag == "Bullet")
+        {
+            // 攻撃された時のエフェクト
+            GetDamage(other.gameObject);
+        }
+
+    }
+
+    void GetDamage(GameObject player)
+    {
+        if (PlayerController.gameState == "playing")
+        {
+            HP_Z--; //hpが減る
+            Debug.Log(HP_Z);
+            if (HP_Z > 0)
+            {
+                //ダメージフラグ　ON
+                inDamage = true;
+
+                Invoke(nameof(DamageEnd), 0.25f);
+            }
+            else
+            {
+                //やられる
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    //ダメージ終了
+    void DamageEnd()
+    {
+        inDamage = false; // ダメージフラグOFF
+        gameObject.GetComponent<SpriteRenderer>().enabled = true; // スプライトを元に戻す
     }
 }

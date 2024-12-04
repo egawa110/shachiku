@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6202692464170077153}
   m_Layer: 0
   m_Name: Ritoning
-  m_TagString: Dead
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

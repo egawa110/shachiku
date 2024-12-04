@@ -50,6 +50,8 @@ public class PlayerBoos : MonoBehaviour
 
     public int HP_P = 4;      //プレイヤーの体力
     private bool inDamage = false;  //ダメージ中のフラグ
+    float SafeTime = 0;
+    public float DCoolTime = 0.5f;
 
     // サウンド再生
     private AudioSource audioSource;
@@ -83,6 +85,9 @@ public class PlayerBoos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        
+        SafeTime += Time.deltaTime;//無敵カウント
         Transform myTransform = this.transform;
         Vector2 worldPos = myTransform.position;
         //ボスイベント
@@ -244,7 +249,7 @@ public class PlayerBoos : MonoBehaviour
             canAttack = true; //指定時間を超えたら攻撃可能にする
         }
 
-        if (Input.GetKeyDown(KeyCode.Z)) //Zキーを押したら
+        if (Input.GetKeyDown(KeyCode.K)&& BoosIve == false) //Kキーを押したら
         {
             //Debug.Log("ZZZ");
 
@@ -292,7 +297,7 @@ public class PlayerBoos : MonoBehaviour
         {
             Goal();
         }
-        else if (collision.gameObject.tag == "Dead" || collision.gameObject.tag == "ZeereCore")
+        else if (collision.gameObject.tag == "Dead" )
         {
             GameOver(); //ゲームオーバー
         }
@@ -309,8 +314,12 @@ public class PlayerBoos : MonoBehaviour
         else if (collision.gameObject.tag == "Enemy")
         {
             GetDamage(collision.gameObject);
-            //敵に当たった時に音を鳴らす
-            audioSource.PlayOneShot(Damage_SE);
+           
+        }
+        else if (collision.gameObject.tag == "ZeereCore")
+        {
+            GetDamage(collision.gameObject);
+            
         }
         else if (collision.gameObject.tag == "Switch")
         {
@@ -321,9 +330,12 @@ public class PlayerBoos : MonoBehaviour
 
     void GetDamage(GameObject enemy)
     {
-        if (gameState == "playing")
+        if (gameState == "playing"&&SafeTime>DCoolTime)
         {
+            SafeTime = 0;
             HP_P--; //hpが減る
+            //敵に当たった時に音を鳴らす
+            audioSource.PlayOneShot(Damage_SE);
             if (HP_P > 0)
             {
                 //移動停止
@@ -341,6 +353,7 @@ public class PlayerBoos : MonoBehaviour
             }
         }
     }
+    
 
     //ダメージ終了
     void DamageEnd()
