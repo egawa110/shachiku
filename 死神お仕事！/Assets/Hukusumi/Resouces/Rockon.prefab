@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 9057750267257257396}
   - component: {fileID: 1364968465726799059}
   - component: {fileID: 1165563192489003744}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rockon
-  m_TagString: Untagged
+  m_TagString: ZeereAtach
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

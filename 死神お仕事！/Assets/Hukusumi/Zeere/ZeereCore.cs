@@ -6,12 +6,15 @@ public class ZeereCore : MonoBehaviour
 {
     Transform Reel;
     [SerializeField] GameObject Samon;
-    [SerializeField] GameObject prefab_A;
-    [SerializeField] GameObject prefab_B;
+    [SerializeField] GameObject Ritning_A;
+    [SerializeField] GameObject Ritning_B;
     [SerializeField] GameObject Rain;
     [SerializeField] GameObject Rite;
     [SerializeField] GameObject Beem;
     [SerializeField] GameObject Helo;
+    [SerializeField] GameObject BossEnd;
+    [SerializeField] GameObject eye;
+
 
     Transform gateTransform;
     public Transform target;
@@ -54,12 +57,29 @@ public class ZeereCore : MonoBehaviour
        
         Reel = GameObject.FindGameObjectWithTag("ZeeReeL").transform;
         gateTransform = GameObject.FindGameObjectWithTag("SamonTG").transform;
+       
 
-        
+
+
     }
 
     private void Update()
     {
+        if (inDamage)
+        {
+            //ダメージ中、点滅させる
+            float val = Mathf.Sin(Time.time * 50);
+            if (val > 0)
+            {
+                //スプライトを表示
+                gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            }
+            else
+            {
+                //スプライトを非表示
+                gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            }
+        }
         //if (Input.GetKeyDown(KeyCode.G))//ON
         //{
         //    GO = true;
@@ -305,12 +325,12 @@ public class ZeereCore : MonoBehaviour
                 {
                     Transform myTransform = this.transform;
                     Vector2 worldPos = myTransform.position;
-                    Instantiate(prefab_A, new Vector2(brx, bry), Quaternion.identity);
-                    Instantiate(prefab_A, new Vector2(-brx, bry), Quaternion.identity);
+                    Instantiate(Ritning_A, new Vector2(brx, bry), Quaternion.identity);
+                    Instantiate(Ritning_A, new Vector2(-brx, bry), Quaternion.identity);
                     Transform myTransformA = this.transform;
                     Vector2 worldPosA = myTransformA.position;
-                    Instantiate(prefab_B, new Vector2(brx, bry), Quaternion.identity);
-                    Instantiate(prefab_B, new Vector2(-brx, bry), Quaternion.identity);
+                    Instantiate(Ritning_B, new Vector2(brx, bry), Quaternion.identity);
+                    Instantiate(Ritning_B, new Vector2(-brx, bry), Quaternion.identity);
                     brx += rx;
                 }
                 if (passedTimes > 4.3&&SamonC < 5)

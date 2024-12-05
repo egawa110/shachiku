@@ -91,7 +91,7 @@ public class PlayerBoos : MonoBehaviour
         Transform myTransform = this.transform;
         Vector2 worldPos = myTransform.position;
         //ボスイベント
-        if (worldPos.x>-12 && BICyec == false)//ON
+        if (worldPos.x>-13 && BICyec == false)//ON
         {
             BoosIve = true;
         }
