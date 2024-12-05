@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 3798197291852592389}
   - component: {fileID: 4469039410257748459}
   - component: {fileID: 4572549983745750037}
-  - component: {fileID: 4421611708898838151}
   m_Layer: 0
   m_Name: "\u6575\u30B5\u30A4\u30BA\u5909\u66F4\uFF11"
   m_TagString: Enemy
@@ -229,17 +228,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP_E: 6
   EnemyDamage_SE: {fileID: 8300000, guid: 3e9daad7b0c45074abdcac74f58dea58, type: 3}
-  _target: {fileID: 7580107209538225574}
-  _cycle: 1
---- !u!114 &4421611708898838151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4548657000076936131}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8fbdcd3a16bff2489384b6c78087188, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
