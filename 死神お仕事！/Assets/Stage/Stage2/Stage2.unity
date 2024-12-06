@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &1993686007
+--- !u!1001 &1343209168
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -131,25 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-<<<<<<< HEAD
-=======
-    - target: {fileID: 3076523993539827655, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
-      propertyPath: Loop
-      value: 1
+    - target: {fileID: 906262186881692767, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: jump
+      value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 4231560234004533132, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -73.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 4231560234004533132, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 37.428
-      objectReference: {fileID: 0}
-    - target: {fileID: 5923510289665522948, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
-      propertyPath: SceneName
-      value: St2
-      objectReference: {fileID: 0}
->>>>>>> 950dc26cd401c4315150a90804affc0634653f34
     - target: {fileID: 6611924174335174627, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: m_Name
       value: Stage2
@@ -196,7 +181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9070849990932730158, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -98
+      value: -98.000015
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -207,4 +192,4 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1993686007}
+  - {fileID: 1343209168}

@@ -175,6 +175,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage1
       objectReference: {fileID: 0}
+    - target: {fileID: 4827651566796840152, guid: ab5e395d174c4a84f88b0b35bb6a9a13, type: 3}
+      propertyPath: jump
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035538833355338843, guid: ab5e395d174c4a84f88b0b35bb6a9a13, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -98
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
