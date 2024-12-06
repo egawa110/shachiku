@@ -820,6 +820,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1552333923}
+  - {fileID: 1788190340}
   m_Father: {fileID: 1198253381}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &446779641
@@ -1061,7 +1062,7 @@ MonoBehaviour:
   attackPoint: {fileID: 640721386}
   attackTime: 1
   fireSpeed: 8
-  HP_P: 4
+  HP_P: 99
   DCoolTime: 0.5
   Jump_SE: {fileID: 8300000, guid: 9c87b10dce5671c46ad6d159ac79b163, type: 3}
   Damage_SE: {fileID: 8300000, guid: 1b2f3ad45283c9e4496672801bd1a76c, type: 3}
@@ -1462,7 +1463,7 @@ MonoBehaviour:
   rx: 1
   boder: 10
   GO: 0
-  HP_Z: 5
+  HP_Z: 10
 --- !u!212 &1198253380
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1531,7 +1532,6 @@ Transform:
   - {fileID: 563236232}
   - {fileID: 446779640}
   - {fileID: 1147076685}
-  - {fileID: 1788190340}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &1229631982
@@ -3184,11 +3184,11 @@ Transform:
   m_GameObject: {fileID: 1788190339}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -1, w: 0}
-  m_LocalPosition: {x: 0.046, y: -0.095, z: 0}
+  m_LocalPosition: {x: 0.008000001, y: -0.017000027, z: 0}
   m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 0.6666667}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1198253381}
+  m_Father: {fileID: 446779640}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1788190341
 SpriteRenderer:
