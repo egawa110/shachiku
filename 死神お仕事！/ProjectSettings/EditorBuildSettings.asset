@@ -36,28 +36,43 @@ EditorBuildSettings:
     path: Assets/Egawa/Ending/Ending.unity
     guid: 460d46ab3e623c94a9465a64326a99e7
   - enabled: 1
-    path: Assets/Egawa/StageSelect/1scene.unity
+    path: "Assets/Egawa/StageSelect/\u30B9\u30C8\u30FC\u30EA\u30FC\u30B7\u30FC\u30F3/1scene.unity"
     guid: 6b8c96a6964519545a9c6b9e63801077
   - enabled: 1
-    path: Assets/Egawa/StageSelect/2scene.unity
+    path: "Assets/Egawa/StageSelect/\u30B9\u30C8\u30FC\u30EA\u30FC\u30B7\u30FC\u30F3/2scene.unity"
     guid: 51303f840b57f07488e467c6e8fe10ac
   - enabled: 1
-    path: Assets/Egawa/StageSelect/3scene.unity
+    path: "Assets/Egawa/StageSelect/\u30B9\u30C8\u30FC\u30EA\u30FC\u30B7\u30FC\u30F3/3scene.unity"
     guid: 74460f2f3aae3df458c1a3d89fbc5b45
   - enabled: 1
-    path: Assets/Egawa/StageSelect/4scene.unity
+    path: "Assets/Egawa/StageSelect/\u30B9\u30C8\u30FC\u30EA\u30FC\u30B7\u30FC\u30F3/4scene.unity"
     guid: 8b27e3840d9b65d428836bd89624eb93
+  - enabled: 1
+    path: "Assets/Egawa/StageSelect/\u30B9\u30C6\u30FC\u30B8\u30BB\u30EC\u30AF\u30C8/St1.unity"
+    guid: a8c729993a3f12f408b556c3f0f70819
+  - enabled: 1
+    path: "Assets/Egawa/StageSelect/\u30B9\u30C6\u30FC\u30B8\u30BB\u30EC\u30AF\u30C8/St2.unity"
+    guid: e931947a2221c4442b700c778d11e3c3
+  - enabled: 1
+    path: "Assets/Egawa/StageSelect/\u30B9\u30C6\u30FC\u30B8\u30BB\u30EC\u30AF\u30C8/St3.unity"
+    guid: 00e8f48e0bd1fa341ad7925388167e81
+  - enabled: 1
+    path: "Assets/Egawa/StageSelect/\u30B9\u30C6\u30FC\u30B8\u30BB\u30EC\u30AF\u30C8/St5.unity"
+    guid: dbea56fe51a892149b3fed82f3eeb736
+  - enabled: 1
+    path: "Assets/Egawa/StageSelect/\u30B9\u30C6\u30FC\u30B8\u30BB\u30EC\u30AF\u30C8/StBOSS.unity"
+    guid: 5a0c505f7dfb69646a396a7ff2d21070
   - enabled: 1
     path: Assets/Stage/Stage1/Stage1set.unity
     guid: abd8a0ef13f2ab14da96672818525625
   - enabled: 1
-    path: Assets/Egawa/StageSelect/5scene.unity
+    path: "Assets/Egawa/StageSelect/\u30B9\u30C8\u30FC\u30EA\u30FC\u30B7\u30FC\u30F3/5scene.unity"
     guid: f28d98678658cf24e9d9f2d29c32e410
   - enabled: 1
-    path: Assets/Egawa/StageSelect/6scene.unity
+    path: "Assets/Egawa/StageSelect/\u30B9\u30C8\u30FC\u30EA\u30FC\u30B7\u30FC\u30F3/6scene.unity"
     guid: d885f696662396149b8ccb0f92bec9ce
   - enabled: 1
-    path: Assets/Egawa/StageSelect/StageSelect.unity
+    path: "Assets/Egawa/StageSelect/\u30B9\u30C6\u30FC\u30B8\u30BB\u30EC\u30AF\u30C8/St4.unity"
     guid: 3fe4695b2d146cf4084ed8f2f2e5a10b
   - enabled: 1
     path: Assets/Stage/Stage2/Stage2set.unity
