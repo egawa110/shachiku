@@ -31,16 +31,27 @@ public class Migu_Nyumu : MonoBehaviour
         Transform yTransform = playerTr.transform;
         Vector2 orldPos = yTransform.position;
         passedTimes += Time.deltaTime;//ŽžŠÔŒo‰ß
-        if (worldPos.y - orldPos.y > 2&&worldPos.x-orldPos.x<=5||worldPos.y-orldPos.y<-2&&worldPos.x-orldPos.x>=-5)
+        if (worldPos.y - orldPos.y > 2 || worldPos.y - orldPos.y < -2)
         {
-
-            transform.position = Vector2.MoveTowards(
-                   transform.position,
-                   new Vector2(playerTr.position.x, worldPos.y),
-                   -speed * Time.deltaTime);
-            if (passedTimes >= firetime)
+            if (worldPos.x - orldPos.x <= 5&& worldPos.x - orldPos.x >0 || worldPos.x - orldPos.x >= -5 && worldPos.x - orldPos.x < 0)
             {
-                Jump();
+
+                transform.position = Vector2.MoveTowards(
+                       transform.position,
+                       new Vector2(playerTr.position.x, worldPos.y),
+                       -speed * Time.deltaTime);
+                if (passedTimes >= firetime)
+                {
+                    Jump();
+                }
+            }
+            else
+            {
+
+                transform.position = Vector2.MoveTowards(
+                       transform.position,
+                       new Vector2(playerTr.position.x, worldPos.y),
+                       speed * Time.deltaTime);
             }
         }
         else

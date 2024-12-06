@@ -372,11 +372,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4892329473010327035, guid: 802fbea0ac6b9dd4093fcffd1792e878, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.88
+      value: 5.34
       objectReference: {fileID: 0}
     - target: {fileID: 4892329473010327035, guid: 802fbea0ac6b9dd4093fcffd1792e878, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.95
+      value: 0.92
       objectReference: {fileID: 0}
     - target: {fileID: 4892329473010327035, guid: 802fbea0ac6b9dd4093fcffd1792e878, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1043,12 +1043,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Samon: {fileID: 2092714078568262376, guid: 1ef17f78ce339b340bbf5457141379ec, type: 3}
-  prefab_A: {fileID: 1163707311380782307, guid: 0463f6e519d6e8c4c9a0bd08309cfd9a, type: 3}
-  prefab_B: {fileID: 4774165697195709479, guid: 78e1fd23e79697f4abb668221f067057, type: 3}
+  Ritning_A: {fileID: 0}
+  Ritning_B: {fileID: 0}
   Rain: {fileID: 5965981361372436574, guid: 33fb0b09195251846bcd62165cc5b135, type: 3}
   Rite: {fileID: 4920715964166157943, guid: d5a4e48f0d150ef458119f5c77f26c07, type: 3}
   Beem: {fileID: 7257482259953934961, guid: 6d3f7de5e2b7fd640a8ec44bb348a712, type: 3}
   Helo: {fileID: 6196895771319119964, guid: 3ce6e9a2c53fe2c41a1285def8bc24d4, type: 3}
+  BossEnd: {fileID: 0}
+  eye: {fileID: 0}
   target: {fileID: 0}
   speed: 5
   Attack: 5
@@ -1057,6 +1059,7 @@ MonoBehaviour:
   rx: 1
   boder: 10
   GO: 0
+  HP_Z: 40
 --- !u!212 &973092005
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3089,11 +3092,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1538318286343054700, guid: 323ebb0e13b329845bcd08377e1db4e5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.3902707
+      value: -7.34
       objectReference: {fileID: 0}
     - target: {fileID: 1538318286343054700, guid: 323ebb0e13b329845bcd08377e1db4e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.7498589
+      value: -2.45
       objectReference: {fileID: 0}
     - target: {fileID: 1538318286343054700, guid: 323ebb0e13b329845bcd08377e1db4e5, type: 3}
       propertyPath: m_LocalPosition.z
