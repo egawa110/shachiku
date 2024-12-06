@@ -52,13 +52,20 @@ public class ZeereCore : MonoBehaviour
     public int HP_Z = 40;    //敵の体力
     private bool inDamage;  //ダメージ中のフラグ
 
+    GameObject Zeere1;
+    GameObject Zeere2;
+    GameObject Zeere3;
+    GameObject Zeere4;
+
     private void Start()
     {
        
         Reel = GameObject.FindGameObjectWithTag("ZeeReeL").transform;
         gateTransform = GameObject.FindGameObjectWithTag("SamonTG").transform;
-       
-
+        Zeere1 = GameObject.Find("ZeerenoTyuusinnZERO");
+        Zeere2 = GameObject.Find("ZeerenoTyuusinn");
+        Zeere3 = GameObject.Find("ZeereEye");
+        Zeere4 = GameObject.Find("ZeereKabar");
 
 
     }
@@ -73,12 +80,29 @@ public class ZeereCore : MonoBehaviour
             {
                 //スプライトを表示
                 gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                Zeere1.GetComponent<SpriteRenderer>().enabled = true;
+                Zeere2.GetComponent<SpriteRenderer>().enabled = true;
+                Zeere3.GetComponent<SpriteRenderer>().enabled = true;
+                Zeere4.GetComponent<SpriteRenderer>().enabled = true;
             }
             else
             {
                 //スプライトを非表示
                 gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                Zeere1.GetComponent<SpriteRenderer>().enabled = false;
+                Zeere2.GetComponent<SpriteRenderer>().enabled = false;
+                Zeere3.GetComponent<SpriteRenderer>().enabled = false;
+                Zeere4.GetComponent<SpriteRenderer>().enabled = false;
             }
+        }
+        else
+        {
+            //スプライトを表示
+            gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            Zeere1.GetComponent<SpriteRenderer>().enabled = true;
+            Zeere2.GetComponent<SpriteRenderer>().enabled = true;
+            Zeere3.GetComponent<SpriteRenderer>().enabled = true;
+            Zeere4.GetComponent<SpriteRenderer>().enabled = true;
         }
         //if (Input.GetKeyDown(KeyCode.G))//ON
         //{
