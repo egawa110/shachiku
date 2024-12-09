@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
+//using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.Android;
 
@@ -49,7 +49,7 @@ public class Player_s : MonoBehaviour
     private bool inDamage = false;  //ダメージ中のフラグ
 
     // サウンド再生
-    //private AudioSource audioSource;
+    private AudioSource audioSource;
     //public AudioClip Jump_SE;
     //public AudioClip Damage_SE;
     //public AudioClip GetSoul_SE;
@@ -75,7 +75,7 @@ public class Player_s : MonoBehaviour
         gameState = "playing";//ゲーム中にする
 
         currentAttackTime = attackTime; //currentAttackTimeにattackTimeをセット。
-        //audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
 
         gauge = GetComponent<GaugeController>();
     }
@@ -138,24 +138,13 @@ public class Player_s : MonoBehaviour
             }
             return; // ダメージ中は操作による移動をさせない
         }
-        //CircleCast
-
-        /*
-                 bool onGround = Physics2D.CircleCast(transform.position,    //発射位置
-                                             1.5f,                  //円の半径
-                                             Vector2.down,          //発射方向
-                                             0.0f,                  //発射距離
-                                             groundLayer);          //検出するレイヤー
-
-         */
-
-
         //地上判定
         bool onGround = Physics2D.CircleCast(transform.position,    //発射位置
                                              0.7f,                  //円の半径
                                              Vector2.down,          //発射方向
                                              1.0f,                  //発射距離
                                              groundLayer);          //検出するレイヤー
+        
         if (onGround || axisH != 0)
         {
             //速度を更新する
@@ -280,6 +269,7 @@ public class Player_s : MonoBehaviour
             GetDamage(collision.gameObject);
 
             //gauge.BeInjured(1);
+            //Debug.Log("GaugeControllerが呼び出された！");
 
             //敵に当たった時に音を鳴らす
             //audioSource.PlayOneShot(Damage_SE);
@@ -297,6 +287,8 @@ public class Player_s : MonoBehaviour
         {
             HP_P--; //hpが減る
 
+            Debug.Log("１ダメージ！");
+
             if (HP_P > 0)
             {
                 //移動停止
@@ -306,8 +298,6 @@ public class Player_s : MonoBehaviour
                 //ダメージフラグ　ON
                 inDamage = true;
                 Invoke(nameof(DamageEnd), 0.25f);
-
-                gauge.BeInjured(1);
             }
             else
             {
@@ -322,6 +312,10 @@ public class Player_s : MonoBehaviour
     {
         inDamage = false; // ダメージフラグOFF
         gameObject.GetComponent<SpriteRenderer>().enabled = true; // スプライトを元に戻す
+
+
+        //Debug.Log("GaugeControllerが呼び出された！");
+        //gauge.BeInjured(1);
     }
     // ゴール
     public void Goal()
@@ -331,7 +325,6 @@ public class Player_s : MonoBehaviour
         GameStop();             // ゲーム停止
         //音楽を鳴らす
         //audioSource.PlayOneShot(Clear_SE);
-
     }
 
     // ゲームオーバー
@@ -346,6 +339,8 @@ public class Player_s : MonoBehaviour
         rbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
         //音楽を鳴らす
         //audioSource.PlayOneShot(Over_SE);
+
+        Debug.Log("ゲームオーバー！");
     }
 
 
