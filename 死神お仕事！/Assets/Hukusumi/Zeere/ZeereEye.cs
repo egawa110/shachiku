@@ -8,19 +8,19 @@ public class ZeereEye : MonoBehaviour
     Transform playerTr;
     Transform Zeere;
     [SerializeField] float speed = 1; // 敵の動くスピード
-    SpriteRenderer sp;
-    Color spriteColor;
-    public float duration = 5.0f;
     bool on = false;
-    float fade = 0;
+    
+
+
     // Start is called before the first frame update
     void Start()
     {
         playerTr = GameObject.FindGameObjectWithTag("Player").transform;
         Zeere = GameObject.FindGameObjectWithTag("ZeereCore").transform;
-        sp = GetComponent<SpriteRenderer>();
-        spriteColor = sp.color;
-        StartCoroutine(Fade(fade));
+
+        Color color = gameObject.GetComponent<SpriteRenderer>().color;
+        color.a = 0.0f;
+        gameObject.GetComponent<SpriteRenderer>().color = color;
     }
 
     // Update is called once per frame
@@ -42,24 +42,21 @@ public class ZeereEye : MonoBehaviour
         //        new Vector2(Zeere.position.x, Zeere.position.y),
         //        0.1f * Time.deltaTime);
         //}
+        if (on == true)
+        {
+            Color color = gameObject.GetComponent<SpriteRenderer>().color;
+            if (color.a <= 1.0f)
+            {
+                color.a += 0.01f;
+                gameObject.GetComponent<SpriteRenderer>().color = color;
+            }
+        }
     }
 
     public void ON()
     {
-        on = true;
-        fade = 1;
+        on = !on;
     }
 
-    IEnumerator Fade(float targetAlpha)
-    {
-        
-            while (!Mathf.Approximately(spriteColor.a, targetAlpha))
-            {
-                float changePerFrame = Time.deltaTime / duration;
-                spriteColor.a = Mathf.MoveTowards(spriteColor.a, targetAlpha, changePerFrame);
-                sp.color = spriteColor;
-                yield return null;
-            }
-        
-    }
+    
 }

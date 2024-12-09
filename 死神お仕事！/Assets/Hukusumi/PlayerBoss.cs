@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerBoss : MonoBehaviour
 {
@@ -48,8 +49,12 @@ public class PlayerBoss : MonoBehaviour
     bool BICyec = false;//イベント制限
 
 
-    public int HP_P = 4;      //プレイヤーの体力
+    public int maxHp = 4;      //プレイヤーの最大Hp
+    int Hp;                    //プレイヤーの現在Hp
     private bool inDamage = false;  //ダメージ中のフラグ
+
+    public Slider slider;      //スライダー用の変数
+
     float SafeTime = 0;
     public float DCoolTime = 0.5f;
 
@@ -80,6 +85,8 @@ public class PlayerBoss : MonoBehaviour
 
         currentAttackTime = attackTime; //currentAttackTimeにattackTimeをセット。
         audioSource = GetComponent<AudioSource>();
+        slider.value = 4; // Sliderを最大Hpにする
+        Hp = maxHp;       // Hpと最大Hpを同じ値にする
     }
 
     // Update is called once per frame
@@ -117,7 +124,7 @@ public class PlayerBoss : MonoBehaviour
                 //速度を０にして強制停止
                 rbody.velocity = new Vector2(0, 0);
             }
-            if(BossIveTime>8)
+            if(BossIveTime>10.5f)
             {
                 BICyec = true;
                 BoosIve = false;
@@ -333,10 +340,12 @@ public class PlayerBoss : MonoBehaviour
         if (gameState == "playing"&&SafeTime>DCoolTime)
         {
             SafeTime = 0;
-            HP_P--; //hpが減る
+            Hp--; //hpが減る
+            slider.value = Hp; // 減ったHPをスライダーに反映する
             //敵に当たった時に音を鳴らす
+
             audioSource.PlayOneShot(Damage_SE);
-            if (HP_P > 0)
+            if (Hp > 0)
             {
                 //移動停止
                 rbody.velocity = new Vector2(0, 0);
