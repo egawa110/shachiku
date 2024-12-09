@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Android;
 
 public class Player_s : MonoBehaviour
@@ -45,11 +45,14 @@ public class Player_s : MonoBehaviour
     private bool canAttack;                           //攻撃可能状態かを指定するフラグ
 
 
-    public int HP_P = 4;      //プレイヤーの体力
+    public int MAX_HP = 4;      //プレイヤーの最大体力
+    int NOW_HP;                 //プレイヤーの現在体力
+    // Slider
+    public Slider slider;       //スライダー
     private bool inDamage = false;  //ダメージ中のフラグ
 
     // サウンド再生
-    //private AudioSource audioSource;
+    private AudioSource audioSource;
     //public AudioClip Jump_SE;
     //public AudioClip Damage_SE;
     //public AudioClip GetSoul_SE;
@@ -58,7 +61,6 @@ public class Player_s : MonoBehaviour
     //public AudioClip Clear_SE;
     //public AudioClip Over_SE;
 
-    private GaugeController gauge;//GaugeControllerスクリプト用の変数
 
     // Start is called before the first frame update
     void Start()
@@ -75,9 +77,12 @@ public class Player_s : MonoBehaviour
         gameState = "playing";//ゲーム中にする
 
         currentAttackTime = attackTime; //currentAttackTimeにattackTimeをセット。
-        //audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
 
-        gauge = GetComponent<GaugeController>();
+        // Sliderを最大に
+        slider.value = 4;
+        //HPを最大HPと同じ価に
+        NOW_HP = MAX_HP;
     }
 
     // Update is called once per frame
@@ -138,24 +143,13 @@ public class Player_s : MonoBehaviour
             }
             return; // ダメージ中は操作による移動をさせない
         }
-        //CircleCast
-
-        /*
-                 bool onGround = Physics2D.CircleCast(transform.position,    //発射位置
-                                             1.5f,                  //円の半径
-                                             Vector2.down,          //発射方向
-                                             0.0f,                  //発射距離
-                                             groundLayer);          //検出するレイヤー
-
-         */
-
-
         //地上判定
         bool onGround = Physics2D.CircleCast(transform.position,    //発射位置
                                              0.7f,                  //円の半径
                                              Vector2.down,          //発射方向
                                              1.0f,                  //発射距離
                                              groundLayer);          //検出するレイヤー
+        
         if (onGround || axisH != 0)
         {
             //速度を更新する
@@ -279,8 +273,6 @@ public class Player_s : MonoBehaviour
         {
             GetDamage(collision.gameObject);
 
-            //gauge.BeInjured(1);
-
             //敵に当たった時に音を鳴らす
             //audioSource.PlayOneShot(Damage_SE);
         }
@@ -295,9 +287,12 @@ public class Player_s : MonoBehaviour
     {
         if (gameState == "playing")
         {
-            HP_P--; //hpが減る
+            NOW_HP--;
 
-            if (HP_P > 0)
+            // Sliderに反映
+            slider.value = (float)NOW_HP;
+
+            if (NOW_HP > 0)
             {
                 //移動停止
                 rbody.velocity = new Vector2(0, 0);
@@ -306,8 +301,6 @@ public class Player_s : MonoBehaviour
                 //ダメージフラグ　ON
                 inDamage = true;
                 Invoke(nameof(DamageEnd), 0.25f);
-
-                gauge.BeInjured(1);
             }
             else
             {
@@ -331,7 +324,6 @@ public class Player_s : MonoBehaviour
         GameStop();             // ゲーム停止
         //音楽を鳴らす
         //audioSource.PlayOneShot(Clear_SE);
-
     }
 
     // ゲームオーバー
@@ -346,6 +338,8 @@ public class Player_s : MonoBehaviour
         rbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
         //音楽を鳴らす
         //audioSource.PlayOneShot(Over_SE);
+
+        Debug.Log("ゲームオーバー！");
     }
 
 

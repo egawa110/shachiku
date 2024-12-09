@@ -25,6 +25,9 @@ public class GaugeController : MonoBehaviour
     // 攻撃力をそれぞれのボタンで設定
     public void BeInjured(int atacck)
     {
+
+        Debug.Log("ダメージ！");
+
         // 攻撃力と体力1あたりの幅の積が実際に体力ゲージから減らす幅
         float damege = _HP1 * atacck;
 
@@ -35,6 +38,8 @@ public class GaugeController : MonoBehaviour
     // 体力ゲージを減らすコルーチン
     IEnumerator damegeEm(float damege)
     {
+        Debug.Log("体力が減るよ！");
+
         // 体力ゲージの幅と高さをVector2で取り出す(Width,Height)
         Vector2 nowsafes = _gauge.GetComponent<RectTransform>().sizeDelta;
         // 体力ゲージの幅からダメージ分の幅を引く

@@ -35,6 +35,7 @@ public class BulletController : MonoBehaviour
         gateTransform = transform.Find("gate");
         //ÉvÉåÉCÉÑÅ[ÇéÊìæ
         player = GameObject.FindGameObjectWithTag("Player");
+        audioSource = GetComponent<AudioSource>();
     }
 
     //Update is Called once per frame
@@ -60,6 +61,8 @@ public class BulletController : MonoBehaviour
                 float y = Mathf.Sin(angleZ * Mathf.Deg2Rad);
                 Vector2 v = new Vector2(-x, y) * fireSpeed;
                 rbody.AddForce(v, ForceMode2D.Impulse);
+
+                audioSource.PlayOneShot(Enemy_Atk);
             }
         }
     }
