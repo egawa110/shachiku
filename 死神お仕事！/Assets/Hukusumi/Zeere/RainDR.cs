@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class RainDR : MonoBehaviour
 {
+    private AudioSource audioSource;
+    public AudioClip Rain_SE;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
+        audioSource.PlayOneShot(Rain_SE);
     }
 
     // Update is called once per frame

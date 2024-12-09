@@ -14,6 +14,10 @@ public class ZeereCore : MonoBehaviour
     [SerializeField] GameObject Helo;
     [SerializeField] GameObject BossEnd;
     [SerializeField] GameObject eye;
+    [SerializeField] GameObject GameClear;
+    [SerializeField] GameObject Fadeout;
+
+    public GameObject GameUI;
 
 
     Transform gateTransform;
@@ -49,6 +53,10 @@ public class ZeereCore : MonoBehaviour
     bool ReeserLooc = false;//ビームロック
     bool LongLooc = false;//延長ロック
 
+    bool EndF = false;
+    bool Crear = false;
+    bool Fade = false;
+
     public int HP_Z = 40;    //敵の体力
     private bool inDamage;  //ダメージ中のフラグ
 
@@ -72,11 +80,33 @@ public class ZeereCore : MonoBehaviour
 
     private void Update()
     {
-        if (inDamage)
+        passedTimes += Time.deltaTime;//時間経過
+        if (GO == true)
         {
-            //ダメージ中、点滅させる
-            float val = Mathf.Sin(Time.time * 50);
-            if (val > 0)
+            if (inDamage)
+            {
+                //ダメージ中、点滅させる
+                float val = Mathf.Sin(Time.time * 50);
+                if (val > 0)
+                {
+                    //スプライトを表示
+                    gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                    Zeere1.GetComponent<SpriteRenderer>().enabled = true;
+                    Zeere2.GetComponent<SpriteRenderer>().enabled = true;
+                    Zeere3.GetComponent<SpriteRenderer>().enabled = true;
+                    Zeere4.GetComponent<SpriteRenderer>().enabled = true;
+                }
+                else
+                {
+                    //スプライトを非表示
+                    gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                    Zeere1.GetComponent<SpriteRenderer>().enabled = false;
+                    Zeere2.GetComponent<SpriteRenderer>().enabled = false;
+                    Zeere3.GetComponent<SpriteRenderer>().enabled = false;
+                    Zeere4.GetComponent<SpriteRenderer>().enabled = false;
+                }
+            }
+            else
             {
                 //スプライトを表示
                 gameObject.GetComponent<SpriteRenderer>().enabled = true;
@@ -85,24 +115,6 @@ public class ZeereCore : MonoBehaviour
                 Zeere3.GetComponent<SpriteRenderer>().enabled = true;
                 Zeere4.GetComponent<SpriteRenderer>().enabled = true;
             }
-            else
-            {
-                //スプライトを非表示
-                gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                Zeere1.GetComponent<SpriteRenderer>().enabled = false;
-                Zeere2.GetComponent<SpriteRenderer>().enabled = false;
-                Zeere3.GetComponent<SpriteRenderer>().enabled = false;
-                Zeere4.GetComponent<SpriteRenderer>().enabled = false;
-            }
-        }
-        else
-        {
-            //スプライトを表示
-            gameObject.GetComponent<SpriteRenderer>().enabled = true;
-            Zeere1.GetComponent<SpriteRenderer>().enabled = true;
-            Zeere2.GetComponent<SpriteRenderer>().enabled = true;
-            Zeere3.GetComponent<SpriteRenderer>().enabled = true;
-            Zeere4.GetComponent<SpriteRenderer>().enabled = true;
         }
         //if (Input.GetKeyDown(KeyCode.G))//ON
         //{
@@ -116,18 +128,26 @@ public class ZeereCore : MonoBehaviour
             //待機場所へ移動
             transform.position = Vector2.MoveTowards(
                transform.position,
-               new Vector2(0, -3),
+               new Vector2(0, -4.5f),
                speed * Time.deltaTime);
         }
         if(GO==true&&GoOK==false)
         {
-            //指定位置に上昇
-            transform.position = Vector2.MoveTowards(
-               transform.position,
-               new Vector2(0, 3),
-               1 * Time.deltaTime);
+            if(passedTimes>1)
+            {
+                ZeereEye Eyeon = Zeere3.GetComponent<ZeereEye>();
+                Eyeon.ON();
+            }
+            if (passedTimes > 2)
+            {
+                //指定位置に上昇
+                transform.position = Vector2.MoveTowards(
+                   transform.position,
+                   new Vector2(0, 3),
+                   1 * Time.deltaTime);
+            }
 
-            if (passedTimes>5&&Cool==false)
+            if (passedTimes>7&&Cool==false)
             {
                 Cool = true;
                 Transform myTransform = this.transform;
@@ -137,7 +157,7 @@ public class ZeereCore : MonoBehaviour
                 Instantiate(Helo, new Vector2(x, y), Quaternion.identity);
 
             }
-            if(passedTimes>7)
+            if(passedTimes>9)
             {
                 ReeserAttack = !ReeserAttack;
                 ReeserLooc = !ReeserLooc;
@@ -148,7 +168,7 @@ public class ZeereCore : MonoBehaviour
             }
         }
         rnd = Random.Range(1, 6);
-        if (Cool==true&&GoOK==true)
+        if (Cool==true&&GoOK==true&&EndF==false)
         {
             coorTime += Time.deltaTime;//時間経過
             if(coorTime>3)
@@ -157,7 +177,7 @@ public class ZeereCore : MonoBehaviour
                 AttackLooc = false;
             }
         }
-        passedTimes += Time.deltaTime;//時間経過
+       
         if (passedTimes > Attack)
         {
             if (AttackLooc == false)//起動用
@@ -413,6 +433,29 @@ public class ZeereCore : MonoBehaviour
 
         }
 
+        if(EndF==true)
+        {
+            if (passedTimes > 5)
+            {
+                if(Fade==false)
+                {
+                    Fade = true;
+                    Transform myTransform = this.transform;
+                    Vector2 worldPos = myTransform.position;
+                    Instantiate(Fadeout, new Vector2(0, 0), Quaternion.identity);
+                }
+            }
+            if (passedTimes > 10 && Crear == false)
+            {
+                //Transform myTransform = this.transform;
+                //Vector2 worldPos = myTransform.position;
+                //Instantiate(GameClear, new Vector2(0, 0), Quaternion.identity);
+                GameObject obj = Instantiate(GameClear, new Vector2(0, 0), Quaternion.identity);
+                obj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                Crear = true;
+            }
+        }
+
     }
 
     public void Zeereon()
@@ -422,25 +465,26 @@ public class ZeereCore : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other) //ぶつかったら消える命令文開始
     {
-
-        if (other.CompareTag("Ground")&&BusteAttack==true)//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
+        if (EndF == false)
         {
-            BusteAttack = false;
-            passedTimes = 0;
-            coorTime = 0;
-            Cool = true;
-            
+            if (other.CompareTag("Ground") && BusteAttack == true)//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
+            {
+                BusteAttack = false;
+                passedTimes = 0;
+                coorTime = 0;
+                Cool = true;
+
+            }
+
+            if (other.CompareTag("Wall") && BusteAttack == true)//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
+            {
+                BusteAttack = false;
+                passedTimes = 0;
+                coorTime = 0;
+                Cool = true;
+
+            }
         }
-
-        if (other.CompareTag("Wall") && BusteAttack == true)//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
-        {
-            BusteAttack = false;
-            passedTimes = 0;
-            coorTime = 0;
-            Cool = true;
-
-        }
-
         if (other.gameObject.tag == "Bullet")
         {
             // 攻撃された時のエフェクト
@@ -464,8 +508,24 @@ public class ZeereCore : MonoBehaviour
             }
             else
             {
+                GameManager S5UI = GameUI.GetComponent<GameManager>();
+                S5UI.BossKill();
                 //やられる
-                Destroy(gameObject);
+                AttackLooc = true;
+                BusteAttack = false;
+                SamonAttack = false;
+                RitoningAttack = false;
+                ReeserAttack = false;
+                if (EndF ==false)
+                {
+                    passedTimes = 0;
+                    EndF = true;
+                    Transform myTransform = this.transform;
+                    Vector2 worldPos = myTransform.position;
+                    Instantiate(BossEnd, new Vector2(0, 0), Quaternion.identity);
+                }
+                
+
             }
         }
     }
