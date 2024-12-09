@@ -61,7 +61,6 @@ public class Player_s : MonoBehaviour
     //public AudioClip Clear_SE;
     //public AudioClip Over_SE;
 
-    private GaugeController gauge;//GaugeControllerスクリプト用の変数
 
     // Start is called before the first frame update
     void Start()
@@ -84,8 +83,6 @@ public class Player_s : MonoBehaviour
         slider.value = 4;
         //HPを最大HPと同じ価に
         NOW_HP = MAX_HP;
-
-        gauge = GetComponent<GaugeController>();
     }
 
     // Update is called once per frame
@@ -290,7 +287,7 @@ public class Player_s : MonoBehaviour
     {
         if (gameState == "playing")
         {
-            NOW_HP = NOW_HP - 1;
+            NOW_HP--;
 
             // Sliderに反映
             slider.value = (float)NOW_HP;
@@ -318,10 +315,6 @@ public class Player_s : MonoBehaviour
     {
         inDamage = false; // ダメージフラグOFF
         gameObject.GetComponent<SpriteRenderer>().enabled = true; // スプライトを元に戻す
-
-
-        //Debug.Log("GaugeControllerが呼び出された！");
-        //gauge.BeInjured(1);
     }
     // ゴール
     public void Goal()

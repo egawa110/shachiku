@@ -486,7 +486,7 @@ PrefabInstance:
     - target: {fileID: 5994639323123957296, guid: f5240d6ebed74914f8074d227c81ecaa, type: 3}
       propertyPath: slider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8415563163020750062}
     - target: {fileID: 5994639323123957296, guid: f5240d6ebed74914f8074d227c81ecaa, type: 3}
       propertyPath: Damage_SE
       value: 

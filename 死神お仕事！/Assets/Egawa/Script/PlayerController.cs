@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.Android;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -45,18 +46,21 @@ public class PlayerController : MonoBehaviour
     private bool canAttack;                           //攻撃可能状態かを指定するフラグ
     
 
-    public int HP_P = 4;      //プレイヤーの体力
+    public int maxHp = 4;      //プレイヤーの最大Hp
+    int Hp;                    //プレイヤーの現在Hp
     private bool inDamage = false;  //ダメージ中のフラグ
 
+    public Slider slider;      //スライダー用の変数
+
     // サウンド再生
-    private AudioSource audioSource;
-    public AudioClip Jump_SE;
-    public AudioClip Damage_SE;
-    public AudioClip GetSoul_SE;
-    public AudioClip Attack_SE;
-    public AudioClip Switch_Act_SE;
-    public AudioClip Clear_SE;
-    public AudioClip Over_SE;
+    private AudioSource audioSource; // オーディオソース
+    public AudioClip Jump_SE;        // ジャンプ
+    public AudioClip Damage_SE;      // ダメージを食らう
+    public AudioClip GetSoul_SE;     // 魂を取る
+    public AudioClip Attack_SE;      // 攻撃する
+    public AudioClip Switch_Act_SE;  // スイッチをポチッとする
+    public AudioClip Clear_SE;       // ゲームクリアー
+    public AudioClip Over_SE;        // ゲームオーバー
 
 
     // Start is called before the first frame update
@@ -75,6 +79,9 @@ public class PlayerController : MonoBehaviour
 
         currentAttackTime = attackTime; //currentAttackTimeにattackTimeをセット。
         audioSource = GetComponent<AudioSource>();
+
+        slider.value = 4; // Sliderを最大Hpにする
+        Hp = maxHp;       // Hpと最大Hpを同じ値にする
     }
 
     // Update is called once per frame
@@ -289,8 +296,10 @@ public class PlayerController : MonoBehaviour
     {
         if (gameState == "playing")
         {
-            HP_P--; //hpが減る
-            if (HP_P > 0)
+            Hp--; //hpが減る
+            slider.value = Hp; // 減ったHPをスライダーに反映する
+
+            if (Hp > 0)
             {
                 //移動停止
                 rbody.velocity = new Vector2(0, 0);
