@@ -20,12 +20,16 @@ public class Zyuto_Myuusey : MonoBehaviour
     float passedTimes = 0;
     public float firetime = 3.0f;//発射
 
+    private AudioSource audioSource;
+    public AudioClip Fire_SE;
+
     // Start is called before the first frame update
     void Start()
     {
         gateTransform = transform.Find("gate");
         playerTr = GameObject.FindGameObjectWithTag("Player").transform;
         //rbody = this.GetComponent<Rigidbody2D>(); //Rigidbody2Dを取ってくる
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -48,7 +52,8 @@ public class Zyuto_Myuusey : MonoBehaviour
                 if (passedTimes >= firetime)
                 {
                     passedTimes = 0; //時間を０にリセット
-                                     //砲弾をプレハブから作る
+                    
+                    //砲弾をプレハブから作る
                     if (worldPos.x - orldPos.x >= 1)//対象の方向
                     {
                         Vector2 pos = new Vector2(gateTransform.position.x,
@@ -61,6 +66,7 @@ public class Zyuto_Myuusey : MonoBehaviour
                         float y = Mathf.Sin(angleZ * Mathf.Deg2Rad);
                         Vector2 v = new Vector2(-x, y) * fireSpeed;
                         rbody.AddForce(v, ForceMode2D.Impulse);
+                        audioSource.PlayOneShot(Fire_SE);
                     }
                     else if (worldPos.x - orldPos.x <= -1)//対象の方向
                     {
@@ -74,7 +80,9 @@ public class Zyuto_Myuusey : MonoBehaviour
                         float y = Mathf.Sin(angleZ * Mathf.Deg2Rad);
                         Vector2 v = new Vector2(x, y) * fireSpeed;
                         rbody.AddForce(v, ForceMode2D.Impulse);
+                        audioSource.PlayOneShot(Fire_SE);
                     }
+                    
                 }
             }
 

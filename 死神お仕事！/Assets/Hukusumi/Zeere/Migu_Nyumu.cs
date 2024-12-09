@@ -15,11 +15,15 @@ public class Migu_Nyumu : MonoBehaviour
     float passedTimes = 0;
     public float firetime = 3.0f;//発射
 
+    private AudioSource audioSource;
+    public AudioClip Junp_SE;
+
     // Start is called before the first frame update
     void Start()
     {
         playerTr = GameObject.FindGameObjectWithTag("Player").transform;
         rbody = this.GetComponent<Rigidbody2D>(); //Rigidbody2Dを取ってくる
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -78,6 +82,7 @@ public class Migu_Nyumu : MonoBehaviour
         {
             //地面の上でジャンプキーが押された
             //ジャンプさせる
+            audioSource.PlayOneShot(Junp_SE);
             Vector2 jumpPw = new Vector2(0, jump);  //ジャンプさせるベクトルを作る
             rbody.AddForce(jumpPw, ForceMode2D.Impulse); //瞬間敵な力を加える
             goJump = false; //ジャンプフラグを下ろす

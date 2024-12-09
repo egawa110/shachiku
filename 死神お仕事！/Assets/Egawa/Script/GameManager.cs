@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerController.gameState == "gameclear")
+        if (PlayerController.gameState == "gameclear"|| PlayerBoss.gameState == "gameclear")
         {
             //ゲームクリア
             mainImage.SetActive(true);  //画像を表示する
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
                 timeCnt.isTimeOver = true; //時間カウント停止
             }
         }
-        else if (PlayerController.gameState == "gameover")
+        else if (PlayerController.gameState == "gameover" || PlayerBoss.gameState == "gameover")
         {
             //ゲームオーバー
             mainImage.SetActive(true);  //画像を表示する
@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
                 timeCnt.isTimeOver = true; //時間カウント停止
             }
         }
-        else if (PlayerController.gameState == "playing")
+        else if (PlayerController.gameState == "playing"||PlayerBoss.gameState=="playing")
         {
             //ゲーム中
             GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -119,6 +119,11 @@ public class GameManager : MonoBehaviour
     void InactiveImage()
     {
         mainImage.SetActive(false);
+    }
+    //ゼーレHP０
+    public void BossKill()
+    {
+        timeCnt.isTimeOver = true; //時間カウント停止
     }
 
     void UpdateSoul()

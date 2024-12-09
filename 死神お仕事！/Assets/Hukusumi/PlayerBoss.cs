@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 
-public class PlayerBoos : MonoBehaviour
+public class PlayerBoss : MonoBehaviour
 {
 
     Rigidbody2D rbody;                //Rigidbody2Då^ÇÃçÏê¨
