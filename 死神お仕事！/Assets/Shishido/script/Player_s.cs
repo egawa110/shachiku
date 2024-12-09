@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-//using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Android;
 
 public class Player_s : MonoBehaviour
@@ -45,7 +45,10 @@ public class Player_s : MonoBehaviour
     private bool canAttack;                           //攻撃可能状態かを指定するフラグ
 
 
-    public int HP_P = 4;      //プレイヤーの体力
+    public int MAX_HP = 4;      //プレイヤーの最大体力
+    int NOW_HP;                 //プレイヤーの現在体力
+    // Slider
+    public Slider slider;       //スライダー
     private bool inDamage = false;  //ダメージ中のフラグ
 
     // サウンド再生
@@ -76,6 +79,11 @@ public class Player_s : MonoBehaviour
 
         currentAttackTime = attackTime; //currentAttackTimeにattackTimeをセット。
         audioSource = GetComponent<AudioSource>();
+
+        // Sliderを最大に
+        slider.value = 4;
+        //HPを最大HPと同じ価に
+        NOW_HP = MAX_HP;
 
         gauge = GetComponent<GaugeController>();
     }
@@ -268,9 +276,6 @@ public class Player_s : MonoBehaviour
         {
             GetDamage(collision.gameObject);
 
-            //gauge.BeInjured(1);
-            //Debug.Log("GaugeControllerが呼び出された！");
-
             //敵に当たった時に音を鳴らす
             //audioSource.PlayOneShot(Damage_SE);
         }
@@ -285,11 +290,12 @@ public class Player_s : MonoBehaviour
     {
         if (gameState == "playing")
         {
-            HP_P--; //hpが減る
+            NOW_HP = NOW_HP - 1;
 
-            Debug.Log("１ダメージ！");
+            // Sliderに反映
+            slider.value = (float)NOW_HP;
 
-            if (HP_P > 0)
+            if (NOW_HP > 0)
             {
                 //移動停止
                 rbody.velocity = new Vector2(0, 0);
