@@ -1090,7 +1090,8 @@ MonoBehaviour:
   attackPoint: {fileID: 0}
   attackTime: 0.2
   fireSpeed: 8
-  HP_P: 4
+  maxHp: 4
+  slider: {fileID: 0}
   Jump_SE: {fileID: 0}
   Damage_SE: {fileID: 0}
   GetSoul_SE: {fileID: 0}
@@ -1130,7 +1131,8 @@ MonoBehaviour:
   attackPoint: {fileID: 640721386}
   attackTime: 1
   fireSpeed: 8
-  HP_P: 4
+  maxHp: 4
+  slider: {fileID: 2111589979}
   DCoolTime: 0.5
   Jump_SE: {fileID: 8300000, guid: 9c87b10dce5671c46ad6d159ac79b163, type: 3}
   Damage_SE: {fileID: 8300000, guid: 1b2f3ad45283c9e4496672801bd1a76c, type: 3}
@@ -2502,7 +2504,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.09
-  duration: 2
 --- !u!1 &1564188210
 GameObject:
   m_ObjectHideFlags: 0
@@ -2965,6 +2966,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 63228863}
+    - target: {fileID: 5182634331579093823, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
+      propertyPath: m_Value
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5355954283887035817, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: SceneName
       value: Stage5
@@ -3079,7 +3084,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7113009532891470134, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -98
+      value: -98.000015
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883889499265972550, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883889499265972550, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4056,6 +4069,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2111589979 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5182634331579093823, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
+  m_PrefabInstance: {fileID: 1751993746}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7356033870893637073
 PrefabInstance:
   m_ObjectHideFlags: 0
