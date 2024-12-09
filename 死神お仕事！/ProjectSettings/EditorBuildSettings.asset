@@ -95,4 +95,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Stage/Stage4/Stage4set.unity
     guid: 0ce17c462f7fc0c4c84a470cc67c600e
+  - enabled: 1
+    path: Assets/Hukusumi/Stage5.unity
+    guid: bdf528b4152041c4681814b85af63d89
   m_configObjects: {}

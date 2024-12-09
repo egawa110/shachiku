@@ -11,9 +11,13 @@ public class ZeereBeem : MonoBehaviour
     public float fireSpeed = 0.0f;
     float ApassedTimes = 0;//経過時間
 
+    private AudioSource audioSource;
+    public AudioClip Charge_SE;
+
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
+        audioSource.PlayOneShot(Charge_SE);
     }
 
     void Update()
@@ -28,6 +32,7 @@ public class ZeereBeem : MonoBehaviour
             float x = worldPos.x;    // ワールド座標を基準にした、x座標が入っている変数
             float y = worldPos.y;    // ワールド座標を基準にした、y座標が入っている変数
             Instantiate(prefab, new Vector2(x, y), Quaternion.identity);
+            
             Destroy(gameObject);//このゲームオブジェクトを消滅させる
         }
 

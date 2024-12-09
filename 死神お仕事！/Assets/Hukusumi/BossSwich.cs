@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoosSwich : MonoBehaviour
+public class BossSwich : MonoBehaviour
 {
     public GameObject targetMoveBlock;
     public GameObject Zeere;

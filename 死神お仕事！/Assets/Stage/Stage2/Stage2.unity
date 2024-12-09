@@ -131,6 +131,7 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< HEAD
     - target: {fileID: 906262186881692767, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: jump
       value: 11
@@ -143,9 +144,19 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 37.46
       objectReference: {fileID: 0}
+=======
+>>>>>>> 479f1cc5c3da842c5f3150506bb606270c9cc34b
     - target: {fileID: 6611924174335174627, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: m_Name
       value: Stage2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7214120178123157854, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7214120178123157854, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8908482115870231497, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: m_LocalPosition.x
@@ -186,10 +197,6 @@ PrefabInstance:
     - target: {fileID: 8908482115870231497, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9070849990932730158, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -98
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
