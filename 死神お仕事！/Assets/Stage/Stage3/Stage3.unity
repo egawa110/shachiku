@@ -131,6 +131,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 722256548943923541, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 722256548943923541, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 9.6
+      objectReference: {fileID: 0}
     - target: {fileID: 1210827747958017208, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.970321
@@ -171,6 +179,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1224575273504584402, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685359024735587061, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3802273277208881031, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -179,9 +195,41 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5030880813288717466, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5136240816448518890, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.13
+      objectReference: {fileID: 0}
     - target: {fileID: 5292821373484602624, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
       propertyPath: m_Name
       value: Stage3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542531752936741026, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_DrawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731518585681788805, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236547265812894947, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7707573678423696339, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761867839388213328, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182573308032300704, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
