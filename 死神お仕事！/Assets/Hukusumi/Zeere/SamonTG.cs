@@ -13,6 +13,6 @@ public class SamonTG : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(0, 0, 121));
+        transform.Rotate(new Vector3(0, 0, 121));//‰ñ‚é
     }
 }

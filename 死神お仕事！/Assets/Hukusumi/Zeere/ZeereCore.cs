@@ -6,8 +6,7 @@ public class ZeereCore : MonoBehaviour
 {
     Transform Reel;
     [SerializeField] GameObject Samon;
-    [SerializeField] GameObject Ritning_A;
-    [SerializeField] GameObject Ritning_B;
+    [SerializeField] GameObject Ritning;
     [SerializeField] GameObject Rain;
     [SerializeField] GameObject Rite;
     [SerializeField] GameObject Beem;
@@ -16,6 +15,7 @@ public class ZeereCore : MonoBehaviour
     [SerializeField] GameObject eye;
     [SerializeField] GameObject GameClear;
     [SerializeField] GameObject Fadeout;
+    [SerializeField] GameObject HeloNull;
 
     public GameObject GameUI;
 
@@ -53,9 +53,9 @@ public class ZeereCore : MonoBehaviour
     bool ReeserLooc = false;//ビームロック
     bool LongLooc = false;//延長ロック
 
-    bool EndF = false;
-    bool Crear = false;
-    bool Fade = false;
+    bool EndF = false;//撃破フラグ
+    bool Crear = false;//クリア出現
+    bool Fade = false;//フェードオブジェフラグ
 
     public int HP_Z = 40;    //敵の体力
     private bool inDamage;  //ダメージ中のフラグ
@@ -224,6 +224,7 @@ public class ZeereCore : MonoBehaviour
                     LongLooc = true;
                 }
 
+                //強制発動
                 //if (Input.GetKeyDown(KeyCode.L))//突進ON
                 //{
                 //    AttackLooc = !AttackLooc;
@@ -369,12 +370,8 @@ public class ZeereCore : MonoBehaviour
                 {
                     Transform myTransform = this.transform;
                     Vector2 worldPos = myTransform.position;
-                    Instantiate(Ritning_A, new Vector2(brx, bry), Quaternion.identity);
-                    Instantiate(Ritning_A, new Vector2(-brx, bry), Quaternion.identity);
-                    Transform myTransformA = this.transform;
-                    Vector2 worldPosA = myTransformA.position;
-                    Instantiate(Ritning_B, new Vector2(brx, bry), Quaternion.identity);
-                    Instantiate(Ritning_B, new Vector2(-brx, bry), Quaternion.identity);
+                    Instantiate(Ritning, new Vector2(brx, bry), Quaternion.identity);
+                    Instantiate(Ritning, new Vector2(-brx, bry), Quaternion.identity);
                     brx += rx;
                 }
                 if (passedTimes > 4.3&&SamonC < 5)
@@ -433,8 +430,19 @@ public class ZeereCore : MonoBehaviour
 
         }
 
-        if(EndF==true)
+        if(EndF==true)//撃破
         {
+            if(passedTimes>1)
+            {
+                Transform myTransform = this.transform;
+                Vector2 worldPos = myTransform.position;
+                float x = worldPos.x;    // ワールド座標を基準にした、x座標が入っている変数
+                //指定位置に上昇
+                transform.position = Vector2.MoveTowards(
+                   transform.position,
+                   new Vector2(x, -10),
+                   0.9f * Time.deltaTime);
+            }
             if (passedTimes > 5)
             {
                 if(Fade==false)
@@ -523,6 +531,9 @@ public class ZeereCore : MonoBehaviour
                     Transform myTransform = this.transform;
                     Vector2 worldPos = myTransform.position;
                     Instantiate(BossEnd, new Vector2(0, 0), Quaternion.identity);
+                    float x = worldPos.x;    // ワールド座標を基準にした、x座標が入っている変数
+                    float y = worldPos.y;    // ワールド座標を基準にした、y座標が入っている変数
+                    Instantiate(HeloNull, new Vector2(x, y), Quaternion.identity);
                 }
                 
 

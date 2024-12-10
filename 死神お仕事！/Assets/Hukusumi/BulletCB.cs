@@ -19,19 +19,19 @@ public class BulletCB : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Ground"))//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
+        if (other.CompareTag("Ground"))
         {
             Destroy(gameObject);//このゲームオブジェクトを消滅させる
         }
-        if (other.CompareTag("Player"))//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
+        if (other.CompareTag("Player"))
         {
             Destroy(gameObject);//このゲームオブジェクトを消滅させる
         }
-        if (other.CompareTag("Bullet"))//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
+        if (other.CompareTag("Bullet"))
         {
             Destroy(gameObject);//このゲームオブジェクトを消滅させる
         }
-        if (other.CompareTag("KinKill"))//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
+        if (other.CompareTag("KinKill"))
         {
             Destroy(gameObject);//このゲームオブジェクトを消滅させる
         }

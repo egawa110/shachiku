@@ -5,8 +5,8 @@ using UnityEngine;
 public class ZeereHalo : MonoBehaviour
 {
     Transform Zeere;
-    [SerializeField] float speed = 2; // 敵の動くスピード
-    [SerializeField] float speedover = 99; // 敵の動くスピード
+    [SerializeField] float speed = 2; // ヘイローの動くスピード
+    [SerializeField] float speedover = 99; // ヘイローの動くスピード範囲外
 
     private void Start()
     {

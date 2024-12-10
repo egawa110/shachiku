@@ -7,7 +7,7 @@ public class ZeereEye : MonoBehaviour
 {
     Transform playerTr;
     Transform Zeere;
-    [SerializeField] float speed = 1; // 敵の動くスピード
+    [SerializeField] float speed = 1; // 目の動くスピード
     bool on = false;
     
 

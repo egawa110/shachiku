@@ -8,7 +8,6 @@ public class ZeereBeem : MonoBehaviour
     [SerializeField] GameObject prefab;
     //public GameObject objPrefab;
     public float firetime = 180.0f;//発射
-    public float fireSpeed = 0.0f;
     float ApassedTimes = 0;//経過時間
 
     private AudioSource audioSource;
@@ -41,7 +40,7 @@ public class ZeereBeem : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("KinKill"))//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
+        if (other.CompareTag("KinKill"))
         {
             Destroy(gameObject);//このゲームオブジェクトを消滅させる
         }
