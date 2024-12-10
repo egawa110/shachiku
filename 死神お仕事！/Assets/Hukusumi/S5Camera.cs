@@ -22,11 +22,6 @@ public class S5Camera : MonoBehaviour
     void Update()
     {
 
-        //if (Input.GetKeyDown(KeyCode.G))//ON
-        //{
-        //    Boos = !Boos;
-        //}
-
         if (Boos == false)
         {
             GameObject player =
@@ -62,7 +57,7 @@ public class S5Camera : MonoBehaviour
                 transform.position = v3;
             }
         }
-        else if(Boos==true)
+        else if(Boos==true)//ボスモード切り替え
         {
             float z = transform.position.z;
             transform.position = Vector3.MoveTowards(

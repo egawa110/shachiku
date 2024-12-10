@@ -22,7 +22,7 @@ public class RainDR : MonoBehaviour
     //接触
     private void OnTriggerEnter2D(Collider2D other) //ぶつかったら消える命令文開始
     {
-        if (other.CompareTag("KinKill"))//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
+        if (other.CompareTag("KinKill"))
         {
             Destroy(gameObject);//このゲームオブジェクトを消滅させる
         }

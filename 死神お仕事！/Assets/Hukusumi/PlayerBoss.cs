@@ -192,9 +192,9 @@ public class PlayerBoss : MonoBehaviour
 
         //地上判定
         bool onGround = Physics2D.CircleCast(transform.position,    //発射位置
-                                             1.8f,                  //円の半径
+                                             0.7f,                  //円の半径
                                              Vector2.down,          //発射方向
-                                             0.0f,                  //発射距離
+                                             1.0f,                  //発射距離
                                              groundLayer);          //検出するレイヤー
         if (BoosIve == false)
         {

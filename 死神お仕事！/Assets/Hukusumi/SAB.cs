@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
+//鎌拡張
 public class SAB : MonoBehaviour
 {
     public float deleteTime = 3.0f; //削除する時間指定
@@ -21,17 +22,14 @@ public class SAB : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
+        if (other.CompareTag("Enemy"))
         {
             Destroy(gameObject);//このゲームオブジェクトを消滅させる
         }
-        if (other.CompareTag("ZeereCore"))//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
+        if (other.CompareTag("ZeereCore"))
         {
             Destroy(gameObject);//このゲームオブジェクトを消滅させる
         }
-        //if (other.CompareTag("Player"))//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
-        //{
-        //    Destroy(gameObject);//このゲームオブジェクトを消滅させる
-        //}
+        
     }
 }
