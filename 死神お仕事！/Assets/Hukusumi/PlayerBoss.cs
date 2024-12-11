@@ -124,7 +124,7 @@ public class PlayerBoss : MonoBehaviour
                 //‘¬“x‚ð‚O‚É‚µ‚Ä‹­§’âŽ~
                 rbody.velocity = new Vector2(0, 0);
             }
-            if(BossIveTime>10.5f)
+            if(BossIveTime>11.5f)
             {
                 BICyec = true;
                 BoosIve = false;

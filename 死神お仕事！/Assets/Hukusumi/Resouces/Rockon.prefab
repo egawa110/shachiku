@@ -100,7 +100,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 7302596685962986113, guid: e8b21eb976d7ce94aba3eeb272993804, type: 3}
   firetime: 2
-  fireSpeed: 0
   Charge_SE: {fileID: 8300000, guid: f32f6c25a32c3914597792a5a10de73e, type: 3}
 --- !u!82 &-2678185857608028322
 AudioSource:

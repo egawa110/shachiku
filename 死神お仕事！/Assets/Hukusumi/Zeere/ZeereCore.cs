@@ -16,6 +16,8 @@ public class ZeereCore : MonoBehaviour
     [SerializeField] GameObject GameClear;
     [SerializeField] GameObject Fadeout;
     [SerializeField] GameObject HeloNull;
+    [SerializeField] GameObject KillEffect;
+    [SerializeField] GameObject SoulEat;
 
     public GameObject GameUI;
 
@@ -41,6 +43,8 @@ public class ZeereCore : MonoBehaviour
     bool GoOK = false;
 
     bool Cool = false;//調整用
+    bool Cool2 = false;//調整用2
+    bool Cool3 = false;//調整用3
     bool AttackLooc = true;//起動用
     bool BusteAttack = false;//突進起動用
     bool SamonAttack = false;//召喚起動用
@@ -65,6 +69,18 @@ public class ZeereCore : MonoBehaviour
     GameObject Zeere3;
     GameObject Zeere4;
 
+    //音
+    private AudioSource audioSource;
+    public AudioClip Samon_SE;
+    public AudioClip Boost_SE;
+    public AudioClip Attack_SE;
+    public AudioClip AttackC_SE;
+    public AudioClip Ritoning_SE;
+    public AudioClip ZVoiceA;
+    public AudioClip ZVoiceB;
+    public AudioClip ZeereON_SE;
+    public AudioClip ZeereON2_SE;
+
     private void Start()
     {
        
@@ -75,7 +91,7 @@ public class ZeereCore : MonoBehaviour
         Zeere3 = GameObject.Find("ZeereEye");
         Zeere4 = GameObject.Find("ZeereKabar");
 
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -145,6 +161,24 @@ public class ZeereCore : MonoBehaviour
                    transform.position,
                    new Vector2(0, 3),
                    1 * Time.deltaTime);
+                if(Cool3==false)
+                {
+                    Cool3 = true;
+                    audioSource.PlayOneShot(ZeereON_SE);
+                }
+            }
+            if (passedTimes >= 4&& passedTimes <= 5)
+            {
+                if(Cool2==false)
+                {
+                    Cool2 = true;
+                    audioSource.PlayOneShot(ZeereON2_SE);
+                }
+                Transform myTransform = this.transform;
+                Vector2 worldPos = myTransform.position;
+                float x = worldPos.x;    // ワールド座標を基準にした、x座標が入っている変数
+                float y = worldPos.y;    // ワールド座標を基準にした、y座標が入っている変数
+                Instantiate(SoulEat, new Vector2(x, y), Quaternion.identity);
             }
 
             if (passedTimes>7&&Cool==false)
@@ -155,29 +189,39 @@ public class ZeereCore : MonoBehaviour
                 float x = worldPos.x;    // ワールド座標を基準にした、x座標が入っている変数
                 float y = worldPos.y;    // ワールド座標を基準にした、y座標が入っている変数
                 Instantiate(Helo, new Vector2(x, y), Quaternion.identity);
+                
 
             }
-            if(passedTimes>9)
+            if(passedTimes>8&&Cool2==true)
             {
+                audioSource.PlayOneShot(ZVoiceA);
+                audioSource.PlayOneShot(ZVoiceB);
+                Cool2 = false;
+            }
+            if(passedTimes>10)
+            {
+                
                 ReeserAttack = !ReeserAttack;
                 ReeserLooc = !ReeserLooc;
                 passedTimes = 0;
                 coorTime = 0;
                 GoOK = true;
                 Cool = false;
+                Cool3 = false;
             }
         }
         rnd = Random.Range(1, 6);
-        if (Cool==true&&GoOK==true&&EndF==false)
+        //突進解除
+        if (Cool == true && GoOK == true && EndF == false)
         {
             coorTime += Time.deltaTime;//時間経過
-            if(coorTime>3)
+            if (coorTime > 3)
             {
                 Cool = false;
                 AttackLooc = false;
             }
         }
-       
+
         if (passedTimes > Attack)
         {
             if (AttackLooc == false)//起動用
@@ -284,8 +328,10 @@ public class ZeereCore : MonoBehaviour
 
         if(BusteAttack==true)//突進
         {
+            
             if (passedTimes < 3)
             {
+                
                 // 対象物へのベクトルを算出
                 Vector3 toDirection = target.transform.position - transform.position;
                 //Debug.Log(toDirection);
@@ -298,8 +344,18 @@ public class ZeereCore : MonoBehaviour
                 //    transform.Rotate(new Vector3(0, 0, 1));
                 //}
             }
+            if (passedTimes < 3 && Cool2 == false)
+            {
+                Cool2 = true;
+                audioSource.PlayOneShot(AttackC_SE);
+            }
             if (passedTimes>=3)
             {
+                if(Cool2==true)
+                {
+                    Cool2 = false;
+                    audioSource.PlayOneShot(Boost_SE);
+                }
                 Vector3 velocity = gameObject.transform.rotation * new Vector3(0, ATspeed, 0);
                 gameObject.transform.position += velocity * Time.deltaTime;
                 SamonLooc = false;
@@ -314,8 +370,10 @@ public class ZeereCore : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(0f, 0f, 180f);
             coorTime += Time.deltaTime;//時間経過
+            
             if (SamonC < 3)
             {
+                
                 if (coorTime > 0.5)
                 {
                     SamonC += 1;
@@ -329,9 +387,11 @@ public class ZeereCore : MonoBehaviour
                     float y = worldPos.y;
 
                     Instantiate(Samon, new Vector2(x, y), Quaternion.identity);
+                    audioSource.PlayOneShot(Samon_SE);
 
                     //Instantiate(Samon, gateTransform.position, gateTransform.rotation);
                 }
+               
             }
             if (passedTimes > 4)
             {
@@ -345,6 +405,7 @@ public class ZeereCore : MonoBehaviour
                 RitoningLooc = false;
                 ReeserLooc = false;
                 LongLooc = false;
+                Cool = false;
             }
         }
 
@@ -380,6 +441,7 @@ public class ZeereCore : MonoBehaviour
                     Transform myTransformR = this.transform;
                     Vector2 worldPosR = myTransformR.position;
                     Instantiate(Rite, new Vector2(0, 3), Quaternion.identity);
+                    audioSource.PlayOneShot(Ritoning_SE);
                 }
                 if (brx > boder)
                 {
@@ -442,6 +504,13 @@ public class ZeereCore : MonoBehaviour
                    transform.position,
                    new Vector2(x, -10),
                    0.9f * Time.deltaTime);
+                if(Cool==false)
+                {
+                    Cool = true;
+                    float ex = worldPos.x;    // ワールド座標を基準にした、x座標が入っている変数
+                    float ey = worldPos.y;    // ワールド座標を基準にした、y座標が入っている変数
+                    Instantiate(KillEffect, new Vector2(ex, ey), Quaternion.identity);
+                }
             }
             if (passedTimes > 5)
             {
@@ -481,7 +550,7 @@ public class ZeereCore : MonoBehaviour
                 passedTimes = 0;
                 coorTime = 0;
                 Cool = true;
-
+                audioSource.PlayOneShot(Attack_SE);
             }
 
             if (other.CompareTag("Wall") && BusteAttack == true)//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
@@ -490,7 +559,7 @@ public class ZeereCore : MonoBehaviour
                 passedTimes = 0;
                 coorTime = 0;
                 Cool = true;
-
+                audioSource.PlayOneShot(Attack_SE);
             }
         }
         if (other.gameObject.tag == "Bullet")
