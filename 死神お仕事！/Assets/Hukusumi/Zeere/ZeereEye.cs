@@ -9,7 +9,10 @@ public class ZeereEye : MonoBehaviour
     Transform Zeere;
     [SerializeField] float speed = 1; // 目の動くスピード
     bool on = false;
-    
+    bool onC = false;
+    //音
+    private AudioSource audioSource;
+    public AudioClip ON_SE;
 
 
     // Start is called before the first frame update
@@ -21,6 +24,8 @@ public class ZeereEye : MonoBehaviour
         Color color = gameObject.GetComponent<SpriteRenderer>().color;
         color.a = 0.0f;
         gameObject.GetComponent<SpriteRenderer>().color = color;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -44,6 +49,11 @@ public class ZeereEye : MonoBehaviour
         //}
         if (on == true)
         {
+            if(onC==false)
+            {
+                onC = true;
+                audioSource.PlayOneShot(ON_SE);
+            }
             Color color = gameObject.GetComponent<SpriteRenderer>().color;
             if (color.a <= 1.0f)
             {
