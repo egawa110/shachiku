@@ -162,12 +162,12 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46787887}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 59b8fd1c1739c24409202b60d4e5b7cf, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 539f547b919dcc04192bda274b24a566, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5e733ffab1a56ec488837adf5c89cad5, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1675,8 +1675,8 @@ MonoBehaviour:
   Attack_SE: {fileID: 8300000, guid: 1ac1e813d4fc54645a235f01a0e1d904, type: 3}
   AttackC_SE: {fileID: 8300000, guid: 2f009c55bb1664b4494662cc6bd6a9d3, type: 3}
   Ritoning_SE: {fileID: 8300000, guid: ce1c9ad80ab3cfe45b3015793b1230e6, type: 3}
-  ZVoiceA: {fileID: 8300000, guid: 7688cb2706d531144a274c6439ae4780, type: 3}
-  ZVoiceB: {fileID: 8300000, guid: f7f75a990f101d94e9df5c304d9f0fc9, type: 3}
+  ZVoiceA: {fileID: 8300000, guid: 0d8a56f7ecbf082488d663518c7c40c8, type: 3}
+  ZVoiceB: {fileID: 8300000, guid: 9c00a9391cb058547840421b855f1a69, type: 3}
   ZeereON_SE: {fileID: 8300000, guid: 9b9ea9ff157dee44aa06305caa5db280, type: 3}
   ZeereON2_SE: {fileID: 8300000, guid: 4d5bf6349ab5c7042b99ba3fac7d1d99, type: 3}
 --- !u!212 &1198253380
