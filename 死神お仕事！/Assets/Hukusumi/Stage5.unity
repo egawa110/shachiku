@@ -166,10 +166,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 59b8fd1c1739c24409202b60d4e5b7cf, type: 2}
   m_audioClip: {fileID: 8300000, guid: 5e733ffab1a56ec488837adf5c89cad5, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1669,8 +1669,9 @@ MonoBehaviour:
   rx: 1
   boder: 10
   GO: 0
-  HP_Z: 1
+  HP_Z: 40
   Samon_SE: {fileID: 8300000, guid: 3a93bf581e56ee64b9659044e719526e, type: 3}
+  SamonR_SE: {fileID: 8300000, guid: f3b1bcf02cf80d142905d9d172b1fcba, type: 3}
   Boost_SE: {fileID: 8300000, guid: ca0bc4d20acab3f4595caf417e4d0afd, type: 3}
   Attack_SE: {fileID: 8300000, guid: 1ac1e813d4fc54645a235f01a0e1d904, type: 3}
   AttackC_SE: {fileID: 8300000, guid: 2f009c55bb1664b4494662cc6bd6a9d3, type: 3}
@@ -1679,6 +1680,8 @@ MonoBehaviour:
   ZVoiceB: {fileID: 8300000, guid: 9c00a9391cb058547840421b855f1a69, type: 3}
   ZeereON_SE: {fileID: 8300000, guid: 9b9ea9ff157dee44aa06305caa5db280, type: 3}
   ZeereON2_SE: {fileID: 8300000, guid: 4d5bf6349ab5c7042b99ba3fac7d1d99, type: 3}
+  Break_SE: {fileID: 8300000, guid: 31d2cd4caa1fa91419b6f839e610d2b7, type: 3}
+  Foor_SE: {fileID: 8300000, guid: d4bd7550ac9dd41428131e7903c4b305, type: 3}
 --- !u!212 &1198253380
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3109,7 +3112,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4892329473010327035, guid: 802fbea0ac6b9dd4093fcffd1792e878, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.58
+      value: -34.68
       objectReference: {fileID: 0}
     - target: {fileID: 4892329473010327035, guid: 802fbea0ac6b9dd4093fcffd1792e878, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3191,6 +3194,22 @@ PrefabInstance:
     - target: {fileID: 2739444284392435738, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3801594696449176174, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191603410222032016, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 110.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191603410222032016, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -148.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191603410222032016, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -425
       objectReference: {fileID: 0}
     - target: {fileID: 5182634331579093823, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: m_Value
@@ -3302,6 +3321,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6706342313684956794, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098051381778572115, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7113009532891470134, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}

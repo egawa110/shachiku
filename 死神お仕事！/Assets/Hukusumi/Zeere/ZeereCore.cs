@@ -72,6 +72,7 @@ public class ZeereCore : MonoBehaviour
     //音
     private AudioSource audioSource;
     public AudioClip Samon_SE;
+    public AudioClip SamonR_SE;
     public AudioClip Boost_SE;
     public AudioClip Attack_SE;
     public AudioClip AttackC_SE;
@@ -80,6 +81,8 @@ public class ZeereCore : MonoBehaviour
     public AudioClip ZVoiceB;
     public AudioClip ZeereON_SE;
     public AudioClip ZeereON2_SE;
+    public AudioClip Break_SE;
+    public AudioClip Foor_SE;
 
     private void Start()
     {
@@ -243,6 +246,8 @@ public class ZeereCore : MonoBehaviour
                     SamonLooc = !SamonLooc;
                     passedTimes = 0;
                     coorTime = 0;
+                    audioSource.PlayOneShot(ZVoiceA);
+                    audioSource.PlayOneShot(ZVoiceB);
                 }
                 if (rnd == 3 && RitoningLooc == false)//雷雨ON
                 {
@@ -251,6 +256,8 @@ public class ZeereCore : MonoBehaviour
                     RitoningLooc = !RitoningLooc;
                     passedTimes = 0;
                     coorTime = 0;
+                    audioSource.PlayOneShot(SamonR_SE);
+                    audioSource.PlayOneShot(ZeereON2_SE);
                 }
                 if (rnd == 4 && ReeserLooc == false)//ビームON
                 {
@@ -510,6 +517,9 @@ public class ZeereCore : MonoBehaviour
                     float ex = worldPos.x;    // ワールド座標を基準にした、x座標が入っている変数
                     float ey = worldPos.y;    // ワールド座標を基準にした、y座標が入っている変数
                     Instantiate(KillEffect, new Vector2(ex, ey), Quaternion.identity);
+                    audioSource.PlayOneShot(ZVoiceA);
+                    audioSource.PlayOneShot(ZVoiceB);
+                    audioSource.PlayOneShot(Foor_SE);
                 }
             }
             if (passedTimes > 5)
@@ -520,6 +530,8 @@ public class ZeereCore : MonoBehaviour
                     Transform myTransform = this.transform;
                     Vector2 worldPos = myTransform.position;
                     Instantiate(Fadeout, new Vector2(0, 0), Quaternion.identity);
+                    audioSource.PlayOneShot(ZVoiceA);
+                    audioSource.PlayOneShot(ZVoiceB);
                 }
             }
             if (passedTimes > 10 && Crear == false)
@@ -593,6 +605,7 @@ public class ZeereCore : MonoBehaviour
                 SamonAttack = false;
                 RitoningAttack = false;
                 ReeserAttack = false;
+                audioSource.PlayOneShot(Break_SE);
                 if (EndF ==false)
                 {
                     passedTimes = 0;

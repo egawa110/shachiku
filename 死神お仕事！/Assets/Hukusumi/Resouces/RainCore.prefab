@@ -5003,7 +5003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42911ad79d1c952459180c5ecb11fd1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rain_SE: {fileID: 8300000, guid: fb022b9af04336146950a4bbc76142dd, type: 3}
+  Rain_SE: {fileID: 8300000, guid: c5dd7930d9410a24e8e708e1d2c19a56, type: 3}
 --- !u!82 &807986952038284720
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5016,7 +5016,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
