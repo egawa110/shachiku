@@ -142,17 +142,6 @@ public class PlayerController : MonoBehaviour
             }
             return; // ダメージ中は操作による移動をさせない
         }
-        //CircleCast
-
-        /*
-                 bool onGround = Physics2D.CircleCast(transform.position,    //発射位置
-                                             1.5f,                  //円の半径
-                                             Vector2.down,          //発射方向
-                                             0.0f,                  //発射距離
-                                             groundLayer);          //検出するレイヤー
-
-         */
-        
 
         //地上判定
         bool onGround = Physics2D.CircleCast(transform.position,    //発射位置
@@ -219,8 +208,6 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.K)) // Kキーを押したら
         {
-            //Debug.Log("ZZZ");
-
             if (canAttack)
             {
                 GameObject playerObj = GameObject.Find("Player");

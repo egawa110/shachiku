@@ -1,13 +1,18 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class EnemyHit : MonoBehaviour
+public class testenemy : MonoBehaviour
 {
     Rigidbody2D rbody;              //Rigidbody2D型の変数
 
-    public int HP_E = 6;    //敵の体力
+    public int E_maxHp = 3;//敵の最大Hp
+    int nowHp;//敵の今のHp
+    //Slider
+    public Slider slider;//スライダー
     private bool inDamage;  //ダメージ中のフラグ
 
     private PlayerController playcon;
@@ -17,6 +22,10 @@ public class EnemyHit : MonoBehaviour
     {
         //プレイヤーコントローラー取得
         playcon = GetComponent<PlayerController>();
+        //スライダーの体力の値を最大に
+        slider.value = 3;
+        //スタート時の体力（nowHp）を最大体力（E_maxHp）と同じ値に
+        nowHp = E_maxHp;
 
     }
 
@@ -46,6 +55,7 @@ public class EnemyHit : MonoBehaviour
         {
             // 攻撃された時のエフェクト
             GetDamage(collision.gameObject);
+            Destroy(collision.gameObject);
         }
     }
 
@@ -53,8 +63,12 @@ public class EnemyHit : MonoBehaviour
     {
         if (PlayerController.gameState == "playing")
         {
-            HP_E--; //hpが減る
-            if (HP_E > 0)
+            nowHp--; //hpが減る
+
+            //スライダーに-1された体力を反映
+            slider.value = nowHp;
+
+            if (nowHp > 0)
             {
                 //ダメージフラグ　ON
                 inDamage = true;
@@ -75,4 +89,5 @@ public class EnemyHit : MonoBehaviour
         inDamage = false; // ダメージフラグOFF
         gameObject.GetComponent<SpriteRenderer>().enabled = true; // スプライトを元に戻す
     }
+
 }

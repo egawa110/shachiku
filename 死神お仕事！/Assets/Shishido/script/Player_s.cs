@@ -16,7 +16,6 @@ public class Player_s : MonoBehaviour
     public LayerMask groundLayer;     //着地できるレイヤー
     bool goJump = false;              //ジャンプ開始フラグ
 
-
     //アニメーション対応
     Animator animator; //アニメーター
     public string stopAnime = "PlayerStop";

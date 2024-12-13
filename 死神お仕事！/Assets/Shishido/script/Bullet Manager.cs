@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
 public class BulletManager : MonoBehaviour
 {
-    public float deleteTime = 3.0f; //削除する時間指定
+    public float deleteTime = 1.0f; //削除する時間指定
     // Start is called before the first frame update
     void Start()
     {
@@ -21,13 +22,22 @@ public class BulletManager : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Ground"))//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
+        //敵に当たったら
+        if(other.gameObject.tag == "Enemy")
         {
-            Destroy(gameObject);//このゲームオブジェクトを消滅させる
+            //プレイヤーの攻撃が消える
+            Destroy(gameObject);
         }
-        if (other.CompareTag("KinKill"))//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
+        //地面に当たったら
+        else if (other.gameObject.tag == "Ground")
         {
-            Destroy(gameObject);//このゲームオブジェクトを消滅させる
+            //プレイヤーの攻撃が消える
+            Destroy(gameObject);
+        }
+        if (other.CompareTag("KinKill"))
+        {
+            //プレイヤーの攻撃が消える
+            Destroy(gameObject);
         }
     }
 }
