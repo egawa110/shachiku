@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ZeereCore : MonoBehaviour
 {
@@ -61,8 +62,10 @@ public class ZeereCore : MonoBehaviour
     bool Crear = false;//クリア出現
     bool Fade = false;//フェードオブジェフラグ
 
-    public int HP_Z = 40;    //敵の体力
+    public int HP_M = 40;
+    int HP_Z ;    //敵の体力
     private bool inDamage;  //ダメージ中のフラグ
+    public Slider slider;//スライダー
 
     GameObject Zeere1;
     GameObject Zeere2;
@@ -83,10 +86,16 @@ public class ZeereCore : MonoBehaviour
     public AudioClip ZeereON2_SE;
     public AudioClip Break_SE;
     public AudioClip Foor_SE;
+    public AudioClip Intor_BGM;
+
+    private bool isAudioEnd;
+    public AudioSource Loop_BGM;
+    public GameObject targetBGM;
 
     private void Start()
     {
-       
+        HP_Z = HP_M;
+        slider.value = HP_M;
         Reel = GameObject.FindGameObjectWithTag("ZeeReeL").transform;
         gateTransform = GameObject.FindGameObjectWithTag("SamonTG").transform;
         Zeere1 = GameObject.Find("ZeerenoTyuusinnZERO");
@@ -99,6 +108,7 @@ public class ZeereCore : MonoBehaviour
 
     private void Update()
     {
+        
         passedTimes += Time.deltaTime;//時間経過
         if (GO == true)
         {
@@ -168,6 +178,9 @@ public class ZeereCore : MonoBehaviour
                 {
                     Cool3 = true;
                     audioSource.PlayOneShot(ZeereON_SE);
+
+                    audioSource.Play();
+                    isAudioEnd = true;
                 }
             }
             if (passedTimes >= 4&& passedTimes <= 5)
@@ -203,7 +216,7 @@ public class ZeereCore : MonoBehaviour
             }
             if(passedTimes>10)
             {
-                
+                slider.gameObject.SetActive(true);
                 ReeserAttack = !ReeserAttack;
                 ReeserLooc = !ReeserLooc;
                 passedTimes = 0;
@@ -213,7 +226,8 @@ public class ZeereCore : MonoBehaviour
                 Cool3 = false;
             }
         }
-        rnd = Random.Range(1, 6);
+
+        
         //突進解除
         if (Cool == true && GoOK == true && EndF == false)
         {
@@ -225,6 +239,7 @@ public class ZeereCore : MonoBehaviour
             }
         }
 
+        rnd = Random.Range(1, 6);
         if (passedTimes > Attack)
         {
             if (AttackLooc == false)//起動用
@@ -545,6 +560,14 @@ public class ZeereCore : MonoBehaviour
             }
         }
 
+        //BGM
+        if (!audioSource.isPlaying && isAudioEnd&& EndF == false)
+        {
+            Debug.Log("ZZZ");
+            BGM BGML = targetBGM.GetComponent<BGM>();
+            BGML.StartL();
+        }
+
     }
 
     public void Zeereon()
@@ -587,6 +610,7 @@ public class ZeereCore : MonoBehaviour
         if (PlayerController.gameState == "playing")
         {
             HP_Z--; //hpが減る
+            slider.value = HP_Z;
             Debug.Log(HP_Z);
             if (HP_Z > 0)
             {
@@ -597,14 +621,18 @@ public class ZeereCore : MonoBehaviour
             }
             else
             {
+                GetComponent<BoxCollider2D>().enabled = false;
                 GameManager S5UI = GameUI.GetComponent<GameManager>();
                 S5UI.BossKill();
+                Loop_BGM.gameObject.SetActive(false);
+                audioSource.Stop();
                 //やられる
                 AttackLooc = true;
                 BusteAttack = false;
                 SamonAttack = false;
                 RitoningAttack = false;
                 ReeserAttack = false;
+                slider.gameObject.SetActive(false);
                 audioSource.PlayOneShot(Break_SE);
                 if (EndF ==false)
                 {

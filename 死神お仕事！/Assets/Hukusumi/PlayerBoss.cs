@@ -373,6 +373,7 @@ public class PlayerBoss : MonoBehaviour
     // ÉSÅ[Éã
     public void Goal()
     {
+        slider.gameObject.SetActive(false);
         animator.Play(goalAnime);
         gameState = "gameclear";
         GameStop();             // ÉQÅ[ÉÄí‚é~

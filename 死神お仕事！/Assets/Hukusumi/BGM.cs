@@ -4,21 +4,27 @@ using UnityEngine;
 
 public class BGM : MonoBehaviour
 {
-    //public AudioClip intro;
-    //public AudioClip loop;
+    public bool BGMLoop = false;
+    bool Cake = false;
+    private AudioSource audioSource;
+    // Start is called before the first frame update
+    void Start()
+    {
 
-    //// Start is called before the first frame update
-    //void Start()
-    //{
-    //    //イントロ部分の再生開始
-    //    intro.PlayScheduled(AudioSettings.dspTime);
+    }
+    // Update is called once per frame
+    void Update()
+    {
+    if(BGMLoop==true&&Cake==false)
+        {
+            audioSource.Play();
+            Cake = true;
+        }
+    }
 
-    //    //イントロ終了後にループ部分の再生を開始
-    //    loop.PlayScheduled(AudioSettings.dspTime + ((float)intro.clip.samples / (float)intro.clip.frequency));
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-        
-    //}
+    public void StartL()
+    {
+        BGMLoop = true;
+    }
 }
+
