@@ -11,14 +11,7 @@ public class BulletManager : MonoBehaviour
     void Start()
     {
         Destroy(gameObject, deleteTime); //íœİ’è
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-    
+    }    
 
     void OnTriggerEnter2D(Collider2D other)
     {

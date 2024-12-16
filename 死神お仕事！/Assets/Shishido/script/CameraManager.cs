@@ -9,12 +9,6 @@ public class CameraManager : MonoBehaviour
     public float topLimit    = 0.0f; // 上スクロール上限
     public float bottomLimit = 0.0f; // 下スクロール上限
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {

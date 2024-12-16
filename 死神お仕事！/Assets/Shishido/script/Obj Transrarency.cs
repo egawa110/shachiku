@@ -17,12 +17,6 @@ public class ObjTransrarency : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();//Sprite Renderer‚ğæ“¾
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     IEnumerator Display()
     {
         //“§–¾‚É‚È‚éˆ—
