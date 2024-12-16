@@ -21257,8 +21257,10 @@ PrefabInstance:
       propertyPath: SceneName
       value: St1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedComponents:
+    - {fileID: 5883492189513099611, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 2346188086741630074, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
