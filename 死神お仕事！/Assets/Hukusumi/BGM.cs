@@ -6,6 +6,7 @@ public class BGM : MonoBehaviour
 {
     public GameObject Zeere;
     bool isAudioEnd = false;
+    bool SS = false;
     private AudioSource audioSource;
     private AudioSource audioSourceZ;
     // Start is called before the first frame update
@@ -18,8 +19,15 @@ public class BGM : MonoBehaviour
     {
         if (!audioSourceZ.isPlaying && isAudioEnd)
         {
+            Debug.Log("RRR");
             audioSource.Play();
             isAudioEnd = false;
+        }
+        if(SS==false)
+        {
+            Debug.Log("ZZZ");
+            SS = true;
+            audioSource.Stop();
         }
     }
     public void Loop()

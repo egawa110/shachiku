@@ -39,5 +39,9 @@ public class BulletManager : MonoBehaviour
             //プレイヤーの攻撃が消える
             Destroy(gameObject);
         }
+        if (other.CompareTag("ZeereCore"))
+        {
+            Destroy(gameObject);//このゲームオブジェクトを消滅させる
+        }
     }
 }
