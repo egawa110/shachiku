@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
             bt.interactable = false;
             mainImage.GetComponent<Image>().sprite = gameClearSpr;  //画像を設定する
             PlayerController.gameState = "gameend";
+            PlayerBoss.gameState = "gameend";
 
             //+++ 時間制限追加 +++
             if (timeCnt != null)
@@ -78,6 +79,7 @@ public class GameManager : MonoBehaviour
             bt.interactable = false;
             mainImage.GetComponent<Image>().sprite = gameOverSpr;  //画像を設定する
             PlayerController.gameState = "gameend";
+            PlayerBoss.gameState = "gameend";
 
             //+++ 時間制限追加 +++
             if (timeCnt != null)
@@ -91,6 +93,7 @@ public class GameManager : MonoBehaviour
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             //playerControllerを取得する
             PlayerController playerCnt = player.GetComponent<PlayerController>();
+            PlayerBoss playerBoss = player.GetComponent<PlayerBoss>();
 
             //+++ 時間制限追加 +++
             //タイムを更新
@@ -107,10 +110,12 @@ public class GameManager : MonoBehaviour
                     if (time == 0)
                     {
                         playerCnt.GameOver(); //ゲームオーバーにする
+                        playerBoss.GameOver(); //ゲームオーバーにする
                     }
                 }
             }
         }
+
 
         UpdateSoul();
     }

@@ -13,7 +13,6 @@ public class ZeereCore : MonoBehaviour
     [SerializeField] GameObject Beem;
     [SerializeField] GameObject Helo;
     [SerializeField] GameObject BossEnd;
-    [SerializeField] GameObject eye;
     [SerializeField] GameObject GameClear;
     [SerializeField] GameObject Fadeout;
     [SerializeField] GameObject HeloNull;
@@ -26,6 +25,7 @@ public class ZeereCore : MonoBehaviour
     Transform gateTransform;
     public Transform target;
     float passedTimes = 0;
+    float BGMTime = 0;
     float coorTime = 0;
     [SerializeField] float speed = 5; // 敵の動くスピード
     //[SerializeField] float RUspeed = 3;
@@ -86,10 +86,10 @@ public class ZeereCore : MonoBehaviour
     public AudioClip ZeereON2_SE;
     public AudioClip Break_SE;
     public AudioClip Foor_SE;
-    public AudioClip Intor_BGM;
 
     public AudioSource Loop_BGM;
     public GameObject targetBGM;
+    bool LoopC = false;
 
     private void Start()
     {
@@ -108,6 +108,10 @@ public class ZeereCore : MonoBehaviour
     private void Update()
     {
         passedTimes += Time.deltaTime;//時間経過
+        if (LoopC == false)
+        {
+            BGMTime += Time.deltaTime;//時間経過
+        }
         if (GO == true)
         {
             if (inDamage)
@@ -152,6 +156,7 @@ public class ZeereCore : MonoBehaviour
         {
 
             passedTimes = 0;
+            BGMTime = 0;
             //待機場所へ移動
             transform.position = Vector2.MoveTowards(
                transform.position,
@@ -237,7 +242,17 @@ public class ZeereCore : MonoBehaviour
                 AttackLooc = false;
             }
         }
-
+        if (BGMTime <= 45 && BGMTime >=35&&LoopC==false&&AttackLooc==false)
+        {
+            passedTimes = 0;
+            Debug.Log("Lady?");
+        }
+        else if(BGMTime>46&&LoopC==false&&AttackLooc==false)
+        {
+            Debug.Log("GO!");
+            passedTimes = 99;
+            LoopC = true;
+        }
         rnd = Random.Range(1, 6);
         if (passedTimes > Attack)
         {
@@ -416,7 +431,7 @@ public class ZeereCore : MonoBehaviour
             }
             if (passedTimes > 4)
             {
-
+                //Debug.Log(passedTimes);
                 AttackLooc = !AttackLooc;
                 SamonAttack = !SamonAttack;
                 passedTimes = 0;
@@ -470,6 +485,7 @@ public class ZeereCore : MonoBehaviour
                 }
                 if (passedTimes > 4.5)
                 {
+                    //Debug.Log(passedTimes);
                     brx = 0.5f;
                     passedTimes = 0;
                     AttackLooc = false;
@@ -501,6 +517,7 @@ public class ZeereCore : MonoBehaviour
             }
             if (passedTimes > 3.1)
             {
+                //Debug.Log(passedTimes);
                 passedTimes = 0;
                 AttackLooc = false;
                 ReeserAttack = false;
@@ -574,6 +591,7 @@ public class ZeereCore : MonoBehaviour
         {
             if (other.CompareTag("Ground") && BusteAttack == true)//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
             {
+                //Debug.Log(passedTimes);
                 BusteAttack = false;
                 passedTimes = 0;
                 coorTime = 0;
@@ -583,6 +601,7 @@ public class ZeereCore : MonoBehaviour
 
             if (other.CompareTag("Wall") && BusteAttack == true)//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
             {
+                //Debug.Log(passedTimes);
                 BusteAttack = false;
                 passedTimes = 0;
                 coorTime = 0;
@@ -600,7 +619,7 @@ public class ZeereCore : MonoBehaviour
 
     void GetDamage(GameObject player)
     {
-        if (PlayerController.gameState == "playing")
+        if (PlayerBoss.gameState == "playing")
         {
             HP_Z--; //hpが減る
             slider.value = HP_Z;

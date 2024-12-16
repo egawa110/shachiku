@@ -6,7 +6,7 @@ AudioMixerController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: S5B
+  m_Name: Gumi
   m_OutputGroup: {fileID: 0}
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
@@ -18,7 +18,7 @@ AudioMixerController:
   m_ExposedParameters: []
   m_AudioMixerGroupViews:
   - guids:
-    - 0cb3cc6d0f7f5e8408e6f46406359abf
+    - 02bd97343ab2a74489d83b9dcb8d3e26
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -30,10 +30,10 @@ AudioMixerGroupController:
   m_PrefabAsset: {fileID: 0}
   m_Name: Master
   m_AudioMixer: {fileID: 24100000}
-  m_GroupID: 0cb3cc6d0f7f5e8408e6f46406359abf
+  m_GroupID: 02bd97343ab2a74489d83b9dcb8d3e26
   m_Children: []
-  m_Volume: 810ccfdb11c1d254682991df87b3c273
-  m_Pitch: 763538dac13f59c48a1d8ce7719b97fd
+  m_Volume: 3493d6c90a0b56740a85371a6e364660
+  m_Pitch: 8498a8d0f3537e4489d3d1a1b84f700b
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 24400004}
@@ -48,9 +48,9 @@ AudioMixerEffectController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_EffectID: fe9136c0ef8b142419d841bbb48ececd
+  m_EffectID: cb3821d9d587b6345980baf92959a082
   m_EffectName: Attenuation
-  m_MixLevel: 77b57ffad19d2044c9d6a86f6ccc6023
+  m_MixLevel: e0af1fd4936b9914f9f614e8abcb3c7f
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
@@ -63,7 +63,7 @@ AudioMixerSnapshotController:
   m_PrefabAsset: {fileID: 0}
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
-  m_SnapshotID: 86d88a11c72ede4418c9b1eca91bda8b
+  m_SnapshotID: fab0ab3d83d39044e89e1c63ea6732f7
   m_FloatValues:
-    810ccfdb11c1d254682991df87b3c273: 9.757735
+    3493d6c90a0b56740a85371a6e364660: 9.925883
   m_TransitionOverrides: {}
