@@ -51,7 +51,7 @@ public class EnemyHit : MonoBehaviour
 
     void GetDamage(GameObject player)
     {
-        if (PlayerController.gameState == "playing")
+        if (PlayerController.gameState == "playing"|| PlayerBoss.gameState == "playing")
         {
             HP_E--; //hp‚ªŒ¸‚é
             if (HP_E > 0)
