@@ -579,7 +579,7 @@ public class ZeereCore : MonoBehaviour
 
         if(HP_Z==HP_M/2)
         {
-            ATspeed = 7.0f;
+            ATspeed = 6.0f;
             BsCT = 1.0f;
         }
 

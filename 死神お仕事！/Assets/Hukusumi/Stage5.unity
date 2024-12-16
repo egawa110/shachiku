@@ -1115,7 +1115,7 @@ MonoBehaviour:
   Damage_SE: {fileID: 8300000, guid: 1b2f3ad45283c9e4496672801bd1a76c, type: 3}
   GetSoul_SE: {fileID: 8300000, guid: 747cee683af35e340b8bda47fb324a44, type: 3}
   Attack_SE: {fileID: 8300000, guid: ecb11876312bcad449b6ec0c63c9a37c, type: 3}
-  Switch_Act_SE: {fileID: 8300000, guid: b28d3277eb0320e44ad838f471bab4e4, type: 3}
+  Switch_Act_SE: {fileID: 8300000, guid: 50cf66027b47d114d90403322ca4a958, type: 3}
   Clear_SE: {fileID: 8300000, guid: 99511c31598401c47a5502623bffd77f, type: 3}
   Over_SE: {fileID: 8300000, guid: 666973d729970c6479f087a84039816a, type: 3}
 --- !u!82 &1107595992
