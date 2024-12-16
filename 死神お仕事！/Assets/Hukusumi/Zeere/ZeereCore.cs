@@ -32,6 +32,7 @@ public class ZeereCore : MonoBehaviour
     float ATspeed = 10.0f;
     float SamonC = 0;
     public float Attack = 10;
+    float BsCT = 3.0f;
 
     int rnd;
     
@@ -236,7 +237,7 @@ public class ZeereCore : MonoBehaviour
         if (Cool == true && GoOK == true && EndF == false)
         {
             coorTime += Time.deltaTime;//時間経過
-            if (coorTime > 3)
+            if (coorTime > BsCT)
             {
                 Cool = false;
                 AttackLooc = false;
@@ -576,7 +577,11 @@ public class ZeereCore : MonoBehaviour
             }
         }
 
-        
+        if(HP_Z==HP_M/2)
+        {
+            ATspeed = 7.0f;
+            BsCT = 1.0f;
+        }
 
     }
 
@@ -589,14 +594,29 @@ public class ZeereCore : MonoBehaviour
     {
         if (EndF == false)
         {
-            if (other.CompareTag("Ground") && BusteAttack == true)//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
+            if (HP_Z > HP_M / 2)
             {
-                //Debug.Log(passedTimes);
-                BusteAttack = false;
-                passedTimes = 0;
-                coorTime = 0;
-                Cool = true;
-                audioSource.PlayOneShot(Attack_SE);
+                if (other.CompareTag("Ground") && BusteAttack == true)//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
+                {
+                    //Debug.Log(passedTimes);
+                    BusteAttack = false;
+                    passedTimes = 0;
+                    coorTime = 0;
+                    Cool = true;
+                    audioSource.PlayOneShot(Attack_SE);
+                }
+            }
+            else
+            {
+                if (other.CompareTag("OverGround") && BusteAttack == true)//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
+                {
+                    //Debug.Log(passedTimes);
+                    BusteAttack = false;
+                    passedTimes = 0;
+                    coorTime = 0;
+                    Cool = true;
+                    audioSource.PlayOneShot(Attack_SE);
+                }
             }
 
             if (other.CompareTag("Wall") && BusteAttack == true)//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下

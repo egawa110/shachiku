@@ -1645,7 +1645,7 @@ MonoBehaviour:
   rx: 1
   boder: 10
   GO: 0
-  HP_M: 1
+  HP_M: 40
   slider: {fileID: 1594238200}
   Samon_SE: {fileID: 8300000, guid: 3a93bf581e56ee64b9659044e719526e, type: 3}
   SamonR_SE: {fileID: 8300000, guid: f3b1bcf02cf80d142905d9d172b1fcba, type: 3}
