@@ -3836,6 +3836,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2476053206838861135}
+    - target: {fileID: 4191603410222032016, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -35.59999
+      objectReference: {fileID: 0}
     - target: {fileID: 5575693022881019164, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: SceneName
       value: St3
@@ -4935,6 +4939,10 @@ PrefabInstance:
     - target: {fileID: 2054102805821350345, guid: 6ea8fddd3ea037146b65f0bfc5a67d28, type: 3}
       propertyPath: m_Name
       value: WallObject (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077696764529546064, guid: 6ea8fddd3ea037146b65f0bfc5a67d28, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
