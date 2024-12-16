@@ -891,8 +891,8 @@ GameObject:
   - component: {fileID: 1349057837}
   - component: {fileID: 1349057836}
   - component: {fileID: 1349057835}
-  - component: {fileID: 1349057834}
   - component: {fileID: 1349057833}
+  - component: {fileID: 1349057838}
   m_Layer: 5
   m_Name: Restart
   m_TagString: Untagged
@@ -965,19 +965,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &1349057834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1349057831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a4c850ec8e40d34db5d825087999bea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneName: St1
 --- !u!114 &1349057835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1022,8 +1009,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1349057834}
-        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+      - m_Target: {fileID: 1349057838}
+        m_TargetAssemblyTypeName: ChangeStory, Assembly-CSharp
         m_MethodName: Load
         m_Mode: 1
         m_Arguments:
@@ -1072,6 +1059,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1349057831}
   m_CullTransparentMesh: 1
+--- !u!114 &1349057838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349057831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca9801b990a144d4386b203fc8f805ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: St1
 --- !u!1 &1560377735
 GameObject:
   m_ObjectHideFlags: 0
