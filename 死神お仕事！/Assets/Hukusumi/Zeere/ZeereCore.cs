@@ -88,7 +88,6 @@ public class ZeereCore : MonoBehaviour
     public AudioClip Foor_SE;
     public AudioClip Intor_BGM;
 
-    private bool isAudioEnd;
     public AudioSource Loop_BGM;
     public GameObject targetBGM;
 
@@ -108,7 +107,6 @@ public class ZeereCore : MonoBehaviour
 
     private void Update()
     {
-        
         passedTimes += Time.deltaTime;//ŽžŠÔŒo‰ß
         if (GO == true)
         {
@@ -180,7 +178,8 @@ public class ZeereCore : MonoBehaviour
                     audioSource.PlayOneShot(ZeereON_SE);
 
                     audioSource.Play();
-                    isAudioEnd = true;
+                    BGM BGML = targetBGM.GetComponent<BGM>();
+                    BGML.Loop();
                 }
             }
             if (passedTimes >= 4&& passedTimes <= 5)
@@ -281,7 +280,7 @@ public class ZeereCore : MonoBehaviour
                     ReeserLooc = !ReeserLooc;
                     passedTimes = 0;
                     coorTime = 0;
-                    Debug.Log(AttackLooc);
+                    //Debug.Log(AttackLooc);
                 }
                 if (rnd == 5 && LongLooc == false)
                 {
@@ -560,13 +559,7 @@ public class ZeereCore : MonoBehaviour
             }
         }
 
-        //BGM
-        if (!audioSource.isPlaying && isAudioEnd&& EndF == false)
-        {
-            Debug.Log("ZZZ");
-            BGM BGML = targetBGM.GetComponent<BGM>();
-            BGML.StartL();
-        }
+        
 
     }
 

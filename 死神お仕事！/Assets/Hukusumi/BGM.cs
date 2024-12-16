@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class BGM : MonoBehaviour
 {
-    public bool BGMLoop = false;
-    bool Cake = false;
+    public GameObject Zeere;
+    bool isAudioEnd = false;
     private AudioSource audioSource;
+    private AudioSource audioSourceZ;
     // Start is called before the first frame update
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
+        audioSourceZ =Zeere.GetComponent<AudioSource>();
     }
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-    if(BGMLoop==true&&Cake==false)
+        if (!audioSourceZ.isPlaying && isAudioEnd)
         {
             audioSource.Play();
-            Cake = true;
+            isAudioEnd = false;
         }
     }
-
-    public void StartL()
+    public void Loop()
     {
-        BGMLoop = true;
+        isAudioEnd = true;
     }
 }
 
