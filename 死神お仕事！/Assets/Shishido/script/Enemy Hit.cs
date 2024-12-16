@@ -17,7 +17,6 @@ public class EnemyHit : MonoBehaviour
     {
         //プレイヤーコントローラー取得
         playcon = GetComponent<PlayerController>();
-
     }
 
     // Update is called once per frame

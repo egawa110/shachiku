@@ -12,10 +12,4 @@ public class MakeaSounds : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
