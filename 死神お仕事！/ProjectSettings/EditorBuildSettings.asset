@@ -54,6 +54,9 @@ EditorBuildSettings:
     path: "Assets/Egawa/StageSelect/\u30B9\u30C8\u30FC\u30EA\u30FC\u30B7\u30FC\u30F3/4scene.unity"
     guid: 8b27e3840d9b65d428836bd89624eb93
   - enabled: 1
+    path: Assets/Stage/Stage5/Stage5set.unity
+    guid: 0928c5845d02def4c803f5a2998146c3
+  - enabled: 1
     path: Assets/Egawa/StageSelect/BOSSset.unity
     guid: ebb46f4d6f63c3c4a8cd35620d102bbc
   - enabled: 1
