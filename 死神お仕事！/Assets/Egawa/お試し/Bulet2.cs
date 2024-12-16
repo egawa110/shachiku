@@ -271,8 +271,7 @@ public class Bullet2 : MonoBehaviour
         else if (collision.gameObject.tag == "Soul")
         {
             //°æ“¾‚·‚é
-            Souls item = collision.gameObject.GetComponent<Souls>();
-            ALL_SOUL += item.soul_one;
+            ALL_SOUL++;
             //‰¹‚ğ–Â‚ç‚·
             audioSource.PlayOneShot(GetSoul_SE);
             // íœ‚·‚é
