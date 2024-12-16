@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: "Assets/Egawa/StageSelect/Ending/\u30A8\u30F3\u30C7\u30A3\u30F3\u30B0\uFF11/En4.unity"
     guid: 17b124d9901d3f5438fd543abdb1d529
   - enabled: 1
+    path: "Assets/Egawa/StageSelect/Ending/\u30A8\u30F3\u30C7\u30A3\u30F3\u30B0\uFF12/BOSSen4.unity"
+    guid: fd0e8ba10c1057c4b96c3a82b13e9c10
+  - enabled: 1
     path: "Assets/Egawa/StageSelect/\u30AF\u30EC\u30B8\u30C3\u30C8.unity"
     guid: ae53f3efd40a4864ea1d65f56c07a60e
   - enabled: 1
@@ -44,6 +47,15 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Egawa/StageSelect/\u30B9\u30C8\u30FC\u30EA\u30FC\u30B7\u30FC\u30F3/1scene.unity"
     guid: 6b8c96a6964519545a9c6b9e63801077
+  - enabled: 1
+    path: "Assets/Egawa/StageSelect/Ending/\u30A8\u30F3\u30C7\u30A3\u30F3\u30B0\uFF12/BOSSen1.unity"
+    guid: 18bacee5cfa6d0845b3f0c73be6b59f8
+  - enabled: 1
+    path: "Assets/Egawa/StageSelect/Ending/\u30A8\u30F3\u30C7\u30A3\u30F3\u30B0\uFF12/BOSSen2.unity"
+    guid: 084e1926bdd9e0048bd07e5b64c719a0
+  - enabled: 1
+    path: "Assets/Egawa/StageSelect/Ending/\u30A8\u30F3\u30C7\u30A3\u30F3\u30B0\uFF12/BOSSen3.unity"
+    guid: dde4cfb224e85e94e994d2c1fdefc7eb
   - enabled: 1
     path: "Assets/Egawa/StageSelect/\u30B9\u30C8\u30FC\u30EA\u30FC\u30B7\u30FC\u30F3/2scene.unity"
     guid: 51303f840b57f07488e467c6e8fe10ac
