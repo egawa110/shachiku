@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
-{
+{    
     //　ポーズした時に表示するUI
     [SerializeField]
     private GameObject pauseUI;
@@ -20,7 +20,6 @@ public class PauseMenu : MonoBehaviour
             if (pauseUI.activeSelf)
             {
                 Time.timeScale = 0f;
-                //　ポーズUIが表示されてなければ通常通り進行
             }
             else
             {
