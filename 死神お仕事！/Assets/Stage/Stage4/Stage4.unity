@@ -131,10 +131,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1799513914069002468, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 40.79
-      objectReference: {fileID: 0}
     - target: {fileID: 3173285051253418098, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -146,10 +142,6 @@ PrefabInstance:
     - target: {fileID: 5613234516803186349, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
       propertyPath: m_Name
       value: Stage4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7020161681903726161, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8545883780130458332, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
       propertyPath: m_LocalPosition.x
@@ -190,10 +182,6 @@ PrefabInstance:
     - target: {fileID: 8545883780130458332, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8908684150872580169, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 34.21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
