@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6661358771367188697}
   - component: {fileID: 3823499709919892117}
   - component: {fileID: 3099372593051593626}
-  - component: {fileID: 597436485072826359}
   m_Layer: 0
   m_Name: Soul
   m_TagString: Soul
@@ -143,16 +142,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &597436485072826359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4087347953034036596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ba9c249f27daac4ca84c42345087c7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soul_one: 1

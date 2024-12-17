@@ -131,14 +131,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 66809678896629456, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
-      propertyPath: m_Size.y
-      value: 3.5658278
-      objectReference: {fileID: 0}
-    - target: {fileID: 66809678896629456, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.020424426
-      objectReference: {fileID: 0}
     - target: {fileID: 6611924174335174627, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: m_Name
       value: Stage2
