@@ -8,7 +8,6 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-
     Rigidbody2D rbody;                //Rigidbody2D型の作成
     float axisH = 0.0f;               //入力
     public float speed = 3.0f;        //移動速度
@@ -16,7 +15,6 @@ public class PlayerController : MonoBehaviour
     public float jump = 9.0f;         //ジャンプ力
     public LayerMask groundLayer;     //着地できるレイヤー
     bool goJump = false;              //ジャンプ開始フラグ
-
 
     //アニメーション対応
     Animator animator; //アニメーター
@@ -31,7 +29,6 @@ public class PlayerController : MonoBehaviour
 
     public static string gameState = "playing";// ゲームの状態
 
-
     //追加
     public int ALL_SOUL = 0;      //1ステージで取得したすべての魂
 
@@ -44,7 +41,6 @@ public class PlayerController : MonoBehaviour
 
     private float currentAttackTime;                  //攻撃の間隔を管理
     private bool canAttack;                           //攻撃可能状態かを指定するフラグ
-    
 
     public int maxHp = 4;      //プレイヤーの最大Hp
     int Hp;                    //プレイヤーの現在Hp
@@ -61,7 +57,6 @@ public class PlayerController : MonoBehaviour
     public AudioClip Switch_Act_SE;  // スイッチをポチッとする
     public AudioClip Clear_SE;       // ゲームクリアー
     public AudioClip Over_SE;        // ゲームオーバー
-
 
     // Start is called before the first frame update
     void Start()
@@ -258,9 +253,6 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.gameObject.tag=="Soul")
         {
-            //魂取得する
-            //Souls item = collision.gameObject.GetComponent<Souls>();
-            //ALL_SOUL += item.soul_one;
             ALL_SOUL++;
             //音を鳴らす
             audioSource.PlayOneShot(GetSoul_SE);
@@ -311,6 +303,7 @@ public class PlayerController : MonoBehaviour
         inDamage = false; // ダメージフラグOFF
         gameObject.GetComponent<SpriteRenderer>().enabled = true; // スプライトを元に戻す
     }
+
     // ゴール
     public void Goal()
     {
@@ -319,9 +312,7 @@ public class PlayerController : MonoBehaviour
         GameStop();             // ゲーム停止
         //音楽を鳴らす
         audioSource.PlayOneShot(Clear_SE);
-
     }
-
     // ゲームオーバー
     public void GameOver()
     {
@@ -335,8 +326,6 @@ public class PlayerController : MonoBehaviour
         //音楽を鳴らす
         audioSource.PlayOneShot(Over_SE);
     }
-
-
     //ゲーム停止
     void GameStop()
     {

@@ -239,24 +239,6 @@ public class Bullet2 : MonoBehaviour
         }
     }
 
-
-    //public void CreateBullet_R()
-    //{
-    //    //第一引数に生成するオブジェクト、第二引数にVector3型の座標、第三引数に回転の情報
-    //    Instantiate(bullet, attackPoint.position, Quaternion.identity);
-    //    canAttack = false; //攻撃フラグをfalseにする
-    //    attackTime = 0f;　 //attackTimeを0に戻す
-    //}
-
-    //public void CreateBullet_L()
-    //{
-    //    //第一引数に生成するオブジェクト、第二引数にVector3型の座標、第三引数に回転の情報
-    //    Instantiate(bullet, attackPoint.position, Quaternion.identity);
-    //    canAttack = false; //攻撃フラグをfalseにする
-    //    attackTime = 0f;　 //attackTimeを0に戻す
-    //}
-
-
     //接触開始
     void OnTriggerEnter2D(Collider2D collision)
     {

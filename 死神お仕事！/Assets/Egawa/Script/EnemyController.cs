@@ -15,18 +15,15 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         if (isToRight)
         {
             transform.localScale = new Vector2(-1, 1); //向きの変更
         }
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        
         if (revTime > 0)
         {
             time += Time.deltaTime;
@@ -38,14 +35,12 @@ public class EnemyController : MonoBehaviour
                 {
                     transform.localScale = new Vector2(-1, 1); //向きの変更
                 }
-
                 else
                 {
                     transform.localScale = new Vector2(1, 1); //向きの変更
                 }
             }
         }
-
     }
     void FixedUpdate()
     {
@@ -58,7 +53,6 @@ public class EnemyController : MonoBehaviour
 
         if (onGround)
         {
-
             //速度を更新する
             //Rigidbody2D を取ってくる
             Rigidbody2D rbody = GetComponent<Rigidbody2D>();
@@ -67,19 +61,16 @@ public class EnemyController : MonoBehaviour
             {
                 rbody.velocity = new Vector2(speed, rbody.velocity.y);
             }
-
             else
             {
                 rbody.velocity = new Vector2(-speed, rbody.velocity.y);
             }
         }
-                                                                      
     }
 
     //接触
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
         isToRight = !isToRight; //フラグを反転させる
         time = 0;               //タイマー初期化
 
@@ -87,11 +78,9 @@ public class EnemyController : MonoBehaviour
         {
             transform.localScale = new Vector2(-1, 1); //向きの変更
         }
-
         else
         {
             transform.localScale = new Vector2(1, 1); //向きの変更
         }
-
     }
 }

@@ -6,7 +6,6 @@ using UnityEngine.UI;  //UIを使うのに必要
 
 public class GameManager : MonoBehaviour
 {
-
     public GameObject mainImage;      //画像を持つGameObject
     public Sprite gameOverSpr;        //GAME OVER画像
     public Sprite gameClearSpr;       //GAME CLEAR画像
@@ -27,7 +26,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         //画像を非表示にする
         Invoke("InactiveImage", 1.0f);
         //ボタン（パネル）を非表示にする
@@ -130,7 +128,6 @@ public class GameManager : MonoBehaviour
     {
         timeCnt.isTimeOver = true; //時間カウント停止
     }
-
     void UpdateSoul()
     {
         //ゲーム中
