@@ -13,7 +13,6 @@ public class Bullet : MonoBehaviour
     public LayerMask groundLayer;      //地面レイヤー
     public float fireSpeed = 4.0f; //発射速度
 
-
     private Vector3 movement;
     private float amountX;
 
@@ -81,9 +80,6 @@ public class Bullet : MonoBehaviour
                     }
                 }
             }
-
-
-
         }
         else
         {
@@ -108,7 +104,6 @@ public class Bullet : MonoBehaviour
 
 
     }
-
 
     //接触
     private void OnTriggerEnter2D(Collider2D other) //ぶつかったら消える命令文開始

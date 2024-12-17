@@ -5,17 +5,6 @@ using UnityEngine;
 public class BulletC : MonoBehaviour
 {
     public float deleteTime = 3.0f; //íœ‚·‚éŠÔw’è
-    // Start is called before the first frame update
-    void Start()
-    {
-        Destroy(gameObject, deleteTime); //íœİ’è
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

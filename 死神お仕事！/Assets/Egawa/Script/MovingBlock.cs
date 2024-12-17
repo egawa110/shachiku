@@ -19,7 +19,6 @@ public class MovingBlock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         startPos = transform.position;                                 //初期位置
         endPos = new Vector2(startPos.x + moveX, startPos.y + moveY);  //移動位置
 
@@ -28,13 +27,11 @@ public class MovingBlock : MonoBehaviour
             //乗った時に動くので最初は動かさない
             isCanMove = false;
         }
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        
         if (isCanMove)
         {
             float distance = Vector2.Distance(startPos, endPos); //移動距離
@@ -76,38 +73,6 @@ public class MovingBlock : MonoBehaviour
     public void Stop()
     {
         isCanMove = false;
-    }
-
-    //接続開始
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        //ここでキャラの大きさが変わる
-        /*
-        if (collision.gameObject.tag == "Player")
-        {
-            //接触したのがプレイヤーなら移動床の子にする
-            collision.transform.SetParent(transform);
-            
-            if (isMoveWhenOn)
-            {
-                //乗った時に動くフラグON
-                isCanMove = true; //移動フラグを立てる
-            }
-        }
-        */
-    }
-
-    //接触終了
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        //ここでキャラの大きさが変わる
-        /*
-        if (collision.gameObject.tag == "Player")
-        {
-            //接触したのがプレイヤーなら移動床の子から外す
-            collision.transform.SetParent(null);
-        }
-        */
     }
 
     //移動範囲表示
