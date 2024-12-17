@@ -376,9 +376,13 @@ public class ZeereCore : MonoBehaviour
                 transform.rotation = Quaternion.FromToRotation(Vector3.up, toDirection);
 
                 //プロト低速ロックオン
-                //if(toDirection.x>0&& transform.localEulerAngles.x-toDirection.x>0)
+                //if (toDirection.x > 0)
                 //{
                 //    transform.Rotate(new Vector3(0, 0, 1));
+                //}
+                //else if (toDirection.x < 0)
+                //{
+                //    transform.Rotate(new Vector3(0, 0, -1));
                 //}
             }
             if (passedTimes < 3 && Cool2 == false)
