@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 76833335805221897}
   - component: {fileID: 3152476119649309543}
   - component: {fileID: 879065424805769347}
-  - component: {fileID: 9099559140909008406}
   m_Layer: 0
   m_Name: Soul (8)
   m_TagString: Soul
@@ -143,19 +142,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &9099559140909008406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8441374987284817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ba9c249f27daac4ca84c42345087c7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soul_one: 1
 --- !u!1 &34501107133883061
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,7 +666,6 @@ GameObject:
   - component: {fileID: 6542671411802714916}
   - component: {fileID: 6436746228120512618}
   - component: {fileID: 8026986583069886623}
-  - component: {fileID: 8823759812203203536}
   m_Layer: 0
   m_Name: Soul (5)
   m_TagString: Soul
@@ -811,19 +796,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8823759812203203536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 414995453474174479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ba9c249f27daac4ca84c42345087c7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soul_one: 1
 --- !u!1 &420680607271440688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,7 +1311,6 @@ GameObject:
   - component: {fileID: 6323713974348445474}
   - component: {fileID: 7783770111885917310}
   - component: {fileID: 8180421643744855121}
-  - component: {fileID: 7826324450501054910}
   m_Layer: 0
   m_Name: Soul (4)
   m_TagString: Soul
@@ -1470,19 +1441,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7826324450501054910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 656842612645181560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ba9c249f27daac4ca84c42345087c7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soul_one: 1
 --- !u!1 &757749823029037710
 GameObject:
   m_ObjectHideFlags: 0
@@ -1962,7 +1920,6 @@ GameObject:
   - component: {fileID: 6698509523770430256}
   - component: {fileID: 229755106049218620}
   - component: {fileID: 5364921033884679404}
-  - component: {fileID: 8759117401430798699}
   m_Layer: 0
   m_Name: Soul (7)
   m_TagString: Soul
@@ -2093,19 +2050,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8759117401430798699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1082917467433171790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ba9c249f27daac4ca84c42345087c7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soul_one: 1
 --- !u!1 &1110731480976777844
 GameObject:
   m_ObjectHideFlags: 0
@@ -2558,7 +2502,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 12c6d1dae3a9dac41a24553c1feeef88, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ef22fbde050c03648824ca4e5d4a7065, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5041,7 +4985,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 12c6d1dae3a9dac41a24553c1feeef88, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ef22fbde050c03648824ca4e5d4a7065, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6218,7 +6162,6 @@ GameObject:
   - component: {fileID: 4625447207646527477}
   - component: {fileID: 8125178100041858511}
   - component: {fileID: 1309766830372520985}
-  - component: {fileID: 5017906873540959113}
   m_Layer: 0
   m_Name: Soul (9)
   m_TagString: Soul
@@ -6349,19 +6292,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5017906873540959113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3073488280028278961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ba9c249f27daac4ca84c42345087c7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soul_one: 1
 --- !u!1 &3085509260517406065
 GameObject:
   m_ObjectHideFlags: 0
@@ -7355,7 +7285,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 12c6d1dae3a9dac41a24553c1feeef88, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ef22fbde050c03648824ca4e5d4a7065, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8978,7 +8908,6 @@ GameObject:
   - component: {fileID: 4290421005189463557}
   - component: {fileID: 1389096245477667825}
   - component: {fileID: 34690477259028946}
-  - component: {fileID: 940593520589753209}
   m_Layer: 0
   m_Name: Soul (3)
   m_TagString: Soul
@@ -9109,19 +9038,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &940593520589753209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4156837381984771437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ba9c249f27daac4ca84c42345087c7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soul_one: 1
 --- !u!1 &4157822342261234645
 GameObject:
   m_ObjectHideFlags: 0
@@ -9516,7 +9432,6 @@ GameObject:
   - component: {fileID: 2251284320053471159}
   - component: {fileID: 7196732088454662470}
   - component: {fileID: 3852766205370680181}
-  - component: {fileID: 7859118606700278438}
   m_Layer: 0
   m_Name: Soul
   m_TagString: Soul
@@ -9647,19 +9562,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7859118606700278438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4509162813468225199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ba9c249f27daac4ca84c42345087c7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soul_one: 1
 --- !u!1 &4518384904990011287
 GameObject:
   m_ObjectHideFlags: 0
@@ -10903,7 +10805,6 @@ GameObject:
   - component: {fileID: 780393128236577611}
   - component: {fileID: 194521509844903852}
   - component: {fileID: 8726694022388215225}
-  - component: {fileID: 2986501017504414559}
   m_Layer: 0
   m_Name: Soul (6)
   m_TagString: Soul
@@ -11034,19 +10935,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2986501017504414559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5058990536376990911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ba9c249f27daac4ca84c42345087c7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soul_one: 1
 --- !u!1 &5061888619564473371
 GameObject:
   m_ObjectHideFlags: 0
@@ -11899,7 +11787,6 @@ GameObject:
   - component: {fileID: 5990328524024310739}
   - component: {fileID: 3787589376938037516}
   - component: {fileID: 6625503586020948406}
-  - component: {fileID: 4844849473163530935}
   m_Layer: 0
   m_Name: Soul (1)
   m_TagString: Soul
@@ -12030,19 +11917,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4844849473163530935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5424428015346820860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ba9c249f27daac4ca84c42345087c7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soul_one: 1
 --- !u!1 &5469848650198762410
 GameObject:
   m_ObjectHideFlags: 0
@@ -17758,7 +17632,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 12c6d1dae3a9dac41a24553c1feeef88, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ef22fbde050c03648824ca4e5d4a7065, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -18087,7 +17961,6 @@ GameObject:
   - component: {fileID: 5676501055302435973}
   - component: {fileID: 4099557806064833832}
   - component: {fileID: 6327118448314322020}
-  - component: {fileID: 6309647890673272156}
   m_Layer: 0
   m_Name: Soul (2)
   m_TagString: Soul
@@ -18218,19 +18091,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6309647890673272156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8158412421599248391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ba9c249f27daac4ca84c42345087c7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soul_one: 1
 --- !u!1 &8171357878333560500
 GameObject:
   m_ObjectHideFlags: 0
@@ -21251,7 +21111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7113009532891470134, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -97.999985
+      value: -97.999954
       objectReference: {fileID: 0}
     - target: {fileID: 7715749213932286118, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: SceneName
