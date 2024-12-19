@@ -39,7 +39,7 @@ EditorBuildSettings:
     path: "Assets/Egawa/StageSelect/Ending/\u30A8\u30F3\u30C7\u30A3\u30F3\u30B0\uFF12/BOSSen4.unity"
     guid: fd0e8ba10c1057c4b96c3a82b13e9c10
   - enabled: 1
-    path: "Assets/Egawa/StageSelect/\u30AF\u30EC\u30B8\u30C3\u30C8.unity"
+    path: "Assets/Egawa/StageSelect/\u30AF\u30EC\u30B8\u30C3\u30C8/\u30AF\u30EC\u30B8\u30C3\u30C8.unity"
     guid: ae53f3efd40a4864ea1d65f56c07a60e
   - enabled: 1
     path: "Assets/Egawa/StageSelect/Ending/\u30A8\u30F3\u30C7\u30A3\u30F3\u30B0\uFF11/Ending.unity"
