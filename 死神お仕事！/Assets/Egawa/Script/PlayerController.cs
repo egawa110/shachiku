@@ -92,6 +92,7 @@ public class PlayerController : MonoBehaviour
         }
 
         speed = 3.0f;
+        rbody.gravityScale = 1.1f;
 
         //水平方向の入力をチェック
         axisH = Input.GetAxisRaw("Horizontal");
@@ -210,7 +211,7 @@ public class PlayerController : MonoBehaviour
             canAttack = true; //指定時間を超えたら攻撃可能にする
         }
 
-        if (Input.GetKeyDown(KeyCode.K)) // Kキーを押したら
+        if (Input.GetMouseButtonDown(0)) // 左クリックしたら
         {
             if (canAttack)
             {
