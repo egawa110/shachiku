@@ -741,6 +741,70 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &375871725
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 90191674428896897, guid: 37160d41f01163149b15ac08160c8519, type: 3}
+      propertyPath: speed
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558627045649422712, guid: 37160d41f01163149b15ac08160c8519, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -18.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558627045649422712, guid: 37160d41f01163149b15ac08160c8519, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558627045649422712, guid: 37160d41f01163149b15ac08160c8519, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558627045649422712, guid: 37160d41f01163149b15ac08160c8519, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558627045649422712, guid: 37160d41f01163149b15ac08160c8519, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558627045649422712, guid: 37160d41f01163149b15ac08160c8519, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558627045649422712, guid: 37160d41f01163149b15ac08160c8519, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558627045649422712, guid: 37160d41f01163149b15ac08160c8519, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558627045649422712, guid: 37160d41f01163149b15ac08160c8519, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558627045649422712, guid: 37160d41f01163149b15ac08160c8519, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512900405639411711, guid: 37160d41f01163149b15ac08160c8519, type: 3}
+      propertyPath: m_Name
+      value: PlayerLoocon
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8512900405639411711, guid: 37160d41f01163149b15ac08160c8519, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 572680978}
+  m_SourcePrefab: {fileID: 100100000, guid: 37160d41f01163149b15ac08160c8519, type: 3}
 --- !u!1 &381691723
 GameObject:
   m_ObjectHideFlags: 0
@@ -1041,6 +1105,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &572680975 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8512900405639411711, guid: 37160d41f01163149b15ac08160c8519, type: 3}
+  m_PrefabInstance: {fileID: 375871725}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &572680978
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572680975}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 5
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &640721385
 GameObject:
   m_ObjectHideFlags: 0
@@ -6557,6 +6653,7 @@ MonoBehaviour:
   KillEffect: {fileID: 3451110779948650419, guid: eb3691943a6d85840841e621d9038e72, type: 3}
   SoulEat: {fileID: 3328487248146833803, guid: d6d5361fc0ff29744a2d5df30b3e3f50, type: 3}
   GameUI: {fileID: 1571002561}
+  LoocON: {fileID: 572680975}
   target: {fileID: 1107595986}
   speed: 5
   Attack: 5
@@ -14233,10 +14330,11 @@ SceneRoots:
   - {fileID: 2041911192}
   - {fileID: 1564188213}
   - {fileID: 1694093035}
-  - {fileID: 1577780478}
-  - {fileID: 2102213310}
+  - {fileID: 1165138442}
   - {fileID: 1231820786}
   - {fileID: 273339359}
-  - {fileID: 1165138442}
+  - {fileID: 1577780478}
+  - {fileID: 2102213310}
   - {fileID: 1751993746}
   - {fileID: 232662569}
+  - {fileID: 375871725}
