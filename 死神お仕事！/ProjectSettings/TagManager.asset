@@ -22,6 +22,7 @@ TagManager:
   - Wall
   - GameEnd
   - OverGround
+  - PlayerLoocon
   layers:
   - Default
   - TransparentFX

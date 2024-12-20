@@ -21,8 +21,10 @@ public class ZeereCore : MonoBehaviour
 
     public GameObject GameUI;
 
+    public GameObject LoocON;
 
     Transform gateTransform;
+    Transform BsTraget;
     public Transform target;
     float passedTimes = 0;
     float BGMTime = 0;
@@ -97,6 +99,7 @@ public class ZeereCore : MonoBehaviour
         HP_Z = HP_M;
         slider.value = HP_M;
         Reel = GameObject.FindGameObjectWithTag("ZeeReeL").transform;
+        BsTraget = GameObject.FindGameObjectWithTag("PlayerLoocon").transform;
         gateTransform = GameObject.FindGameObjectWithTag("SamonTG").transform;
         Zeere1 = GameObject.Find("ZeerenoTyuusinnZERO");
         Zeere2 = GameObject.Find("ZeerenoTyuusinn");
@@ -263,6 +266,8 @@ public class ZeereCore : MonoBehaviour
 
                 if (rnd == 1 && BusteLooc == false)//突進ON
                 {
+                    PlayerLoocon LCO = LoocON.GetComponent<PlayerLoocon>();
+                    LCO.Reset();
                     AttackLooc = !AttackLooc;
                     BusteAttack = !BusteAttack;
                     BusteLooc = !BusteLooc;
@@ -370,17 +375,16 @@ public class ZeereCore : MonoBehaviour
             {
                 
                 // 対象物へのベクトルを算出
-                Vector3 toDirection = target.transform.position - transform.position;
-                //Debug.Log(toDirection);
+                Vector3 toDirection = BsTraget.transform.position - transform.position;
                 // 対象物へ回転する
                 transform.rotation = Quaternion.FromToRotation(Vector3.up, toDirection);
 
                 //プロト低速ロックオン
-                //if (toDirection.x > 0)
+                //if (toDirection.x > 0&& transform.localEulerAngles.z -toDirection.x-180>0)
                 //{
                 //    transform.Rotate(new Vector3(0, 0, 1));
                 //}
-                //else if (toDirection.x < 0)
+                //else if (toDirection.x < 0 && transform.localEulerAngles.z - toDirection.x - 180 < 0)
                 //{
                 //    transform.Rotate(new Vector3(0, 0, -1));
                 //}
