@@ -91,6 +91,8 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+        speed = 3.0f;
+
         //水平方向の入力をチェック
         axisH = Input.GetAxisRaw("Horizontal");
 
@@ -109,6 +111,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             Jump();
+        }
+
+        //ダッシュ
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            speed = 5.0f;
+            rbody.gravityScale = 1.7f;
         }
 
         //主人公の攻撃
@@ -287,7 +296,7 @@ public class PlayerController : MonoBehaviour
                 Vector3 v = (transform.position - enemy.transform.position).normalized; rbody.AddForce(new Vector2(v.x * 4, v.y * 4), ForceMode2D.Impulse);
                 //ダメージフラグ　ON
                 inDamage = true;
-                Invoke(nameof(DamageEnd), 0.25f);
+                Invoke(nameof(DamageEnd), 0.5f);
             }
             else
             {
