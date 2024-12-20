@@ -489,7 +489,7 @@ GameObject:
   - component: {fileID: 273339360}
   - component: {fileID: 273339355}
   m_Layer: 0
-  m_Name: "\u30B9\u30A4\u30C3\u30C1\u767D1\u30B5\u30A4\u30BA\u5909\u66F420"
+  m_Name: BossEventON
   m_TagString: Switch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -638,6 +638,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1118878799}
+  - {fileID: 850076742}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &273339360
@@ -5983,12 +5984,12 @@ Transform:
   m_GameObject: {fileID: 850076736}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -25.93, y: 8, z: -4.508251}
+  m_LocalPosition: {x: -18.79, y: 12.58, z: -4.508251}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1948150013}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 273339359}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1107595979 stripped
 GameObject:
@@ -6145,7 +6146,7 @@ GameObject:
   - component: {fileID: 1118878798}
   - component: {fileID: 1118878800}
   m_Layer: 0
-  m_Name: NOBossSeerd
+  m_Name: BossShield
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6890,8 +6891,8 @@ GameObject:
   - component: {fileID: 1231820784}
   - component: {fileID: 1231820783}
   m_Layer: 0
-  m_Name: "\u767D\u58C1 (1)"
-  m_TagString: Untagged
+  m_Name: "\u767D\u58C1 "
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8027,11 +8028,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4892329473010327035, guid: 802fbea0ac6b9dd4093fcffd1792e878, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -33.3
+      value: -34.19
       objectReference: {fileID: 0}
     - target: {fileID: 4892329473010327035, guid: 802fbea0ac6b9dd4093fcffd1792e878, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.4
+      value: 4.27
       objectReference: {fileID: 0}
     - target: {fileID: 4892329473010327035, guid: 802fbea0ac6b9dd4093fcffd1792e878, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8043,15 +8044,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4892329473010327035, guid: 802fbea0ac6b9dd4093fcffd1792e878, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4892329473010327035, guid: 802fbea0ac6b9dd4093fcffd1792e878, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4892329473010327035, guid: 802fbea0ac6b9dd4093fcffd1792e878, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4892329473010327035, guid: 802fbea0ac6b9dd4093fcffd1792e878, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13944,7 +13945,7 @@ GameObject:
   - component: {fileID: 2102213310}
   - component: {fileID: 2102213309}
   m_Layer: 0
-  m_Name: Spline
+  m_Name: ZeereRall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14217,20 +14218,20 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 63228864}
+  - {fileID: 1702779979}
   - {fileID: 1198253381}
   - {fileID: 1755372433}
   - {fileID: 1524389749}
-  - {fileID: 1564188213}
+  - {fileID: 1753199616}
+  - {fileID: 381691726}
+  - {fileID: 1229631985}
   - {fileID: 1238864541}
+  - {fileID: 2072989009}
   - {fileID: 1785739969}
   - {fileID: 1469329928}
-  - {fileID: 2072989009}
-  - {fileID: 1702779979}
-  - {fileID: 63228864}
-  - {fileID: 1753199616}
-  - {fileID: 1229631985}
-  - {fileID: 381691726}
   - {fileID: 2041911192}
+  - {fileID: 1564188213}
   - {fileID: 1694093035}
   - {fileID: 1577780478}
   - {fileID: 2102213310}
@@ -14239,4 +14240,3 @@ SceneRoots:
   - {fileID: 1165138442}
   - {fileID: 1751993746}
   - {fileID: 232662569}
-  - {fileID: 850076742}
