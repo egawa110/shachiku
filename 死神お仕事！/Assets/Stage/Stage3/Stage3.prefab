@@ -14935,7 +14935,7 @@ PrefabInstance:
       objectReference: {fileID: 976747209025802516}
     - target: {fileID: 3801594696449176174, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: gameTime
-      value: 300
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 4191603410222032016, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -15035,7 +15035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7113009532891470134, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -97.999985
+      value: -98
       objectReference: {fileID: 0}
     - target: {fileID: 7715749213932286118, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: SceneName

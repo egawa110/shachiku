@@ -9,10 +9,10 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rbody;                //Rigidbody2D型の作成
+    
     float axisH = 0.0f;               //入力
     public float speed = 3.0f;        //移動速度
-
-    public float jump = 9.0f;         //ジャンプ力
+    public float jump = 10.0f;         //ジャンプ力
     public LayerMask groundLayer;     //着地できるレイヤー
     bool goJump = false;              //ジャンプ開始フラグ
 
@@ -93,6 +93,7 @@ public class PlayerController : MonoBehaviour
 
         speed = 3.0f;
         rbody.gravityScale = 1.1f;
+        jump = 10.0f;
 
         //水平方向の入力をチェック
         axisH = Input.GetAxisRaw("Horizontal");
@@ -118,7 +119,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
             speed = 5.0f;
-            rbody.gravityScale = 1.7f;
+            rbody.gravityScale = 1.5f;
+            jump = 11.0f;
         }
 
         //主人公の攻撃

@@ -21194,20 +21194,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4501625490419077493, guid: 26240530ac30a0b4ba88699e2079aa16, type: 3}
-      propertyPath: jump
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4501625490419077493, guid: 26240530ac30a0b4ba88699e2079aa16, type: 3}
       propertyPath: slider
       value: 
       objectReference: {fileID: 4970099630008106578}
     - target: {fileID: 6038821470476163204, guid: 26240530ac30a0b4ba88699e2079aa16, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8840777467208058527, guid: 26240530ac30a0b4ba88699e2079aa16, type: 3}
-      propertyPath: m_GravityScale
-      value: 1.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

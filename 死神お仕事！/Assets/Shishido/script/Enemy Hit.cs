@@ -7,7 +7,7 @@ public class EnemyHit : MonoBehaviour
 {
     Rigidbody2D rbody;              //Rigidbody2D型の変数
 
-    public int HP_E = 6;    //敵の体力
+    public int HP_E = 3;    //敵の体力
     private bool inDamage;  //ダメージ中のフラグ
 
     private PlayerController playcon;
