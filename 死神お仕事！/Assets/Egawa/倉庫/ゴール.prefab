@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8113642133021837804}
   - component: {fileID: 1853705619586955715}
   - component: {fileID: 3933357497108303706}
+  - component: {fileID: 5912661677374025065}
   m_Layer: 0
   m_Name: "\u30B4\u30FC\u30EB"
   m_TagString: Goal
@@ -130,3 +131,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.028961, y: 6.442194}
   m_EdgeRadius: 0
+--- !u!95 &5912661677374025065
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122659837122832396}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 06f388afae9adde41813e3645cd6f176, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -112,7 +112,9 @@ public class PlayerController : MonoBehaviour
         //キャラクターをジャンプさせる
         if (Input.GetButtonDown("Jump"))
         {
+            nowAnime = jumpAnime;
             Jump();
+
         }
 
         //ダッシュ
@@ -187,7 +189,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             // 空中
-            nowAnime = jumpAnime;
+            //nowAnime = jumpAnime;
         }
         if (nowAnime != oldAnime)
         {
