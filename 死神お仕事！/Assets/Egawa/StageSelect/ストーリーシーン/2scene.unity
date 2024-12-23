@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &5759080710757833910
+--- !u!1001 &2041365336
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -137,15 +137,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5187037996067625014, guid: 56a629b5294ee25469f41c4b4cffa157, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.6895096
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5187037996067625014, guid: 56a629b5294ee25469f41c4b4cffa157, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.48694766
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5187037996067625014, guid: 56a629b5294ee25469f41c4b4cffa157, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.82897556
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5187037996067625014, guid: 56a629b5294ee25469f41c4b4cffa157, type: 3}
       propertyPath: m_LocalRotation.w
@@ -153,15 +153,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5187037996067625014, guid: 56a629b5294ee25469f41c4b4cffa157, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5187037996067625014, guid: 56a629b5294ee25469f41c4b4cffa157, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5187037996067625014, guid: 56a629b5294ee25469f41c4b4cffa157, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5187037996067625014, guid: 56a629b5294ee25469f41c4b4cffa157, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -175,10 +175,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6744093072116179165, guid: 56a629b5294ee25469f41c4b4cffa157, type: 3}
-      propertyPath: m_Delegates.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -188,4 +184,4 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 5759080710757833910}
+  - {fileID: 2041365336}
