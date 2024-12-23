@@ -7,11 +7,12 @@ using UnityEngine.Rendering;
 public class BulletManager : MonoBehaviour
 {
     public float deleteTime = 1.0f; //íœ‚·‚éŠÔw’è
+
     // Start is called before the first frame update
     void Start()
     {
         Destroy(gameObject, deleteTime); //íœİ’è
-    }    
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {

@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 5919311}
   - component: {fileID: 5919310}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: "\u6575\u60C5\u5831"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -821,7 +821,7 @@ GameObject:
   - component: {fileID: 364505669}
   - component: {fileID: 364505668}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: "\u64CD\u4F5C\u65B9\u6CD5"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1351,7 +1351,7 @@ GameObject:
   - component: {fileID: 821566481}
   - component: {fileID: 821566480}
   m_Layer: 5
-  m_Name: Enemyset
+  m_Name: "\u6575\u60C5\u5831\u30DC\u30BF\u30F3"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1702,7 +1702,7 @@ GameObject:
   - component: {fileID: 1053155163}
   - component: {fileID: 1053155162}
   m_Layer: 5
-  m_Name: "\u64CD\u4F5C\u65B9\u6CD5"
+  m_Name: "\u64CD\u4F5C\u65B9\u6CD5\u30DC\u30BF\u30F3"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1892,7 +1892,7 @@ GameObject:
   - component: {fileID: 1303729892}
   - component: {fileID: 1303729891}
   m_Layer: 5
-  m_Name: Text (Legacy) (1)
+  m_Name: "\u30AF\u30EC\u30B8\u30C3\u30C8"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1974,7 +1974,7 @@ GameObject:
   - component: {fileID: 1466097958}
   - component: {fileID: 1466097957}
   m_Layer: 5
-  m_Name: "\u64CD\u4F5C\u65B9\u6CD5 (1)"
+  m_Name: "\u30AF\u30EC\u30B8\u30C3\u30C8\u30DC\u30BF\u30F3"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

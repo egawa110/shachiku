@@ -218,9 +218,9 @@ public class PlayerController : MonoBehaviour
             if (canAttack)
             {
                 GameObject playerObj = GameObject.Find("Player");
-                if (playerObj.transform.localScale.x >= 0)
+
+                if (playerObj.transform.localScale.x > 0)//右向き
                 {
-                    //CreateBullet_R();
                     Vector2 pos = new Vector2(attackPoint.position.x,
                             attackPoint.position.y);
                     GameObject obj = Instantiate(bullet, pos, Quaternion.identity);
@@ -232,7 +232,7 @@ public class PlayerController : MonoBehaviour
                     Vector2 v = new Vector2(x, y) * fireSpeed;
                     rbody.AddForce(v, ForceMode2D.Impulse);
                 }
-                else if (playerObj.transform.localScale.x <= 0)
+                else if (playerObj.transform.localScale.x < 0)//左向き
                 {
                     Vector2 pos = new Vector2(attackPoint.position.x,
                             attackPoint.position.y);
@@ -296,7 +296,7 @@ public class PlayerController : MonoBehaviour
                 //移動停止
                 rbody.velocity = new Vector2(0, 0);
                 //敵キャラの反対方向にヒットバックさせる
-                Vector3 v = (transform.position - enemy.transform.position).normalized; rbody.AddForce(new Vector2(v.x * 4, v.y * 4), ForceMode2D.Impulse);
+                Vector3 v = (transform.position - enemy.transform.position).normalized; rbody.AddForce(new Vector2(v.x * 4.5f, v.y * 4.5f), ForceMode2D.Impulse);
                 //ダメージフラグ　ON
                 inDamage = true;
                 Invoke(nameof(DamageEnd), 0.5f);
