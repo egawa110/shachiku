@@ -8,13 +8,7 @@ public class ZeereSamon : MonoBehaviour
     public float deletetime = 3.0f;
     float passedTimes = 0;//経過時間
     private int number; // ランダムに選ばれたプレファブのインデックス
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         transform.Rotate(new Vector3(0, 0, 5));
@@ -29,7 +23,6 @@ public class ZeereSamon : MonoBehaviour
             Instantiate(Prefabs[number], new Vector2(x, y), Quaternion.identity);
             Destroy(gameObject);
         }
-
     }
 
     void OnTriggerEnter2D(Collider2D other)

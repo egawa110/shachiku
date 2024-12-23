@@ -14,8 +14,6 @@ public class ZeereEye : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip ON_SE;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         playerTr = GameObject.FindGameObjectWithTag("Player").transform;
@@ -28,7 +26,6 @@ public class ZeereEye : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         //if (Vector2.Distance(transform.position, Zeere.position) < 0.2f)

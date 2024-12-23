@@ -16,12 +16,10 @@ public class ZeereHalo : MonoBehaviour
 
     private void Update()
     {
-
         transform.localScale = Vector2.MoveTowards(
                 transform.localScale,
                 new Vector2(4,4),
                 3 * Time.deltaTime);
-        
         if (Vector2.Distance(transform.position, Zeere.position) < 1.0f)
         {
             // ƒ[[ƒŒ‚ÉŒü‚¯‚Äi‚Þ
@@ -37,8 +35,6 @@ public class ZeereHalo : MonoBehaviour
                 transform.position,
                 new Vector2(Zeere.position.x, Zeere.position.y),
                 speedover * Time.deltaTime);
-        }
-
-        
+        }   
     }
 }

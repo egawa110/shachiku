@@ -12,12 +12,6 @@ public class S5Camera : MonoBehaviour
     float speed = 1.5f;
     bool Boos = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {

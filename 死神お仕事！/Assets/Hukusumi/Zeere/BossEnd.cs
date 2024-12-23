@@ -4,20 +4,12 @@ using UnityEngine;
 
 public class BossEnd : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-    
-        GameObject[] balls = GameObject.FindGameObjectsWithTag("ZeereAtach");
-        foreach (GameObject ball_Soccer in balls)
+        GameObject[] End = GameObject.FindGameObjectsWithTag("ZeereAtach");
+        foreach (GameObject Dell in End)
         {
-            Destroy(ball_Soccer);
+            Destroy(Dell);
         }
     }
 }

@@ -14,11 +14,6 @@ public class RainDR : MonoBehaviour
         audioSource.PlayOneShot(Rain_SE);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     //ÚG
     private void OnTriggerEnter2D(Collider2D other) //‚Ô‚Â‚©‚Á‚½‚çÁ‚¦‚é–½—ß•¶ŠJn
     {

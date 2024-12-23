@@ -21,8 +21,6 @@ public class ZeereBeem : MonoBehaviour
 
     void Update()
     {
-
-
         ApassedTimes += Time.deltaTime;//時間経過
         if (ApassedTimes >= firetime)
         {
@@ -34,10 +32,8 @@ public class ZeereBeem : MonoBehaviour
             
             Destroy(gameObject);//このゲームオブジェクトを消滅させる
         }
-
-
-
     }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("KinKill"))

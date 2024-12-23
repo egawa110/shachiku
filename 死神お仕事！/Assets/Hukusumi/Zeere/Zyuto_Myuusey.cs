@@ -13,7 +13,6 @@ public class Zyuto_Myuusey : MonoBehaviour
     public LayerMask groundLayer;      //地面レイヤー
     public float fireSpeed = 4.0f; //発射速度
 
-
     private Vector3 movement;
     private float amountX;
 
@@ -23,7 +22,6 @@ public class Zyuto_Myuusey : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip Fire_SE;
 
-    // Start is called before the first frame update
     void Start()
     {
         gateTransform = transform.Find("gate");
@@ -32,10 +30,8 @@ public class Zyuto_Myuusey : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-
         Transform myTransform = this.transform;
         Vector2 worldPos = myTransform.position;
         Transform yTransform = playerTr.transform;
@@ -85,19 +81,14 @@ public class Zyuto_Myuusey : MonoBehaviour
                     
                 }
             }
-
-            
-            
         }
         else
         {
-
             transform.position = Vector2.MoveTowards(
                    transform.position,
                    new Vector2(playerTr.position.x, worldPos.y),
                    -speed * Time.deltaTime);
         }
-
     }
 
     void FixedUpdate()
@@ -108,12 +99,8 @@ public class Zyuto_Myuusey : MonoBehaviour
                                              Vector2.down,       //発射方向
                                              0.0f,               //発射距離
                                              groundLayer);       //検出するレイヤー
-
-        
-
     }
    
-
     //接触
     private void OnTriggerEnter2D(Collider2D other) //ぶつかったら消える命令文開始
     {
@@ -121,6 +108,5 @@ public class Zyuto_Myuusey : MonoBehaviour
         {
             Destroy(gameObject);//このゲームオブジェクトを消滅させる
         }
-
     }
 }

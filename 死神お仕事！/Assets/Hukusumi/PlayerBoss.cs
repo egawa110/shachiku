@@ -68,8 +68,6 @@ public class PlayerBoss : MonoBehaviour
     public AudioClip Clear_SE;
     public AudioClip Over_SE;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         //FPSを60に固定
@@ -89,11 +87,8 @@ public class PlayerBoss : MonoBehaviour
         Hp = maxHp;       // Hpと最大Hpを同じ値にする
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
-        
         SafeTime += Time.deltaTime;//無敵カウント
         Transform myTransform = this.transform;
         Vector2 worldPos = myTransform.position;

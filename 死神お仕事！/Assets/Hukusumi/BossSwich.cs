@@ -8,34 +8,11 @@ public class BossSwich : MonoBehaviour
     public GameObject Zeere;
     public GameObject Camera;
 
-    public bool on = false; //スイッチの状態（true:押されている false:押されていない）
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     //接触開始
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Player")
         {
-            if (on)
-            {
-                on = false;
-                MovingBlock movBlock = targetMoveBlock.GetComponent<MovingBlock>();
-                movBlock.Stop();
-            }
-            else
-            {
-                on = true;
                 MovingBlock movBlock = targetMoveBlock.GetComponent<MovingBlock>();
                 movBlock.Move();
 
@@ -46,7 +23,6 @@ public class BossSwich : MonoBehaviour
                 BCamera.Booson();
 
                 Destroy(gameObject);//このゲームオブジェクトを消滅させる
-            }
         }
     }
 }

@@ -11,7 +11,6 @@ public class Migu_Nyumu : MonoBehaviour
     public float jump = 9.0f;
     bool goJump = false;              //ジャンプ開始フラグ
 
-
     float passedTimes = 0;
     public float firetime = 3.0f;//発射
 
@@ -29,7 +28,6 @@ public class Migu_Nyumu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
             Transform myTransform = this.transform;
             Vector2 worldPos = myTransform.position;
         Transform yTransform = playerTr.transform;
@@ -39,7 +37,6 @@ public class Migu_Nyumu : MonoBehaviour
         {
             if (worldPos.x - orldPos.x <= 5&& worldPos.x - orldPos.x >0 || worldPos.x - orldPos.x >= -5 && worldPos.x - orldPos.x < 0)
             {
-
                 transform.position = Vector2.MoveTowards(
                        transform.position,
                        new Vector2(playerTr.position.x, worldPos.y),
@@ -51,7 +48,6 @@ public class Migu_Nyumu : MonoBehaviour
             }
             else
             {
-
                 transform.position = Vector2.MoveTowards(
                        transform.position,
                        new Vector2(playerTr.position.x, worldPos.y),
@@ -60,13 +56,11 @@ public class Migu_Nyumu : MonoBehaviour
         }
         else
         {
-
             transform.position = Vector2.MoveTowards(
                    transform.position,
                    new Vector2(playerTr.position.x, worldPos.y),
                    speed * Time.deltaTime);
         }
-
     }
     
     void FixedUpdate()
@@ -77,7 +71,6 @@ public class Migu_Nyumu : MonoBehaviour
                                              Vector2.down,       //発射方向
                                              0.0f,               //発射距離
                                              groundLayer);       //検出するレイヤー
-
         if (onGround && goJump)
         {
             //地面の上でジャンプキーが押された
@@ -87,11 +80,7 @@ public class Migu_Nyumu : MonoBehaviour
             rbody.AddForce(jumpPw, ForceMode2D.Impulse); //瞬間敵な力を加える
             goJump = false; //ジャンプフラグを下ろす
             passedTimes = 0;
-
-
-
         }
-
     }
     public void Jump()
     {
@@ -105,6 +94,5 @@ public class Migu_Nyumu : MonoBehaviour
         {
             Destroy(gameObject);//このゲームオブジェクトを消滅させる
         }
-
     }
 }
