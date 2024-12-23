@@ -45,7 +45,7 @@ public class PlayerBoss : MonoBehaviour
     private bool canAttack;                           //攻撃可能状態かを指定するフラグ
 
     private float BossIveTime = 0;//イベント計測
-    bool BoosIve = false;//イベント確認
+    bool BossIve = false;//イベント確認
     bool BICyec = false;//イベント制限
 
 
@@ -95,13 +95,13 @@ public class PlayerBoss : MonoBehaviour
         //ボスイベント
         if (worldPos.x>-13 && BICyec == false)//ON
         {
-            BoosIve = true;
+            BossIve = true;
         }
         if (Input.GetKeyDown(KeyCode.I))//ON
          {
-            BoosIve = true;
+            BossIve = true;
          }
-        if(BoosIve==true&&BICyec==false)
+        if(BossIve==true&&BICyec==false)
         {
             BossIveTime += Time.deltaTime;//時間経過
             if (worldPos.x < -7)
@@ -122,7 +122,7 @@ public class PlayerBoss : MonoBehaviour
             if(BossIveTime>11.5f)
             {
                 BICyec = true;
-                BoosIve = false;
+                BossIve = false;
             }
         }
 
@@ -139,7 +139,7 @@ public class PlayerBoss : MonoBehaviour
 
         //水平方向の入力をチェック
         axisH = Input.GetAxisRaw("Horizontal");
-        if (BoosIve == false)
+        if (BossIve == false)
         {
             //向きの調整
             if (axisH > 0.0f)
@@ -191,7 +191,7 @@ public class PlayerBoss : MonoBehaviour
                                              Vector2.down,          //発射方向
                                              1.0f,                  //発射距離
                                              groundLayer);          //検出するレイヤー
-        if (BoosIve == false)
+        if (BossIve == false)
         {
             if (onGround || axisH != 0)
             {
@@ -251,7 +251,7 @@ public class PlayerBoss : MonoBehaviour
             canAttack = true; //指定時間を超えたら攻撃可能にする
         }
 
-        if (Input.GetKeyDown(KeyCode.K)&& BoosIve == false) //Kキーを押したら
+        if (Input.GetKeyDown(KeyCode.K)&& BossIve == false) //Kキーを押したら
         {
             //Debug.Log("ZZZ");
 

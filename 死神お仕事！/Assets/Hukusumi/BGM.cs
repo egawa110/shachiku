@@ -6,7 +6,7 @@ public class BGM : MonoBehaviour
 {
     public GameObject Zeere;
     bool isAudioEnd = false;
-    bool SS = false;
+    bool Load = false;
     private AudioSource audioSource;
     private AudioSource audioSourceZ;
     // Start is called before the first frame update
@@ -23,10 +23,10 @@ public class BGM : MonoBehaviour
             audioSource.Play();
             isAudioEnd = false;
         }
-        if(SS==false)
+        if(Load==false)
         {
             Debug.Log("ZZZ");
-            SS = true;
+            Load = true;
             audioSource.Stop();
         }
     }
