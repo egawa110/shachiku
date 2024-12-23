@@ -13,9 +13,6 @@ public class Zyuto_Myuusey : MonoBehaviour
     public LayerMask groundLayer;      //地面レイヤー
     public float fireSpeed = 4.0f; //発射速度
 
-    private Vector3 movement;
-    private float amountX;
-
     float passedTimes = 0;
     public float firetime = 3.0f;//発射
 
