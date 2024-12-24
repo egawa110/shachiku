@@ -3,16 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.Android;
 using UnityEngine.UI;
 
 public class PlayerBoss : MonoBehaviour
 {
-
     Rigidbody2D rbody;                //Rigidbody2D型の作成
     float axisH = 0.0f;               //入力
     public float speed = 3.0f;        //移動速度
 
-    public float jump = 9.0f;         //ジャンプ力
+    public float jump = 10.0f;         //ジャンプ力
     public LayerMask groundLayer;     //着地できるレイヤー
     bool goJump = false;              //ジャンプ開始フラグ
 
@@ -137,6 +137,10 @@ public class PlayerBoss : MonoBehaviour
             return;
         }
 
+        speed = 3.0f;
+        rbody.gravityScale = 1.1f;
+        jump = 10.0f;
+
         //水平方向の入力をチェック
         axisH = Input.GetAxisRaw("Horizontal");
         if (BossIve == false)
@@ -156,6 +160,23 @@ public class PlayerBoss : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             Jump();
+        }
+
+        if (BICyec == true)
+        {
+            //ダッシュ
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            {
+                speed = 5.0f;
+                rbody.gravityScale = 1.5f;
+                jump = 11.0f;
+            }
+        }
+        else
+        {
+            speed = 3.0f;
+            rbody.gravityScale = 1.1f;
+            jump = 10.0f;
         }
 
         //主人公の攻撃
@@ -250,45 +271,47 @@ public class PlayerBoss : MonoBehaviour
         {
             canAttack = true; //指定時間を超えたら攻撃可能にする
         }
-
-        if (Input.GetKeyDown(KeyCode.K)&& BossIve == false) //Kキーを押したら
+        if (BossIve == false)
         {
-            //Debug.Log("ZZZ");
-
-            if (canAttack)
+            if (Input.GetMouseButtonDown(0))
             {
-                GameObject playerObj = GameObject.Find("Player");
-                if (playerObj.transform.localScale.x >= 0)
-                {
-                    //CreateBullet_R();
-                    Vector2 pos = new Vector2(attackPoint.position.x,
-                            attackPoint.position.y);
-                    GameObject obj = Instantiate(bullet, pos, Quaternion.identity);
-                    //方針が向いてる方向に発射する
-                    Rigidbody2D rbody = obj.GetComponent<Rigidbody2D>();
-                    float angleZ = transform.localEulerAngles.z;
-                    float x = Mathf.Cos(angleZ * Mathf.Deg2Rad);
-                    float y = Mathf.Sin(angleZ * Mathf.Deg2Rad);
-                    Vector2 v = new Vector2(x, y) * fireSpeed;
-                    rbody.AddForce(v, ForceMode2D.Impulse);
-                }
-                else if (playerObj.transform.localScale.x <= 0)
-                {
-                    Vector2 pos = new Vector2(attackPoint.position.x,
-                            attackPoint.position.y);
-                    GameObject obj = Instantiate(bullet, pos, Quaternion.identity);
-                    //方針が向いてる方向に発射する
-                    Rigidbody2D rbody = obj.GetComponent<Rigidbody2D>();
-                    float angleZ = transform.localEulerAngles.z;
-                    float x = Mathf.Cos(angleZ * Mathf.Deg2Rad);
-                    float y = Mathf.Sin(angleZ * Mathf.Deg2Rad);
-                    Vector2 v = new Vector2(-x, y) * fireSpeed;
-                    rbody.AddForce(v, ForceMode2D.Impulse);
-                }
-                canAttack = false; //攻撃フラグをfalseにする
-                attackTime = 0f;　 //attackTimeを0に戻す
-            }
+                //Debug.Log("ZZZ");
 
+                if (canAttack)
+                {
+                    GameObject playerObj = GameObject.Find("Player");
+                    if (playerObj.transform.localScale.x >= 0)
+                    {
+                        //CreateBullet_R();
+                        Vector2 pos = new Vector2(attackPoint.position.x,
+                                attackPoint.position.y);
+                        GameObject obj = Instantiate(bullet, pos, Quaternion.identity);
+                        //方針が向いてる方向に発射する
+                        Rigidbody2D rbody = obj.GetComponent<Rigidbody2D>();
+                        float angleZ = transform.localEulerAngles.z;
+                        float x = Mathf.Cos(angleZ * Mathf.Deg2Rad);
+                        float y = Mathf.Sin(angleZ * Mathf.Deg2Rad);
+                        Vector2 v = new Vector2(x, y) * fireSpeed;
+                        rbody.AddForce(v, ForceMode2D.Impulse);
+                    }
+                    else if (playerObj.transform.localScale.x <= 0)
+                    {
+                        Vector2 pos = new Vector2(attackPoint.position.x,
+                                attackPoint.position.y);
+                        GameObject obj = Instantiate(bullet, pos, Quaternion.identity);
+                        //方針が向いてる方向に発射する
+                        Rigidbody2D rbody = obj.GetComponent<Rigidbody2D>();
+                        float angleZ = transform.localEulerAngles.z;
+                        float x = Mathf.Cos(angleZ * Mathf.Deg2Rad);
+                        float y = Mathf.Sin(angleZ * Mathf.Deg2Rad);
+                        Vector2 v = new Vector2(-x, y) * fireSpeed;
+                        rbody.AddForce(v, ForceMode2D.Impulse);
+                    }
+                    canAttack = false; //攻撃フラグをfalseにする
+                    attackTime = 0f;  //attackTimeを0に戻す
+                }
+
+            }
         }
     }
 

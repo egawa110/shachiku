@@ -72,6 +72,7 @@ public class ZeereCore : MonoBehaviour
     int HP_Z ;    //敵の体力
     private bool inDamage;  //ダメージ中のフラグ
     public Slider slider;//スライダー
+    bool HalfC = false;
 
     //ゼーレのパーツ
     GameObject Zeere1;
@@ -92,6 +93,7 @@ public class ZeereCore : MonoBehaviour
     public AudioClip ZeereON2_SE;
     public AudioClip Break_SE;
     public AudioClip Foor_SE;
+    public AudioClip Damage_SE;
 
     public AudioSource Loop_BGM;
     public GameObject targetBGM;
@@ -560,8 +562,9 @@ public class ZeereCore : MonoBehaviour
             }
         }
         //半分処理
-        if(HP_Z==HP_M/2)
+        if(HP_Z<=HP_M/2&&AttackLooc==false&&HalfC==false)
         {
+            HalfC = true;
             ATspeed = ATspeed/2;
             BsCT = BsCT/2;
         }
@@ -628,7 +631,7 @@ public class ZeereCore : MonoBehaviour
             {
                 //ダメージフラグ　ON
                 inDamage = true;
-
+                audioSource.PlayOneShot(Damage_SE);
                 Invoke(nameof(DamageEnd), 0.25f);
             }
             else
