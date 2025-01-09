@@ -10,13 +10,20 @@ public class EnemyHit : MonoBehaviour
     public int HP_E = 3;    //敵の体力
     private bool inDamage;  //ダメージ中のフラグ
 
+    bool ZERO = false;//死亡確認
+
     private PlayerController playcon;
+
+    private AudioSource audioSource;
+    public AudioClip Damage_SE;
 
     // Start is called before the first frame update
     void Start()
     {
         //プレイヤーコントローラー取得
         playcon = GetComponent<PlayerController>();
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -36,6 +43,10 @@ public class EnemyHit : MonoBehaviour
                 //スプライトを非表示
                 gameObject.GetComponent<SpriteRenderer>().enabled = false;
             }
+        }
+        if(!audioSource.isPlaying && ZERO)
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -57,13 +68,18 @@ public class EnemyHit : MonoBehaviour
             {
                 //ダメージフラグ　ON
                 inDamage = true;
-
+                audioSource.PlayOneShot(Damage_SE);
                 Invoke(nameof(DamageEnd), 0.25f);
             }
             else
             {
                 //やられる
-                Destroy(gameObject);
+                gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                GetComponent<BoxCollider2D>().enabled = false;
+                GetComponent<CircleCollider2D>().enabled = false;
+                ZERO = true;
+                audioSource.Play();
+                GetComponent<BoxCollider2D>().enabled = false;
             }
         }
     }
