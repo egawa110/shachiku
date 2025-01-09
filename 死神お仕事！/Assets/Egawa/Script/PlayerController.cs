@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour
         //キャラクターをジャンプさせる
         if (Input.GetButtonDown("Jump"))
         {
-            nowAnime = jumpAnime;
+           // nowAnime = jumpAnime;
             Jump();
 
         }
