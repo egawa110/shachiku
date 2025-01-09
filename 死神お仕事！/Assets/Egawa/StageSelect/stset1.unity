@@ -1092,6 +1092,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: ChangeStory, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 6263818156054895261, guid: 7a9b3e85ab8a0ea46b659592a40ad23a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6ec85c2004f969a429227b85e9e4860f, type: 3}
     - target: {fileID: 6959304452395527710, guid: 7a9b3e85ab8a0ea46b659592a40ad23a, type: 3}
       propertyPath: m_Name
       value: Canvas
