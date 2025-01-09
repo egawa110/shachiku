@@ -96,7 +96,9 @@ public class ZeereCore : MonoBehaviour
     public AudioClip Damage_SE;
 
     public AudioSource Loop_BGM;
+    public AudioSource Start_BGM;
     public GameObject targetBGM;
+    public GameObject targetBGMS;
     bool LoopC = false;
 
     private void Start()
@@ -188,9 +190,9 @@ public class ZeereCore : MonoBehaviour
                     Cool3 = true;
                     audioSource.PlayOneShot(ZeereON_SE);
 
-                    audioSource.Play();
-                    BGM BGML = targetBGM.GetComponent<BGM>();
-                    BGML.Loop();
+                    BGMS BGMLS = targetBGMS.GetComponent<BGMS>();
+                    BGMLS.BS();
+                    
                 }
             }
             if (passedTimes >= 4&& passedTimes <= 5)
@@ -199,6 +201,8 @@ public class ZeereCore : MonoBehaviour
                 {
                     Cool2 = true;
                     audioSource.PlayOneShot(ZeereON2_SE);
+                    BGM BGML = targetBGM.GetComponent<BGM>();
+                    BGML.Loop();
                 }
                 Transform myTransform = this.transform;
                 Vector2 worldPos = myTransform.position;
@@ -249,17 +253,17 @@ public class ZeereCore : MonoBehaviour
             }
         }
         //BGMÉãÅ[Év
-        if (BGMTime <= 45 && BGMTime >=35&&LoopC==false&&AttackLooc==false)
-        {
-            passedTimes = 0;
-            Debug.Log("Lady?");
-        }
-        else if(BGMTime>46&&LoopC==false&&AttackLooc==false)
-        {
-            Debug.Log("GO!");
-            passedTimes = 99;
-            LoopC = true;
-        }
+        //if (BGMTime <= 45 && BGMTime >=35&&LoopC==false&&AttackLooc==false)
+        //{
+        //    passedTimes = 0;
+        //    Debug.Log("Lady?");
+        //}
+        //else if(BGMTime>46&&LoopC==false&&AttackLooc==false)
+        //{
+        //    Debug.Log("GO!");
+        //    passedTimes = 99;
+        //    LoopC = true;
+        //}
         //çUåÇèàóù
         rnd = Random.Range(1, 6);
         if (passedTimes > Attack)
@@ -640,7 +644,7 @@ public class ZeereCore : MonoBehaviour
                 GameManager S5UI = GameUI.GetComponent<GameManager>();
                 S5UI.BossKill();
                 Loop_BGM.gameObject.SetActive(false);
-                audioSource.Stop();
+                Start_BGM.gameObject.SetActive(false);
                 //Ç‚ÇÁÇÍÇÈ
                 AttackLooc = true;
                 BusteAttack = false;
