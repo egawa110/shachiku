@@ -151,6 +151,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage2
       objectReference: {fileID: 0}
+    - target: {fileID: 7000133144855559598, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7214120178123157854, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
