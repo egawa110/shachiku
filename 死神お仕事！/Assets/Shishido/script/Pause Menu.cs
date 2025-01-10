@@ -5,8 +5,7 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {    
     //　ポーズした時に表示するUI
-    [SerializeField]
-    private GameObject pauseUI;
+    public GameObject pauseUI;
 
     // Update is called once per frame
     void Update()
