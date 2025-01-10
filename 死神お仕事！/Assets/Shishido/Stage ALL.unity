@@ -2910,6 +2910,7 @@ GameObject:
   - component: {fileID: 8798755296431237609}
   - component: {fileID: 5549416726775084038}
   - component: {fileID: 2020897056295264303}
+  - component: {fileID: 8798755296431237610}
   m_Layer: 5
   m_Name: Restart
   m_TagString: Untagged
@@ -3852,9 +3853,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2020897056295264303}
-        m_TargetAssemblyTypeName: ChangeStory, Assembly-CSharp
-        m_MethodName: Load
+      - m_Target: {fileID: 8798755296431237610}
+        m_TargetAssemblyTypeName: StagePopup, Assembly-CSharp
+        m_MethodName: Delete
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3864,6 +3865,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8798755296431237610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871935635267796641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f95613a1c0fe044c94960291459cff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Popup: {fileID: 2851158048053777972}
 --- !u!1 &8852296803100123543
 GameObject:
   m_ObjectHideFlags: 0
