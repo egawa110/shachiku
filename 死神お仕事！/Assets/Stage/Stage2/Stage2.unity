@@ -131,6 +131,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 358632704947176605, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: Damage_SE
+      value: 
+      objectReference: {fileID: 8300000, guid: 75807113d5bda644289261fe4399e053, type: 3}
+    - target: {fileID: 1487979204314767467, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d6c6b86d57aa6a8419909480c673390e, type: 3}
+    - target: {fileID: 4659224284351836304, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: Damage_SE
+      value: 
+      objectReference: {fileID: 8300000, guid: 75807113d5bda644289261fe4399e053, type: 3}
+    - target: {fileID: 5833463843481015398, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d6c6b86d57aa6a8419909480c673390e, type: 3}
     - target: {fileID: 6611924174335174627, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: m_Name
       value: Stage2
@@ -143,6 +159,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7853694277406584411, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: Damage_SE
+      value: 
+      objectReference: {fileID: 8300000, guid: 75807113d5bda644289261fe4399e053, type: 3}
     - target: {fileID: 8908482115870231497, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: m_LocalPosition.x
       value: 66.26446
@@ -182,6 +202,14 @@ PrefabInstance:
     - target: {fileID: 8908482115870231497, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8980651468343806637, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d6c6b86d57aa6a8419909480c673390e, type: 3}
+    - target: {fileID: 9070849990932730158, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -98
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
