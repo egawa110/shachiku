@@ -691,8 +691,8 @@ GameObject:
   - component: {fileID: 6162383816460772018}
   - component: {fileID: 5543418989160275243}
   - component: {fileID: 3931419665986803210}
-  - component: {fileID: 8323485864747391445}
   - component: {fileID: 5789862079012022087}
+  - component: {fileID: 8486414849397013799}
   m_Layer: 5
   m_Name: To Restart
   m_TagString: Untagged
@@ -802,8 +802,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8323485864747391445}
-        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+      - m_Target: {fileID: 8486414849397013799}
+        m_TargetAssemblyTypeName: ChangeBack, Assembly-CSharp
         m_MethodName: Load
         m_Mode: 1
         m_Arguments:
@@ -814,19 +814,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8323485864747391445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3857125057905776788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a4c850ec8e40d34db5d825087999bea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneName: Stage1
 --- !u!114 &5789862079012022087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -872,6 +859,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &8486414849397013799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3857125057905776788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee424fe1fc5dbdc479114851f394b7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: Stage1
 --- !u!1 &3875282970019197288
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,8 +884,8 @@ GameObject:
   - component: {fileID: 8371648075538872397}
   - component: {fileID: 847467683338480289}
   - component: {fileID: 3793534646473871520}
-  - component: {fileID: 7715749213932286118}
   - component: {fileID: 8802657371472311794}
+  - component: {fileID: 5920374890466414180}
   m_Layer: 5
   m_Name: To StageSelsect
   m_TagString: Untagged
@@ -995,8 +995,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7715749213932286118}
-        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+      - m_Target: {fileID: 5920374890466414180}
+        m_TargetAssemblyTypeName: ChangeBack, Assembly-CSharp
         m_MethodName: Load
         m_Mode: 1
         m_Arguments:
@@ -1007,19 +1007,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7715749213932286118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3875282970019197288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a4c850ec8e40d34db5d825087999bea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneName: StageSelect
 --- !u!114 &8802657371472311794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1065,6 +1052,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &5920374890466414180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3875282970019197288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee424fe1fc5dbdc479114851f394b7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: StageSelect
 --- !u!1 &4018413621005530722
 GameObject:
   m_ObjectHideFlags: 0

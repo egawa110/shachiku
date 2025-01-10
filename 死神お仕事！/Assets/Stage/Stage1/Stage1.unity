@@ -426,6 +426,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+<<<<<<< HEAD
 --- !u!20 &450066628 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 8418413023315554612, guid: ab5e395d174c4a84f88b0b35bb6a9a13, type: 3}
@@ -569,6 +570,13 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6706342313684956794, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
   m_PrefabInstance: {fileID: 1146569083}
   m_PrefabAsset: {fileID: 0}
+=======
+--- !u!82 &425269781 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8914969648687189367, guid: ab5e395d174c4a84f88b0b35bb6a9a13, type: 3}
+  m_PrefabInstance: {fileID: 1923272145}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> 0d1041e27c8fd6b7354f6612a85bf0f5655624af
 --- !u!1001 &1923272145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -649,6 +657,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage1
       objectReference: {fileID: 0}
+    - target: {fileID: 4827651566796840152, guid: ab5e395d174c4a84f88b0b35bb6a9a13, type: 3}
+      propertyPath: BGM
+      value: 
+      objectReference: {fileID: 425269781}
     - target: {fileID: 4827651566796840152, guid: ab5e395d174c4a84f88b0b35bb6a9a13, type: 3}
       propertyPath: bullet
       value: 

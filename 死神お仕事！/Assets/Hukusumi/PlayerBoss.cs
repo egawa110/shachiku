@@ -68,6 +68,9 @@ public class PlayerBoss : MonoBehaviour
     public AudioClip Clear_SE;
     public AudioClip Over_SE;
 
+    public AudioSource Loop_BGM;
+    public AudioSource Start_BGM;
+
     void Start()
     {
         //FPSを60に固定
@@ -403,6 +406,8 @@ public class PlayerBoss : MonoBehaviour
     // ゲームオーバー
     public void GameOver()
     {
+        Loop_BGM.gameObject.SetActive(false);
+        Start_BGM.gameObject.SetActive(false);
         animator.Play(deadAnime);
         gameState = "gameover"; GameStop();
         // ゲーム停止（ゲームオーバー演出）

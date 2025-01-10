@@ -128,6 +128,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3852310014914301263, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
   m_PrefabInstance: {fileID: 933672489001597300}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1782726538 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3734948504923014902, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+  m_PrefabInstance: {fileID: 933672489001597300}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1997806121
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,7 +360,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4414255925213114041, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
       propertyPath: HP_M
-      value: 2
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4414255925213114041, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
       propertyPath: Damage_SE
@@ -381,10 +386,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7628500047501792407, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -98
+      objectReference: {fileID: 0}
     - target: {fileID: 7772066870388495016, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
       propertyPath: jump
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7772066870388495016, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+      propertyPath: Loop_BGM
+      value: 
+      objectReference: {fileID: 1782726538}
+    - target: {fileID: 7772066870388495016, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+      propertyPath: Attack_SE
+      value: 
+      objectReference: {fileID: 8300000, guid: 21460a807285de14ab93b97f8aef2d8e, type: 3}
+    - target: {fileID: 7772066870388495016, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+      propertyPath: Start_BGM
+      value: 
+      objectReference: {fileID: 1997806123}
     - target: {fileID: 8080150929359353063, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

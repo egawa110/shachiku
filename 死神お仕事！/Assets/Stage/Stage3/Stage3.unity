@@ -203,6 +203,10 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: 28.172283
       objectReference: {fileID: 0}
+    - target: {fileID: 8173368101874123065, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: BGM
+      value: 
+      objectReference: {fileID: 1560370601}
     m_RemovedComponents:
     - {fileID: 8538147917205048883, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
     - {fileID: 5158153417044499836, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
@@ -211,6 +215,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+--- !u!82 &1560370601 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7295194293968585723, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+  m_PrefabInstance: {fileID: 711742472}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

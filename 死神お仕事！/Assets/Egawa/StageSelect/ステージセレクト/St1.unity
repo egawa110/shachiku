@@ -659,6 +659,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -37
       objectReference: {fileID: 0}
+    - target: {fileID: 8798755297931767240, guid: e89c71baac7f0a746b82cac781754ff9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2119853079}
+    - target: {fileID: 8798755297931767240, guid: e89c71baac7f0a746b82cac781754ff9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Delete
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798755297931767240, guid: e89c71baac7f0a746b82cac781754ff9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StagePopup, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8852296801580623286, guid: e89c71baac7f0a746b82cac781754ff9, type: 3}
       propertyPath: m_Name
       value: "\u30B9\u30C6\u30FC\u30B8\u9078\u629E"
@@ -681,7 +693,33 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2399157977938424336, guid: e89c71baac7f0a746b82cac781754ff9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 185727272}
+    - targetCorrespondingSourceObject: {fileID: 4871935634369280640, guid: e89c71baac7f0a746b82cac781754ff9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2119853079}
   m_SourcePrefab: {fileID: 100100000, guid: e89c71baac7f0a746b82cac781754ff9, type: 3}
+--- !u!1 &2119853077 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4871935634369280640, guid: e89c71baac7f0a746b82cac781754ff9, type: 3}
+  m_PrefabInstance: {fileID: 2119853076}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2119853078 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2851158046618161685, guid: e89c71baac7f0a746b82cac781754ff9, type: 3}
+  m_PrefabInstance: {fileID: 2119853076}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2119853079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119853077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f95613a1c0fe044c94960291459cff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Popup: {fileID: 2119853078}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
