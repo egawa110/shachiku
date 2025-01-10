@@ -4,12 +4,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement; // シーン切り替えに必要
 
-public class ChangeScene : MonoBehaviour
+public class ChangeBack : MonoBehaviour
 {
+    private PauseMenu pausemenu;
+
     //-----------------------------------------
-    // フェードありのスクリプト
+    // フェードありのスクリプト(ポーズ画面のボタンにのみ使用)
     //-----------------------------------------
     public string SceneName; // 読み込むシーン名
+     
+    void Start()
+    {
+        pausemenu = GetComponent<PauseMenu>();
+    }
+    void Update()
+    {
+        if (pausemenu.pauseUI.activeSelf == true)
+        {
+            Load();
+        }
+    }
 
     // シーンを読み込む
     public void Load()
