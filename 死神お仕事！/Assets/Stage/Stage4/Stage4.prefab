@@ -11285,6 +11285,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4501625490419077493, guid: 26240530ac30a0b4ba88699e2079aa16, type: 3}
+      propertyPath: BGM
+      value: 
+      objectReference: {fileID: 3957274732813002512}
+    - target: {fileID: 4501625490419077493, guid: 26240530ac30a0b4ba88699e2079aa16, type: 3}
       propertyPath: bullet
       value: 
       objectReference: {fileID: 2887120631419227553, guid: 736ce010eb1d2574ba9419376eb2125e, type: 3}
