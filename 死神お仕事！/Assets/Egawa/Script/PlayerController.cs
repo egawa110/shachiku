@@ -58,6 +58,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip Clear_SE;       // ゲームクリアー
     public AudioClip Over_SE;        // ゲームオーバー
 
+    public AudioSource BGM;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -322,6 +324,7 @@ public class PlayerController : MonoBehaviour
     // ゴール
     public void Goal()
     {
+        BGM.gameObject.SetActive(false);
         animator.Play(goalAnime);
         gameState = "gameclear";
         GameStop();             // ゲーム停止
@@ -331,6 +334,7 @@ public class PlayerController : MonoBehaviour
     // ゲームオーバー
     public void GameOver()
     {
+        BGM.gameObject.SetActive(false);
         animator.Play(deadAnime);
         gameState = "gameover"; GameStop();
         // ゲーム停止（ゲームオーバー演出）

@@ -426,6 +426,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!82 &425269781 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8914969648687189367, guid: ab5e395d174c4a84f88b0b35bb6a9a13, type: 3}
+  m_PrefabInstance: {fileID: 1923272145}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1923272145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -494,6 +499,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage1
       objectReference: {fileID: 0}
+    - target: {fileID: 4827651566796840152, guid: ab5e395d174c4a84f88b0b35bb6a9a13, type: 3}
+      propertyPath: BGM
+      value: 
+      objectReference: {fileID: 425269781}
     - target: {fileID: 4827651566796840152, guid: ab5e395d174c4a84f88b0b35bb6a9a13, type: 3}
       propertyPath: bullet
       value: 
