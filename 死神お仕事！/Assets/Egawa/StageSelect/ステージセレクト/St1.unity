@@ -611,6 +611,10 @@ PrefabInstance:
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2020897055681897486, guid: e89c71baac7f0a746b82cac781754ff9, type: 3}
+      propertyPath: SceneName
+      value: St1
+      objectReference: {fileID: 0}
     - target: {fileID: 4821952149784163814, guid: e89c71baac7f0a746b82cac781754ff9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
