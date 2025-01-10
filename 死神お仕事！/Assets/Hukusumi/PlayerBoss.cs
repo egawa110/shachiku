@@ -280,6 +280,7 @@ public class PlayerBoss : MonoBehaviour
                 if (canAttack)
                 {
                     GameObject playerObj = GameObject.Find("Player");
+                    audioSource.PlayOneShot(Attack_SE);
                     if (playerObj.transform.localScale.x >= 0)
                     {
                         //CreateBullet_R();

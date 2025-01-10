@@ -220,6 +220,7 @@ public class PlayerController : MonoBehaviour
             if (canAttack)
             {
                 GameObject playerObj = GameObject.Find("Player");
+                audioSource.PlayOneShot(Attack_SE);
 
                 if (playerObj.transform.localScale.x > 0)//‰EŒü‚«
                 {
