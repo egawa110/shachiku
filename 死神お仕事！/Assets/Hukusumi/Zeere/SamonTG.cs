@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class SamonTG : MonoBehaviour
 {
+    public int s=121;
     void Update()
     {
-        transform.Rotate(new Vector3(0, 0, 121));//‰ñ‚é
+        transform.Rotate(new Vector3(0, 0, s));//‰ñ‚é
     }
 }
