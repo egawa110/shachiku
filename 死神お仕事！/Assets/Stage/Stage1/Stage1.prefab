@@ -2730,6 +2730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP_E: 3
+  Damage_SE: {fileID: 0}
 --- !u!1 &1249090379810226277
 GameObject:
   m_ObjectHideFlags: 0
@@ -5235,6 +5236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP_E: 3
+  Damage_SE: {fileID: 0}
 --- !u!1 &2684620865902211656
 GameObject:
   m_ObjectHideFlags: 0
@@ -7535,6 +7537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP_E: 3
+  Damage_SE: {fileID: 0}
 --- !u!1 &3415713676894320443
 GameObject:
   m_ObjectHideFlags: 0
@@ -17882,6 +17885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP_E: 3
+  Damage_SE: {fileID: 0}
 --- !u!1 &8156965784126456155
 GameObject:
   m_ObjectHideFlags: 0
@@ -21339,6 +21343,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4501625490419077493, guid: 26240530ac30a0b4ba88699e2079aa16, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 2887120631419227553, guid: 736ce010eb1d2574ba9419376eb2125e, type: 3}
     - target: {fileID: 4501625490419077493, guid: 26240530ac30a0b4ba88699e2079aa16, type: 3}
       propertyPath: slider
       value: 

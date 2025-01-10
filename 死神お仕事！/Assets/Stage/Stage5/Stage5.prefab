@@ -1403,8 +1403,11 @@ MonoBehaviour:
   ZeereON2_SE: {fileID: 8300000, guid: 4d5bf6349ab5c7042b99ba3fac7d1d99, type: 3}
   Break_SE: {fileID: 8300000, guid: 31d2cd4caa1fa91419b6f839e610d2b7, type: 3}
   Foor_SE: {fileID: 8300000, guid: d4bd7550ac9dd41428131e7903c4b305, type: 3}
+  Damage_SE: {fileID: 0}
   Loop_BGM: {fileID: 3734948504923014902}
+  Start_BGM: {fileID: 0}
   targetBGM: {fileID: 2948841912997299151}
+  targetBGMS: {fileID: 0}
 --- !u!61 &6856753359094933883
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13650,7 +13653,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7113009532891470134, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -98
+      value: -97.999985
       objectReference: {fileID: 0}
     - target: {fileID: 7715749213932286118, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: SceneName
@@ -13812,7 +13815,7 @@ MonoBehaviour:
   goalAnime: PlayerGoal
   deadAnime: PlayerOver
   ALL_SOUL: 0
-  bullet: {fileID: 1935894521084834061, guid: 32e57dec91737934aa5bcecb46716675, type: 3}
+  bullet: {fileID: 2887120631419227553, guid: 736ce010eb1d2574ba9419376eb2125e, type: 3}
   attackPoint: {fileID: 2200168116770210442}
   attackTime: 1
   fireSpeed: 8
