@@ -123,11 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< HEAD
---- !u!1001 &1523732456
-=======
---- !u!1001 &800378114
->>>>>>> 6dfd3a56aba8b25a9eb4ad4d81f56745eeefc788
+--- !u!1001 &1640281686
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -179,13 +175,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage1
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
+    - target: {fileID: 5317717472403182572, guid: ab5e395d174c4a84f88b0b35bb6a9a13, type: 3}
+      propertyPath: SceneName
+      value: St2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690483490430722905, guid: ab5e395d174c4a84f88b0b35bb6a9a13, type: 3}
+      propertyPath: SceneName
+      value: Stage1
+      objectReference: {fileID: 0}
     - target: {fileID: 7357466605053165510, guid: ab5e395d174c4a84f88b0b35bb6a9a13, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -98.000015
+      value: -98
       objectReference: {fileID: 0}
->>>>>>> 6dfd3a56aba8b25a9eb4ad4d81f56745eeefc788
     - target: {fileID: 9215894192920371126, guid: ab5e395d174c4a84f88b0b35bb6a9a13, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -203,8 +204,4 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-<<<<<<< HEAD
-  - {fileID: 1523732456}
-=======
-  - {fileID: 800378114}
->>>>>>> 6dfd3a56aba8b25a9eb4ad4d81f56745eeefc788
+  - {fileID: 1640281686}
