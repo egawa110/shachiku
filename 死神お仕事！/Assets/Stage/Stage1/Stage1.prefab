@@ -21504,6 +21504,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4004483565413166581}
     m_Modifications:
+    - target: {fileID: 454234453162602834, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0bb67e31e98283842a5411cd47243c44, type: 3}
     - target: {fileID: 2203005004000834478, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: m_Camera
       value: 
@@ -21614,7 +21618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7113009532891470134, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -98
+      value: -98.000015
       objectReference: {fileID: 0}
     - target: {fileID: 7715749213932286118, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: SceneName
