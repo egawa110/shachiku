@@ -27,7 +27,7 @@ public class ClearcCount : MonoBehaviour
     public void GameStart()
     {
         StageClear.StageCC++;
-        Debug.Log(GameScore.Score_.ToString());
+        Debug.Log(StageClear.StageCC.ToString());
     }
 
     public void S1C()
@@ -36,7 +36,7 @@ public class ClearcCount : MonoBehaviour
         {
             StageClear.StageCC++;
         }
-        Debug.Log(GameScore.Score_.ToString());
+        Debug.Log(StageClear.StageCC.ToString());
     }
     public void S2C()
     {
@@ -44,7 +44,7 @@ public class ClearcCount : MonoBehaviour
         {
             StageClear.StageCC++;
         }
-        Debug.Log(GameScore.Score_.ToString());
+        Debug.Log(StageClear.StageCC.ToString());
     }
     public void S3C()
     {
@@ -52,7 +52,7 @@ public class ClearcCount : MonoBehaviour
         {
             StageClear.StageCC++;
         }
-        Debug.Log(GameScore.Score_.ToString());
+        Debug.Log(StageClear.StageCC.ToString());
     }
     public void S4C()
     {
@@ -60,7 +60,7 @@ public class ClearcCount : MonoBehaviour
         {
             StageClear.StageCC++;
         }
-        Debug.Log(GameScore.Score_.ToString());
+        Debug.Log(StageClear.StageCC.ToString());
     }
     public void S5C()
     {
@@ -68,6 +68,6 @@ public class ClearcCount : MonoBehaviour
         {
             StageClear.StageCC++;
         }
-        Debug.Log(GameScore.Score_.ToString());
+        Debug.Log(StageClear.StageCC.ToString());
     }
 }
