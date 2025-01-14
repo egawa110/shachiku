@@ -80,11 +80,15 @@ public class EnemyHit : MonoBehaviour
             else
             {
                 //‚â‚ç‚ê‚é
+<<<<<<< HEAD
+=======
+                inDamage = false;
+                gameObject.GetComponent<SpriteRenderer>().enabled = false;
+>>>>>>> 4cc775ba535e35e7a90366eaa5fdcc225e044041
                 GetComponent<BoxCollider2D>().enabled = false;
                 GetComponent<CircleCollider2D>().enabled = false;
                 ZERO = true;
                 audioSource.Play();
-                GetComponent<BoxCollider2D>().enabled = false;
             }
         }
     }
