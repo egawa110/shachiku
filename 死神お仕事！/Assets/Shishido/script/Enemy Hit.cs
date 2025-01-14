@@ -29,7 +29,7 @@ public class EnemyHit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inDamage)
+        if (inDamage&&ZERO==false)
         {
             //ダメージ中、点滅させる
             float val = Mathf.Sin(Time.time * 50);
@@ -44,6 +44,12 @@ public class EnemyHit : MonoBehaviour
                 gameObject.GetComponent<SpriteRenderer>().enabled = false;
             }
         }
+
+        if(ZERO)
+        {
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        }
+
         if(!audioSource.isPlaying && ZERO)
         {
             Destroy(gameObject);
@@ -74,7 +80,6 @@ public class EnemyHit : MonoBehaviour
             else
             {
                 //やられる
-                gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 GetComponent<BoxCollider2D>().enabled = false;
                 GetComponent<CircleCollider2D>().enabled = false;
                 ZERO = true;
