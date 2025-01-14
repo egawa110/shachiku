@@ -140,6 +140,10 @@ PrefabInstance:
       propertyPath: Damage_SE
       value: 
       objectReference: {fileID: 8300000, guid: 75807113d5bda644289261fe4399e053, type: 3}
+    - target: {fileID: 548412682193348985, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 906262186881692767, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: BGM
       value: 
@@ -148,6 +152,18 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: d6c6b86d57aa6a8419909480c673390e, type: 3}
+    - target: {fileID: 2026646465381727902, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2927518400540554381, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3683065077947655018, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4659224284351836304, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: Damage_SE
       value: 
