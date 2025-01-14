@@ -46,7 +46,8 @@ public class PlayerController : MonoBehaviour
     int Hp;                    //プレイヤーの現在Hp
     private bool inDamage = false;  //ダメージ中のフラグ
 
-    public Slider slider;      //スライダー用の変数
+    public GameObject[] lifeArray = new GameObject[4];
+    //public Slider slider;      //スライダー用の変数
 
     // サウンド再生
     private AudioSource audioSource; // オーディオソース
@@ -77,7 +78,7 @@ public class PlayerController : MonoBehaviour
         currentAttackTime = attackTime; //currentAttackTimeにattackTimeをセット。
         audioSource = GetComponent<AudioSource>();
 
-        slider.value = 4; // Sliderを最大Hpにする
+        //slider.value = 4; // Sliderを最大Hpにする
         Hp = maxHp;       // Hpと最大Hpを同じ値にする
     }
 
@@ -279,6 +280,8 @@ public class PlayerController : MonoBehaviour
         else if (collision.gameObject.tag=="Enemy")
         {
             GetDamage(collision.gameObject);
+            lifeArray[Hp - 1].SetActive(false);
+            UnityEngine.Debug.Log(lifeArray[Hp]);
             //敵に当たった時に音を鳴らす
             audioSource.PlayOneShot(Damage_SE);
         }
@@ -294,7 +297,7 @@ public class PlayerController : MonoBehaviour
         if (gameState == "playing")
         {
             Hp--; //hpが減る
-            slider.value = Hp; // 減ったHPをスライダーに反映する
+            //slider.value = Hp; // 減ったHPをスライダーに反映する
 
             if (Hp > 0)
             {
@@ -306,7 +309,7 @@ public class PlayerController : MonoBehaviour
                 inDamage = true;
                 Invoke(nameof(DamageEnd), 0.5f);
             }
-            else
+            else if(Hp == 0)
             {
                 //ゲームオーバー
                 GameOver();
