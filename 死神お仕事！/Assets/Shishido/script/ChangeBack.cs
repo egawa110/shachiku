@@ -19,7 +19,7 @@ public class ChangeBack : MonoBehaviour
     }
     void Update()
     {
-        if (pausemenu.pauseUI.activeSelf == true)
+        if (pausemenu.pauseUI.activeSelf == false)
         {
             Load();
         }
