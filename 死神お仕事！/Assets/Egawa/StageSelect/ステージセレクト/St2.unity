@@ -931,6 +931,10 @@ PrefabInstance:
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2983636325101261563, guid: e89c71baac7f0a746b82cac781754ff9, type: 3}
+      propertyPath: SceneName
+      value: Stage1
+      objectReference: {fileID: 0}
     - target: {fileID: 4494355710333824654, guid: e89c71baac7f0a746b82cac781754ff9, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.6500444
