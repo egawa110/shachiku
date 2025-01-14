@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &57779907 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3302578808149119843, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+  m_PrefabInstance: {fileID: 133231020}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &133231020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131,6 +136,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2141587324982855658, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: lifeArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 928136856}
+    - target: {fileID: 2141587324982855658, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: lifeArray.Array.data[1]
+      value: 
+      objectReference: {fileID: 970185442}
+    - target: {fileID: 2141587324982855658, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: lifeArray.Array.data[2]
+      value: 
+      objectReference: {fileID: 57779907}
+    - target: {fileID: 2141587324982855658, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: lifeArray.Array.data[3]
+      value: 
+      objectReference: {fileID: 1441109482}
     - target: {fileID: 6611924174335174627, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: m_Name
       value: Stage2
@@ -192,6 +213,21 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+--- !u!1 &928136856 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8713115933148359516, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+  m_PrefabInstance: {fileID: 133231020}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &970185442 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7561082907882554058, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+  m_PrefabInstance: {fileID: 133231020}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1441109482 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4307812289661841357, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+  m_PrefabInstance: {fileID: 133231020}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

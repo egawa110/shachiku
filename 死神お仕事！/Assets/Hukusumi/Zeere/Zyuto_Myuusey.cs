@@ -19,12 +19,16 @@ public class Zyuto_Myuusey : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip Fire_SE;
 
+    GameObject Zyuto;
+
     void Start()
     {
         gateTransform = transform.Find("gate");
         playerTr = GameObject.FindGameObjectWithTag("Player").transform;
         //rbody = this.GetComponent<Rigidbody2D>(); //Rigidbody2Dを取ってくる
         audioSource = GetComponent<AudioSource>();
+
+        Zyuto = this.transform.Find("name").gameObject;
     }
 
     void Update()
@@ -86,6 +90,14 @@ public class Zyuto_Myuusey : MonoBehaviour
                    new Vector2(playerTr.position.x, worldPos.y),
                    -speed * Time.deltaTime);
         }
+
+        if(gameObject.GetComponent<SpriteRenderer>().enabled == false)
+        {
+            foreach (Transform child in gameObject.transform)
+            {
+                GameObject.Destroy(child.gameObject);
+            }
+        }
     }
 
     void FixedUpdate()
@@ -106,4 +118,6 @@ public class Zyuto_Myuusey : MonoBehaviour
             Destroy(gameObject);//このゲームオブジェクトを消滅させる
         }
     }
+
 }
+

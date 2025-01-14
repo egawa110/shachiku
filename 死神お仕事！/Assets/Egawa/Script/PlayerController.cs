@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
     int Hp;                    //プレイヤーの現在Hp
     private bool inDamage = false;  //ダメージ中のフラグ
 
-    public GameObject[] lifeArray = new GameObject[4];
+    //public GameObject[] lifeArray = new GameObject[4];
     //public Slider slider;      //スライダー用の変数
 
     // サウンド再生
@@ -280,8 +280,6 @@ public class PlayerController : MonoBehaviour
         else if (collision.gameObject.tag=="Enemy")
         {
             GetDamage(collision.gameObject);
-            lifeArray[Hp - 1].SetActive(false);
-            UnityEngine.Debug.Log(lifeArray[Hp]);
             //敵に当たった時に音を鳴らす
             audioSource.PlayOneShot(Damage_SE);
         }
