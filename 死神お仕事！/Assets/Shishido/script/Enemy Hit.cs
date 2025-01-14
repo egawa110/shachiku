@@ -81,10 +81,7 @@ public class EnemyHit : MonoBehaviour
             {
                 //‚â‚ç‚ê‚é
                 inDamage = false;
-<<<<<<< HEAD
-=======
                 gameObject.GetComponent<SpriteRenderer>().enabled = false;
->>>>>>> 6dfd3a56aba8b25a9eb4ad4d81f56745eeefc788
                 GetComponent<BoxCollider2D>().enabled = false;
                 GetComponent<CircleCollider2D>().enabled = false;
                 ZERO = true;
