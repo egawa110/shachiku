@@ -185,6 +185,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage1
       objectReference: {fileID: 0}
+    - target: {fileID: 5317717472403182572, guid: ab5e395d174c4a84f88b0b35bb6a9a13, type: 3}
+      propertyPath: SceneName
+      value: St2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690483490430722905, guid: ab5e395d174c4a84f88b0b35bb6a9a13, type: 3}
+      propertyPath: SceneName
+      value: Stage1
+      objectReference: {fileID: 0}
     - target: {fileID: 6040595381483351917, guid: ab5e395d174c4a84f88b0b35bb6a9a13, type: 3}
       propertyPath: lifeArray.Array.data[0]
       value: 

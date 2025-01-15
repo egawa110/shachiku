@@ -5,7 +5,7 @@ public class moveback : MonoBehaviour
 {
     [SerializeField] private float ResetPosition;
 
-    private float MoveSpeed = -0.05f;
+    private float MoveSpeed = -0.02f;
     private Vector3 StartPosition;
 
     void Start()
