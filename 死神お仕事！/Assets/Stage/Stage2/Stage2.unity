@@ -139,19 +139,19 @@ PrefabInstance:
     - target: {fileID: 2141587324982855658, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: lifeArray.Array.data[0]
       value: 
-      objectReference: {fileID: 928136856}
+      objectReference: {fileID: 1441109482}
     - target: {fileID: 2141587324982855658, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: lifeArray.Array.data[1]
       value: 
-      objectReference: {fileID: 970185442}
+      objectReference: {fileID: 57779907}
     - target: {fileID: 2141587324982855658, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: lifeArray.Array.data[2]
       value: 
-      objectReference: {fileID: 57779907}
+      objectReference: {fileID: 970185442}
     - target: {fileID: 2141587324982855658, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: lifeArray.Array.data[3]
       value: 
-      objectReference: {fileID: 1441109482}
+      objectReference: {fileID: 928136856}
     - target: {fileID: 6611924174335174627, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: m_Name
       value: Stage2

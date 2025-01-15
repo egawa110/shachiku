@@ -207,19 +207,19 @@ PrefabInstance:
     - target: {fileID: 6937337832915726988, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
       propertyPath: lifeArray.Array.data[0]
       value: 
-      objectReference: {fileID: 1584574203}
+      objectReference: {fileID: 722720015}
     - target: {fileID: 6937337832915726988, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
       propertyPath: lifeArray.Array.data[1]
       value: 
-      objectReference: {fileID: 1495351402}
+      objectReference: {fileID: 565906973}
     - target: {fileID: 6937337832915726988, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
       propertyPath: lifeArray.Array.data[2]
       value: 
-      objectReference: {fileID: 565906973}
+      objectReference: {fileID: 1495351402}
     - target: {fileID: 6937337832915726988, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
       propertyPath: lifeArray.Array.data[3]
       value: 
-      objectReference: {fileID: 722720015}
+      objectReference: {fileID: 1584574203}
     - target: {fileID: 8173368101874123065, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
       propertyPath: BGM
       value: 
