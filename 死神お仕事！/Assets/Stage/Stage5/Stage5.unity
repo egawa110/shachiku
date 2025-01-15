@@ -428,10 +428,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4516082725262654665, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 933672489001597303}
+      addedObject: {fileID: 933672489001597302}
     - targetCorrespondingSourceObject: {fileID: 4516082725262654665, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 933672489001597302}
+      addedObject: {fileID: 933672489001597303}
   m_SourcePrefab: {fileID: 100100000, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
 --- !u!1 &933672489001597301 stripped
 GameObject:
@@ -468,7 +468,7 @@ MonoBehaviour:
   Stage2: St2
   Stage3: St3
   Stage4: St4
-  Stage5: St4
+  Stage5: StBOSS
   StageAll: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
