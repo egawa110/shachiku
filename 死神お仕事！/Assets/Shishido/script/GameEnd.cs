@@ -13,6 +13,7 @@ public class GameEnd : MonoBehaviour
     //ゲーム開始時に呼ばれる
     private void Start()
     {
+        Time.timeScale = 1;
         //確認パネルを非表示
         confirmationPanel.SetActive(false);
     }

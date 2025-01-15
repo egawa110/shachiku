@@ -170,6 +170,10 @@ PrefabInstance:
       propertyPath: lifeArray.Array.data[3]
       value: 
       objectReference: {fileID: 2145897092}
+    - target: {fileID: 5378883159688500872, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
+      propertyPath: sceneName
+      value: Stage4
+      objectReference: {fileID: 0}
     - target: {fileID: 5613234516803186349, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
       propertyPath: m_Name
       value: Stage4
@@ -178,6 +182,10 @@ PrefabInstance:
       propertyPath: BGM
       value: 
       objectReference: {fileID: 868406009}
+    - target: {fileID: 6736199503293241229, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
+      propertyPath: sceneName
+      value: St4
+      objectReference: {fileID: 0}
     - target: {fileID: 8545883780130458332, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
       propertyPath: m_LocalPosition.x
       value: 81.02593

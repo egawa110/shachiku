@@ -306,6 +306,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5023324843631597688, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: sceneName
+      value: St3
+      objectReference: {fileID: 0}
     - target: {fileID: 5217301108029580543, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
       propertyPath: m_Size.x
       value: 23.081478
@@ -316,6 +320,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5292821373484602624, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
       propertyPath: m_Name
+      value: Stage3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5938003988684921213, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: sceneName
       value: Stage3
       objectReference: {fileID: 0}
     - target: {fileID: 6766524831772943813, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
