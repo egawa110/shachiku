@@ -5,9 +5,15 @@ using UnityEngine;
 public class rotetion : MonoBehaviour
 {
     public int s = 90;
-    void Update()
+
+    private void FixedUpdate()
+    {
+        //transform.Rotate(new Vector3(0, 0, s));//‰ñ‚é
+    }
+    private void Update()
     {
         transform.Rotate(new Vector3(0, 0, s));//‰ñ‚é
     }
+
 
 }
