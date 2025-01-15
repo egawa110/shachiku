@@ -136,6 +136,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 194165338392629156, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: sceneName
+      value: Stage2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1544655673293442721, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: sceneName
+      value: St2
+      objectReference: {fileID: 0}
     - target: {fileID: 2141587324982855658, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: lifeArray.Array.data[0]
       value: 
