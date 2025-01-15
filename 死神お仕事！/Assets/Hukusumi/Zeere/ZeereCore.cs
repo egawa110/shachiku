@@ -23,6 +23,11 @@ public class ZeereCore : MonoBehaviour
 
     public GameObject LoocON;
 
+    public GameObject Heart1;
+    public GameObject Heart2;
+    public GameObject Heart3;
+    public GameObject Heart4;
+
     Transform gateTransform;
     Transform BoostTraget;
     public Transform target;
@@ -645,6 +650,10 @@ public class ZeereCore : MonoBehaviour
                 S5UI.BossKill();
                 Loop_BGM.gameObject.SetActive(false);
                 Start_BGM.gameObject.SetActive(false);
+                Destroy(Heart1);
+                Destroy(Heart2);
+                Destroy(Heart3);
+                Destroy(Heart4);
                 //‚â‚ç‚ê‚é
                 AttackLooc = true;
                 BusteAttack = false;

@@ -123,6 +123,26 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &6756755 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8994144452094035827, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+  m_PrefabInstance: {fileID: 933672489001597300}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1187732970 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7842164049320685285, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+  m_PrefabInstance: {fileID: 933672489001597300}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1551108589 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4173393798484039386, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+  m_PrefabInstance: {fileID: 933672489001597300}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1729749810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3456422648145816180, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+  m_PrefabInstance: {fileID: 933672489001597300}
+  m_PrefabAsset: {fileID: 0}
 --- !u!82 &1782726538 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 3734948504923014902, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
@@ -154,6 +174,10 @@ PrefabInstance:
       propertyPath: Zeere
       value: 
       objectReference: {fileID: 1997806121}
+    - target: {fileID: 1873468063324209695, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 4fc6d9ee29e81a740b7dc01f1b7815a3, type: 2}
     - target: {fileID: 3303278114827786410, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
       propertyPath: m_SizeDelta.x
       value: 66.05
@@ -228,36 +252,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4284568313516826197, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.99586
+      value: 15.4071
       objectReference: {fileID: 0}
     - target: {fileID: 4284568313516826197, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8139708
+      value: -0.12821722
       objectReference: {fileID: 0}
     - target: {fileID: 4284568313516826197, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.054205
+      value: 0.23009975
       objectReference: {fileID: 0}
     - target: {fileID: 4284568313516826197, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.76004624
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4284568313516826197, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.32712275
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4284568313516826197, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.498046
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4284568313516826197, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.25936583
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4414255925213114041, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
       propertyPath: HP_M
-      value: 2
+      value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 4414255925213114041, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+      propertyPath: Heart1
+      value: 
+      objectReference: {fileID: 1187732970}
+    - target: {fileID: 4414255925213114041, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+      propertyPath: Heart2
+      value: 
+      objectReference: {fileID: 6756755}
+    - target: {fileID: 4414255925213114041, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+      propertyPath: Heart3
+      value: 
+      objectReference: {fileID: 1551108589}
+    - target: {fileID: 4414255925213114041, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+      propertyPath: Heart4
+      value: 
+      objectReference: {fileID: 1729749810}
     - target: {fileID: 4414255925213114041, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
       propertyPath: Damage_SE
       value: 
@@ -338,6 +378,22 @@ PrefabInstance:
       propertyPath: Start_BGM
       value: 
       objectReference: {fileID: 1997806123}
+    - target: {fileID: 7772066870388495016, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+      propertyPath: lifeArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 1187732970}
+    - target: {fileID: 7772066870388495016, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+      propertyPath: lifeArray.Array.data[1]
+      value: 
+      objectReference: {fileID: 6756755}
+    - target: {fileID: 7772066870388495016, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+      propertyPath: lifeArray.Array.data[2]
+      value: 
+      objectReference: {fileID: 1551108589}
+    - target: {fileID: 7772066870388495016, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+      propertyPath: lifeArray.Array.data[3]
+      value: 
+      objectReference: {fileID: 1729749810}
     - target: {fileID: 8080150929359353063, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

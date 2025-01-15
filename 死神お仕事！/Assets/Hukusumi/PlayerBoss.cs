@@ -30,6 +30,9 @@ public class PlayerBoss : MonoBehaviour
 
     public static string gameState = "playing";// ゲームの状態
 
+    //HP
+    public GameObject[] lifeArray = new GameObject[4];
+    private int lifePoint = 4;
 
     //追加
     public int ALL_SOUL = 0;      //1ステージで取得したすべての魂
@@ -53,7 +56,7 @@ public class PlayerBoss : MonoBehaviour
     int Hp;                    //プレイヤーの現在Hp
     private bool inDamage = false;  //ダメージ中のフラグ
 
-    public Slider slider;      //スライダー用の変数
+    //public Slider slider;      //スライダー用の変数
 
     float SafeTime = 0;
     public float DCoolTime = 0.5f;
@@ -64,7 +67,6 @@ public class PlayerBoss : MonoBehaviour
     public AudioClip Damage_SE;
     public AudioClip GetSoul_SE;
     public AudioClip Attack_SE;
-    public AudioClip Switch_Act_SE;
     public AudioClip Clear_SE;
     public AudioClip Over_SE;
 
@@ -86,7 +88,7 @@ public class PlayerBoss : MonoBehaviour
 
         currentAttackTime = attackTime; //currentAttackTimeにattackTimeをセット。
         audioSource = GetComponent<AudioSource>();
-        slider.value = 4; // Sliderを最大Hpにする
+        //slider.value = 4; // Sliderを最大Hpにする
         Hp = maxHp;       // Hpと最大Hpを同じ値にする
     }
 
@@ -278,15 +280,15 @@ public class PlayerBoss : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                //Debug.Log("ZZZ");
+                UnityEngine.Debug.Log("ZZZ");
 
                 if (canAttack)
                 {
                     GameObject playerObj = GameObject.Find("Player");
                     audioSource.PlayOneShot(Attack_SE);
-                    if (playerObj.transform.localScale.x >= 0)
+
+                    if (playerObj.transform.localScale.x > 0)//右向き
                     {
-                        //CreateBullet_R();
                         Vector2 pos = new Vector2(attackPoint.position.x,
                                 attackPoint.position.y);
                         GameObject obj = Instantiate(bullet, pos, Quaternion.identity);
@@ -298,7 +300,7 @@ public class PlayerBoss : MonoBehaviour
                         Vector2 v = new Vector2(x, y) * fireSpeed;
                         rbody.AddForce(v, ForceMode2D.Impulse);
                     }
-                    else if (playerObj.transform.localScale.x <= 0)
+                    else if (playerObj.transform.localScale.x < 0)//左向き
                     {
                         Vector2 pos = new Vector2(attackPoint.position.x,
                                 attackPoint.position.y);
@@ -349,11 +351,6 @@ public class PlayerBoss : MonoBehaviour
             GetDamage(collision.gameObject);
             
         }
-        else if (collision.gameObject.tag == "Switch")
-        {
-            // スイッチに触れたら音を鳴らす
-            audioSource.PlayOneShot(Switch_Act_SE);
-        }
     }
 
     void GetDamage(GameObject enemy)
@@ -362,21 +359,22 @@ public class PlayerBoss : MonoBehaviour
         {
             SafeTime = 0;
             Hp--; //hpが減る
-            slider.value = Hp; // 減ったHPをスライダーに反映する
+            //slider.value = Hp; // 減ったHPをスライダーに反映する
+            lifeArray[lifePoint - 1].SetActive(false);
+            lifePoint--;
             //敵に当たった時に音を鳴らす
-
             audioSource.PlayOneShot(Damage_SE);
             if (Hp > 0)
             {
                 //移動停止
                 rbody.velocity = new Vector2(0, 0);
                 //敵キャラの反対方向にヒットバックさせる
-                Vector3 v = (transform.position - enemy.transform.position).normalized; rbody.AddForce(new Vector2(v.x * 4, v.y * 4), ForceMode2D.Impulse);
+                Vector3 v = (transform.position - enemy.transform.position).normalized; rbody.AddForce(new Vector2(v.x * 4.5f, v.y * 4.5f), ForceMode2D.Impulse);
                 //ダメージフラグ　ON
                 inDamage = true;
-                Invoke(nameof(DamageEnd), 0.25f);
+                Invoke(nameof(DamageEnd), 0.5f);
             }
-            else
+            else if (Hp == 0)
             {
                 //ゲームオーバー
                 GameOver();
@@ -394,7 +392,7 @@ public class PlayerBoss : MonoBehaviour
     // ゴール
     public void Goal()
     {
-        slider.gameObject.SetActive(false);
+        //slider.gameObject.SetActive(false);
         animator.Play(goalAnime);
         gameState = "gameclear";
         GameStop();             // ゲーム停止
