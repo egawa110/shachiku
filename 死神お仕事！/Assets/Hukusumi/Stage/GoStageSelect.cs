@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement; // シーン切り替えに必要
 
 public class GOStageSelect : MonoBehaviour
 {
+    private PauseMenu pausemenu;
+
     //-----------------------------------------
     // フェードありのスクリプト
     //-----------------------------------------
@@ -17,7 +19,17 @@ public class GOStageSelect : MonoBehaviour
     public string Stage5; // 読み込むシーン名
     public string StageAll; // 読み込むシーン名
     int CC;
-
+    void Start()
+    {
+        pausemenu = GetComponent<PauseMenu>();
+    }
+    void Update()
+    {
+        if (pausemenu.pauseUI.activeSelf == false)
+        {
+            Load();
+        }
+    }
     // シーンを読み込む
     public void Load()
     {
