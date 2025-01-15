@@ -10,12 +10,13 @@ public static class StageClear
     public static int StageCC = 0;
 }
 
-public class ClearcCount : MonoBehaviour
+public class ClearCount : MonoBehaviour
 {
+    public int Count;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Count = StageClear.StageCC;
     }
 
     // Update is called once per frame
