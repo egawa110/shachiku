@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour
                 //スプライトを非表示
                 gameObject.GetComponent<SpriteRenderer>().enabled = false;
             }
-            return; // ダメージ中は操作による移動をさせない
+           return; // ダメージ中は操作による移動をさせない
         }
 
         //地上判定
@@ -279,6 +279,8 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.gameObject.tag=="Enemy")
         {
+            if (inDamage)
+                return;
             GetDamage(collision.gameObject);
             //敵に当たった時に音を鳴らす
             audioSource.PlayOneShot(Damage_SE);
