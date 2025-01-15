@@ -11,6 +11,11 @@ public class ChangeScene : MonoBehaviour
     //-----------------------------------------
     public string SceneName; // 読み込むシーン名
 
+    private void Start()
+    {
+        Time.timeScale = 1;
+    }
+
     // シーンを読み込む
     public void Load()
     {

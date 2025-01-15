@@ -767,7 +767,7 @@ GameObject:
   - component: {fileID: 5543418989160275243}
   - component: {fileID: 3931419665986803210}
   - component: {fileID: 5789862079012022087}
-  - component: {fileID: 8486414849397013799}
+  - component: {fileID: 2154284275812665276}
   m_Layer: 5
   m_Name: To Restart
   m_TagString: Untagged
@@ -877,7 +877,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8486414849397013799}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ChangeBack, Assembly-CSharp
         m_MethodName: Load
         m_Mode: 1
@@ -934,7 +934,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &8486414849397013799
+--- !u!114 &2154284275812665276
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -943,10 +943,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3857125057905776788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee424fe1fc5dbdc479114851f394b7e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a4942d660457dc49896a39911790e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Stage1
+  sceneName: Stage1
 --- !u!1 &3875282970019197288
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,7 +960,7 @@ GameObject:
   - component: {fileID: 847467683338480289}
   - component: {fileID: 3793534646473871520}
   - component: {fileID: 8802657371472311794}
-  - component: {fileID: 5920374890466414180}
+  - component: {fileID: 737436249389958841}
   m_Layer: 5
   m_Name: To StageSelsect
   m_TagString: Untagged
@@ -1070,7 +1070,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5920374890466414180}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ChangeBack, Assembly-CSharp
         m_MethodName: Load
         m_Mode: 1
@@ -1127,7 +1127,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &5920374890466414180
+--- !u!114 &737436249389958841
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1136,10 +1136,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3875282970019197288}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee424fe1fc5dbdc479114851f394b7e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a4942d660457dc49896a39911790e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: StageSelect
+  sceneName: St1
 --- !u!1 &4018413621005530722
 GameObject:
   m_ObjectHideFlags: 0
