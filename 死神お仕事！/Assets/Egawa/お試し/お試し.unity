@@ -497,7 +497,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &317548028
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1086,6 +1086,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.7316675, y: 3.5175493}
   m_EdgeRadius: 0
+--- !u!114 &598833996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598833990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46f129ff23ef28d43b36b81ec1480749, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1754598428}
 --- !u!1 &664404796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,6 +1283,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5993670755161920374, guid: 420eef4838abd45449130935cd89e969, type: 3}
       insertIndex: -1
       addedObject: {fileID: 598833995}
+    - targetCorrespondingSourceObject: {fileID: 5993670755161920374, guid: 420eef4838abd45449130935cd89e969, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 598833996}
   m_SourcePrefab: {fileID: 100100000, guid: 420eef4838abd45449130935cd89e969, type: 3}
 --- !u!1 &1157017794
 GameObject:
@@ -1765,6 +1781,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.868784, y: 1.8738108}
   m_EdgeRadius: 0
+--- !u!4 &1754598428 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 599763513303640742, guid: 26240530ac30a0b4ba88699e2079aa16, type: 3}
+  m_PrefabInstance: {fileID: 25892863}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1868696268
 GameObject:
   m_ObjectHideFlags: 0
