@@ -166,6 +166,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 94710039397337880, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 208170124458730470, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
       propertyPath: m_Name
       value: Stage5
@@ -469,7 +473,7 @@ MonoBehaviour:
   Stage3: St3
   Stage4: St4
   Stage5: StBOSS
-  StageAll: 
+  StageAll: StBOSS
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
