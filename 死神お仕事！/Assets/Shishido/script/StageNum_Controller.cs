@@ -6,19 +6,6 @@ using UnityEngine.SceneManagement; // ÉRÉåèdóv
 
 public class StageNum_Controller : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (Time.timeScale == 0)
-            Time.timeScale = 1;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.name == "Player")

@@ -31,7 +31,6 @@ public class BulletController : MonoBehaviour
     //Start is called before the first frame update
     private void Start()
     {
-        Time.timeScale = 1;
         //発射口オブジェクトのTransformを取得
         gateTransform = transform.Find("gate");
         //プレイヤーを取得
