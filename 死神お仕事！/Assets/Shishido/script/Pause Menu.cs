@@ -20,7 +20,7 @@ public class PauseMenu : MonoBehaviour
             {
                 Time.timeScale = 0f;
             }
-            else
+            else if(!pauseUI.activeSelf)
             {
                 Time.timeScale = 1f;
             }

@@ -8,7 +8,11 @@ public class StagePopup : MonoBehaviour
 
     public void Appear()
     {
-        Time.timeScale = 1;
+        if (Time.timeScale == 0)
+            Time.timeScale = 1;
+        else
+            return;
+
         Popup.SetActive(true);
     }
     public void Delete()

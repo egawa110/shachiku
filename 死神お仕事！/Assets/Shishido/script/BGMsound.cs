@@ -8,7 +8,12 @@ public class BGMsound : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 1;
+        if (Time.timeScale == 0)
+            Time.timeScale = 1;
+        else
+            return;
+
+
         if (DontDestroyEnabled)
         {
             //シーンが切り替わってもこのオブジェクトは消えない

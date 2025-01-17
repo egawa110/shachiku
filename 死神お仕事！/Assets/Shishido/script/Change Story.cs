@@ -15,7 +15,10 @@ public class ChangeStory : MonoBehaviour
 
     private void Start()
     {
-        Time.timeScale = 1;
+        if (Time.timeScale == 0)
+            Time.timeScale = 1;
+        else
+            return;
     }
 
     // ƒV[ƒ“‚ğ“Ç‚İ‚Ş
