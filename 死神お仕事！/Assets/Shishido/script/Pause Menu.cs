@@ -7,11 +7,8 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(Time.timeScale);
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            Debug.Log(Time.timeScale);
-            Debug.Log("QÉLÅ[Ç™ì¸óÕÇ≥ÇÍÇ‹ÇµÇΩ");
             if (isPaused)
             {
                 Resume();
