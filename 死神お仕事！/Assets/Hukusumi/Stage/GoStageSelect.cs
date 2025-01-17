@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement; // シーン切り替えに必要
+using UnityEngine.UI;
 
 public class GOStageSelect : MonoBehaviour
 {
@@ -21,67 +22,86 @@ public class GOStageSelect : MonoBehaviour
     int CC;
     void Start()
     {
-        pausemenu = GetComponent<PauseMenu>();
+        Time.timeScale = 1;
+        // ボタンコンポーネントを取得し、クリック時にメソッドを呼び出すよう設定
+        Button button = GetComponent<Button>();
+        button.onClick.AddListener(() => StartCoroutine(LoadSceneAsync()));
     }
     void Update()
     {
-        if (pausemenu.pauseUI.activeSelf == false)
-        {
-            Load();
-        }
+
     }
     // シーンを読み込む
-    public void Load()
+    private IEnumerator LoadSceneAsync()
     {
         ClearCount clearcount = GetComponent<ClearCount>();
         CC = clearcount.Count;
         if (CC == 0)
         {
-            //SceneManager.LoadScene(SceneName);
-            Initiate.Fade(Opening, Color.black, 1.0f);
-            clearcount.GameStart();
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(Opening);
+            while (!asyncLoad.isDone)
+            {
+                yield return null;
+            }
             Debug.Log(Opening);
         }
         else if (CC == 1)
         {
-            //SceneManager.LoadScene(SceneName);
-            Initiate.Fade(Stage1, Color.black, 1.0f);
-
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(Stage1);
+            while (!asyncLoad.isDone)
+            {
+                yield return null;
+            }
             Debug.Log(Stage1);
         }
         else if (CC == 2)
         {
-            //SceneManager.LoadScene(SceneName);
-            Initiate.Fade(Stage2, Color.black, 1.0f);
 
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(Stage2);
+            while (!asyncLoad.isDone)
+            {
+                yield return null;
+            }
             Debug.Log(Stage2);
         }
         else if (CC == 3)
         {
-            //SceneManager.LoadScene(SceneName);
-            Initiate.Fade(Stage3, Color.black, 1.0f);
 
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(Stage3);
+            while (!asyncLoad.isDone)
+            {
+                yield return null;
+            }
             Debug.Log(Stage3);
         }
         else if (CC == 4)
         {
-            //SceneManager.LoadScene(SceneName);
-            Initiate.Fade(Stage4, Color.black, 1.0f);
 
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(Stage4);
+            while (!asyncLoad.isDone)
+            {
+                yield return null;
+            }
             Debug.Log(Stage4);
         }
         else if (CC == 5)
         {
-            //SceneManager.LoadScene(SceneName);
-            Initiate.Fade(Stage5, Color.black, 1.0f);
 
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(Stage5);
+            while (!asyncLoad.isDone)
+            {
+                yield return null;
+            }
             Debug.Log(Stage5);
         }
         else if (CC == 6)
         {
-            //SceneManager.LoadScene(SceneName);
-            Initiate.Fade(StageAll, Color.black, 1.0f);
 
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(StageAll);
+            while (!asyncLoad.isDone)
+            {
+                yield return null;
+            }
             Debug.Log(StageAll);
         }
     }
