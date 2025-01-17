@@ -15,7 +15,6 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 1;
         if (isToRight)
         {
             transform.localScale = new Vector2(-1, 1); //Œü‚«‚Ì•ÏX

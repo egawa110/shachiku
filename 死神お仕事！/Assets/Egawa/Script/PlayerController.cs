@@ -64,9 +64,6 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (Time.timeScale == 0)
-            Time.timeScale = 1;
-
         //FPS‚ð60‚ÉŒÅ’è
         Application.targetFrameRate = 60;
 

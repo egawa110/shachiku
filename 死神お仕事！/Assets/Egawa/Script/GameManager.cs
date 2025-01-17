@@ -26,9 +26,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (Time.timeScale == 0)
-            Time.timeScale = 1;
-
         //画像を非表示にする
         Invoke("InactiveImage", 1.0f);
         //ボタン（パネル）を非表示にする

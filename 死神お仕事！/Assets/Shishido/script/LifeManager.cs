@@ -7,11 +7,6 @@ public class LifeManager : MonoBehaviour
     public GameObject[] lifeArray = new GameObject[4];
     private int lifePoint = 4;
 
-    private void Start()
-    {
-        if (Time.timeScale == 0)
-            Time.timeScale = 1;
-    }
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")

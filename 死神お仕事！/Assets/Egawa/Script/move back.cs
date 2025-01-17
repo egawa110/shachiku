@@ -10,9 +10,6 @@ public class moveback : MonoBehaviour
 
     void Start()
     {
-        if (Time.timeScale == 0)
-            Time.timeScale = 1;
-
         StartPosition = transform.position;
     }
 
