@@ -267,7 +267,7 @@ MonoBehaviour:
   Stage3: St3
   Stage4: St4
   Stage5: StBOSS
-  StageAll: StBOSS
+  StageAll: St4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
