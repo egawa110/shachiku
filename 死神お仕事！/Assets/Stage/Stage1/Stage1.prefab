@@ -3873,6 +3873,8 @@ GameObject:
   - component: {fileID: 1835359033134085369}
   - component: {fileID: 6679650858607836920}
   - component: {fileID: 5581890528691998574}
+  - component: {fileID: 7420346551960695299}
+  - component: {fileID: 8882632619318076741}
   m_Layer: 0
   m_Name: "\u30B4\u30FC\u30EB"
   m_TagString: Goal
@@ -4013,6 +4015,31 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7420346551960695299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880398534472165591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30475691e1f22014483b192f721fc7b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Count: 0
+--- !u!114 &8882632619318076741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880398534472165591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a00637b9d431924a88c4797f267bb20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1954805450799351921
 GameObject:
   m_ObjectHideFlags: 0
@@ -22413,7 +22440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60a0efdeed6801c41b6de3ffe16f5391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseUI: {fileID: 2497512699943442154}
+  pauseMenuUI: {fileID: 2497512699943442154}
 --- !u!1 &8613332864255911160
 GameObject:
   m_ObjectHideFlags: 0
@@ -23497,6 +23524,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 0bb67e31e98283842a5411cd47243c44, type: 3}
+    - target: {fileID: 737436249389958841, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2203005004000834478, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: m_Camera
       value: 
@@ -23642,7 +23673,10 @@ PrefabInstance:
       addedObject: {fileID: 488995488221686904}
     - targetCorrespondingSourceObject: {fileID: 3875282970019197288, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4002489592205532107}
+      addedObject: {fileID: 3233821097975726546}
+    - targetCorrespondingSourceObject: {fileID: 3875282970019197288, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7209712283386093718}
   m_SourcePrefab: {fileID: 100100000, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
 --- !u!1 &2319554540183191845 stripped
 GameObject:
@@ -23677,7 +23711,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3875282970019197288, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
   m_PrefabInstance: {fileID: 336789888618243824}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4002489592205532107
+--- !u!114 &3233821097975726546
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -23686,10 +23720,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 3561012269612914584}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a4942d660457dc49896a39911790e54, type: 3}
+  m_Script: {fileID: 11500000, guid: 30475691e1f22014483b192f721fc7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: St1
+  Count: 0
+--- !u!114 &7209712283386093718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3561012269612914584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943dbbbad22ea3744890965b515d7767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Opening: 1scene
+  Stage1: st1
+  Stage2: St2
+  Stage3: St3
+  Stage4: St4
+  Stage5: StBOSS
+  StageAll: St4
 --- !u!1 &3903995294256119179 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3639264292494515067, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
