@@ -164,6 +164,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage2
       objectReference: {fileID: 0}
+    - target: {fileID: 6906916737305410058, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1925234859}
     - target: {fileID: 7214120178123157854, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -171,6 +175,26 @@ PrefabInstance:
     - target: {fileID: 7214120178123157854, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7735201230548574842, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.26775
+      objectReference: {fileID: 0}
+    - target: {fileID: 7735201230548574842, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.26775
+      objectReference: {fileID: 0}
+    - target: {fileID: 7735201230548574842, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.26775
+      objectReference: {fileID: 0}
+    - target: {fileID: 7735201230548574842, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 29.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 7735201230548574842, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 47.58
       objectReference: {fileID: 0}
     - target: {fileID: 8908482115870231497, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: m_LocalPosition.x
@@ -234,6 +258,11 @@ GameObject:
 --- !u!1 &1441109482 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4307812289661841357, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+  m_PrefabInstance: {fileID: 133231020}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1925234859 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4231560234004533132, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
   m_PrefabInstance: {fileID: 133231020}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
