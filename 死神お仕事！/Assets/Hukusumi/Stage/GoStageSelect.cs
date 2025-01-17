@@ -38,6 +38,7 @@ public class GOStageSelect : MonoBehaviour
         CC = clearcount.Count;
         if (CC == 0)
         {
+            clearcount.GameStart();
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(Opening);
             while (!asyncLoad.isDone)
             {

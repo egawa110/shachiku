@@ -11,9 +11,6 @@ public class BulletManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (Time.timeScale == 0)
-            Time.timeScale = 1;
-
         Destroy(gameObject, deleteTime); //íœİ’è
     }
 
