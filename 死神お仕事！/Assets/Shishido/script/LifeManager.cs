@@ -11,8 +11,6 @@ public class LifeManager : MonoBehaviour
     {
         if (Time.timeScale == 0)
             Time.timeScale = 1;
-        else
-            return;
     }
     void OnTriggerEnter2D(Collider2D collision)
     {

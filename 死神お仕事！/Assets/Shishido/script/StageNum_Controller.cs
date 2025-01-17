@@ -11,8 +11,6 @@ public class StageNum_Controller : MonoBehaviour
     {
         if (Time.timeScale == 0)
             Time.timeScale = 1;
-        else
-            return;
     }
 
     // Update is called once per frame

@@ -15,8 +15,6 @@ public class ChangeScene : MonoBehaviour
     {
         if (Time.timeScale == 0)
             Time.timeScale = 1;
-        else
-            return;
     }
 
     // ƒV[ƒ“‚ğ“Ç‚İ‚Ş

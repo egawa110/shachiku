@@ -11,8 +11,6 @@ public class SceneSwitchButton : MonoBehaviour
     {
         if (Time.timeScale == 0)
             Time.timeScale = 1;
-        else
-            return;
 
         // ボタンコンポーネントを取得し、クリック時にメソッドを呼び出すよう設定
         Button button = GetComponent<Button>();

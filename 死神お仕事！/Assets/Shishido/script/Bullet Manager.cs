@@ -13,8 +13,6 @@ public class BulletManager : MonoBehaviour
     {
         if (Time.timeScale == 0)
             Time.timeScale = 1;
-        else
-            return;
 
         Destroy(gameObject, deleteTime); //íœİ’è
     }

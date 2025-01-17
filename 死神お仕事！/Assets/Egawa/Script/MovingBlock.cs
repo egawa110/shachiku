@@ -19,7 +19,9 @@ public class MovingBlock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 1;
+        if (Time.timeScale == 0)
+            Time.timeScale = 1;
+
         startPos = transform.position;                                 //‰ŠúˆÊ’u
         endPos = new Vector2(startPos.x + moveX, startPos.y + moveY);  //ˆÚ“®ˆÊ’u
 

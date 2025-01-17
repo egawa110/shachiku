@@ -15,8 +15,6 @@ public class StageScore : MonoBehaviour
     {
         if (Time.timeScale == 0)
             Time.timeScale = 1;
-        else
-            return;
 
         //Œ»İ‚ÌStageNum‚ğŒÄ‚Ño‚·
         StageNum = PlayerPrefs.GetInt("SCORE", 0);

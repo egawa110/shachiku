@@ -17,8 +17,6 @@ public class ChangeStory : MonoBehaviour
     {
         if (Time.timeScale == 0)
             Time.timeScale = 1;
-        else
-            return;
     }
 
     // ƒV[ƒ“‚ğ“Ç‚İ‚Ş

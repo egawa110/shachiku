@@ -10,8 +10,6 @@ public class BGMsound : MonoBehaviour
     {
         if (Time.timeScale == 0)
             Time.timeScale = 1;
-        else
-            return;
 
 
         if (DontDestroyEnabled)

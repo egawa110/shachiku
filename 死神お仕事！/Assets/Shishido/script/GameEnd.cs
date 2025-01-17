@@ -15,8 +15,6 @@ public class GameEnd : MonoBehaviour
     {
         if (Time.timeScale == 0)
             Time.timeScale = 1;
-        else
-            return;
 
         //確認パネルを非表示
         confirmationPanel.SetActive(false);
