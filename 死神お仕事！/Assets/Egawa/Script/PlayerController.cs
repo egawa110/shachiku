@@ -39,15 +39,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float attackTime = 0.2f; //攻撃間隔
     public float fireSpeed = 8.0f;
 
-    private float currentAttackTime;                  //攻撃の間隔を管理
-    private bool canAttack;                           //攻撃可能状態かを指定するフラグ
+    private float currentAttackTime;    //攻撃の間隔を管理
+    private bool canAttack;             //攻撃可能状態かを指定するフラグ
 
     public int maxHp = 4;      //プレイヤーの最大Hp
     int Hp;                    //プレイヤーの現在Hp
     private bool inDamage = false;  //ダメージ中のフラグ
 
-    //public GameObject[] lifeArray = new GameObject[4];
-    //public Slider slider;      //スライダー用の変数
 
     // サウンド再生
     private AudioSource audioSource; // オーディオソース
@@ -60,6 +58,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip Over_SE;        // ゲームオーバー
 
     public AudioSource BGM;
+
 
     void Start()
     {
@@ -76,12 +75,13 @@ public class PlayerController : MonoBehaviour
 
         currentAttackTime = attackTime; //currentAttackTimeにattackTimeをセット。
        
+        //AudioSouceを取得
         audioSource = GetComponent<AudioSource>();
 
         Hp = maxHp;       // Hpと最大Hpを同じ値にする
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (Time.timeScale == 0)
@@ -120,6 +120,7 @@ public class PlayerController : MonoBehaviour
         //ダッシュ
         if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
+            //Shiftキーを押したときに、歩く速度・重力の値・ジャンプ力を変更
             speed = 5.0f;
             rbody.gravityScale = 1.5f;
             jump = 11.0f;
@@ -247,7 +248,6 @@ public class PlayerController : MonoBehaviour
                 canAttack = false; //攻撃フラグをfalseにする
                 attackTime = 0f;　 //attackTimeを0に戻す
             }
-
         }
     }    
 
@@ -272,8 +272,6 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.gameObject.tag=="Enemy")
         {
-            if (inDamage)
-                return;
             GetDamage(collision.gameObject);
             //敵に当たった時に音を鳴らす
             audioSource.PlayOneShot(Damage_SE);
@@ -299,7 +297,7 @@ public class PlayerController : MonoBehaviour
                 Vector3 v = (transform.position - enemy.transform.position).normalized; rbody.AddForce(new Vector2(v.x * 4.5f, v.y * 4.5f), ForceMode2D.Impulse);
                 //ダメージフラグ　ON
                 inDamage = true;
-                Invoke(nameof(DamageEnd), 0.5f);
+                Invoke(nameof(DamageEnd), 0.7f);
             }
             else if(Hp == 0)
             {
