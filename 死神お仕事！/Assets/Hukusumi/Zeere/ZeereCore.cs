@@ -152,11 +152,7 @@ public class ZeereCore : MonoBehaviour
                 float val = Mathf.Sin(Time.time * 50);
                 if (val > 0)
                 {
-                    //スプライトを表示
-                    gameObject.GetComponent<SpriteRenderer>().enabled = true;
-                    Zeere1.GetComponent<SpriteRenderer>().enabled = true;
-                    Zeere2.GetComponent<SpriteRenderer>().enabled = true;
-                    Zeere3.GetComponent<SpriteRenderer>().enabled = true;
+                    RendererTrue();
                 }
                 else
                 {
@@ -169,11 +165,7 @@ public class ZeereCore : MonoBehaviour
             }
             else
             {
-                //スプライトを表示
-                gameObject.GetComponent<SpriteRenderer>().enabled = true;
-                Zeere1.GetComponent<SpriteRenderer>().enabled = true;
-                Zeere2.GetComponent<SpriteRenderer>().enabled = true;
-                Zeere3.GetComponent<SpriteRenderer>().enabled = true;
+                RendererTrue();
             }
         }
         //起動前
@@ -221,20 +213,17 @@ public class ZeereCore : MonoBehaviour
                     BGM BGML = targetBGM.GetComponent<BGM>();
                     BGML.Loop();
                 }
-                Instantiate(SoulEat, new Vector2(x, y), Quaternion.identity);
+                Create(SoulEat, x, y);
             }
 
             if (PassedTimes>7&&Cool==false)
             {
                 Cool = true;
-                Instantiate(Helo, new Vector2(x, y), Quaternion.identity);
-                
-
+                Create(Helo, x, y);
             }
             if(PassedTimes>8&&Cool2==true)
             {
-                audioSource.PlayOneShot(ZVoiceA);
-                audioSource.PlayOneShot(ZVoiceB);
+                Voice();
                 Cool2 = false;
             }
             if(PassedTimes>10)
@@ -284,8 +273,7 @@ public class ZeereCore : MonoBehaviour
                     SamonLooc = !SamonLooc;
                     PassedTimes = 0;
                     coorTime = 0;
-                    audioSource.PlayOneShot(ZVoiceA);
-                    audioSource.PlayOneShot(ZVoiceB);
+                    Voice();
                 }
                 if (rnd == 3 && RitoningLooc == false)//雷雨ON
                 {
@@ -305,7 +293,7 @@ public class ZeereCore : MonoBehaviour
                     PassedTimes = 0;
                     coorTime = 0;
                 }
-                if (rnd == 5 && LongLooc == false)
+                if (rnd == 5 && LongLooc == false)//待機
                 {
                     transform.eulerAngles = new Vector3(0f, 0f, 180f);
                     PassedTimes = 0;
@@ -366,11 +354,11 @@ public class ZeereCore : MonoBehaviour
                 transform.eulerAngles = new Vector3(0f, 0f, DAngle);
             }
         }
-     
 
-        if(BusteAttack==true)//突進
+
+        if (BusteAttack == true)//突進
         {
-            
+
             if (PassedTimes < 3)
             {
                 // 対象物へのベクトルを算出
@@ -383,9 +371,9 @@ public class ZeereCore : MonoBehaviour
                 Cool2 = true;
                 audioSource.PlayOneShot(AttackC_SE);
             }
-            if (PassedTimes>=3)
+            if (PassedTimes >= 3)
             {
-                if(Cool2==true)
+                if (Cool2 == true)
                 {
                     Cool2 = false;
                     audioSource.PlayOneShot(Boost_SE);
@@ -415,10 +403,9 @@ public class ZeereCore : MonoBehaviour
                     // 生成する
                     Transform STGT = STg.transform;
                     Vector2 SamonPos = STGT.position;
-                    float x = SamonPos.x;
-                    float y = SamonPos.y;
-
-                    Instantiate(Samon, new Vector2(x, y), Quaternion.identity);
+                    float Sx = SamonPos.x;
+                    float Sy = SamonPos.y;
+                    Create(Samon, Sx, Sy);
                     audioSource.PlayOneShot(Samon_SE);
                 }
                
@@ -426,16 +413,10 @@ public class ZeereCore : MonoBehaviour
             if (PassedTimes > 4)
             {
                 //リセット
-                AttackLooc = !AttackLooc;
-                SamonAttack = !SamonAttack;
-                PassedTimes = 0;
-                coorTime = 0;
-                SamonC = 0;
                 BusteLooc = false;
                 RitoningLooc = false;
                 ReeserLooc = false;
-                LongLooc = false;
-                Cool = false;
+                AttackReset();
             }
         }
 
@@ -451,21 +432,21 @@ public class ZeereCore : MonoBehaviour
             if (SamonC<2)
             {
                 SamonC+=1;
-                Instantiate(Rain, new Vector2(0, 7), Quaternion.identity);
+                Create(Rain, 0, 7);
             }
             if (PassedTimes > 4)
             {
 
                 if (Cool == false)
                 {
-                    Instantiate(Ritning, new Vector2(Rx, Ry), Quaternion.identity);
-                    Instantiate(Ritning, new Vector2(-Rx, Ry), Quaternion.identity);
+                    Create(Ritning, Rx, Ry);
+                    Create(Ritning,-Rx, Ry);
                     Rx += PRX;
                 }
                 if (PassedTimes > 4.3&&SamonC < 5)
                 {
                     SamonC += 1;
-                    Instantiate(Rite, new Vector2(0, 3), Quaternion.identity);
+                    Create(Rite, 0, 3);
                     audioSource.PlayOneShot(Ritoning_SE);
                 }
                 if (Rx > Boder)
@@ -475,17 +456,12 @@ public class ZeereCore : MonoBehaviour
                 }
                 if (PassedTimes > 4.5)
                 {
-                    //リセット
-                    Rx = R;
-                    PassedTimes = 0;
-                    AttackLooc = false;
-                    RitoningAttack = false;
-                    SamonC = 0;
+                    //リセット         
                     BusteLooc = false;
                     SamonLooc = false;
                     ReeserLooc = false;
-                    LongLooc = false;
-                    Cool = false;
+                    AttackReset();
+
                 }
             }
         }
@@ -500,20 +476,16 @@ public class ZeereCore : MonoBehaviour
                 Transform HeroTransform = Target.transform;
                 Vector2 HeroPos = HeroTransform.position;
                 float Bx = HeroPos.x;
-                Instantiate(Beem, new Vector2(Bx, 0), Quaternion.identity);
-                Instantiate(Beem, new Vector2(-Bx, 0), Quaternion.identity);
+                Create(Beem, Bx, 0);
+                Create(Beem,-Bx, 0);
             }
             if (PassedTimes > 3.1)
             {
                 //リセット
-                PassedTimes = 0;
-                AttackLooc = false;
-                ReeserAttack = false;
-                SamonC = 0;
                 BusteLooc = false;
                 SamonLooc = false;
                 RitoningLooc = false;
-                LongLooc = false;
+                AttackReset();
             }
         }
 
@@ -529,9 +501,8 @@ public class ZeereCore : MonoBehaviour
                 if(Cool==false)
                 {
                     Cool = true;
-                    Instantiate(KillEffect, new Vector2(x, y), Quaternion.identity);
-                    audioSource.PlayOneShot(ZVoiceA);
-                    audioSource.PlayOneShot(ZVoiceB);
+                    Create(KillEffect, x, y);
+                    Voice();
                     audioSource.PlayOneShot(Foor_SE);
                 }
             }
@@ -541,9 +512,8 @@ public class ZeereCore : MonoBehaviour
                 if(Fade==false)
                 {
                     Fade = true;
-                    Instantiate(Fadeout, new Vector2(0, 0), Quaternion.identity);
-                    audioSource.PlayOneShot(ZVoiceA);
-                    audioSource.PlayOneShot(ZVoiceB);
+                    Create(Fadeout, 0, 0);
+                    Voice();
                 }
             }
             if (PassedTimes > 10 && Crear == false)
@@ -562,6 +532,35 @@ public class ZeereCore : MonoBehaviour
             BsCT = BsCT/2;
         }
 
+    }
+
+    void Voice()//鳴き声
+    {
+        audioSource.PlayOneShot(ZVoiceA);
+        audioSource.PlayOneShot(ZVoiceB);
+    }
+
+    void RendererTrue()//パーツ表示
+    {
+        //スプライトを表示
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        Zeere1.GetComponent<SpriteRenderer>().enabled = true;
+        Zeere2.GetComponent<SpriteRenderer>().enabled = true;
+        Zeere3.GetComponent<SpriteRenderer>().enabled = true;
+    }
+
+    void AttackReset()//リセット
+    {
+        Rx = R;
+        PassedTimes = 0;
+        coorTime = 0;
+        AttackLooc = false;
+        SamonC = 0;
+        Cool = false;
+        SamonAttack = false;
+        RitoningAttack = false;
+        ReeserAttack = false;
+        LongLooc = false;
     }
 
     public void Zeereon()//起動スイッチ
@@ -653,13 +652,18 @@ public class ZeereCore : MonoBehaviour
                 {
                     PassedTimes = 0;
                     EndF = true;
-                    Instantiate(BossEnd, new Vector2(0, 0), Quaternion.identity);
-                    Instantiate(HeloNull, new Vector2(x, y), Quaternion.identity);
+                    Create(BossEnd, 0, 0);
+                    Create(HeloNull, x, y);
                 }
                 
 
             }
         }
+    }
+
+    void Create(GameObject v, float Cx, float Cy)//プレハブ生成
+    {
+        Instantiate(v, new Vector2(Cx, Cy), Quaternion.identity);
     }
 
     //ダメージ終了
