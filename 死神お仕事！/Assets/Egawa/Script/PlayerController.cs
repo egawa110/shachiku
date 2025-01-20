@@ -11,10 +11,17 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rbody;                //Rigidbody2D型の作成
     
     float axisH = 0.0f;               //入力
-    public float speed = 3.0f;        //移動速度
-    public float jump = 10.0f;         //ジャンプ力
+    public float Speed = 3.0f;        //移動速度
+    public float Jump = 10.0f;         //ジャンプ力
     public LayerMask groundLayer;     //着地できるレイヤー
     bool goJump = false;              //ジャンプ開始フラグ
+
+    //プレイヤーの足元が地面かどうかを判定する為に使用する変数
+    private float Radius_Cicle = 0.7f;       //円の半径
+    private float Firing_Distance = 1.0f;    //発射距離
+
+    Vector2 Left = new Vector2(-1, 1);     //左向き
+    Vector2 Right = new Vector2(1, 1);     //右向き
 
     //アニメーション対応
     Animator animator; //アニメーター
@@ -57,7 +64,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip Clear_SE;       // ゲームクリアー
     public AudioClip Over_SE;        // ゲームオーバー
 
-    public AudioSource BGM;
+    public AudioSource BGM;//クリア時、またはゲームオーバー時にBGMを止める
 
 
     void Start()
@@ -73,7 +80,8 @@ public class PlayerController : MonoBehaviour
 
         gameState = "playing";//ゲーム中にする
 
-        currentAttackTime = attackTime; //currentAttackTimeにattackTimeをセット。
+        //currentAttackTimeにattackTimeをセット。
+        currentAttackTime = attackTime;
        
         //AudioSouceを取得
         audioSource = GetComponent<AudioSource>();
@@ -82,60 +90,75 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    //アップデート関数
+    //説明
+    //プレイヤーの入力を判定するため
     void Update()
     {
+        //ポーズ画面が出てる間はアップデート関数を抜ける
         if (Time.timeScale == 0)
         {
             return;
         }
+        //ゲームがプレイ中じゃない時、
+        //またはダメージを受けている最中はアップデート関数を抜ける
         if (gameState != "playing" || inDamage)
         {
             return;
         }
 
-        speed = 3.0f;
-        rbody.gravityScale = 1.1f;
-        jump = 10.0f;
 
         //水平方向の入力をチェック
         axisH = Input.GetAxisRaw("Horizontal");
 
+
+
         //向きの調整
         if (axisH > 0.0f)
         {
-            transform.localScale = new Vector2(1, 1);
+            transform.localScale = Right;
+        }
+        else  if (axisH < 0.0f)
+        {
+            transform.localScale = Left;
         }
 
-        else if (axisH < 0.0f)
-        {
-            transform.localScale = new Vector2(-1, 1);
-        }
+
+
+        //常にプレイヤーの歩く速度・重力の値・ジャンプ力を
+        //元の値にし続ける
+        Speed = 3.0f;
+        rbody.gravityScale = 1.1f;
+        Jump = 10.0f;
 
         //キャラクターをジャンプさせる
         if (Input.GetButtonDown("Jump"))
         {
-            Jump();
+            goJump = true;      //ジャンプフラグを立てる
         }
 
         //ダッシュ
         if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
             //Shiftキーを押したときに、歩く速度・重力の値・ジャンプ力を変更
-            speed = 5.0f;
+            Speed = 5.0f;
             rbody.gravityScale = 1.5f;
-            jump = 11.0f;
+            Jump = 11.0f;
         }
-
         //主人公の攻撃
         Attack();
     }
 
+    //
     void FixedUpdate()
     {
+        //ゲームがプレイ中じゃない時、アップデート関数を抜ける
         if (gameState != "playing")
         {
             return;
         }
+
+        //ダメージを受けている最中の処理
         if (inDamage)
         {
             //ダメージ中、点滅させる
@@ -155,20 +178,20 @@ public class PlayerController : MonoBehaviour
 
         //地上判定
         bool onGround = Physics2D.CircleCast(transform.position,    //発射位置
-                                             0.7f,                  //円の半径
+                                             Radius_Cicle,                  //円の半径
                                              Vector2.down,          //発射方向
-                                             1.0f,                  //発射距離
+                                             Firing_Distance,                  //発射距離
                                              groundLayer);          //検出するレイヤー
         if (onGround || axisH != 0)
         {
             //速度を更新する
-            rbody.velocity = new Vector2(axisH * speed, rbody.velocity.y);
+            rbody.velocity = new Vector2(axisH * Speed, rbody.velocity.y);
         }
         if (onGround && goJump)
         {
             //地面の上でジャンプキーが押された
             //ジャンプさせる
-            Vector2 jumpPw = new(0, jump);                  //ジャンプさせるベクトルを作る
+            Vector2 jumpPw = new(0, Jump);                  //ジャンプさせるベクトルを作る
             rbody.AddForce(jumpPw, ForceMode2D.Impulse);    //瞬間的な力を加える
             goJump = false;
             //ジャンプ音を鳴らす
@@ -193,14 +216,8 @@ public class PlayerController : MonoBehaviour
             oldAnime = nowAnime;
             animator.Play(nowAnime);        // アニメーション再生
         }
-
     }
 
-    //ジャンプ
-    public void Jump()
-    {
-        goJump = true;                      //ジャンプフラグを立てる
-    }
 
     //攻撃
     public void Attack()
