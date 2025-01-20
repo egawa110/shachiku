@@ -140,9 +140,21 @@ PrefabInstance:
       propertyPath: sceneName
       value: Stage2
       objectReference: {fileID: 0}
+    - target: {fileID: 399655821794251107, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: EnemySpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 827984732134171253, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: EnemySpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1106663434898875515, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207047216460858992, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: EnemySpeed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1544655673293442721, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: m_Enabled
@@ -168,6 +180,10 @@ PrefabInstance:
       propertyPath: lifeArray.Array.data[3]
       value: 
       objectReference: {fileID: 928136856}
+    - target: {fileID: 4744860639278294382, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: EnemySpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6611924174335174627, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: m_Name
       value: Stage2
@@ -203,6 +219,10 @@ PrefabInstance:
     - target: {fileID: 7735201230548574842, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: m_LocalPosition.y
       value: 47.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893735941470567333, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: EnemySpeed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8908482115870231497, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: m_LocalPosition.x

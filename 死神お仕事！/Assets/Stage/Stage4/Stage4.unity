@@ -240,6 +240,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -97.99994
       objectReference: {fileID: 0}
+    - target: {fileID: 4528994035619092271, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
+      propertyPath: EnemySpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4899883611529753525, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
       propertyPath: lifeArray.Array.data[0]
       value: 
