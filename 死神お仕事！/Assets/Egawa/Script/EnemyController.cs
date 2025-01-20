@@ -4,24 +4,25 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    public float EnemySpeed        = 2.0f;  //移動速度
+    public bool isToRight          = false; //true ＝ 右向き  false ＝ 左向き
+    public float revTime           = 0;     //反転時間
+    public LayerMask groundLayer;           //地面レイヤー
 
-    public float speed        = 3.0f;  //移動速度
-    public bool isToRight     = false; //true ＝ 右向き  false ＝ 左向き
-    public float revTime      = 0;     //反転時間
-    public LayerMask groundLayer;      //地面レイヤー
+    private float CircleRadius     = 0.5f;  //地上判定の円半径
+    private float Firingdistance   = 0.5f;  ////地上判定の発射距離
+    private float time             = 0;     //反転用のタイマー
 
-    float time = 0;
-
-    // Start is called before the first frame update
     void Start()
     {
-        if (isToRight)
-        {
-            transform.localScale = new Vector2(-1, 1); //向きの変更
-        }
+        //Enemy反転関数
+        ChangeDirection(isToRight);
+        
     }
 
-    // Update is called once per frame
+    //Update関数
+    //説明
+    //タイマーを更新し、一定時間ごとに敵の向きを反転させてる
     void Update()
     {
         if (revTime > 0)
@@ -31,24 +32,24 @@ public class EnemyController : MonoBehaviour
             {
                 isToRight = !isToRight; //フラグを反転させる
                 time = 0;               //タイマーを初期化
-                if (isToRight)
-                {
-                    transform.localScale = new Vector2(-1, 1); //向きの変更
-                }
-                else
-                {
-                    transform.localScale = new Vector2(1, 1); //向きの変更
-                }
+
+                //Enemy反転関数
+                ChangeDirection(isToRight);
+               
             }
         }
     }
+
+    //FixedUpdate関数
+    //説明
+    //地上判定を行い、物理演算に基づいて敵の速度を更新してる
     void FixedUpdate()
     {
         //地上判定
         bool onGround = Physics2D.CircleCast(transform.position, //発射位置
-                                             0.5f,               //円の半径
+                                             CircleRadius,       //円の半径
                                              Vector2.down,       //発射方向
-                                             0.5f,               //発射距離
+                                             Firingdistance,     //発射距離
                                              groundLayer);       //検出するレイヤー
 
         if (onGround)
@@ -59,11 +60,11 @@ public class EnemyController : MonoBehaviour
 
             if (isToRight)
             {
-                rbody.velocity = new Vector2(speed, rbody.velocity.y);
+                rbody.velocity = new Vector2(EnemySpeed, rbody.velocity.y);
             }
             else
             {
-                rbody.velocity = new Vector2(-speed, rbody.velocity.y);
+                rbody.velocity = new Vector2(-EnemySpeed, rbody.velocity.y);
             }
         }
     }
@@ -74,13 +75,21 @@ public class EnemyController : MonoBehaviour
         isToRight = !isToRight; //フラグを反転させる
         time = 0;               //タイマー初期化
 
+        //Enemy反転関数
+        ChangeDirection(isToRight);
+       
+    }
+
+    //Enemy反転関数
+    void ChangeDirection(bool isToRight)
+    {
         if (isToRight)
         {
-            transform.localScale = new Vector2(-1, 1); //向きの変更
+            transform.localScale = new Vector2(-1, 1); // 向きの変更
         }
         else
         {
-            transform.localScale = new Vector2(1, 1); //向きの変更
+            transform.localScale = new Vector2(1, 1); // 向きの変更
         }
     }
 }
