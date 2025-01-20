@@ -1,29 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
-{    
-    //　ポーズした時に表示するUI
-    public GameObject pauseUI;
+{
+    public GameObject pauseMenuUI;
+    private bool isPaused = false;
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("q"))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            //　ポーズUIのアクティブ、非アクティブを切り替え
-            pauseUI.SetActive(!pauseUI.activeSelf);
-
-            //　ポーズUIが表示されてる時は停止
-            if (pauseUI.activeSelf)
+            if (isPaused)
             {
-                Time.timeScale = 0f;
+                Resume();
             }
-            else if(!pauseUI.activeSelf)
+            else
             {
-                Time.timeScale = 1f;
+                Pause();
             }
         }
+    }
+
+    void Resume()
+    {
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
+    }
+
+    void Pause()
+    {
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
     }
 }

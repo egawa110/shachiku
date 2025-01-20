@@ -307,6 +307,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5023324843631597688, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5023324843631597688, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
       propertyPath: sceneName
       value: St3
       objectReference: {fileID: 0}
@@ -364,6 +368,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2357382326253967099, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
       insertIndex: 5
       addedObject: {fileID: 711742474}
+    - targetCorrespondingSourceObject: {fileID: 8811939580961992617, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      insertIndex: 5
+      addedObject: {fileID: 711742478}
+    - targetCorrespondingSourceObject: {fileID: 8811939580961992617, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 711742477}
   m_SourcePrefab: {fileID: 100100000, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
 --- !u!1 &711742473 stripped
 GameObject:
@@ -389,6 +399,43 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 711742473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30475691e1f22014483b192f721fc7b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Count: 0
+--- !u!1 &711742476 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8811939580961992617, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+  m_PrefabInstance: {fileID: 711742472}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &711742477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711742476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943dbbbad22ea3744890965b515d7767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Opening: 1scene
+  Stage1: st1
+  Stage2: St2
+  Stage3: St3
+  Stage4: St4
+  Stage5: StBOSS
+  StageAll: St4
+--- !u!114 &711742478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711742476}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30475691e1f22014483b192f721fc7b0, type: 3}

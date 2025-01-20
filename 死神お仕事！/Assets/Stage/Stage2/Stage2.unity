@@ -145,6 +145,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1544655673293442721, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1544655673293442721, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: sceneName
       value: St2
       objectReference: {fileID: 0}
@@ -254,6 +258,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6819032289232879171, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       insertIndex: 5
       addedObject: {fileID: 133231022}
+    - targetCorrespondingSourceObject: {fileID: 3067966395113109872, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      insertIndex: 5
+      addedObject: {fileID: 133231026}
+    - targetCorrespondingSourceObject: {fileID: 3067966395113109872, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      insertIndex: 6
+      addedObject: {fileID: 133231025}
   m_SourcePrefab: {fileID: 100100000, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
 --- !u!1 &133231021 stripped
 GameObject:
@@ -279,6 +289,43 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133231021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30475691e1f22014483b192f721fc7b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Count: 0
+--- !u!1 &133231024 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3067966395113109872, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+  m_PrefabInstance: {fileID: 133231020}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &133231025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133231024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943dbbbad22ea3744890965b515d7767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Opening: 1scene
+  Stage1: st1
+  Stage2: St2
+  Stage3: St3
+  Stage4: St4
+  Stage5: StBOSS
+  StageAll: St4
+--- !u!114 &133231026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133231024}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30475691e1f22014483b192f721fc7b0, type: 3}

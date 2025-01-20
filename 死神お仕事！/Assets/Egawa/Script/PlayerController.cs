@@ -61,7 +61,6 @@ public class PlayerController : MonoBehaviour
 
     public AudioSource BGM;
 
-    // Start is called before the first frame update
     void Start()
     {
         //FPSを60に固定
@@ -76,9 +75,9 @@ public class PlayerController : MonoBehaviour
         gameState = "playing";//ゲーム中にする
 
         currentAttackTime = attackTime; //currentAttackTimeにattackTimeをセット。
+       
         audioSource = GetComponent<AudioSource>();
 
-        //slider.value = 4; // Sliderを最大Hpにする
         Hp = maxHp;       // Hpと最大Hpを同じ値にする
     }
 
@@ -115,9 +114,7 @@ public class PlayerController : MonoBehaviour
         //キャラクターをジャンプさせる
         if (Input.GetButtonDown("Jump"))
         {
-           // nowAnime = jumpAnime;
             Jump();
-
         }
 
         //ダッシュ
@@ -189,11 +186,7 @@ public class PlayerController : MonoBehaviour
                 nowAnime = moveAnime;  		// 移動
             }
         }
-        else
-        {
-            // 空中
-            //nowAnime = jumpAnime;
-        }
+
         if (nowAnime != oldAnime)
         {
             oldAnime = nowAnime;
@@ -297,7 +290,6 @@ public class PlayerController : MonoBehaviour
         if (gameState == "playing")
         {
             Hp--; //hpが減る
-            //slider.value = Hp; // 減ったHPをスライダーに反映する
 
             if (Hp > 0)
             {
