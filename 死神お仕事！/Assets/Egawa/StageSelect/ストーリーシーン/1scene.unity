@@ -182,7 +182,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 513fb0eb1fc67b448b5e8583b6a8768e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -266,7 +266,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 5e249df7366863e4c8ddebf30927e95f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -350,7 +350,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 7902634b50d6fea4a806434d6376195c, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -449,7 +449,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 34301424a63d3a64f97020889f072309, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -518,7 +518,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 8b75a77761fab68478d60d4071161f78, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -602,7 +602,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: cc6d41e57009b2e4e9a6ee77539a736c, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -637,6 +637,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1643436009}
   - component: {fileID: 1643436008}
+  - component: {fileID: 1643436010}
   m_Layer: 0
   m_Name: "\u4F1A\u8A71UI"
   m_TagString: Untagged
@@ -686,7 +687,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: f90140dc6f4c19e42853f72835b7f114, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -712,6 +713,19 @@ Transform:
   - {fileID: 306046446}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1643436010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643436007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42cf5d5c6d22f884d9e5558f50203e4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: {fileID: 306046445}
 --- !u!224 &1659425505 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6088375776127413187, guid: 3895275a17ba7ce4ba36d64b8a28ffe2, type: 3}
@@ -776,7 +790,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 1536e75091ca70244a7024a5df74a3b5, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -816,6 +830,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1933465291}
   - component: {fileID: 1933465290}
+  - component: {fileID: 1933465292}
   m_Layer: 0
   m_Name: "\u4F1A\u8A71UI \u4E3B"
   m_TagString: Untagged
@@ -865,7 +880,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: f90140dc6f4c19e42853f72835b7f114, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -891,6 +906,19 @@ Transform:
   - {fileID: 190394628}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1933465292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933465289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42cf5d5c6d22f884d9e5558f50203e4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: {fileID: 190394626}
 --- !u!1001 &6780567231204563773
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -996,6 +1024,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 535963121172600134, guid: a4318229785b2314bb3ae2c646d18cd0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1539057472535176460, guid: a4318229785b2314bb3ae2c646d18cd0, type: 3}
       propertyPath: m_Name
       value: "\u30B9\u30C8\u30FC\u30EA\u30FC\uFF11"
@@ -1055,6 +1087,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7587405926089056157, guid: a4318229785b2314bb3ae2c646d18cd0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7014571987592068000}
+    - targetCorrespondingSourceObject: {fileID: 7587405926089056157, guid: a4318229785b2314bb3ae2c646d18cd0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7014571987592068006}
   m_SourcePrefab: {fileID: 100100000, guid: a4318229785b2314bb3ae2c646d18cd0, type: 3}
 --- !u!1 &7014571987592067998 stripped
 GameObject:
@@ -1078,19 +1113,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9bce1e9b8112441ad9d5925c7a1279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SS:
+  Text:
   - {fileID: 7014571987592067999}
   - {fileID: 108001984}
   - {fileID: 1661192209}
   - {fileID: 527112054}
   - {fileID: 278499448}
   - {fileID: 1233877600}
-  frame:
+  Frame:
   - {fileID: 1643436007}
   - {fileID: 1933465289}
-  name:
-  - {fileID: 306046445}
-  - {fileID: 190394626}
+  TChange: 2
+  MSwitch: 0
+--- !u!114 &7014571987592068006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7014571987592067998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca9801b990a144d4386b203fc8f805ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: St1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
