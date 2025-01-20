@@ -8,10 +8,13 @@ public class EnemyLookAtPlayer2D : MonoBehaviour
 
     void Update()
     {
-        Vector3 direction = player.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        if (player != null)
+        {
+            Vector3 direction = player.position - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        // 2DƒQ[ƒ€—p‚ÉZ²‚Ì‰ñ“]‚Ì‚İ‚ğİ’è
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+            // 2DƒQ[ƒ€—p‚ÉZ²‚Ì‰ñ“]‚Ì‚İ‚ğİ’è
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        }
     }
 }

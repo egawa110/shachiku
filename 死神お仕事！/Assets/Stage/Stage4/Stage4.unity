@@ -183,6 +183,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1450832223553833252, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -65.80606
+      objectReference: {fileID: 0}
     - target: {fileID: 3173285051253418098, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -190,6 +194,10 @@ PrefabInstance:
     - target: {fileID: 3173285051253418098, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3888387572960905218, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -97.99994
       objectReference: {fileID: 0}
     - target: {fileID: 4899883611529753525, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
       propertyPath: lifeArray.Array.data[0]
@@ -214,6 +222,22 @@ PrefabInstance:
     - target: {fileID: 5613234516803186349, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
       propertyPath: m_Name
       value: Stage4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5799937931768039495, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
+      propertyPath: wait
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5799937931768039495, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
+      propertyPath: moveX
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5799937931768039495, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
+      propertyPath: isCanMove
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5799937931768039495, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
+      propertyPath: isMoveWhenOn
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5968431501121650688, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
       propertyPath: BGM
