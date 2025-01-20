@@ -37,6 +37,9 @@ public class ZeereCore : MonoBehaviour
 
     public float DAngle = 180.0f;//初期角度
 
+    float x;
+    float y;
+
     //突進系
     float ATspeed = 10.0f;//突進速度
     float BsCT = 3.0f;//ロックオン時間
@@ -44,6 +47,7 @@ public class ZeereCore : MonoBehaviour
     public float Attack = 10;//攻撃CT
 
     float SamonC = 0;//召喚カウンター
+    public float Samonfrequency = 3;//召喚回数
 
     int rnd;//乱数
     
@@ -135,6 +139,11 @@ public class ZeereCore : MonoBehaviour
     private void Update()
     {
         PassedTimes += Time.deltaTime;//時間経過
+        //自身の位置
+        Transform myTransform = this.transform;
+        Vector2 worldPos = myTransform.position;
+        x = worldPos.x;    // ワールド座標を基準にした、x座標が入っている変数
+        y = worldPos.y;    // ワールド座標を基準にした、y座標が入っている変数
         if (Go == true)
         {
             if (inDamage)
@@ -212,20 +221,12 @@ public class ZeereCore : MonoBehaviour
                     BGM BGML = targetBGM.GetComponent<BGM>();
                     BGML.Loop();
                 }
-                Transform myTransform = this.transform;
-                Vector2 worldPos = myTransform.position;
-                float x = worldPos.x;    // ワールド座標を基準にした、x座標が入っている変数
-                float y = worldPos.y;    // ワールド座標を基準にした、y座標が入っている変数
                 Instantiate(SoulEat, new Vector2(x, y), Quaternion.identity);
             }
 
             if (PassedTimes>7&&Cool==false)
             {
                 Cool = true;
-                Transform myTransform = this.transform;
-                Vector2 worldPos = myTransform.position;
-                float x = worldPos.x;    // ワールド座標を基準にした、x座標が入っている変数
-                float y = worldPos.y;    // ワールド座標を基準にした、y座標が入っている変数
                 Instantiate(Helo, new Vector2(x, y), Quaternion.identity);
                 
 
@@ -404,7 +405,7 @@ public class ZeereCore : MonoBehaviour
             transform.eulerAngles = new Vector3(0f, 0f, DAngle);
             coorTime += Time.deltaTime;//時間経過
             
-            if (SamonC < 3)
+            if (SamonC < Samonfrequency)
             {
                 
                 if (coorTime > 0.5)
@@ -412,10 +413,10 @@ public class ZeereCore : MonoBehaviour
                     SamonC += 1;
                     coorTime = 0;
                     // 生成する
-                    Transform myTransform = STg.transform;
-                    Vector2 worldPos = myTransform.position;
-                    float x = worldPos.x;
-                    float y = worldPos.y;
+                    Transform STGT = STg.transform;
+                    Vector2 SamonPos = STGT.position;
+                    float x = SamonPos.x;
+                    float y = SamonPos.y;
 
                     Instantiate(Samon, new Vector2(x, y), Quaternion.identity);
                     audioSource.PlayOneShot(Samon_SE);
@@ -450,8 +451,6 @@ public class ZeereCore : MonoBehaviour
             if (SamonC<2)
             {
                 SamonC+=1;
-                Transform myTransform = this.transform;
-                Vector2 worldPos = myTransform.position;
                 Instantiate(Rain, new Vector2(0, 7), Quaternion.identity);
             }
             if (PassedTimes > 4)
@@ -459,8 +458,6 @@ public class ZeereCore : MonoBehaviour
 
                 if (Cool == false)
                 {
-                    Transform myTransform = this.transform;
-                    Vector2 worldPos = myTransform.position;
                     Instantiate(Ritning, new Vector2(Rx, Ry), Quaternion.identity);
                     Instantiate(Ritning, new Vector2(-Rx, Ry), Quaternion.identity);
                     Rx += PRX;
@@ -468,8 +465,6 @@ public class ZeereCore : MonoBehaviour
                 if (PassedTimes > 4.3&&SamonC < 5)
                 {
                     SamonC += 1;
-                    Transform myTransformR = this.transform;
-                    Vector2 worldPosR = myTransformR.position;
                     Instantiate(Rite, new Vector2(0, 3), Quaternion.identity);
                     audioSource.PlayOneShot(Ritoning_SE);
                 }
@@ -502,13 +497,11 @@ public class ZeereCore : MonoBehaviour
             if (SamonC < 1)
             {
                 SamonC += 1;
-                Transform myTransform = Target.transform;
-                Vector2 worldPos = myTransform.position;
-                float x = worldPos.x;
-                float y = 0;
-
-                Instantiate(Beem, new Vector2(x, y), Quaternion.identity);
-                Instantiate(Beem, new Vector2(-x, y), Quaternion.identity);
+                Transform HeroTransform = Target.transform;
+                Vector2 HeroPos = HeroTransform.position;
+                float Bx = HeroPos.x;
+                Instantiate(Beem, new Vector2(Bx, 0), Quaternion.identity);
+                Instantiate(Beem, new Vector2(-Bx, 0), Quaternion.identity);
             }
             if (PassedTimes > 3.1)
             {
@@ -528,9 +521,6 @@ public class ZeereCore : MonoBehaviour
         {
             if(PassedTimes>1)
             {
-                Transform myTransform = this.transform;
-                Vector2 worldPos = myTransform.position;
-                float x = worldPos.x;    // ワールド座標を基準にした、x座標が入っている変数
                 //指定方向に落下
                 transform.position = Vector2.MoveTowards(
                    transform.position,
@@ -539,9 +529,7 @@ public class ZeereCore : MonoBehaviour
                 if(Cool==false)
                 {
                     Cool = true;
-                    float ex = worldPos.x;    // ワールド座標を基準にした、x座標が入っている変数
-                    float ey = worldPos.y;    // ワールド座標を基準にした、y座標が入っている変数
-                    Instantiate(KillEffect, new Vector2(ex, ey), Quaternion.identity);
+                    Instantiate(KillEffect, new Vector2(x, y), Quaternion.identity);
                     audioSource.PlayOneShot(ZVoiceA);
                     audioSource.PlayOneShot(ZVoiceB);
                     audioSource.PlayOneShot(Foor_SE);
@@ -553,8 +541,6 @@ public class ZeereCore : MonoBehaviour
                 if(Fade==false)
                 {
                     Fade = true;
-                    Transform myTransform = this.transform;
-                    Vector2 worldPos = myTransform.position;
                     Instantiate(Fadeout, new Vector2(0, 0), Quaternion.identity);
                     audioSource.PlayOneShot(ZVoiceA);
                     audioSource.PlayOneShot(ZVoiceB);
@@ -667,11 +653,7 @@ public class ZeereCore : MonoBehaviour
                 {
                     PassedTimes = 0;
                     EndF = true;
-                    Transform myTransform = this.transform;
-                    Vector2 worldPos = myTransform.position;
                     Instantiate(BossEnd, new Vector2(0, 0), Quaternion.identity);
-                    float x = worldPos.x;    // ワールド座標を基準にした、x座標が入っている変数
-                    float y = worldPos.y;    // ワールド座標を基準にした、y座標が入っている変数
                     Instantiate(HeloNull, new Vector2(x, y), Quaternion.identity);
                 }
                 
