@@ -5,64 +5,69 @@ using UnityEngine.UI;
 
 public class ZeereCore : MonoBehaviour
 {
+    //移動経路
     Transform Reel;
-    [SerializeField] GameObject Samon;
-    [SerializeField] GameObject Ritning;
-    [SerializeField] GameObject Rain;
-    [SerializeField] GameObject Rite;
-    [SerializeField] GameObject Beem;
-    [SerializeField] GameObject Helo;
-    [SerializeField] GameObject BossEnd;
-    [SerializeField] GameObject GameClear;
-    [SerializeField] GameObject Fadeout;
-    [SerializeField] GameObject HeloNull;
-    [SerializeField] GameObject KillEffect;
-    [SerializeField] GameObject SoulEat;
+    //プレハブ
+    [SerializeField] GameObject Samon;//召喚魔法陣
+    [SerializeField] GameObject Ritning;//雷判定
+    [SerializeField] GameObject Rain;//雨
+    [SerializeField] GameObject Rite;//雷エフェクト
+    [SerializeField] GameObject Beem;//ビーム
+    [SerializeField] GameObject Helo;//ヘイロー
+    [SerializeField] GameObject BossEnd;//死亡時ゼーレ以外のダメージ源を除外
+    [SerializeField] GameObject GameClear;//ゴール
+    [SerializeField] GameObject Fadeout;//フェードアウト
+    [SerializeField] GameObject HeloNull;//ヘイロー破壊
+    [SerializeField] GameObject KillEffect;//死亡時に吐く
+    [SerializeField] GameObject SoulEat;//起動時に吸収
 
+    //死亡時消去
     public GameObject GameUI;
-
-    public GameObject LoocON;
-
     public GameObject Heart1;
     public GameObject Heart2;
     public GameObject Heart3;
     public GameObject Heart4;
 
-    Transform gateTransform;
-    Transform BoostTraget;
-    public Transform target;
-    float passedTimes = 0;
-    float BGMTime = 0;
+    Transform STg;//召喚位置
+    Transform BoostTraget;//突進ロックオン
+    public Transform Target;//ビームロックオン
+    float PassedTimes = 0;//アクションの時間経過
     float coorTime = 0;
-    [SerializeField] float speed = 5; // 敵の動くスピード
+    [SerializeField] float Speed = 5; // 敵の動くスピード
+
+    public float DAngle = 180.0f;//初期角度
 
     //突進系
-    float ATspeed = 10.0f;
-    public float Attack = 10;
-    float BsCT = 3.0f;
+    float ATspeed = 10.0f;//突進速度
+    float BsCT = 3.0f;//ロックオン時間
+
+    public float Attack = 10;//攻撃CT
 
     float SamonC = 0;//召喚カウンター
 
     int rnd;//乱数
     
-    public float r = 0.5f;//雷初期化
-    float rx;//雷x
-    public float ry = 20.0f;//雷y
-    public float prx = 1.0f;//雷ずらし
-    public float boder = 10.0f;//雷オーバーラン防止
+    //雷雨系
+    public float R = 0.5f;//雷初期化
+    float Rx;//雷x
+    public float Ry = 20.0f;//雷y
+    public float PRX = 1.0f;//雷ずらし
+    public float Boder = 10.0f;//雷オーバーラン防止
 
-    public bool GO = false;//ゼーレ起動
+    public bool Go = false;//ゼーレ起動
     bool GoOK = false;//イベント確認
 
     bool Cool = false;//調整用
     bool Cool2 = false;//調整用2
     bool Cool3 = false;//調整用3
-    bool AttackLooc = true;//起動用
+    //攻撃起動
+    bool AttackLooc = true;//攻撃制限＆確認
     bool BusteAttack = false;//突進起動用
     bool SamonAttack = false;//召喚起動用
     bool RitoningAttack = false;//雷雨起動用
     bool ReeserAttack = false;//ビーム起動用
 
+    //連続同攻撃禁止
     bool BusteLooc = false;//突進ロック
     bool SamonLooc = false;//召喚ロック
     bool RitoningLooc = false;//雷雨ロック
@@ -73,62 +78,64 @@ public class ZeereCore : MonoBehaviour
     bool Crear = false;//クリア出現
     bool Fade = false;//フェードオブジェフラグ
 
+    //HP
     public int HP_M = 40;//体力マックス
-    int HP_Z ;    //敵の体力
+    int HP_z;    //敵の体力
     private bool inDamage;  //ダメージ中のフラグ
     public Slider slider;//スライダー
     bool HalfC = false;
 
     //ゼーレのパーツ
-    GameObject Zeere1;
-    GameObject Zeere2;
-    GameObject Zeere3;
+    GameObject Zeere1;//白目
+    GameObject Zeere2;//黒目
+    GameObject Zeere3;//カバー
+    //GameObject Zeere4;//右肩
+    //GameObject Zeere5;//左肩
 
     //音
     private AudioSource audioSource;
-    public AudioClip Samon_SE;
-    public AudioClip SamonR_SE;
-    public AudioClip Boost_SE;
-    public AudioClip Attack_SE;
-    public AudioClip AttackC_SE;
-    public AudioClip Ritoning_SE;
-    public AudioClip ZVoiceA;
-    public AudioClip ZVoiceB;
-    public AudioClip ZeereON_SE;
-    public AudioClip ZeereON2_SE;
-    public AudioClip Break_SE;
-    public AudioClip Foor_SE;
-    public AudioClip Damage_SE;
+    public AudioClip Samon_SE;//召喚音
+    public AudioClip BootZeere_SE;//起動音
+    public AudioClip Boost_SE;//突進音
+    public AudioClip Attack_SE;//激突音
+    public AudioClip AttackC_SE;//チャージ音
+    public AudioClip Ritoning_SE;//電撃音
+    public AudioClip ZVoiceA;//鳴き声A
+    public AudioClip ZVoiceB;//鳴き声B
+    public AudioClip ZeereON_SE;//準備1
+    public AudioClip ZeereON2_SE;//準備2
+    public AudioClip Break_SE;//トドメダメージ音
+    public AudioClip Foor_SE;//落下音
+    public AudioClip Damage_SE;//ダメージ音
 
-    public AudioSource Loop_BGM;
+    //BGM
+    //イントロ
     public AudioSource Start_BGM;
-    public GameObject targetBGM;
     public GameObject targetBGMS;
-    bool LoopC = false;
+    //ループ
+    public AudioSource Loop_BGM;
+    public GameObject targetBGM;
 
+    //スタート
     private void Start()
     {
-        HP_Z = HP_M;
-        rx = r;
+        HP_z = HP_M;
+        Rx = R;
         slider.value = HP_M;
         Reel = GameObject.FindGameObjectWithTag("ZeeReeL").transform;
         BoostTraget = GameObject.FindGameObjectWithTag("PlayerLoocon").transform;
-        gateTransform = GameObject.FindGameObjectWithTag("SamonTG").transform;
+        STg = GameObject.FindGameObjectWithTag("SamonTG").transform;
         Zeere1 = GameObject.Find("Zeerecenter");
         Zeere2 = GameObject.Find("ZeereEye");
         Zeere3 = GameObject.Find("ZeereKabar");
 
         audioSource = GetComponent<AudioSource>();
     }
-
+    //アップデート
     private void Update()
     {
-        passedTimes += Time.deltaTime;//時間経過
-        if (LoopC == false)
-        {
-            BGMTime += Time.deltaTime;//時間経過
-        }
-        if (GO == true)
+        PassedTimes += Time.deltaTime;//時間経過
+        if (Go == true)
         {
             if (inDamage)
             {
@@ -138,7 +145,6 @@ public class ZeereCore : MonoBehaviour
                 {
                     //スプライトを表示
                     gameObject.GetComponent<SpriteRenderer>().enabled = true;
-                    //Zeere1.GetComponent<SpriteRenderer>().enabled = true;
                     Zeere1.GetComponent<SpriteRenderer>().enabled = true;
                     Zeere2.GetComponent<SpriteRenderer>().enabled = true;
                     Zeere3.GetComponent<SpriteRenderer>().enabled = true;
@@ -147,7 +153,6 @@ public class ZeereCore : MonoBehaviour
                 {
                     //スプライトを非表示
                     gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                    //Zeere1.GetComponent<SpriteRenderer>().enabled = false;
                     Zeere1.GetComponent<SpriteRenderer>().enabled = false;
                     Zeere2.GetComponent<SpriteRenderer>().enabled = false;
                     Zeere3.GetComponent<SpriteRenderer>().enabled = false;
@@ -157,33 +162,31 @@ public class ZeereCore : MonoBehaviour
             {
                 //スプライトを表示
                 gameObject.GetComponent<SpriteRenderer>().enabled = true;
-                //Zeere1.GetComponent<SpriteRenderer>().enabled = true;
                 Zeere1.GetComponent<SpriteRenderer>().enabled = true;
                 Zeere2.GetComponent<SpriteRenderer>().enabled = true;
                 Zeere3.GetComponent<SpriteRenderer>().enabled = true;
             }
         }
-        //開始時
-        if (GO==false)
+        //起動前
+        if (Go==false)
         {
 
-            passedTimes = 0;
-            BGMTime = 0;
+            PassedTimes = 0;
             //待機場所へ移動
             transform.position = Vector2.MoveTowards(
                transform.position,
                new Vector2(0, -4.5f),
-               speed * Time.deltaTime);
+               Speed * Time.deltaTime);
         }
         //起動
-        if(GO==true&&GoOK==false)
+        if(Go==true&&GoOK==false)
         {
-            if(passedTimes>1)
+            if(PassedTimes>1)
             {
                 ZeereEye Eyeon = Zeere2.GetComponent<ZeereEye>();
                 Eyeon.ON();
             }
-            if (passedTimes > 2)
+            if (PassedTimes > 2)
             {
                 //指定位置に上昇
                 transform.position = Vector2.MoveTowards(
@@ -200,7 +203,7 @@ public class ZeereCore : MonoBehaviour
                     
                 }
             }
-            if (passedTimes >= 4&& passedTimes <= 5)
+            if (PassedTimes >= 4&& PassedTimes <= 5)
             {
                 if(Cool2==false)
                 {
@@ -216,7 +219,7 @@ public class ZeereCore : MonoBehaviour
                 Instantiate(SoulEat, new Vector2(x, y), Quaternion.identity);
             }
 
-            if (passedTimes>7&&Cool==false)
+            if (PassedTimes>7&&Cool==false)
             {
                 Cool = true;
                 Transform myTransform = this.transform;
@@ -227,18 +230,18 @@ public class ZeereCore : MonoBehaviour
                 
 
             }
-            if(passedTimes>8&&Cool2==true)
+            if(PassedTimes>8&&Cool2==true)
             {
                 audioSource.PlayOneShot(ZVoiceA);
                 audioSource.PlayOneShot(ZVoiceB);
                 Cool2 = false;
             }
-            if(passedTimes>10)
+            if(PassedTimes>10)
             {
                 slider.gameObject.SetActive(true);
                 ReeserAttack = !ReeserAttack;
                 ReeserLooc = !ReeserLooc;
-                passedTimes = 0;
+                PassedTimes = 0;
                 coorTime = 0;
                 GoOK = true;
                 Cool = false;
@@ -257,32 +260,20 @@ public class ZeereCore : MonoBehaviour
                 AttackLooc = false;
             }
         }
-        //BGMループ
-        //if (BGMTime <= 45 && BGMTime >=35&&LoopC==false&&AttackLooc==false)
-        //{
-        //    passedTimes = 0;
-        //    Debug.Log("Lady?");
-        //}
-        //else if(BGMTime>46&&LoopC==false&&AttackLooc==false)
-        //{
-        //    Debug.Log("GO!");
-        //    passedTimes = 99;
-        //    LoopC = true;
-        //}
         //攻撃処理
         rnd = Random.Range(1, 6);
-        if (passedTimes > Attack)
+        if (PassedTimes > Attack)
         {
             if (AttackLooc == false)//起動用
             {
                 if (rnd == 1 && BusteLooc == false)//突進ON
                 {
-                    PlayerLoocon LCO = LoocON.GetComponent<PlayerLoocon>();
+                    PlayerLoocon LCO = BoostTraget.GetComponent<PlayerLoocon>();
                     LCO.Reset();
                     AttackLooc = !AttackLooc;
                     BusteAttack = !BusteAttack;
                     BusteLooc = !BusteLooc;
-                    passedTimes = 0;
+                    PassedTimes = 0;
                     coorTime = 0;
                 }
                 if (rnd == 2 && SamonLooc == false)//召喚ON
@@ -290,7 +281,7 @@ public class ZeereCore : MonoBehaviour
                     AttackLooc = !AttackLooc;
                     SamonAttack = !SamonAttack;
                     SamonLooc = !SamonLooc;
-                    passedTimes = 0;
+                    PassedTimes = 0;
                     coorTime = 0;
                     audioSource.PlayOneShot(ZVoiceA);
                     audioSource.PlayOneShot(ZVoiceB);
@@ -300,9 +291,9 @@ public class ZeereCore : MonoBehaviour
                     AttackLooc = !AttackLooc;
                     RitoningAttack = !RitoningAttack;
                     RitoningLooc = !RitoningLooc;
-                    passedTimes = 0;
+                    PassedTimes = 0;
                     coorTime = 0;
-                    audioSource.PlayOneShot(SamonR_SE);
+                    audioSource.PlayOneShot(BootZeere_SE);
                     audioSource.PlayOneShot(ZeereON2_SE);
                 }
                 if (rnd == 4 && ReeserLooc == false)//ビームON
@@ -310,13 +301,13 @@ public class ZeereCore : MonoBehaviour
                     AttackLooc = !AttackLooc;
                     ReeserAttack = !ReeserAttack;
                     ReeserLooc = !ReeserLooc;
-                    passedTimes = 0;
+                    PassedTimes = 0;
                     coorTime = 0;
                 }
                 if (rnd == 5 && LongLooc == false)
                 {
                     transform.eulerAngles = new Vector3(0f, 0f, 180f);
-                    passedTimes = 0;
+                    PassedTimes = 0;
                     LongLooc = true;
                 }
 
@@ -360,18 +351,18 @@ public class ZeereCore : MonoBehaviour
             transform.position = Vector2.MoveTowards(
                 transform.position,
                 new Vector2(Reel.position.x, Reel.position.y),
-                speed * Time.deltaTime);
-            if(transform.localEulerAngles.z<180)
+                Speed * Time.deltaTime);
+            if(transform.localEulerAngles.z<DAngle)
             {
                 transform.Rotate(new Vector3(0, 0, 1));
             }
-            else if (transform.localEulerAngles.z > 180)
+            else if (transform.localEulerAngles.z > DAngle)
             {
                 transform.Rotate(new Vector3(0, 0, -1));
             }
             else
             {
-                transform.eulerAngles = new Vector3(0f, 0f, 180f);
+                transform.eulerAngles = new Vector3(0f, 0f, DAngle);
             }
         }
      
@@ -379,19 +370,19 @@ public class ZeereCore : MonoBehaviour
         if(BusteAttack==true)//突進
         {
             
-            if (passedTimes < 3)
+            if (PassedTimes < 3)
             {
                 // 対象物へのベクトルを算出
                 Vector3 toDirection = BoostTraget.transform.position - transform.position;
                 // 対象物へ回転する
                 transform.rotation = Quaternion.FromToRotation(Vector3.up, toDirection);
             }
-            if (passedTimes < 3 && Cool2 == false)
+            if (PassedTimes < 3 && Cool2 == false)
             {
                 Cool2 = true;
                 audioSource.PlayOneShot(AttackC_SE);
             }
-            if (passedTimes>=3)
+            if (PassedTimes>=3)
             {
                 if(Cool2==true)
                 {
@@ -410,7 +401,7 @@ public class ZeereCore : MonoBehaviour
 
         if (SamonAttack == true)//召喚
         {
-            transform.eulerAngles = new Vector3(0f, 0f, 180f);
+            transform.eulerAngles = new Vector3(0f, 0f, DAngle);
             coorTime += Time.deltaTime;//時間経過
             
             if (SamonC < 3)
@@ -421,7 +412,7 @@ public class ZeereCore : MonoBehaviour
                     SamonC += 1;
                     coorTime = 0;
                     // 生成する
-                    Transform myTransform = gateTransform.transform;
+                    Transform myTransform = STg.transform;
                     Vector2 worldPos = myTransform.position;
                     float x = worldPos.x;
                     float y = worldPos.y;
@@ -431,11 +422,12 @@ public class ZeereCore : MonoBehaviour
                 }
                
             }
-            if (passedTimes > 4)
+            if (PassedTimes > 4)
             {
+                //リセット
                 AttackLooc = !AttackLooc;
                 SamonAttack = !SamonAttack;
-                passedTimes = 0;
+                PassedTimes = 0;
                 coorTime = 0;
                 SamonC = 0;
                 BusteLooc = false;
@@ -449,11 +441,12 @@ public class ZeereCore : MonoBehaviour
 
         if (RitoningAttack == true)//雷雨
         {
+            //指定位置に移動
             transform.position = Vector2.MoveTowards(
                 transform.position,
                 new Vector2(0, 3),
-                speed * Time.deltaTime);
-            transform.eulerAngles = new Vector3(0f, 0f, 180f);
+                Speed * Time.deltaTime);
+            transform.eulerAngles = new Vector3(0f, 0f, DAngle);
             if (SamonC<2)
             {
                 SamonC+=1;
@@ -461,18 +454,18 @@ public class ZeereCore : MonoBehaviour
                 Vector2 worldPos = myTransform.position;
                 Instantiate(Rain, new Vector2(0, 7), Quaternion.identity);
             }
-            if (passedTimes > 4)
+            if (PassedTimes > 4)
             {
 
                 if (Cool == false)
                 {
                     Transform myTransform = this.transform;
                     Vector2 worldPos = myTransform.position;
-                    Instantiate(Ritning, new Vector2(rx, ry), Quaternion.identity);
-                    Instantiate(Ritning, new Vector2(-rx, ry), Quaternion.identity);
-                    rx += prx;
+                    Instantiate(Ritning, new Vector2(Rx, Ry), Quaternion.identity);
+                    Instantiate(Ritning, new Vector2(-Rx, Ry), Quaternion.identity);
+                    Rx += PRX;
                 }
-                if (passedTimes > 4.3&&SamonC < 5)
+                if (PassedTimes > 4.3&&SamonC < 5)
                 {
                     SamonC += 1;
                     Transform myTransformR = this.transform;
@@ -480,14 +473,16 @@ public class ZeereCore : MonoBehaviour
                     Instantiate(Rite, new Vector2(0, 3), Quaternion.identity);
                     audioSource.PlayOneShot(Ritoning_SE);
                 }
-                if (rx > boder)
+                if (Rx > Boder)
                 {
+                    //過剰生成防止
                     Cool = true;
                 }
-                if (passedTimes > 4.5)
+                if (PassedTimes > 4.5)
                 {
-                    rx = r;
-                    passedTimes = 0;
+                    //リセット
+                    Rx = R;
+                    PassedTimes = 0;
                     AttackLooc = false;
                     RitoningAttack = false;
                     SamonC = 0;
@@ -503,11 +498,11 @@ public class ZeereCore : MonoBehaviour
 
         if (ReeserAttack == true)//ビーム
         {
-            transform.eulerAngles = new Vector3(0f, 0f, 180f);
+            transform.eulerAngles = new Vector3(0f, 0f, DAngle);
             if (SamonC < 1)
             {
                 SamonC += 1;
-                Transform myTransform = target.transform;
+                Transform myTransform = Target.transform;
                 Vector2 worldPos = myTransform.position;
                 float x = worldPos.x;
                 float y = 0;
@@ -515,9 +510,10 @@ public class ZeereCore : MonoBehaviour
                 Instantiate(Beem, new Vector2(x, y), Quaternion.identity);
                 Instantiate(Beem, new Vector2(-x, y), Quaternion.identity);
             }
-            if (passedTimes > 3.1)
+            if (PassedTimes > 3.1)
             {
-                passedTimes = 0;
+                //リセット
+                PassedTimes = 0;
                 AttackLooc = false;
                 ReeserAttack = false;
                 SamonC = 0;
@@ -530,12 +526,12 @@ public class ZeereCore : MonoBehaviour
 
         if(EndF==true)//撃破
         {
-            if(passedTimes>1)
+            if(PassedTimes>1)
             {
                 Transform myTransform = this.transform;
                 Vector2 worldPos = myTransform.position;
                 float x = worldPos.x;    // ワールド座標を基準にした、x座標が入っている変数
-                //指定位置に下降
+                //指定方向に落下
                 transform.position = Vector2.MoveTowards(
                    transform.position,
                    new Vector2(x, -10),
@@ -551,8 +547,9 @@ public class ZeereCore : MonoBehaviour
                     audioSource.PlayOneShot(Foor_SE);
                 }
             }
-            if (passedTimes > 5)
+            if (PassedTimes > 5)
             {
+                //フェードアウト
                 if(Fade==false)
                 {
                     Fade = true;
@@ -563,15 +560,16 @@ public class ZeereCore : MonoBehaviour
                     audioSource.PlayOneShot(ZVoiceB);
                 }
             }
-            if (passedTimes > 10 && Crear == false)
+            if (PassedTimes > 10 && Crear == false)
             {
+                //クリア
                 GameObject obj = Instantiate(GameClear, new Vector2(0, 0), Quaternion.identity);
                 obj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
                 Crear = true;
             }
         }
         //半分処理
-        if(HP_Z<=HP_M/2&&AttackLooc==false&&HalfC==false)
+        if(HP_z<=HP_M/2&&AttackLooc==false&&HalfC==false)
         {
             HalfC = true;
             ATspeed = ATspeed/2;
@@ -580,32 +578,33 @@ public class ZeereCore : MonoBehaviour
 
     }
 
-    public void Zeereon()
+    public void Zeereon()//起動スイッチ
     {
-        GO = true;
+        Go = true;
     }
 
-    public void OnTriggerEnter2D(Collider2D other) //ぶつかったら消える命令文開始
+    public void OnTriggerEnter2D(Collider2D other) 
     {
         if (EndF == false)
         {
-            if (HP_Z > HP_M / 2)
+            if (HP_z > HP_M / 2)
             {
                 if (other.CompareTag("Ground") && BusteAttack == true)
-                {
+                {//リセット
                     BusteAttack = false;
-                    passedTimes = 0;
+                    PassedTimes = 0;
                     coorTime = 0;
                     Cool = true;
                     audioSource.PlayOneShot(Attack_SE);
                 }
             }
-            else
+            else//後半戦
             {
                 if (other.CompareTag("OverGround") && BusteAttack == true)
                 {
+                    //リセット
                     BusteAttack = false;
-                    passedTimes = 0;
+                    PassedTimes = 0;
                     coorTime = 0;
                     Cool = true;
                     audioSource.PlayOneShot(Attack_SE);
@@ -614,8 +613,9 @@ public class ZeereCore : MonoBehaviour
 
             if (other.CompareTag("Wall") && BusteAttack == true)
             {
+                //リセット
                 BusteAttack = false;
-                passedTimes = 0;
+                PassedTimes = 0;
                 coorTime = 0;
                 Cool = true;
                 audioSource.PlayOneShot(Attack_SE);
@@ -633,10 +633,10 @@ public class ZeereCore : MonoBehaviour
     {
         if (PlayerBoss.gameState == "playing")
         {
-            HP_Z--; //hpが減る
-            slider.value = HP_Z;
-            Debug.Log(HP_Z);
-            if (HP_Z > 0)
+            HP_z--; //hpが減る
+            slider.value = HP_z;
+            Debug.Log(HP_z);
+            if (HP_z > 0)
             {
                 //ダメージフラグ　ON
                 inDamage = true;
@@ -645,6 +645,7 @@ public class ZeereCore : MonoBehaviour
             }
             else
             {
+                //UI&BGM停止
                 GetComponent<BoxCollider2D>().enabled = false;
                 GameManager S5UI = GameUI.GetComponent<GameManager>();
                 S5UI.BossKill();
@@ -664,7 +665,7 @@ public class ZeereCore : MonoBehaviour
                 audioSource.PlayOneShot(Break_SE);
                 if (EndF ==false)
                 {
-                    passedTimes = 0;
+                    PassedTimes = 0;
                     EndF = true;
                     Transform myTransform = this.transform;
                     Vector2 worldPos = myTransform.position;
