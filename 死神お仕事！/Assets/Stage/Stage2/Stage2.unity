@@ -140,6 +140,10 @@ PrefabInstance:
       propertyPath: sceneName
       value: Stage2
       objectReference: {fileID: 0}
+    - target: {fileID: 358632704947176605, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: HP_E
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 399655821794251107, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: EnemySpeed
       value: 2
@@ -199,6 +203,10 @@ PrefabInstance:
     - target: {fileID: 7214120178123157854, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7635450481649856422, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7735201230548574842, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: m_LocalScale.x

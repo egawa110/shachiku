@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHit : MonoBehaviour
+public class EnemyHP : MonoBehaviour
 {
     Rigidbody2D rbody; public int HP_E = 3;
     //敵の体力
@@ -60,17 +60,17 @@ public class EnemyHit : MonoBehaviour
                 if (HP_E > 0)
                 {
                     //ダメージフラグ ON
-                    inDamage = true;
-                    audioSource.PlayOneShot(Damage_SE);
+                    inDamage = true; 
+                    audioSource.PlayOneShot(Damage_SE); 
                     Invoke(nameof(DamageEnd), 0.25f);
                 }
                 else
                 {
-                    ZERO = true;
-                    inDamage = false;
-                    gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                    GetComponent<BoxCollider2D>().enabled = false;
-                    GetComponent<CircleCollider2D>().enabled = false;
+                    ZERO = true; 
+                    inDamage = false; 
+                    gameObject.GetComponent<SpriteRenderer>().enabled = false; 
+                    GetComponent<BoxCollider2D>().enabled = false; 
+                    GetComponent<CircleCollider2D>().enabled = false; 
                     audioSource.Play();
                 }
             }
@@ -79,9 +79,9 @@ public class EnemyHit : MonoBehaviour
 
     void DamageEnd()
     {
-        inDamage = false;
+        inDamage = false; 
         // ダメージフラグOFF
-        gameObject.GetComponent<SpriteRenderer>().enabled = true;
-
+        gameObject.GetComponent<SpriteRenderer>().enabled = true; 
+        
     }
 }

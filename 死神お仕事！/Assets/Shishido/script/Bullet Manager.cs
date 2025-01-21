@@ -16,7 +16,7 @@ public class BulletManager : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         //敵に当たったら
-        if(other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Enemy")
         {
             //プレイヤーの攻撃が消える
             Destroy(gameObject);
@@ -37,4 +37,6 @@ public class BulletManager : MonoBehaviour
             Destroy(gameObject);//このゲームオブジェクトを消滅させる
         }
     }
+
+
 }
