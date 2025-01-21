@@ -537,35 +537,14 @@ public class ZeereCore : MonoBehaviour
         Zeere3.GetComponent<SpriteRenderer>().enabled = true;
     }
 
-    void ONReset()//リセット(起動)
-    {
-        AttackLooc = true;
-        BusteLooc = true;
-        SamonLooc = true;
-        RitoningLooc = true;
-        ReeserLooc = true;
-        PassedTimes = 0;
-        coorTime = 0;
-    }
-    void AttackReset()//リセット
-    {
-        Rx = R;
-        PassedTimes = 0;
-        coorTime = 0;
-        AttackLooc = false;
-        SamonC = 0;
-        Cool = false;
-        SamonAttack = false;
-        RitoningAttack = false;
-        ReeserAttack = false;
-        LongLooc = false;
-    }
+    
 
     public void Zeereon()//起動スイッチ
     {
         Go = true;
     }
 
+    //接触
     public void OnTriggerEnter2D(Collider2D other) 
     {
         if (EndF == false)
@@ -612,6 +591,7 @@ public class ZeereCore : MonoBehaviour
 
     }
 
+    //ダメージ
     void GetDamage(GameObject player)
     {
         if (PlayerBoss.gameState == "playing")
@@ -657,6 +637,30 @@ public class ZeereCore : MonoBehaviour
 
             }
         }
+    }
+
+    void ONReset()//リセット(起動)
+    {
+        AttackLooc = true;
+        BusteLooc = true;
+        SamonLooc = true;
+        RitoningLooc = true;
+        ReeserLooc = true;
+        PassedTimes = 0;
+        coorTime = 0;
+    }
+    void AttackReset()//リセット
+    {
+        Rx = R;
+        PassedTimes = 0;
+        coorTime = 0;
+        AttackLooc = false;
+        SamonC = 0;
+        Cool = false;
+        SamonAttack = false;
+        RitoningAttack = false;
+        ReeserAttack = false;
+        LongLooc = false;
     }
 
     void Create(GameObject v, float Cx, float Cy)//プレハブ生成
