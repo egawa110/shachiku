@@ -238,6 +238,10 @@ PrefabInstance:
       propertyPath: EnemySpeed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 992356028268452591, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8168c140db0d87d40b0451dca8a19752, type: 3}
     - target: {fileID: 1210827747958017208, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.970321
@@ -322,6 +326,18 @@ PrefabInstance:
       propertyPath: sceneName
       value: St3
       objectReference: {fileID: 0}
+    - target: {fileID: 5186645721104589891, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5186645721104589891, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5186645721104589891, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5217301108029580543, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
       propertyPath: m_Size.x
       value: 23.081478
@@ -330,9 +346,37 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: 1.9407382
       objectReference: {fileID: 0}
+    - target: {fileID: 5251147125316393247, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_Size.x
+      value: 6.840393
+      objectReference: {fileID: 0}
+    - target: {fileID: 5251147125316393247, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_Size.y
+      value: 1.6372094
+      objectReference: {fileID: 0}
+    - target: {fileID: 5251147125316393247, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.046463013
+      objectReference: {fileID: 0}
+    - target: {fileID: 5251147125316393247, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.34385633
+      objectReference: {fileID: 0}
+    - target: {fileID: 5251147125316393247, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 9.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5251147125316393247, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 5.4
+      objectReference: {fileID: 0}
     - target: {fileID: 5292821373484602624, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
       propertyPath: m_Name
       value: Stage3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418784146391967109, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5938003988684921213, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
       propertyPath: sceneName
