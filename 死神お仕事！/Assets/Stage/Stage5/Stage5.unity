@@ -352,6 +352,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5047210651460696253, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+      propertyPath: SceneName
+      value: En2
+      objectReference: {fileID: 0}
     - target: {fileID: 5849101481709582990, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
       propertyPath: m_SizeDelta.x
       value: 66.05

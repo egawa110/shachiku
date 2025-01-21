@@ -9,6 +9,9 @@ public class Story : MonoBehaviour
     int SSCount = 0;//会話カウンター
     public int TChange = 0;//話者切り替えタイミング
     public bool MSwitch = false;//モノローグ使わないとき
+    //音
+    private AudioSource audioSource;
+    public AudioClip Enter_SE;//クリック音
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,13 @@ public class Story : MonoBehaviour
         {
             Text[SSCount].GetComponent<SpriteRenderer>().enabled = true;
         }
+        else
+        {
+            Frame[SSCount].GetComponent<SpriteRenderer>().enabled = true;
+            SSCount++;
+            Text[SSCount].GetComponent<SpriteRenderer>().enabled = true;
+        }
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -31,7 +41,8 @@ public class Story : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-                if (SSCount == 0)
+            audioSource.PlayOneShot(Enter_SE);
+            if (SSCount == 0)
                 {
                     Frame[SSCount].GetComponent<SpriteRenderer>().enabled = true;
                     SSCount++;

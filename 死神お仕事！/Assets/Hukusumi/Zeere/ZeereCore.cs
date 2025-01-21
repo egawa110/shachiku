@@ -260,38 +260,26 @@ public class ZeereCore : MonoBehaviour
                 {
                     PlayerLoocon LCO = BoostTraget.GetComponent<PlayerLoocon>();
                     LCO.Reset();
-                    AttackLooc = !AttackLooc;
                     BusteAttack = !BusteAttack;
-                    BusteLooc = !BusteLooc;
-                    PassedTimes = 0;
-                    coorTime = 0;
+                    ONReset();
                 }
                 if (rnd == 2 && SamonLooc == false)//召喚ON
                 {
-                    AttackLooc = !AttackLooc;
                     SamonAttack = !SamonAttack;
-                    SamonLooc = !SamonLooc;
-                    PassedTimes = 0;
-                    coorTime = 0;
+                    ONReset();
                     Voice();
                 }
                 if (rnd == 3 && RitoningLooc == false)//雷雨ON
                 {
-                    AttackLooc = !AttackLooc;
                     RitoningAttack = !RitoningAttack;
-                    RitoningLooc = !RitoningLooc;
-                    PassedTimes = 0;
-                    coorTime = 0;
+                    ONReset();
                     audioSource.PlayOneShot(BootZeere_SE);
                     audioSource.PlayOneShot(ZeereON2_SE);
                 }
                 if (rnd == 4 && ReeserLooc == false)//ビームON
                 {
-                    AttackLooc = !AttackLooc;
                     ReeserAttack = !ReeserAttack;
-                    ReeserLooc = !ReeserLooc;
-                    PassedTimes = 0;
-                    coorTime = 0;
+                    ONReset();
                 }
                 if (rnd == 5 && LongLooc == false)//待機
                 {
@@ -549,6 +537,16 @@ public class ZeereCore : MonoBehaviour
         Zeere3.GetComponent<SpriteRenderer>().enabled = true;
     }
 
+    void ONReset()//リセット(起動)
+    {
+        AttackLooc = true;
+        BusteLooc = true;
+        SamonLooc = true;
+        RitoningLooc = true;
+        ReeserLooc = true;
+        PassedTimes = 0;
+        coorTime = 0;
+    }
     void AttackReset()//リセット
     {
         Rx = R;
