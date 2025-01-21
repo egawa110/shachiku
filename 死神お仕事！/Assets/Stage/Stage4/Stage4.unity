@@ -235,6 +235,10 @@ PrefabInstance:
       propertyPath: moveX
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4528994035619092271, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
+      propertyPath: EnemySpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5613234516803186349, guid: f462e7ddc15438b45b35ac8294a64687, type: 3}
       propertyPath: m_Name
       value: Stage4
