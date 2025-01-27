@@ -191,6 +191,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -97.999985
       objectReference: {fileID: 0}
+    - target: {fileID: 3517975271659298159, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: pauseMenuUI
+      value: 
+      objectReference: {fileID: 1459321013}
     - target: {fileID: 5186645721104589891, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -271,6 +275,11 @@ MonoBehaviour:
   wait: 3
   isMoveWhenOn: 0
   isCanMove: 1
+--- !u!1 &1459321013 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7604889854614417115, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+  m_PrefabInstance: {fileID: 1459321010}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

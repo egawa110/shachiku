@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &142045859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4129845344609466370, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+  m_PrefabInstance: {fileID: 1519519995}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1158234984
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,6 +318,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage2
       objectReference: {fileID: 0}
+    - target: {fileID: 7488581132007677767, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
+      propertyPath: pauseMenuUI
+      value: 
+      objectReference: {fileID: 142045859}
     - target: {fileID: 7893735941470567333, guid: ddd48a7ddbd0d03459d555d79779dc74, type: 3}
       propertyPath: EnemySpeed
       value: 2
