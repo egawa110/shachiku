@@ -76,29 +76,29 @@ public class moveblock : MonoBehaviour
     }
 
     //playerの接触開始
-    //void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Player")
-    //    {
-    //        //接触したのがプレイヤーなら移動床の子にする
-    //        collision.transform.SetParent(transform);
-    //        if (isMoveWhenOn)
-    //        {
-    //            //乗った時に動くフラグＯＮ
-    //            isCanMove = true; //移動フラグを立てる
-    //        }
-    //    }
-    //}
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            //接触したのがプレイヤーなら移動床の子にする
+            collision.transform.SetParent(transform);
+            if (isMoveWhenOn)
+            {
+                //乗った時に動くフラグＯＮ
+                isCanMove = true; //移動フラグを立てる
+            }
+        }
+    }
 
     //接触終了
-    //void OnCollisionExit2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Player")
-    //    {
-    //        //接触したのがプレイヤーなら移動床の子から外す
-    //        collision.transform.SetParent(null);
-    //    }
-    //}
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            //接触したのがプレイヤーなら移動床の子から外す
+            collision.transform.SetParent(null);
+        }
+    }
 
 
     //移動範囲表示
