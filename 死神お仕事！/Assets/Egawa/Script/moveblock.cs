@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingBlock : MonoBehaviour
+public class moveblock : MonoBehaviour
 {
     public float moveX = 0.0f;        //X移動距離
     public float moveY = 0.0f;        //Y移動距離
     public float times = 0.0f;        //時間
-    public float wait  = 0.0f;        //停止時間
+    public float wait = 0.0f;        //停止時間
     public bool isMoveWhenOn = false; // 乗った時に動くフラグ
-    public bool isCanMove    = true;  //動くフラグ
+    public bool isCanMove = true;  //動くフラグ
     Vector3 startPos;                 //初期位置
     Vector3 endPos;                   //移動位置
     bool isReverse = false;           //反転フラグ
@@ -48,7 +48,7 @@ public class MovingBlock : MonoBehaviour
                 transform.position = Vector2.Lerp(startPos, endPos, movep); //正移動
             }
 
-            if (movep >=　1.0f)
+            if (movep >= 1.0f)
             {
                 movep = 0.0f;           //移動補完値リセット
                 isReverse = !isReverse; //移動を逆転
@@ -90,7 +90,7 @@ public class MovingBlock : MonoBehaviour
     //    }
     //}
 
-    ////接触終了
+    //接触終了
     //void OnCollisionExit2D(Collision2D collision)
     //{
     //    if (collision.gameObject.tag == "Player")
