@@ -107,11 +107,8 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-
         //水平方向の入力をチェック
         axisH = Input.GetAxisRaw("Horizontal");
-
-
 
         //向きの調整
         if (axisH > 0.0f)
@@ -122,8 +119,6 @@ public class PlayerController : MonoBehaviour
         {
             transform.localScale = Left;
         }
-
-
 
         //常にプレイヤーの歩く速度・重力の値・ジャンプ力を
         //元の値にし続ける
@@ -239,7 +234,7 @@ public class PlayerController : MonoBehaviour
                 if (playerObj.transform.localScale.x > 0)//右向き
                 {
                     Vector2 pos = new Vector2(attackPoint.position.x,
-                            attackPoint.position.y);
+                    attackPoint.position.y);
                     GameObject obj = Instantiate(bullet, pos, Quaternion.identity);
                     //方針が向いてる方向に発射する
                     Rigidbody2D rbody = obj.GetComponent<Rigidbody2D>();
@@ -252,7 +247,7 @@ public class PlayerController : MonoBehaviour
                 else if (playerObj.transform.localScale.x < 0)//左向き
                 {
                     Vector2 pos = new Vector2(attackPoint.position.x,
-                            attackPoint.position.y);
+                    attackPoint.position.y);
                     GameObject obj = Instantiate(bullet, pos, Quaternion.identity);
                     //方針が向いてる方向に発射する
                     Rigidbody2D rbody = obj.GetComponent<Rigidbody2D>();
@@ -266,7 +261,20 @@ public class PlayerController : MonoBehaviour
                 attackTime = 0f;　 //attackTimeを0に戻す
             }
         }
-    }    
+    }
+    //void ShotBullet(Vector2 vector2)
+    //{
+    //    Vector2 pos = new Vector2(attackPoint.position.x,
+    //    attackPoint.position.y);
+    //    GameObject obj = Instantiate(bullet, pos, Quaternion.identity);
+    //    //方針が向いてる方向に発射する
+    //    Rigidbody2D rbody = obj.GetComponent<Rigidbody2D>();
+    //    float angleZ = transform.localEulerAngles.z;
+    //    float x = Mathf.Cos(angleZ * Mathf.Deg2Rad);
+    //    float y = Mathf.Sin(angleZ * Mathf.Deg2Rad);
+    //    Vector2 v = new Vector2(x, y) * fireSpeed;
+    //    rbody.AddForce(v, ForceMode2D.Impulse);
+    //}
 
     //接触開始
     void OnTriggerEnter2D(Collider2D collision)
