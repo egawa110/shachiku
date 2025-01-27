@@ -37,6 +37,7 @@ public class ZeereCore : MonoBehaviour
 
     public float DAngle = 180.0f;//初期角度
 
+    //ゼーレ位置
     float x;
     float y;
 
@@ -61,9 +62,9 @@ public class ZeereCore : MonoBehaviour
     public bool Go = false;//ゼーレ起動
     bool GoOK = false;//イベント確認
 
-    bool Cool = false;//調整用
-    bool Cool2 = false;//調整用2
-    bool Cool3 = false;//調整用3
+    bool Cool = false;//起動確認用
+    bool Cool2 = false;//起動確認用2
+    bool Cool3 = false;//起動確認用3
     //攻撃起動
     bool AttackLooc = true;//攻撃制限＆確認
     bool BusteAttack = false;//突進起動用
@@ -87,7 +88,7 @@ public class ZeereCore : MonoBehaviour
     int HP_z;    //敵の体力
     private bool inDamage;  //ダメージ中のフラグ
     public Slider slider;//スライダー
-    bool HalfC = false;
+    bool HalfC = false;//半分処理確認
 
     //ゼーレのパーツ
     GameObject Zeere1;//白目
@@ -251,7 +252,7 @@ public class ZeereCore : MonoBehaviour
             }
         }
         //攻撃処理
-        rnd = Random.Range(1, 6);
+        rnd = Random.Range(1, 6);//乱数
         if (PassedTimes > Attack)
         {
             if (AttackLooc == false)//起動用
