@@ -515,9 +515,7 @@ public class ZeereCore : MonoBehaviour
         //半分処理
         if(HP_z<=HP_M/2&&AttackLooc==false&&HalfC==false)
         {
-            HalfC = true;
-            ATspeed = ATspeed/2;
-            BsCT = BsCT/2;
+            Half();
         }
 
     }
@@ -637,6 +635,12 @@ public class ZeereCore : MonoBehaviour
 
             }
         }
+    }
+    void Half()//半分処理
+    {
+        HalfC = true;
+        ATspeed = ATspeed / 2;
+        BsCT = BsCT / 2;
     }
 
     void ONReset()//リセット(起動)
