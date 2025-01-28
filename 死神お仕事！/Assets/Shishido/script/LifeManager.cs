@@ -9,12 +9,12 @@ public class LifeManager : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy" && lifePoint < 4)
+        if (collision.gameObject.tag == "Enemy")
         {
             lifeArray[lifePoint - 1].SetActive(false);
             lifePoint--;
         }
-        else if (collision.gameObject.tag == "heal" && lifePoint > 0) 
+        else if (collision.gameObject.tag == "heal") 
         {
             lifeArray[lifePoint - 1].SetActive(true);
             lifePoint++;
