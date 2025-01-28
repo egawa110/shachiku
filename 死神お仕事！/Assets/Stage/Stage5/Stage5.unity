@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: SceneName
       value: BOSSen1
       objectReference: {fileID: 0}
+    - target: {fileID: 9124458094791598424, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
