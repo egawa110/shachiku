@@ -306,6 +306,11 @@ public class PlayerController : MonoBehaviour
             // スイッチに触れたら音を鳴らす
             audioSource.PlayOneShot(Switch_Act_SE);
         }
+        else if(collision.gameObject.tag == "Heal")
+        {
+            Hp++;
+            Destroy(collision.gameObject);
+        }
     }
 
     void GetDamage(GameObject enemy)
