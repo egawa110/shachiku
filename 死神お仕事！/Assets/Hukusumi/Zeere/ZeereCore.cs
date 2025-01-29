@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class ZeereCore : MonoBehaviour
 {
+    /// <summary>
+    /// 
+    /// </summary>
     //移動経路
     Transform Reel;
     //プレハブ
