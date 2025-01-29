@@ -23,6 +23,7 @@ TagManager:
   - GameEnd
   - OverGround
   - PlayerLoocon
+  - Heal
   layers:
   - Default
   - TransparentFX

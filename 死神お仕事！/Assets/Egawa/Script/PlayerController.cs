@@ -276,7 +276,11 @@ public class PlayerController : MonoBehaviour
     //    rbody.AddForce(v, ForceMode2D.Impulse);
     //}
 
-    //接触開始
+
+    /// <summary>
+    /// 接触した当たり判定を取得し、それに応じた処理
+    /// </summary>
+    /// <param name="collision">プレイヤーに接触した当たり判定</param>
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag=="Goal")
@@ -313,6 +317,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// ダメージを受けた時の処理
+    /// </summary>
+    /// <param name="enemy">当たったオブジェクトが敵</param>
     void GetDamage(GameObject enemy)
     {
         if (gameState == "playing")
