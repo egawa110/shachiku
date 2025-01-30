@@ -248,11 +248,11 @@ public class PlayerBoss : MonoBehaviour
                 nowAnime = moveAnime;  		// ˆÚ“®
             }
         }
-        else
-        {
-            // ‹ó’†
-            nowAnime = jumpAnime;
-        }
+        //else
+        //{
+        //    // ‹ó’†
+        //    nowAnime = jumpAnime;
+        //}
         if (nowAnime != oldAnime)
         {
             oldAnime = nowAnime;
