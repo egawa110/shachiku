@@ -19,13 +19,16 @@ public class LifeManager : MonoBehaviour
         else if (collision.gameObject.tag == "Heal") 
         {
             lifePoint++;
-            lifeArray[lifePoint - 1].SetActive(true);
 
             if (lifePoint > 4) // lifePoint‚ª‚S‚æ‚è‘å‚«‚­‚È‚Á‚½‚ç
             {
                 // lifePoint‚ð‚S‚É‚·‚é
                 lifePoint = 4;
+
+                return;
             }
+
+            lifeArray[lifePoint - 1].SetActive(true);
 
             Debug.Log("lifePoint:");
             Debug.Log(lifePoint);

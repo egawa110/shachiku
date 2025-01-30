@@ -170,12 +170,6 @@ public class PlayerController : MonoBehaviour
            return; // ƒ_ƒ[ƒW’†‚Í‘€ì‚É‚æ‚éˆÚ“®‚ğ‚³‚¹‚È‚¢
         }
 
-        if (Hp > 4) // ‘Ì—Í‚ª‚S‚æ‚è‘å‚«‚­‚È‚Á‚½‚ç
-        {
-            //¡‚Ì‘Ì—Í‚ğ‚S‚É‚·‚é
-            Hp = maxHp;
-        }
-
         //’nã”»’è
         bool onGround = Physics2D.CircleCast(transform.position,    //”­ËˆÊ’u
                                              Radius_Cicle,                  //‰~‚Ì”¼Œa
@@ -318,6 +312,12 @@ public class PlayerController : MonoBehaviour
         else if(collision.gameObject.tag == "Heal")
         {
             Hp++;
+
+            if (Hp > 4) // ‘Ì—Í‚ª‚S‚æ‚è‘å‚«‚­‚È‚Á‚½‚ç
+            {
+                //¡‚Ì‘Ì—Í‚ğ‚S‚É‚·‚é
+                Hp = maxHp;
+            }
             Destroy(collision.gameObject);
             UnityEngine.Debug.Log("Hp:");
             UnityEngine.Debug.Log(Hp);
