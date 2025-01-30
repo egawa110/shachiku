@@ -13,11 +13,22 @@ public class LifeManager : MonoBehaviour
         {
             lifeArray[lifePoint - 1].SetActive(false);
             lifePoint--;
+            Debug.Log("lifePoint:");
+            Debug.Log(lifePoint);
         }
-        else if (collision.gameObject.tag == "heal") 
+        else if (collision.gameObject.tag == "Heal") 
         {
-            lifeArray[lifePoint - 1].SetActive(true);
             lifePoint++;
+            lifeArray[lifePoint - 1].SetActive(true);
+
+            if (lifePoint > 4) // lifePoint‚ª‚S‚æ‚è‘å‚«‚­‚È‚Á‚½‚ç
+            {
+                // lifePoint‚ð‚S‚É‚·‚é
+                lifePoint = 4;
+            }
+
+            Debug.Log("lifePoint:");
+            Debug.Log(lifePoint);
         }
     }
 }

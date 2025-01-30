@@ -144,7 +144,6 @@ public class PlayerController : MonoBehaviour
         Attack();
     }
 
-    //
     void FixedUpdate()
     {
         //ゲームがプレイ中じゃない時、アップデート関数を抜ける
@@ -169,6 +168,12 @@ public class PlayerController : MonoBehaviour
                 gameObject.GetComponent<SpriteRenderer>().enabled = false;
             }
            return; // ダメージ中は操作による移動をさせない
+        }
+
+        if (Hp > 4) // 体力が４より大きくなったら
+        {
+            //今の体力を４にする
+            Hp = maxHp;
         }
 
         //地上判定
@@ -314,6 +319,8 @@ public class PlayerController : MonoBehaviour
         {
             Hp++;
             Destroy(collision.gameObject);
+            UnityEngine.Debug.Log("Hp:");
+            UnityEngine.Debug.Log(Hp);
         }
     }
 
@@ -326,6 +333,8 @@ public class PlayerController : MonoBehaviour
         if (gameState == "playing")
         {
             Hp--; //hpが減る
+            UnityEngine.Debug.Log("Hp:");
+            UnityEngine.Debug.Log(Hp);
 
             if (Hp > 0)
             {
