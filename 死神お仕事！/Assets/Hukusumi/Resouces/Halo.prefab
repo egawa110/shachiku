@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2305070429336344619}
   - component: {fileID: 1284402877856175530}
   - component: {fileID: 3898221063208148303}
+  - component: {fileID: 8078718118882242297}
   m_Layer: 6
   m_Name: Halo
   m_TagString: ZeereAtach
@@ -99,3 +100,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   speedover: 10
+--- !u!114 &8078718118882242297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6196895771319119964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8201c8e925a89444b5f8a564c2db8e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
