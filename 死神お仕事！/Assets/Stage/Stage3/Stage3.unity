@@ -171,25 +171,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3113817235406971756, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
-      propertyPath: m_SortingOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3120546520000354196, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
-      propertyPath: m_SortingOrder
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 5292821373484602624, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
       propertyPath: m_Name
       value: Stage3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6138911646708728117, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
-      propertyPath: m_SortingOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6147459877283273626, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
-      propertyPath: m_SortingOrder
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
