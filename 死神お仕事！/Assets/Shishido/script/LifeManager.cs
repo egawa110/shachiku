@@ -16,7 +16,7 @@ public class LifeManager : MonoBehaviour
             Debug.Log("lifePoint:");
             Debug.Log(lifePoint);
         }
-        else if (collision.gameObject.tag == "Heal") 
+        else if (collision.gameObject.tag == "Soul") 
         {
             lifePoint++;
 
