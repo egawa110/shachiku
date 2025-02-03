@@ -5,18 +5,19 @@ using UnityEngine;
 public class AppearGoal : MonoBehaviour
 {
     private PlayerController PlayCon;
+    
 
     void Start()
     {
         PlayCon = GetComponent<PlayerController>();
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.SetActive(false);
     }
 
     void Update()
     {
-        if(PlayCon.ALL_SOUL == 10)
+        if (PlayCon.ALL_SOUL >= 10)
         {
-            gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            gameObject.SetActive(true);
         }
     }
 }

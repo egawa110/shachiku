@@ -146,7 +146,6 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        UnityEngine.Debug.Log(Hp);
 
         //ゲームがプレイ中じゃない時、アップデート関数を抜ける
         if (gameState != "playing")
