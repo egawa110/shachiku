@@ -6,7 +6,7 @@ public class HalfDamageHalo : MonoBehaviour
 {
     int rnd;//—”
     bool inDamage = false;
-    bool HalfF = false;
+    public bool HalfF = false;
     // Start is called before the first frame update
     void Start()
     {

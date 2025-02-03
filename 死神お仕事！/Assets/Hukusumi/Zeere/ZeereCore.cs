@@ -590,6 +590,23 @@ public class ZeereCore : MonoBehaviour
             // 攻撃された時のエフェクト
             GetDamage(other.gameObject);
         }
+        else if (other.gameObject.tag == "Heal")
+        {
+            HP_z++;
+
+            if ( HP_z > HP_M) 
+            {
+                // HP_zをmaxにする
+                HP_z = HP_M;
+            }
+            else if(HalfC&&HP_z>HP_M/2)
+            {
+                // HP_zをmax/2にする
+                HP_z = HP_M/2;
+            }
+            Destroy(other.gameObject);
+            slider.value = HP_z;
+        }
 
     }
 

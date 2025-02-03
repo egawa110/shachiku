@@ -321,6 +321,10 @@ public class PlayerBoss : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 接触した当たり判定を取得し、それに応じた処理
+    /// </summary>
+    /// <param name="collision">プレイヤーに接触した当たり判定</param>
     //接触開始
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -348,8 +352,22 @@ public class PlayerBoss : MonoBehaviour
         }
         else if (collision.gameObject.tag == "ZeereCore")
         {
-            GetDamage(collision.gameObject);
-            
+            GetDamage(collision.gameObject);   
+        }
+        else if (collision.gameObject.tag == "Heal")
+        {
+            lifePoint++;
+            Hp++;
+
+            if (lifePoint > 4|| Hp > 4) // lifePointが４より大きくなったら
+            {
+                // lifePointを４にする
+                lifePoint = 4;
+                Hp = maxHp;
+            }
+            UnityEngine.Debug.Log("Hp:");
+            lifeArray[lifePoint - 1].SetActive(true);
+            Destroy(collision.gameObject);
         }
     }
 
