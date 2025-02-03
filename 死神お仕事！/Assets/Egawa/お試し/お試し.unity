@@ -263,12 +263,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 88282071}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4319d989ac11f744ea7f26f7e6e0bcb5, type: 3}
+  m_Script: {fileID: 11500000, guid: a0cf9c30edf6dbd4bbc03b4366e9a7f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 1987284559}
-  originalPosition: {fileID: 1987284559}
-  isSwitchOn: 1
+  targetMoveBlock: {fileID: 1987284555}
+  imageOn: {fileID: 21300000, guid: f66d2a052b43250459e7e9b9a6cbb298, type: 3}
+  imageOff: {fileID: 21300000, guid: 5926bdb991457dd449c59d2e43e1a32f, type: 3}
+  on: 0
 --- !u!1 &99789532
 GameObject:
   m_ObjectHideFlags: 0

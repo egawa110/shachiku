@@ -14487,6 +14487,10 @@ PrefabInstance:
       propertyPath: revTime
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4469039410257748459, guid: b397f58607b22a049a679e0af4f84b2c, type: 3}
+      propertyPath: EnemySpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4548657000076936131, guid: b397f58607b22a049a679e0af4f84b2c, type: 3}
       propertyPath: m_Name
       value: "\u6575\u30B5\u30A4\u30BA\u5909\u66F4\uFF11 (2)"
