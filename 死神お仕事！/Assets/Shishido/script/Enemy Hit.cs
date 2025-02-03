@@ -32,6 +32,10 @@ public class EnemyHit : MonoBehaviour
         if (ZERO)
         {
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            foreach (Transform child in gameObject.transform)
+            {
+                GameObject.Destroy(child.gameObject);
+            }
         }
 
         if (!audioSource.isPlaying && ZERO)

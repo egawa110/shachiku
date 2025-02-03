@@ -16,6 +16,8 @@ public class Lessyn_Rifgo : MonoBehaviour
     float passedTimes = 0;
     public float firetime = 3.0f;//発射
 
+    bool Dead = false;
+
     private AudioSource audioSource;
     public AudioClip Fire_SE;
 
@@ -46,16 +48,16 @@ public class Lessyn_Rifgo : MonoBehaviour
             GameObject obj = Instantiate(Bullet, pos, Quaternion.identity);
             //方針が向いてる方向に発射する
             Rigidbody2D rbody = obj.GetComponent<Rigidbody2D>();
-            Vector2 v = new Vector2(0, 1) * fireSpeed;
+            Vector2 v = new Vector2(0, 2) * fireSpeed;
             rbody.AddForce(v, ForceMode2D.Impulse);
             audioSource.PlayOneShot(Fire_SE);
-            if (gameObject.GetComponent<SpriteRenderer>().enabled == false)
-            {
-                foreach (Transform child in gameObject.transform)
-                {
-                    GameObject.Destroy(child.gameObject);
-                }
-            }
+        }
+        if (GetComponent<BoxCollider2D>().enabled == false&&Dead==false)
+        {
+            float x = worldPos.x;    // ワールド座標を基準にした、x座標が入っている変数
+            float y = worldPos.y;    // ワールド座標を基準にした、y座標が入っている変数
+            Instantiate(Heal, new Vector2(x, y), Quaternion.identity);
+            Dead = true;
         }
 
         void FixedUpdate()
