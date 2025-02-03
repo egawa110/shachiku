@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     public GameObject objPrefab;   //発生させるPrefabデータ
-    public float delayTime = 3.0f; //遅延時間
+    public float delayTime = 5.0f; //遅延時間
     public float fireSpeed = 4.0f; //発射速度
     public float length = 8.0f;    //範囲
 

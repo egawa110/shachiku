@@ -2,29 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwitchMovement : MonoBehaviour
+public class Swichi : MonoBehaviour
 {
-    public Transform targetPosition; // オンの時の目標位置
-    public Transform originalPosition; // オフの時の元の位置
-    public bool isSwitchOn = false; // スイッチの状態
+    public GameObject targetMoveBlock;
+    public Sprite imageOn;
+    public Sprite imageOff;
+    public bool on = false; // スイッチの状態（true:押されている false:押されていない）
 
-    void Update()
+    // Start is called before the first frame update
+    void Start()
     {
-        if (isSwitchOn)
+        UpdateSprite();
+    }
+
+    // 接触開始
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Player")
         {
-            // スイッチがオンの時、目標位置に移動
-            transform.position = Vector3.Lerp(transform.position, targetPosition.position, Time.deltaTime * 5);
-        }
-        else
-        {
-            // スイッチがオフの時、元の位置に戻る
-            transform.position = Vector3.Lerp(transform.position, originalPosition.position, Time.deltaTime * 5);
+            on = !on;
+            UpdateSprite();
+            MovingBlock movBlock = targetMoveBlock.GetComponent<MovingBlock>();
+            if (on)
+            {
+                movBlock.Move();
+            }
+            else
+            {
+                movBlock.Stop();
+            }
         }
     }
 
-    // スイッチの状態を切り替えるメソッド
-    public void ToggleSwitch()
+    void UpdateSprite()
     {
-        isSwitchOn = !isSwitchOn;
+        if (on)
+        {
+            GetComponent<SpriteRenderer>().sprite = imageOn;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().sprite = imageOff;
+        }
     }
 }
