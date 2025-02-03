@@ -69,6 +69,7 @@ public class moveblock : MonoBehaviour
         isCanMove = true;
     }
 
+
     //ˆÚ“®ƒtƒ‰ƒO‚ð‰º‚·
     public void Stop()
     {

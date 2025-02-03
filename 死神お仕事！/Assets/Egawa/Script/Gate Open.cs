@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class オン試し : MonoBehaviour
+public class GateOpen : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

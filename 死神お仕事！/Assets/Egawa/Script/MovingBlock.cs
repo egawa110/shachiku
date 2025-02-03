@@ -69,6 +69,13 @@ public class MovingBlock : MonoBehaviour
         isCanMove = true;
     }
 
+    public void Reverse()
+    {
+        isCanMove = true;
+
+    }
+
+
     //ˆÚ“®ƒtƒ‰ƒO‚ð‰º‚·
     public void Stop()
     {
@@ -123,5 +130,6 @@ public class MovingBlock : MonoBehaviour
         //ˆÚ“®ˆÊ’u
         Vector2 toPos = new Vector3(fromPos.x + moveX, fromPos.y + moveY);
         Gizmos.DrawWireCube(toPos, new Vector2(size.x, size.y));
+
     }
 }
