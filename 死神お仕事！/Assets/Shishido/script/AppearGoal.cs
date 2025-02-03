@@ -9,7 +9,7 @@ public class AppearGoal : MonoBehaviour
 
     void Start()
     {
-        PlayCon = GetComponent<PlayerController>();
+        PlayCon = FindObjectOfType<PlayerController>();
         gameObject.SetActive(false);
     }
 
