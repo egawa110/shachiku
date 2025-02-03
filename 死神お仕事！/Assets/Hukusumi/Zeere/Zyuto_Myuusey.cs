@@ -19,7 +19,7 @@ public class Zyuto_Myuusey : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip Fire_SE;
 
-    GameObject Zyuto;
+    //GameObject Zyuto;
 
     void Start()
     {
@@ -28,7 +28,7 @@ public class Zyuto_Myuusey : MonoBehaviour
         //rbody = this.GetComponent<Rigidbody2D>(); //Rigidbody2D‚ðŽæ‚Á‚Ä‚­‚é
         audioSource = GetComponent<AudioSource>();
 
-        Zyuto = this.transform.Find("name").gameObject;
+        //Zyuto = this.transform.Find("name").gameObject;
     }
 
     void Update()

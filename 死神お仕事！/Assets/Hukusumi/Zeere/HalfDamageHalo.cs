@@ -7,10 +7,14 @@ public class HalfDamageHalo : MonoBehaviour
     int rnd;//乱数
     bool inDamage = false;
     public bool HalfF = false;
+    float HalfC ;
     // Start is called before the first frame update
     void Start()
     {
-        
+        ZeereCore zeere; //呼ぶスクリプトにあだなつける
+        GameObject obj = GameObject.Find("ZeereCore"); //Playerっていうオブジェクトを探す
+        zeere = obj.GetComponent<ZeereCore>(); //付いているスクリプトを取得
+        HalfC = zeere.BsCT;
     }
 
     // Update is called once per frame
@@ -40,6 +44,16 @@ public class HalfDamageHalo : MonoBehaviour
             {
                 inDamage = true;
                 Invoke(nameof(DamageEnd), 0.25f);
+            }
+        }
+        else
+        {
+            ZeereCore zeere; //呼ぶスクリプトにあだなつける
+            GameObject obj = GameObject.Find("ZeereCore"); //Playerっていうオブジェクトを探す
+            zeere = obj.GetComponent<ZeereCore>(); //付いているスクリプトを取得
+            if (zeere.BsCT==HalfC/2)
+            {
+                HarfFON();
             }
         }
 

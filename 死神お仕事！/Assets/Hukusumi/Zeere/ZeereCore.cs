@@ -23,6 +23,7 @@ public class ZeereCore : MonoBehaviour
     [SerializeField] GameObject HeloNull;//ヘイロー破壊
     [SerializeField] GameObject KillEffect;//死亡時に吐く
     [SerializeField] GameObject SoulEat;//起動時に吸収
+    [SerializeField] GameObject SoulVomiting;//半分以下で吐く
 
     //死亡時消去
     public GameObject GameUI;
@@ -46,7 +47,7 @@ public class ZeereCore : MonoBehaviour
 
     //突進系
     float ATspeed = 10.0f;//突進速度
-    float BsCT = 3.0f;//ロックオン時間
+    public float BsCT = 3.0f;//ロックオン時間
 
     public float Attack = 10;//攻撃CT
 
@@ -662,6 +663,8 @@ public class ZeereCore : MonoBehaviour
         HalfC = true;
         ATspeed = ATspeed / 2;
         BsCT = BsCT / 2;
+        Voice();
+        Create(SoulVomiting, x, y);
     }
 
     void ONReset()//リセット(起動)

@@ -170,10 +170,10 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6545656357581861747}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff186747214b11049852be39da8dba3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   HP_E: 1
-  EnemyDamage_SE: {fileID: 8300000, guid: 3e9daad7b0c45074abdcac74f58dea58, type: 3}
+  Damage_SE: {fileID: 0}
