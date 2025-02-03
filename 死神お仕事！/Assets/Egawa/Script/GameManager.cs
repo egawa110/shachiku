@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     //+++ 時間制限追加 +++
     public GameObject timeBar;  //時間表示イメージ
-    public GameObject timeText; //時間テイスト
+    public GameObject timeText; //時間テキスト
     TimeController timeCnt;     //TimeController
 
     public GameObject soulText; //魂のテキスト

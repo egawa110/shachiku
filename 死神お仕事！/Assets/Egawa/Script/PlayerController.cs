@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -36,7 +37,6 @@ public class PlayerController : MonoBehaviour
 
     public static string gameState = "playing";// ゲームの状態
 
-    //追加
     public int ALL_SOUL = 0;      //1ステージで取得したすべての魂
 
     //攻撃用変数
@@ -295,6 +295,14 @@ public class PlayerController : MonoBehaviour
         else if (collision.gameObject.tag=="Soul")
         {
             ALL_SOUL++;
+            Hp++;
+
+            if (Hp > 4) // 体力が４より大きくなったら
+            {
+                //今の体力を４にする
+                Hp = maxHp;
+            }
+
             //音を鳴らす
             audioSource.PlayOneShot(GetSoul_SE);
             // 削除する
@@ -311,19 +319,6 @@ public class PlayerController : MonoBehaviour
             // スイッチに触れたら音を鳴らす
             audioSource.PlayOneShot(Switch_Act_SE);
         }
-        else if(collision.gameObject.tag == "Heal")
-        {
-            Hp++;
-
-            if (Hp > 4) // 体力が４より大きくなったら
-            {
-                //今の体力を４にする
-                Hp = maxHp;
-            }
-            Destroy(collision.gameObject);
-            UnityEngine.Debug.Log("Hp:");
-            UnityEngine.Debug.Log(Hp);
-        }
     }
 
     /// <summary>
@@ -335,8 +330,6 @@ public class PlayerController : MonoBehaviour
         if (gameState == "playing")
         {
             Hp--; //hpが減る
-            UnityEngine.Debug.Log("Hp:");
-            UnityEngine.Debug.Log(Hp);
 
             if (Hp > 0)
             {
