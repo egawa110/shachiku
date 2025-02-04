@@ -13000,14 +13000,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6804310216698933812, guid: c5bbe78ffc087764cafd38b6e3882855, type: 3}
+    - {fileID: 3638001005434621631, guid: c5bbe78ffc087764cafd38b6e3882855, type: 3}
+    - {fileID: 8447058806600432719, guid: c5bbe78ffc087764cafd38b6e3882855, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1122659837122832396, guid: c5bbe78ffc087764cafd38b6e3882855, type: 3}
-      insertIndex: 4
+      insertIndex: -1
       addedObject: {fileID: 4836081282664616736}
     - targetCorrespondingSourceObject: {fileID: 1122659837122832396, guid: c5bbe78ffc087764cafd38b6e3882855, type: 3}
-      insertIndex: 5
+      insertIndex: -1
       addedObject: {fileID: 4601498462878454862}
   m_SourcePrefab: {fileID: 100100000, guid: c5bbe78ffc087764cafd38b6e3882855, type: 3}
 --- !u!1 &2357382326253967099 stripped
@@ -15793,6 +15795,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -35.59999
       objectReference: {fileID: 0}
+    - target: {fileID: 5196822793280464427, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
+      propertyPath: GoalObj
+      value: 
+      objectReference: {fileID: 2357382326253967099}
     - target: {fileID: 5355954283887035817, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: SceneName
       value: Stage3
@@ -15887,7 +15893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7113009532891470134, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -98
+      value: -97.999985
       objectReference: {fileID: 0}
     - target: {fileID: 7715749213932286118, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: SceneName
