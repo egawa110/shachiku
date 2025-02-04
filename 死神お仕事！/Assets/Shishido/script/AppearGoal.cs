@@ -9,17 +9,17 @@ public class AppearGoal : MonoBehaviour
     void Start()
     {
         PlayCon = FindObjectOfType<PlayerController>();
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        //gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.SetActive(false);
     }
 
     void Update()
     {
-        Debug.Log("Updateメソッドが呼び出されています");
         Debug.Log(PlayCon.ALL_SOUL);
-
         if (PlayCon.ALL_SOUL >= 10)
         {
-            gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            //gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            gameObject.SetActive(true);
             Debug.Log("ゴールが表示されました");
         }
     }
