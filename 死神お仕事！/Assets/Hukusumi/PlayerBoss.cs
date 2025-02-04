@@ -35,7 +35,7 @@ public class PlayerBoss : MonoBehaviour
     private int lifePoint = 4;
 
     //追加
-    public int ALL_SOUL = 0;      //1ステージで取得したすべての魂
+    //public int ALL_SOUL = 0;      //1ステージで取得したすべての魂
 
     //攻撃用変数
     [SerializeField] private GameObject bullet;     //バレットプレハブを格納
@@ -336,15 +336,15 @@ public class PlayerBoss : MonoBehaviour
         {
             GameOver(); //ゲームオーバー
         }
-        else if (collision.gameObject.tag == "Soul")
-        {
-            //魂取得する
-            ALL_SOUL++;
-            //音を鳴らす
-            audioSource.PlayOneShot(GetSoul_SE);
-            // 削除する
-            Destroy(collision.gameObject);
-        }
+        //else if (collision.gameObject.tag == "Soul")
+        //{
+        //    //魂取得する
+        //    ALL_SOUL++;
+        //    //音を鳴らす
+        //    audioSource.PlayOneShot(GetSoul_SE);
+        //    // 削除する
+        //    Destroy(collision.gameObject);
+        //}
         else if (collision.gameObject.tag == "Enemy")
         {
             GetDamage(collision.gameObject);
@@ -358,7 +358,7 @@ public class PlayerBoss : MonoBehaviour
         {
             lifePoint++;
             Hp++;
-
+            audioSource.PlayOneShot(GetSoul_SE);
             if (lifePoint > 4|| Hp > 4) // lifePointが４より大きくなったら
             {
                 // lifePointを４にする
