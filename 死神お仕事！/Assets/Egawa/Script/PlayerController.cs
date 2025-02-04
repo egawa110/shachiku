@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     bool goJump = false;              //ジャンプ開始フラグ
 
     //プレイヤーの足元が地面かどうかを判定する為に使用する変数
-    private float Radius_Cicle = 0.7f;       //円の半径
+    private float Radius_Cicle = 0.3f;       //円の半径
     private float Firing_Distance = 1.0f;    //発射距離
 
     Vector2 Left = new Vector2(-1, 1);     //左向き
@@ -373,7 +373,7 @@ public class PlayerController : MonoBehaviour
         gameState = "gameover"; GameStop();
         // ゲーム停止（ゲームオーバー演出）
         // プレイヤー当たりを消す
-        GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<CapsuleCollider2D>().enabled = false;
         // プレイヤーを上に少し跳ね上げる演出
         rbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
         //音楽を鳴らす
