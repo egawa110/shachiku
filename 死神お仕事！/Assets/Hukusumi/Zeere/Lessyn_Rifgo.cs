@@ -84,16 +84,6 @@ public class Lessyn_Rifgo : MonoBehaviour
                                                  0.0f,               //発射距離
                                                  groundLayer);       //検出するレイヤー
         }
-
-        //接触
-        void OnTriggerEnter2D(Collider2D other) //ぶつかったら消える命令文開始
-        {
-            if (other.CompareTag("KinKill"))
-            {
-                Destroy(gameObject);//このゲームオブジェクトを消滅させる
-            }
-        }
-
     }
 }
 

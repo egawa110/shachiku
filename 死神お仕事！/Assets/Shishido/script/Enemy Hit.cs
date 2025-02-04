@@ -51,6 +51,11 @@ public class EnemyHit : MonoBehaviour
             // 攻撃された時のエフェクト
             GetDamage();
         }
+        else if (collision.gameObject.CompareTag("KinKill"))
+        {
+            // 攻撃された時のエフェクト
+            Destroy(gameObject);
+        }
     }
 
     void GetDamage()

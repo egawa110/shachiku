@@ -128,8 +128,8 @@ GameObject:
   - component: {fileID: 939645114997604093}
   - component: {fileID: 6811488875127277232}
   - component: {fileID: 6267767777346007713}
-  - component: {fileID: 4256635420860142472}
   - component: {fileID: 6695625551365885680}
+  - component: {fileID: 4256635420860142472}
   - component: {fileID: 7302275157334970656}
   m_Layer: 0
   m_Name: Lessyn_Rifgo
@@ -314,20 +314,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.4174565}
   serializedVersion: 2
   m_Radius: 0.90047204
---- !u!114 &4256635420860142472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7851678097838253713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff186747214b11049852be39da8dba3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HP_E: 2
-  Damage_SE: {fileID: 8300000, guid: 2ef07b2f0683a9345a44165f5fd0c7fa, type: 3}
 --- !u!114 &6695625551365885680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,6 +335,20 @@ MonoBehaviour:
   fireSpeed: 4
   firetime: 5
   Fire_SE: {fileID: 8300000, guid: bad626c3241623e4e875345cd724e534, type: 3}
+--- !u!114 &4256635420860142472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7851678097838253713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff186747214b11049852be39da8dba3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP_E: 2
+  Damage_SE: {fileID: 8300000, guid: 2ef07b2f0683a9345a44165f5fd0c7fa, type: 3}
 --- !u!82 &7302275157334970656
 AudioSource:
   m_ObjectHideFlags: 0
