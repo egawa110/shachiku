@@ -53,7 +53,6 @@ public class EnemyHit : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("KinKill"))
         {
-            // 攻撃された時のエフェクト
             Destroy(gameObject);
         }
     }
