@@ -100,5 +100,8 @@ MonoBehaviour:
   Prefabs:
   - {fileID: 413604111671354255, guid: 323ebb0e13b329845bcd08377e1db4e5, type: 3}
   - {fileID: 413604111671354255, guid: 323ebb0e13b329845bcd08377e1db4e5, type: 3}
+  - {fileID: 413604111671354255, guid: 323ebb0e13b329845bcd08377e1db4e5, type: 3}
   - {fileID: 6694177340419223938, guid: 2f82d88e96b19064da46ce4036c65a55, type: 3}
+  - {fileID: 6694177340419223938, guid: 2f82d88e96b19064da46ce4036c65a55, type: 3}
+  - {fileID: 7851678097838253713, guid: 1c0327965740f364da004fad90ec6aae, type: 3}
   deletetime: 3
