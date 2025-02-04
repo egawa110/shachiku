@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class AppearGoal : MonoBehaviour
 {
-    private PlayerController PlayCon;
+    private PlayerController _playCon;
+    public GameObject GoalObj;
 
     void Start()
     {
-        PlayCon = FindObjectOfType<PlayerController>();
-        //gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        gameObject.SetActive(false);
+        _playCon = FindObjectOfType<PlayerController>();
+        GoalObj.SetActive(false);
     }
 
     void Update()
     {
-        Debug.Log(PlayCon.ALL_SOUL);
-        if (PlayCon.ALL_SOUL >= 10)
+        Debug.Log("UpDateåƒÇ—èoÇµ");
+        Debug.Log(_playCon.ALL_SOUL);
+
+        if (_playCon.ALL_SOUL >= 10)
         {
-            //gameObject.GetComponent<SpriteRenderer>().enabled = true;
-            gameObject.SetActive(true);
+            GoalObj.SetActive(true);
             Debug.Log("ÉSÅ[ÉãÇ™ï\é¶Ç≥ÇÍÇ‹ÇµÇΩ");
         }
     }

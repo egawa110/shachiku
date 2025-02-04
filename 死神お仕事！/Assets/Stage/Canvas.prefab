@@ -1596,6 +1596,7 @@ GameObject:
   - component: {fileID: 4960720344511783464}
   - component: {fileID: 3801594696449176174}
   - component: {fileID: 445257152024511504}
+  - component: {fileID: 5196822793280464427}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1730,6 +1731,19 @@ MonoBehaviour:
   timeText: {fileID: 2933737386603795188}
   soulText: {fileID: 3588547528010429207}
   stageSoul: 10
+--- !u!114 &5196822793280464427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6686937101272606608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99830ffdb9db13e4b8597df09aac64d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GoalObj: {fileID: 0}
 --- !u!1 &6802950145414469408
 GameObject:
   m_ObjectHideFlags: 0

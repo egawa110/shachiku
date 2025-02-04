@@ -13,8 +13,6 @@ public class LifeManager : MonoBehaviour
         {
             lifeArray[lifePoint - 1].SetActive(false);
             lifePoint--;
-            Debug.Log("lifePoint:");
-            Debug.Log(lifePoint);
         }
         else if (collision.gameObject.tag == "Soul") 
         {
@@ -30,8 +28,6 @@ public class LifeManager : MonoBehaviour
 
             lifeArray[lifePoint - 1].SetActive(true);
 
-            Debug.Log("lifePoint:");
-            Debug.Log(lifePoint);
         }
     }
 }
