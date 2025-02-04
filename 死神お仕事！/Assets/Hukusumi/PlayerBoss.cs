@@ -181,7 +181,7 @@ public class PlayerBoss : MonoBehaviour
         {
             speed = 3.0f;
             rbody.gravityScale = 1.1f;
-            jump = 10.0f;
+            jump = 11.0f;
         }
 
         //ålŒö‚ÌUŒ‚
