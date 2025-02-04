@@ -18,6 +18,9 @@ public class Lessyn_Rifgo : MonoBehaviour
 
     bool Dead = false;
 
+    float x;
+    float y;
+
     private AudioSource audioSource;
     public AudioClip Fire_SE;
 
@@ -27,6 +30,18 @@ public class Lessyn_Rifgo : MonoBehaviour
         Zeere = GameObject.FindGameObjectWithTag("ZeereCore").transform;
         //rbody = this.GetComponent<Rigidbody2D>(); //Rigidbody2Dを取ってくる
         audioSource = GetComponent<AudioSource>();
+        //Transform myTransform = this.transform;
+        //Vector2 WorldPos = myTransform.position;
+        //if(WorldPos.x<0)
+        //{
+        //    new Vector2(100, 1),
+        //       speed);
+        //}
+        //else
+        //{
+        //    new Vector2(-100, 1),
+        //       speed);
+        //}
     }
 
     void Update()
@@ -54,8 +69,8 @@ public class Lessyn_Rifgo : MonoBehaviour
         }
         if (GetComponent<BoxCollider2D>().enabled == false&&Dead==false)
         {
-            float x = worldPos.x;    // ワールド座標を基準にした、x座標が入っている変数
-            float y = worldPos.y;    // ワールド座標を基準にした、y座標が入っている変数
+            x = worldPos.x;    // ワールド座標を基準にした、x座標が入っている変数
+            y = worldPos.y;    // ワールド座標を基準にした、y座標が入っている変数
             Instantiate(Heal, new Vector2(x, y), Quaternion.identity);
             Dead = true;
         }

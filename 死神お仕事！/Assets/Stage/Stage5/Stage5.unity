@@ -696,7 +696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff186747214b11049852be39da8dba3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP_E: 1
+  HP_E: 2
   Damage_SE: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
