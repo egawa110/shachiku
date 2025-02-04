@@ -5,19 +5,22 @@ using UnityEngine;
 public class AppearGoal : MonoBehaviour
 {
     private PlayerController PlayCon;
-    
 
     void Start()
     {
         PlayCon = FindObjectOfType<PlayerController>();
-        gameObject.SetActive(false);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     void Update()
     {
+        Debug.Log("Updateメソッドが呼び出されています");
+        Debug.Log(PlayCon.ALL_SOUL);
+
         if (PlayCon.ALL_SOUL >= 10)
         {
-            gameObject.SetActive(true);
+            gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            Debug.Log("ゴールが表示されました");
         }
     }
 }
