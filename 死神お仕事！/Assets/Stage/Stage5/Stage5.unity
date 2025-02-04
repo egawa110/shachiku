@@ -157,6 +157,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage5
       objectReference: {fileID: 0}
+    - target: {fileID: 1625256553606384157, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+      propertyPath: sceneName
+      value: Stage5
+      objectReference: {fileID: 0}
     - target: {fileID: 3852310014914301263, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.1671
