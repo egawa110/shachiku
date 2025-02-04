@@ -213,7 +213,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  jump: 10
+  jump: 11
   firetime: 3
   Junp_SE: {fileID: 8300000, guid: 022158dc608056f498b83ca46e7be1fc, type: 3}
 --- !u!114 &-265533026075872929

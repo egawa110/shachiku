@@ -144,7 +144,7 @@ public class PlayerBoss : MonoBehaviour
 
         speed = 3.0f;
         rbody.gravityScale = 1.1f;
-        jump = 10.0f;
+        jump = 11.0f;
 
         //水平方向の入力をチェック
         axisH = Input.GetAxisRaw("Horizontal");
@@ -173,7 +173,7 @@ public class PlayerBoss : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
             {
                 speed = 5.0f;
-                rbody.gravityScale = 1.5f;
+                rbody.gravityScale = 1.1f;
                 jump = 11.0f;
             }
         }
