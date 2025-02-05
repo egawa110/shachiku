@@ -14,6 +14,8 @@ public class MovingBlock : MonoBehaviour
     Vector3 endPos;                   //移動位置
     bool isReverse = false;           //反転フラグ
 
+    public float originalpos = 0.0f;  //お試し追加
+
     float movep = 0;                  //移動保完値
 
     // Start is called before the first frame update
@@ -68,13 +70,6 @@ public class MovingBlock : MonoBehaviour
     {
         isCanMove = true;
     }
-
-    public void Reverse()
-    {
-        isCanMove = true;
-
-    }
-
 
     //移動フラグを下す
     public void Stop()
