@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SwitchAction : MonoBehaviour
 {
+    private Vector3 initialPosition; //試し追加
+
     public GameObject targetMoveBlock;
     public Sprite imageOn;
     public Sprite imageOff;
@@ -12,6 +14,9 @@ public class SwitchAction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //オブジェクトの初期位置を保存
+        initialPosition = transform.position;
+
         if (on)
         {
             GetComponent<SpriteRenderer>().sprite = imageOn;
@@ -34,6 +39,7 @@ public class SwitchAction : MonoBehaviour
                 MovingBlock movBlock = targetMoveBlock.GetComponent<MovingBlock>();
                 movBlock.Stop();
             }
+        
             else
             {
                 on = true;
