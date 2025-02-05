@@ -70,13 +70,18 @@ public class MoveBlock2 : MonoBehaviour
     //移動フラグを立てる
     public void Move()
     {
-        isCanMove = true;
+        transform.position = Vector2.Lerp(startPos, endPos, movep); //正移動
+
+        //isCanMove = true;
     }
 
     //移動フラグを下す
     public void Stop()
     {
-        isCanMove = false;
+        //isCanMove = false;
+        transform.position = Vector2.Lerp(endPos, startPos, movep); //逆移動
+
+
     }
 
     //playerの接触開始
