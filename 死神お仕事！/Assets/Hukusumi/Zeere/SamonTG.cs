@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SamonTG : MonoBehaviour
 {
+    //‰ñ“]‘¬“x
     public int s=121;
     void Update()
     {

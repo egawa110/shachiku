@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RainDR : MonoBehaviour
 {
+    //‰¹
     private AudioSource audioSource;
     public AudioClip Rain_SE;
 

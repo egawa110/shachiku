@@ -173,6 +173,14 @@ PrefabInstance:
       propertyPath: sceneName
       value: Stage5
       objectReference: {fileID: 0}
+    - target: {fileID: 2943809845947609694, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+      propertyPath: m_Size.x
+      value: 1.7632475
+      objectReference: {fileID: 0}
+    - target: {fileID: 2943809845947609694, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+      propertyPath: m_Offset.x
+      value: -1.3366108
+      objectReference: {fileID: 0}
     - target: {fileID: 3852310014914301263, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.1671

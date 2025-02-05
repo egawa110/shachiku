@@ -161,11 +161,7 @@ public class ZeereCore : MonoBehaviour
                 }
                 else
                 {
-                    //スプライトを非表示
-                    gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                    Zeere1.GetComponent<SpriteRenderer>().enabled = false;
-                    Zeere2.GetComponent<SpriteRenderer>().enabled = false;
-                    Zeere3.GetComponent<SpriteRenderer>().enabled = false;
+                    RendererFalse();
                 }
             }
             else
@@ -293,7 +289,7 @@ public class ZeereCore : MonoBehaviour
                     LongLooc = true;
                 }
 
-                //強制発動
+                //強制起動
                 //if (Input.GetKeyDown(KeyCode.L))//突進ON
                 //{
                 //    AttackLooc = !AttackLooc;
@@ -364,7 +360,7 @@ public class ZeereCore : MonoBehaviour
                 Cool2 = true;
                 audioSource.PlayOneShot(AttackC_SE);
             }
-            if (PassedTimes >= 3)
+            if (PassedTimes >= 3)//突進
             {
                 if (Cool2 == true)
                 {
@@ -539,8 +535,15 @@ public class ZeereCore : MonoBehaviour
         Zeere2.GetComponent<SpriteRenderer>().enabled = true;
         Zeere3.GetComponent<SpriteRenderer>().enabled = true;
     }
+    void RendererFalse()//パーツ非表示
+    {
+        //スプライトを非表示
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        Zeere1.GetComponent<SpriteRenderer>().enabled = false;
+        Zeere2.GetComponent<SpriteRenderer>().enabled = false;
+        Zeere3.GetComponent<SpriteRenderer>().enabled = false;
+    }
 
-    
 
     public void Zeereon()//起動スイッチ
     {

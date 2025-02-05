@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Beemcore : MonoBehaviour
 {
-    public float deletetime = 0.3f;
+    public float Deletetime = 0.3f;//è¡ãééûä‘
     private AudioSource audioSource;
-    public AudioClip Beem_SE;
+    public AudioClip Beem_SE;//SE
 
     void Start()
     {
+        //âπ
         audioSource = GetComponent<AudioSource>();
         audioSource.PlayOneShot(Beem_SE);
-        Destroy(gameObject, deletetime);//è¡ãé
+
+        Destroy(gameObject, Deletetime);//è¡ãé
     }
 }

@@ -28,7 +28,7 @@ public class ZeereBeem : MonoBehaviour
             Vector2 worldPos = myTransform.position;
             float x = worldPos.x;    // ワールド座標を基準にした、x座標が入っている変数
             float y = worldPos.y;    // ワールド座標を基準にした、y座標が入っている変数
-            Instantiate(prefab, new Vector2(x, y), Quaternion.identity);
+            Instantiate(prefab, new Vector2(x, y), Quaternion.identity);//ビーム生成
             
             Destroy(gameObject);//このゲームオブジェクトを消滅させる
         }

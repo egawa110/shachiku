@@ -5,16 +5,16 @@ using UnityEngine;
 public class HalfDamageHalo : MonoBehaviour
 {
     int rnd;//乱数
-    bool inDamage = false;
-    public bool HalfF = false;
-    float HalfC ;
+    bool inDamage = false;//点滅
+    public bool HalfF = false;//半分確認
+    float HalfC ;//ゼーレ初期数値
     // Start is called before the first frame update
     void Start()
     {
-        ZeereCore zeere; //呼ぶスクリプトにあだなつける
+        ZeereCore Zeere; //呼ぶスクリプトにあだなつける
         GameObject obj = GameObject.Find("ZeereCore"); //Playerっていうオブジェクトを探す
-        zeere = obj.GetComponent<ZeereCore>(); //付いているスクリプトを取得
-        HalfC = zeere.BsCT;
+        Zeere = obj.GetComponent<ZeereCore>(); //付いているスクリプトを取得
+        HalfC = Zeere.BsCT;//初期数値保存
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class HalfDamageHalo : MonoBehaviour
     {
         if (HalfF)
         {
-            //乱数で一瞬消える感じでおなしゃす
+            //ランダムで点滅
             rnd = Random.Range(0, 100);//乱数
             if (inDamage)
             {
@@ -40,7 +40,7 @@ public class HalfDamageHalo : MonoBehaviour
                 }
                 rnd = 100;
             }
-            if (rnd == 0)
+            if (rnd == 0)//点滅起動
             {
                 inDamage = true;
                 Invoke(nameof(DamageEnd), 0.25f);
@@ -49,9 +49,9 @@ public class HalfDamageHalo : MonoBehaviour
         else
         {
             ZeereCore zeere; //呼ぶスクリプトにあだなつける
-            GameObject obj = GameObject.Find("ZeereCore"); //Playerっていうオブジェクトを探す
+            GameObject obj = GameObject.Find("ZeereCore"); //オブジェクトを探す
             zeere = obj.GetComponent<ZeereCore>(); //付いているスクリプトを取得
-            if (zeere.BsCT==HalfC/2)
+            if (zeere.BsCT==HalfC/2)//半分確認
             {
                 HarfFON();
             }

@@ -6,8 +6,9 @@ public class BossEnd : MonoBehaviour
 {
     void Update()
     {
-        GameObject[] End = GameObject.FindGameObjectsWithTag("ZeereAtach");
-        GameObject[] Endh = GameObject.FindGameObjectsWithTag("Heal");
+        GameObject[] End = GameObject.FindGameObjectsWithTag("ZeereAtach");//ゼーレパーツタグ
+        GameObject[] Endh = GameObject.FindGameObjectsWithTag("Heal");//ハート
+        //全消去
         foreach (GameObject Dell in End)
         {
             Destroy(Dell);

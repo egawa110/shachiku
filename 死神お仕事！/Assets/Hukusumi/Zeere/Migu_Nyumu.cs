@@ -6,14 +6,15 @@ public class Migu_Nyumu : MonoBehaviour
 {
     Rigidbody2D rbody;                //Rigidbody2D型の作成
     Transform playerTr;
-    public float speed = 3.0f;  //移動速度
+    public float Speed = 3.0f;  //移動速度
     public LayerMask groundLayer;      //地面レイヤー
-    public float jump = 9.0f;
+    public float jump = 9.0f;//ジャンプ力
     bool goJump = false;              //ジャンプ開始フラグ
 
-    float passedTimes = 0;
-    public float firetime = 3.0f;//発射
+    float PassedTimes = 0;//時間
+    public float FireTime = 3.0f;//発射
 
+    //音
     private AudioSource audioSource;
     public AudioClip Junp_SE;
 
@@ -28,20 +29,22 @@ public class Migu_Nyumu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            Transform myTransform = this.transform;
-            Vector2 worldPos = myTransform.position;
-        Transform yTransform = playerTr.transform;
-        Vector2 orldPos = yTransform.position;
-        passedTimes += Time.deltaTime;//時間経過
-        if (worldPos.y - orldPos.y > 2 || worldPos.y - orldPos.y < -2)
+        //自身の位置
+        Transform myTransform = this.transform;
+        Vector2 worldPos = myTransform.position;
+        //プレイヤーの位置
+        Transform myTransformP = playerTr.transform;
+        Vector2 worldPosP = myTransformP.position;
+        PassedTimes += Time.deltaTime;//時間経過
+        if (worldPos.y - worldPosP.y > 2 || worldPos.y - worldPosP.y < -2)
         {
-            if (worldPos.x - orldPos.x <= 5&& worldPos.x - orldPos.x >0 || worldPos.x - orldPos.x >= -5 && worldPos.x - orldPos.x < 0)
+            if (worldPos.x - worldPosP.x <= 5&& worldPos.x - worldPosP.x >0 || worldPos.x - worldPosP.x >= -5 && worldPos.x - worldPosP.x < 0)//高さが違うとき離れて跳ぶ
             {
                 transform.position = Vector2.MoveTowards(
                        transform.position,
                        new Vector2(playerTr.position.x, worldPos.y),
-                       -speed * Time.deltaTime);
-                if (passedTimes >= firetime)
+                       -Speed * Time.deltaTime);
+                if (PassedTimes >= FireTime)
                 {
                     Jump();
                 }
@@ -51,15 +54,15 @@ public class Migu_Nyumu : MonoBehaviour
                 transform.position = Vector2.MoveTowards(
                        transform.position,
                        new Vector2(playerTr.position.x, worldPos.y),
-                       speed * Time.deltaTime);
+                       Speed * Time.deltaTime);
             }
         }
-        else
+        else//同ｙ時
         {
             transform.position = Vector2.MoveTowards(
                    transform.position,
                    new Vector2(playerTr.position.x, worldPos.y),
-                   speed * Time.deltaTime);
+                   Speed * Time.deltaTime);
         }
     }
     
@@ -79,7 +82,7 @@ public class Migu_Nyumu : MonoBehaviour
             Vector2 jumpPw = new Vector2(0, jump);  //ジャンプさせるベクトルを作る
             rbody.AddForce(jumpPw, ForceMode2D.Impulse); //瞬間敵な力を加える
             goJump = false; //ジャンプフラグを下ろす
-            passedTimes = 0;
+            PassedTimes = 0;
         }
     }
     public void Jump()
