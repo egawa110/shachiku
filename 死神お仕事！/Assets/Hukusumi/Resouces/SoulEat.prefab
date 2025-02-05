@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77a3392689aecc4dab24a0742caa480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deletetime: 4
+  Deletetime: 4
   Beem_SE: {fileID: 0}
 --- !u!1 &4520825469245564759
 GameObject:

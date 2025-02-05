@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5206801058258455770}
   - component: {fileID: 2703993162166103643}
   - component: {fileID: 4271947991470420223}
+  - component: {fileID: 5778450718057383335}
   m_Layer: 0
   m_Name: "\u56DE\u5FA9\u5F3E\u4E382"
   m_TagString: Heal
@@ -157,7 +158,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1831538271512898340}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8689b53764f103946b21aeda90f6d4e4, type: 3}
   m_Name: 
@@ -177,3 +178,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP_E: 1
   Damage_SE: {fileID: 0}
+--- !u!114 &5778450718057383335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831538271512898340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c5d2def186d4094ca5ebd15e68d2c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deleteTime: 3
