@@ -1380,6 +1380,7 @@ MonoBehaviour:
   HeloNull: {fileID: 5313535258178795790, guid: 5990c47ffd0714b40992fbd7cfe92067, type: 3}
   KillEffect: {fileID: 3451110779948650419, guid: eb3691943a6d85840841e621d9038e72, type: 3}
   SoulEat: {fileID: 3328487248146833803, guid: d6d5361fc0ff29744a2d5df30b3e3f50, type: 3}
+  SoulVomiting: {fileID: 0}
   GameUI: {fileID: 6316115712220359217}
   Heart1: {fileID: 7842164049320685285}
   Heart2: {fileID: 8994144452094035827}
@@ -1388,6 +1389,7 @@ MonoBehaviour:
   Target: {fileID: 9124458094791598424}
   Speed: 5
   DAngle: 180
+  BsCT: 3
   Attack: 5
   Samonfrequency: 3
   R: 0.5
@@ -2152,6 +2154,7 @@ MonoBehaviour:
   wait: 0
   isMoveWhenOn: 1
   isCanMove: 0
+  originalpos: 0
 --- !u!1 &5030254394595024406
 GameObject:
   m_ObjectHideFlags: 0
@@ -13869,7 +13872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7113009532891470134, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -98
+      value: -97.999985
       objectReference: {fileID: 0}
     - target: {fileID: 7715749213932286118, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: SceneName
@@ -13891,7 +13894,7 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6706342313684956794, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
-      insertIndex: -1
+      insertIndex: 4
       addedObject: {fileID: 581933135665927543}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3875282970019197288, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
@@ -14087,7 +14090,6 @@ MonoBehaviour:
   - {fileID: 8994144452094035827}
   - {fileID: 4173393798484039386}
   - {fileID: 3456422648145816180}
-  ALL_SOUL: 0
   bullet: {fileID: 2887120631419227553, guid: 736ce010eb1d2574ba9419376eb2125e, type: 3}
   attackPoint: {fileID: 2200168116770210442}
   attackTime: 1

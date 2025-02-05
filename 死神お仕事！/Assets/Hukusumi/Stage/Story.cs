@@ -62,7 +62,7 @@ public class Story : MonoBehaviour
                     if (SSCount >= Text.Length)
                     {
                         Debug.Log("GO");
-                        ChangeStory changestory = GetComponent<ChangeStory>();
+                        ChangeScene changestory = GetComponent<ChangeScene>();
                         changestory.Load();
                     }
                     Text[SSCount].GetComponent<SpriteRenderer>().enabled = true;

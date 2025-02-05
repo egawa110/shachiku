@@ -1089,7 +1089,7 @@ PrefabInstance:
       addedObject: {fileID: 7014571987592068000}
     - targetCorrespondingSourceObject: {fileID: 7587405926089056157, guid: a4318229785b2314bb3ae2c646d18cd0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7014571987592068006}
+      addedObject: {fileID: 7014571987592068012}
     - targetCorrespondingSourceObject: {fileID: 7587405926089056157, guid: a4318229785b2314bb3ae2c646d18cd0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7014571987592068008}
@@ -1129,19 +1129,6 @@ MonoBehaviour:
   TChange: 2
   MSwitch: 0
   Enter_SE: {fileID: 8300000, guid: 5edfa15cfd2a0a1419fbf8feb4a6f816, type: 3}
---- !u!114 &7014571987592068006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7014571987592067998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca9801b990a144d4386b203fc8f805ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneName: St1
 --- !u!82 &7014571987592068008
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1238,6 +1225,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7014571987592068012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7014571987592067998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4c850ec8e40d34db5d825087999bea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: St1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

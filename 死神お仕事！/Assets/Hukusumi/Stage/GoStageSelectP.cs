@@ -5,10 +5,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement; // シーン切り替えに必要
 using UnityEngine.UI;
 
-public class GOStageSelect : MonoBehaviour
+public class GOStageSelectP : MonoBehaviour
 {
     private PauseMenu pausemenu;
-
+    public GameObject pauseMenuUI;
     //-----------------------------------------
     // フェードありのスクリプト
     //-----------------------------------------
@@ -25,13 +25,15 @@ public class GOStageSelect : MonoBehaviour
         Time.timeScale = 1;
         // ボタンコンポーネントを取得し、クリック時にメソッドを呼び出すよう設定
         Button button = GetComponent<Button>();
-        button.onClick.AddListener(() => StartCoroutine(LoadSceneAsync()));
+        button.onClick.AddListener(() => StartCoroutine(LoadSceneAsyncP()));
     }
     // シーンを読み込む
-    private IEnumerator LoadSceneAsync()
+    private IEnumerator LoadSceneAsyncP()
     {
         ClearCount clearcount = GetComponent<ClearCount>();
         CC = clearcount.Count;
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
         if (CC == 0)
         {
 

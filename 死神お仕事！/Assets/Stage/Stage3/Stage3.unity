@@ -171,15 +171,135 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2391848565853339038, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5292821373484602624, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
       propertyPath: m_Name
       value: Stage3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5938003988684921213, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8719738895212480715, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 818285235}
+    - target: {fileID: 8719738895212480715, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 8719738895212480715, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PoseR, Assembly-CSharp
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 210928435585788893, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+    - {fileID: 8738791533918324187, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8794065273051645525, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 818285235}
+    - targetCorrespondingSourceObject: {fileID: 8811939580961992617, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1485532315}
+    - targetCorrespondingSourceObject: {fileID: 2530955645699806278, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 818285232}
+    - targetCorrespondingSourceObject: {fileID: 2530955645699806278, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 818285231}
   m_SourcePrefab: {fileID: 100100000, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+--- !u!1 &818285230 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2530955645699806278, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+  m_PrefabInstance: {fileID: 818285229}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &818285231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818285230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30475691e1f22014483b192f721fc7b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Count: 0
+--- !u!114 &818285232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818285230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943dbbbad22ea3744890965b515d7767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Opening: 1scene
+  Stage1: st1
+  Stage2: St2
+  Stage3: St3
+  Stage4: St4
+  Stage5: StBOSS
+  StageAll: St4
+--- !u!1 &818285233 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8794065273051645525, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+  m_PrefabInstance: {fileID: 818285229}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &818285234 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7604889854614417115, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+  m_PrefabInstance: {fileID: 818285229}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &818285235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818285233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957a8b7d16a5d8f46b61669573536588, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: Stage3
+  pauseMenuUI: {fileID: 818285234}
+--- !u!1 &1485532313 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8811939580961992617, guid: e0fc9364fd1cd7345819a1dc6f86cbc9, type: 3}
+  m_PrefabInstance: {fileID: 818285229}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1485532315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485532313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 045306d034f6d0442972f4f262e45f4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 818285234}
+  Opening: 1scene
+  Stage1: St1
+  Stage2: St2
+  Stage3: St3
+  Stage4: St4
+  Stage5: StBOSS
+  StageAll: St4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
