@@ -391,6 +391,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &884833233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884833225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4c850ec8e40d34db5d825087999bea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: BOSSset
 --- !u!82 &1689851775 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 6882247979259938658, guid: 21130a1f792e13947b000802521fe26f, type: 3}
@@ -456,6 +469,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 6ec85c2004f969a429227b85e9e4860f, type: 3}
+    - target: {fileID: 3441592858955293131, guid: 21130a1f792e13947b000802521fe26f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 884833233}
+    - target: {fileID: 3441592858955293131, guid: 21130a1f792e13947b000802521fe26f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Load
+      objectReference: {fileID: 0}
+    - target: {fileID: 3441592858955293131, guid: 21130a1f792e13947b000802521fe26f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ChangeScene, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3800489888076810646, guid: 21130a1f792e13947b000802521fe26f, type: 3}
       propertyPath: m_Pitch
       value: 1
@@ -473,10 +498,22 @@ PrefabInstance:
       value: "\u6575\u8AAC\u660E\uFF08\u9B54\u6CD5\u5175\uFF09"
       objectReference: {fileID: 0}
     - target: {fileID: 6882247979259938658, guid: 21130a1f792e13947b000802521fe26f, type: 3}
+<<<<<<< HEAD
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+=======
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6882247979259938658, guid: 21130a1f792e13947b000802521fe26f, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3125820925034443345, guid: 21130a1f792e13947b000802521fe26f, type: 3}
+>>>>>>> f46b84e54646a72fcb36c67d7fec8d55aa571767
     m_RemovedGameObjects:
     - {fileID: 739502001084217704, guid: 21130a1f792e13947b000802521fe26f, type: 3}
     - {fileID: 3215593899037039496, guid: 21130a1f792e13947b000802521fe26f, type: 3}
@@ -488,6 +525,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2392914648055574439, guid: 21130a1f792e13947b000802521fe26f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 884833227}
+    - targetCorrespondingSourceObject: {fileID: 2392914648055574439, guid: 21130a1f792e13947b000802521fe26f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 884833233}
   m_SourcePrefab: {fileID: 100100000, guid: 21130a1f792e13947b000802521fe26f, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
