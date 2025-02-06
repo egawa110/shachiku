@@ -836,7 +836,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 662423006fe5ea1498e3e256ce580239, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Select_Sounds: {fileID: 8300000, guid: efc280fd17218be49ab323f4dcd081c6, type: 3}
 --- !u!82 &1040596782
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1018,7 +1017,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca9801b990a144d4386b203fc8f805ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Enemyset
 --- !u!114 &1633287871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1064,6 +1062,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1633287873 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1693612984569742294, guid: 7a9b3e85ab8a0ea46b659592a40ad23a, type: 3}
+  m_PrefabInstance: {fileID: 1901100631}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633287864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4c850ec8e40d34db5d825087999bea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1901100631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1083,14 +1092,14 @@ PrefabInstance:
     - target: {fileID: 5459169049793305142, guid: 7a9b3e85ab8a0ea46b659592a40ad23a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1633287870}
+      objectReference: {fileID: 1633287873}
     - target: {fileID: 5459169049793305142, guid: 7a9b3e85ab8a0ea46b659592a40ad23a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Load
       objectReference: {fileID: 0}
     - target: {fileID: 5459169049793305142, guid: 7a9b3e85ab8a0ea46b659592a40ad23a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ChangeStory, Assembly-CSharp
+      value: ChangeScene, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6263818156054895261, guid: 7a9b3e85ab8a0ea46b659592a40ad23a, type: 3}
       propertyPath: m_Sprite
@@ -1192,8 +1201,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1693612984569742294, guid: 7a9b3e85ab8a0ea46b659592a40ad23a, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7194218804201857287, guid: 7a9b3e85ab8a0ea46b659592a40ad23a, type: 3}
