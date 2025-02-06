@@ -206,6 +206,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage5
       objectReference: {fileID: 0}
+    - target: {fileID: 909868744994132146, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 1395347171533305069, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.25
@@ -233,6 +237,10 @@ PrefabInstance:
     - target: {fileID: 2943809845947609694, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
       propertyPath: m_Size.x
       value: 1.7632475
+      objectReference: {fileID: 0}
+    - target: {fileID: 2943809845947609694, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2943809845947609694, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
       propertyPath: m_Offset.x
@@ -366,6 +374,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -25.41
       objectReference: {fileID: 0}
+    - target: {fileID: 7519456086085995021, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519456086085995021, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519456086085995021, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 7628500047501792407, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -98
@@ -374,6 +394,10 @@ PrefabInstance:
       propertyPath: jump
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 7772066870388495016, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
+      propertyPath: Clear_SE
+      value: 
+      objectReference: {fileID: 8300000, guid: dbbf8673aa8e31f4cacf5dd0a47b4176, type: 3}
     - target: {fileID: 7772066870388495016, guid: 2762af881a7765a49a176d1c62faee3e, type: 3}
       propertyPath: pauseMenuUI
       value: 
