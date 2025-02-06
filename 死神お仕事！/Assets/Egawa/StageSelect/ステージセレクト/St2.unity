@@ -620,7 +620,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30BF\u30A4\u30C8\u30EB\u306B\u623B\u308A\u307E\u3059\u304B\uFF1F"
+  m_Text: "\u30BF\u30A4\u30C8\u30EB\u306B\u3082\u3069\u308A\u307E\u3059\u304B\uFF1F"
 --- !u!222 &1289986913
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -935,6 +935,14 @@ PrefabInstance:
       propertyPath: SceneName
       value: Stage1set
       objectReference: {fileID: 0}
+    - target: {fileID: 3169173795541998571, guid: e89c71baac7f0a746b82cac781754ff9, type: 3}
+      propertyPath: m_Text
+      value: "\u3082\u3069\u308B"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3412049475374816252, guid: e89c71baac7f0a746b82cac781754ff9, type: 3}
+      propertyPath: m_Text
+      value: "\u3082\u3069\u3089\u306A\u3044"
+      objectReference: {fileID: 0}
     - target: {fileID: 4494355710333824654, guid: e89c71baac7f0a746b82cac781754ff9, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.6500444
@@ -1046,6 +1054,10 @@ PrefabInstance:
     - target: {fileID: 7587190361806553065, guid: e89c71baac7f0a746b82cac781754ff9, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -38
+      objectReference: {fileID: 0}
+    - target: {fileID: 8425339822794100353, guid: e89c71baac7f0a746b82cac781754ff9, type: 3}
+      propertyPath: m_Text
+      value: "\u30BF\u30A4\u30C8\u30EB\u306B\u3082\u3069\u308A\u307E\u3059\u304B\uFF1F"
       objectReference: {fileID: 0}
     - target: {fileID: 8798755297931767240, guid: e89c71baac7f0a746b82cac781754ff9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
