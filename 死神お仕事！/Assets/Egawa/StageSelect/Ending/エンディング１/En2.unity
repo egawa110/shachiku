@@ -696,7 +696,7 @@ PrefabInstance:
       addedObject: {fileID: 1198868118828737007}
     - targetCorrespondingSourceObject: {fileID: 5593688995741178133, guid: 425d251f95607ac4ab956aeae7eaafbf, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1198868118828737014}
+      addedObject: {fileID: 1198868118828737020}
     - targetCorrespondingSourceObject: {fileID: 5593688995741178133, guid: 425d251f95607ac4ab956aeae7eaafbf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1198868118828737018}
@@ -761,19 +761,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: {fileID: 578601958}
---- !u!114 &1198868118828737014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1198868118828737006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca9801b990a144d4386b203fc8f805ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneName: StBOSS
 --- !u!82 &1198868118828737018
 AudioSource:
   m_ObjectHideFlags: 0
@@ -870,6 +857,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1198868118828737020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198868118828737006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4c850ec8e40d34db5d825087999bea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: StBOSS
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
