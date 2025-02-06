@@ -989,6 +989,7 @@ MonoBehaviour:
   targetMoveBlock: {fileID: 5008449033903621975}
   Zeere: {fileID: 4051573335913436113}
   Camera: {fileID: 5608520899287075653}
+  Wall: {fileID: 0}
 --- !u!114 &2793961464761066796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13646,6 +13647,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3852310014914301263}
     m_Modifications:
+    - target: {fileID: 338668983254509882, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 737436249389958841, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -13872,7 +13877,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7113009532891470134, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -97.999985
+      value: -97.99997
       objectReference: {fileID: 0}
     - target: {fileID: 7715749213932286118, guid: 997a6b4e0aef6c44e84eb0560770c294, type: 3}
       propertyPath: SceneName

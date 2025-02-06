@@ -7,6 +7,7 @@ public class BossSwich : MonoBehaviour
     public GameObject targetMoveBlock;
     public GameObject Zeere;
     public GameObject Camera;
+    public GameObject Wall;
 
     //接触開始
     void OnTriggerEnter2D(Collider2D col)
@@ -22,7 +23,10 @@ public class BossSwich : MonoBehaviour
                 S5Camera BCamera = Camera.GetComponent<S5Camera>();
                 BCamera.Booson();
 
-                Destroy(gameObject);//このゲームオブジェクトを消滅させる
+                WallON Block = Wall.GetComponent<WallON>();
+                Block.ON();
+
+            Destroy(gameObject);//このゲームオブジェクトを消滅させる
         }
     }
 }
